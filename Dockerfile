@@ -39,7 +39,7 @@ COPY textpressoapi /data/textpresso/textpressoapi
 COPY tpctools /data/textpresso/tpctools
 RUN /root/initialize.sh -t \
 && mkdir -p /usr/local/textpresso/cas_annotate \
-&& cp /data/textpresso/textpressoapi/cas_annotate_server.py /data/textpresso/textpressoapi/casannot.py /data/textpresso/textpressoapi/category_index.py /usr/local/textpresso/cas_annotate/ \
+&& cp /data/textpresso/textpressoapi/cas_annotate_server.py /data/textpresso/textpressoapi/casannot.py /data/textpresso/textpressoapi/category_index.py /data/textpresso/textpressoapi/access.py /usr/local/textpresso/cas_annotate/ \
 && rm -rf /data/textpresso/textpressocentral \
 && rm -rf /data/textpresso/textpressoapi \
 && rm -rf /data/textpresso/textpressoapi_data \

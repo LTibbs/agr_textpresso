@@ -6,6 +6,7 @@
 #include <SQLiteCpp/SQLiteCpp.h>
 #include <boost/program_options.hpp>
 #include <fstream>
+#include "access_control.h"
 
 using namespace tpc::index;
 using namespace std;
@@ -209,6 +210,9 @@ int main(int argc, const char* argv[]) {
     string ssl_key;
     string index_path;
     string login_database;
+    string oa_manifest;
+    string api_keys_file;
+    int max_anon_snippets = 3;
 
     try {
         desc.add_options()
@@ -217,6 +221,16 @@ int main(int argc, const char* argv[]) {
                 "textpresso index")
                 ("login-database,d", po::value<string>(&login_database)->default_value(""),
                 "database for logins and tokens (optional, authentication disabled if not provided)")
+                ("open-access-manifest", po::value<string>(&oa_manifest)->default_value(
+                "/data/textpresso/open_access_manifest.tsv"),
+                "manifest of per-accession / per-corpus open-access status; if the file is absent, "
+                "every document is treated as open access and no request is restricted")
+                ("api-keys-file", po::value<string>(&api_keys_file)->default_value(
+                "/data/textpresso/textpressoapi_data/api_keys.txt"),
+                "file of API keys (one per line) that grant unrestricted full-text access")
+                ("max-anon-snippets", po::value<int>(&max_anon_snippets)->default_value(3),
+                "maximum matching sentences returned per non-open-access document to "
+                "unauthenticated clients")
                 ("ssl_cert,c", po::value<string>(&ssl_cert)->default_value(""),
                 "ssl certificate file")
                 ("ssl_key,k", po::value<string>(&ssl_key)->default_value(""),
@@ -238,15 +252,40 @@ int main(int argc, const char* argv[]) {
     }
 
     IndexManager indexManager(index_path);
+
+    tpc_access::AccessControl access;
+    access.load(oa_manifest, api_keys_file);
+    if (max_anon_snippets < 0) {
+        max_anon_snippets = 0;
+    }
+    if (access.enforcing()) {
+        cout << "access control: ENFORCING (manifest: " << oa_manifest << "); "
+                << "unauthenticated clients get at most " << max_anon_snippets
+                << " matching sentences per non-open-access document" << endl;
+        if (!access.has_keys()) {
+            cout << "access control: WARNING no API keys loaded from " << api_keys_file
+                    << " -- no client can retrieve full text of a non-open-access document" << endl;
+        }
+    } else {
+        cout << "access control: disabled (no manifest at " << oa_manifest
+                << "); all documents served as open access" << endl;
+    }
+
     crow::SimpleApp app;
 
     CROW_ROUTE(app, "/v1/textpresso/api/search_documents")
             .methods("POST"_method)
-            ([&indexManager, &login_database](const crow::request & req) {
+            ([&indexManager, &login_database, &access, max_anon_snippets](const crow::request & req) {
                 // parse request
                 auto json_req = crow::json::load(req.body);
                 if (!json_req)
                     return crow::response(400);
+                // Open-access gating: an unauthenticated client gets the full
+                // response for open-access documents, but only metadata +
+                // abstract + the first `max_anon_snippets` matching sentences
+                // for non-open-access ones. A valid API key lifts the limit.
+                bool authenticated = access.is_valid_key(tpc_access::extract_api_key(req, json_req));
+                bool enforce = access.enforcing() && !authenticated;
                 int64_t since_num(0);
                 int64_t count(200);
                 if (json_req.has("since_num"))
@@ -339,8 +378,21 @@ int main(int argc, const char* argv[]) {
                     json_resp[i]["journal"] = journal;
                     json_resp[i]["doc_type"] = doc_type;
                     json_resp[i]["year"] = year;
+
+                    bool open_access = access.is_open_access(
+                            tpc_access::AccessControl::corpus_of(doc_details[i].filepath), accession);
+                    if (access.enforcing()) {
+                        json_resp[i]["open_access"] = open_access;
+                    }
+                    bool limited = enforce && !open_access;
+                    if (limited) {
+                        json_resp[i]["access_limited"] = true;
+                    }
+
                     if (include_text) {
-                        json_resp[i]["fulltext"] = doc_details[i].fulltext;
+                        if (!limited) {
+                            json_resp[i]["fulltext"] = doc_details[i].fulltext;
+                        }
                         json_resp[i]["abstract"] = doc_details[i].abstract;
                         if (doc_details[i].abstract.empty() && !bib.abstract_text.empty() &&
                                 bib.abstract_text != "<not uploaded>") {
@@ -350,11 +402,15 @@ int main(int argc, const char* argv[]) {
                     if (include_match_sentences) {
                         sort(doc_details[i].sentences_details.begin(),
                                 doc_details[i].sentences_details.end(), sentence_before);
-                        for (int j = 0; j < doc_details[i].sentences_details.size(); ++j) {
+                        size_t n_sentences = doc_details[i].sentences_details.size();
+                        if (limited && n_sentences > static_cast<size_t>(max_anon_snippets)) {
+                            n_sentences = static_cast<size_t>(max_anon_snippets);
+                        }
+                        for (size_t j = 0; j < n_sentences; ++j) {
                             json_resp[i]["matched_sentences"][j] = doc_details[i].sentences_details[j].sentence_text;
                         }
                     }
-                    if (include_all_sentences) {
+                    if (include_all_sentences && !limited) {
                         sort(doc_details[i].all_sentences_details.begin(), doc_details[i].all_sentences_details.end(),
                                 sentence_before);
                         for (int j = 0; j < doc_details[i].all_sentences_details.size(); ++j) {
@@ -397,11 +453,13 @@ int main(int argc, const char* argv[]) {
 
     CROW_ROUTE(app, "/v1/textpresso/api/get_category_matches_document_fulltext")
             .methods("POST"_method)
-            ([&indexManager, &login_database](const crow::request & req) {
+            ([&indexManager, &login_database, &access](const crow::request & req) {
                 // parse request
                 auto json_req = crow::json::load(req.body);
                 if (!json_req)
                     return crow::response(400);
+                bool authenticated = access.is_valid_key(tpc_access::extract_api_key(req, json_req));
+                bool enforce = access.enforcing() && !authenticated;
                 int64_t since_num(0);
                 int64_t count(10000000);
                 if (json_req.has("since_num"))
@@ -442,9 +500,19 @@ int main(int argc, const char* argv[]) {
                 crow::json::wvalue json_resp;
                 for (int i = 0; i < doc_details.size(); ++i) {
                     json_resp[i]["identifier"] = doc_details[i].filepath;
-                            matches = indexManager.get_words_belonging_to_category_from_document_fulltext(
+                    // This endpoint derives its result from the full text, so a
+                    // non-open-access document is withheld from unauthenticated
+                    // clients (empty match list, flagged).
+                    bool open_access = access.is_open_access(
+                            tpc_access::AccessControl::corpus_of(doc_details[i].filepath),
+                            basename_without_suffix(doc_details[i].filepath, ".tpcas"));
+                    if (enforce && !open_access) {
+                        json_resp[i]["access_limited"] = true;
+                        continue;
+                    }
+                    matches = indexManager.get_words_belonging_to_category_from_document_fulltext(
                             doc_details[i].fulltext, doc_details[i].categories_string, category);
-                            int j = 0;
+                    int j = 0;
                     for (auto& word : matches) {
                         json_resp[i]["matches"][j++] = word;
                     }

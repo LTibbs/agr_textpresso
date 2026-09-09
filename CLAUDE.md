@@ -81,6 +81,8 @@ CAS files are gzip-compressed UIMA XMI documents. `.tpcas` = CAS-1 (tokenized on
 | `/data/textpresso/luceneindex_new/` | New index being built (swapped atomically) |
 | `/data/textpresso/obofiles4production/` | OBO category files used by annotator |
 | `/data/textpresso/textpressoapi_data/tokens.db` | SQLite API auth tokens |
+| `/data/textpresso/open_access_manifest.tsv` | Optional. Per-accession / per-corpus open-access status. Absent → every document served in full, no gating (default) |
+| `/data/textpresso/textpressoapi_data/api_keys.txt` | Optional. API keys (one per line) that lift the open-access limit |
 
 Host volume `${TEXTPRESSO_DATA_DIR}` is mounted at `/data/textpresso`.
 
@@ -157,6 +159,17 @@ Batches with fewer than 4 PDFs are carried over to the next week's run.
 The system uses **AWS Cognito** (replaced legacy Okta). The `agr_cognito_py` library handles token generation. Required env vars: `COGNITO_REGION`, `COGNITO_USER_POOL_ID`, `COGNITO_CLIENT_ID`, `COGNITO_CLIENT_SECRET`.
 
 API access to `textpressoapi` uses a separate SQLite token table (not Cognito).
+
+**Open-access gating** (`textpressoapi/access_control.h`, `textpressoapi/access.py`):
+an optional layer, off unless an open-access manifest file exists. When on, a
+request with no valid API key gets a reduced payload (metadata + abstract +
+first N matching sentences) for any document the manifest marks non-open-access;
+open-access documents and API-key-bearing requests are unaffected. Enforced by
+both `textpressoapi` (`search_documents`, `get_category_matches_document_fulltext`)
+and `cas_annotate_server.py` (`/annotate`). Keys (`X-API-Key` / `Authorization:
+Bearer` / body `api_key`) live in `api_keys.txt`, separate from `tokens.db`.
+See `textpressoapi/docs/search_documents.rst` and
+`textpressoapi/open_access_manifest.tsv.example`.
 
 ### Multi-MOD deployment
 

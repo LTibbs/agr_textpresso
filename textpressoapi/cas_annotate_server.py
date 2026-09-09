@@ -24,7 +24,18 @@ Endpoints:
       &ontology=GO&ontology=PO           (repeatable; default: all except *_RELATED)
       &related_synonyms=1                (include *_RELATED annotations; ignored if ontology given)
 
+      &api_key=<key>                     (also read from an "X-API-Key" header or
+                                           "Authorization: Bearer <key>")
+
     200 -> {"sentences": [...], "annotations": [...], "sections": [...]}
+    200 -> {"access_limited": true, "sentences": [...], "annotations": [...],
+             "sections": [...]}
+             (non-open-access document, no valid API key: same shape and keys as
+              the full payload, but every sentence "text" and every annotation
+              "term" is blanked to "". Offsets, categories and sections are
+              kept. Governed by the open-access manifest -- see access.py. With
+              no manifest file present, every document returns the full payload
+              as before.)
     400 -> {"error": "..."}  (missing identifier)
     404 -> {"error": "..."}  (no CAS2 file for that identifier)
     500 -> {"error": "..."}  (parse failure)
@@ -67,6 +78,7 @@ import sys
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 
+import access
 import casannot
 import category_index
 
@@ -76,6 +88,7 @@ ANNOTATE_SUFFIX = "/v1/textpresso/annotate"
 CATEGORY_SEARCH_SUFFIX = "/v1/textpresso/category_search"
 
 _CATEGORY_INDEX = None  # built once at startup, see main()
+_ACCESS = None          # access.AccessControl, built once at startup, see main()
 
 
 def _load_annotation(identifier, ontology_filter, include_related):
@@ -89,6 +102,23 @@ def _load_annotation(identifier, ontology_filter, include_related):
     elif not include_related:
         annotations = [a for a in annotations if not a["ontology"].endswith("_RELATED")]
     return {"sentences": sentences, "annotations": annotations, "sections": sections}
+
+
+def _redact_annotation(result):
+    """Blank out running text in an annotation payload for a restricted document.
+
+    Keeps every key and every element (character offsets, ontology categories,
+    section boundaries -- so a client can still see *what* is annotated and
+    *where*, and existing offset-join code keeps working), but empties the
+    sentence ``text`` and the verbatim matched ``term``. A valid API key returns
+    the full payload instead.
+    """
+    return {
+        "access_limited": True,
+        "sentences": [dict(s, text="") for s in result["sentences"]],
+        "annotations": [dict(a, term="") for a in result["annotations"]],
+        "sections": result["sections"],
+    }
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -134,6 +164,14 @@ class Handler(BaseHTTPRequestHandler):
             self._send_json(404, {"error": "CAS2 file not found for identifier"})
             return
 
+        if _ACCESS is not None and _ACCESS.enforcing:
+            key = access.key_from_request(self.headers, qs)
+            if not _ACCESS.is_valid_key(key):
+                corpus, accession = access.identifier_parts(identifier)
+                if not _ACCESS.is_open_access(corpus, accession):
+                    self._send_json(200, _redact_annotation(result))
+                    return
+
         self._send_json(200, result)
 
     def _handle_category_search(self, qs):
@@ -161,7 +199,20 @@ class ThreadingHTTPServer(socketserver.ThreadingMixIn, HTTPServer):
 
 
 def main():
-    global _CATEGORY_INDEX
+    global _CATEGORY_INDEX, _ACCESS
+
+    _ACCESS = access.AccessControl()
+    if _ACCESS.enforcing:
+        print(f"cas_annotate_server: access control ENFORCING "
+              f"(manifest: {_ACCESS.manifest_path}); non-open-access documents "
+              f"return offsets/categories only to unauthenticated clients", file=sys.stderr)
+        if not _ACCESS.has_keys:
+            print(f"cas_annotate_server: WARNING no API keys loaded from "
+                  f"{_ACCESS.api_keys_path}", file=sys.stderr)
+    else:
+        print(f"cas_annotate_server: access control disabled (no manifest at "
+              f"{_ACCESS.manifest_path}); all documents served in full", file=sys.stderr)
+
     print("cas_annotate_server: building category index from OBO files...", file=sys.stderr)
     _CATEGORY_INDEX = category_index.build_index(casannot._ontology_of)
     print(f"cas_annotate_server: indexed {len(_CATEGORY_INDEX['categories'])} categories, "
