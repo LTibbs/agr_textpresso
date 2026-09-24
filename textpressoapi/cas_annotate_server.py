@@ -123,7 +123,12 @@ def _redact_annotation(result):
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args):
-        sys.stderr.write("cas_annotate_server: " + (fmt % args) + "\n")
+        try:
+            sys.stderr.write("cas_annotate_server: " + (fmt % args) + "\n")
+        except OSError:
+            # Never let a logging failure (e.g. disk full -> ENOSPC) take
+            # down the request thread before a response has been sent.
+            pass
 
     def _send_json(self, status, payload):
         body = json.dumps(payload).encode()
