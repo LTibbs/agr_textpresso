@@ -50,6 +50,10 @@ def run_text_command(command):
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         universal_newlines=True,
+        # pdfinfo can emit non-UTF-8 bytes (e.g. a garbage CreationDate);
+        # don't let that crash the whole .bib.
+        encoding="utf-8",
+        errors="replace",
         check=False,
     )
     if proc.returncode != 0:
