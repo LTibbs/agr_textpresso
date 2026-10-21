@@ -85,6 +85,19 @@ def test_build_index_children_by_type(index):
     assert set(index["by_id"]) == {"PO:0009010", "PO:0020123", "PO:0030124", "PO:0040001"}
 
 
+def test_build_index_surface_forms_keep_stored_case(tmp_path, monkeypatch):
+    path = tmp_path / "go.obo"
+    path.write_text(_OBO_TEXT + '\n[Term]\nid: GO:0060292\nname: long term synaptic depression\n'
+                    'synonym: "LTD" RELATED []\n')
+    monkeypatch.setattr(category_index, "_active_obo_paths", lambda *a, **k: [str(path)])
+    index = category_index.build_index(ontology_of=lambda category: "GO")
+    assert index["surface_forms"]["ltd"] == {"LTD"}
+    assert index["surface_forms"]["seed"] == {"seed"}
+    assert index["surface_forms"]["seeds"] == {"seeds"}
+    # records themselves are unchanged
+    assert set(index["synonyms"]["ltd"][0]) == {"id", "name", "category", "ontology"}
+
+
 def test_descendants_single_relationship_type(index):
     assert category_index._descendants(index, "PO:0009010", {"is_a"}) == {"PO:0020123"}
 

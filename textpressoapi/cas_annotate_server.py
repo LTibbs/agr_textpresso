@@ -79,6 +79,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 
 import access
+import annotation_hygiene as hygiene
+import annotation_italics as italics
 import casannot
 import category_index
 
@@ -89,10 +91,26 @@ CATEGORY_SEARCH_SUFFIX = "/v1/textpresso/category_search"
 
 _CATEGORY_INDEX = None  # built once at startup, see main()
 _ACCESS = None          # access.AccessControl, built once at startup, see main()
+_VIEW = None            # hygiene.OntologyView over _CATEGORY_INDEX, see main()
+_ITALICS = {}           # per-paper italic counts, see main()
+_OBO_CLASS = None       # surface form -> OBO provenance class, see main()
+
+# Default OFF for one release so published API scripts keep their current
+# results; announce, then flip to "1". The `hygiene` field in the response makes
+# the change self-documenting either way.
+_HYGIENE_DEFAULT = os.environ.get("TEXTPRESSO_HYGIENE_DEFAULT", "0")
 
 
-def _load_annotation(identifier, ontology_filter, include_related):
-    """Return {sentences, annotations, sections} for identifier, or None if no CAS2 file."""
+def _load_annotation(identifier, ontology_filter, include_related,
+                     clean=False, drop_sections=None, use_italics=True):
+    """Return {sentences, annotations, sections} for identifier, or None if no CAS2 file.
+
+    With clean=True, applies the shared hygiene layer: references/acknowledgments
+    and per-span ancestors are dropped, abbreviation synonyms are case-checked,
+    and short non-italicised alias forms are removed (see
+    annotation_italics.never_italicised). Every drop carries a reason and is
+    reversible with hygiene=0, so nothing becomes unreachable.
+    """
     path = casannot.identifier_to_cas_path(identifier)
     if not os.path.exists(path):
         return None
@@ -101,7 +119,27 @@ def _load_annotation(identifier, ontology_filter, include_related):
         annotations = [a for a in annotations if a["ontology"] in ontology_filter]
     elif not include_related:
         annotations = [a for a in annotations if not a["ontology"].endswith("_RELATED")]
-    return {"sentences": sentences, "annotations": annotations, "sections": sections}
+
+    out = {"sentences": sentences, "annotations": annotations, "sections": sections}
+    if not clean:
+        return out
+
+    paper_italics = italics.for_paper(_ITALICS, identifier) if use_italics else None
+    annotations, dropped = hygiene.clean_annotations(
+        annotations, sections,
+        drop_sections=(drop_sections if drop_sections is not None
+                       else hygiene.DEFAULT_DROP_SECTIONS),
+        ontology_view=_VIEW,
+        section_types_at=casannot.section_types_at,
+        italics=paper_italics,
+        italic_rule=italics.never_italicised,
+        obo_class_of=_OBO_CLASS)
+    out["annotations"] = annotations
+    out["hygiene"] = hygiene.hygiene_report(annotations, dropped)
+    if paper_italics:
+        out["hygiene"]["italic_coverage"] = italics.coverage(
+            _ITALICS, annotations + dropped, identifier)
+    return out
 
 
 def _redact_annotation(result):
@@ -118,6 +156,7 @@ def _redact_annotation(result):
         "sentences": [dict(s, text="") for s in result["sentences"]],
         "annotations": [dict(a, term="") for a in result["annotations"]],
         "sections": result["sections"],
+        **({"hygiene": result["hygiene"]} if "hygiene" in result else {}),
     }
 
 
@@ -158,9 +197,14 @@ class Handler(BaseHTTPRequestHandler):
 
         ontology_filter = set(qs.get("ontology") or ()) or None
         include_related = (qs.get("related_synonyms") or ["0"])[0] == "1"
+        clean = (qs.get("hygiene") or [_HYGIENE_DEFAULT])[0] == "1"
+        use_italics = (qs.get("italics") or ["1"])[0] != "0"
+        drop_sections = set(qs.get("exclude_sections") or ()) or None
 
         try:
-            result = _load_annotation(identifier, ontology_filter, include_related)
+            result = _load_annotation(identifier, ontology_filter, include_related,
+                                      clean=clean, drop_sections=drop_sections,
+                                      use_italics=use_italics)
         except Exception as e:
             self._send_json(500, {"error": str(e)})
             return
@@ -220,6 +264,17 @@ def main():
 
     print("cas_annotate_server: building category index from OBO files...", file=sys.stderr)
     _CATEGORY_INDEX = category_index.build_index(casannot._ontology_of)
+    global _VIEW, _ITALICS, _OBO_CLASS
+    # reuse the index already built above rather than parsing the OBO twice
+    _VIEW = hygiene.OntologyView.from_category_index(_CATEGORY_INDEX)
+    _ITALICS = italics.load_index(os.environ.get(
+        "TEXTPRESSO_ITALICS_INDEX", "/data/textpresso/italics/MaizeOpenAccess.json"))
+    # ~98 KB map, so the gene OBO is not re-parsed here; rebuild with
+    # bin/build_class_map.py whenever the OBO changes (unlisted forms resolve to
+    # 'unknown', which is NOT exempt from the italics rule)
+    _OBO_CLASS = italics.load_class_map(os.environ.get(
+        "TEXTPRESSO_OBO_CLASS_MAP", "/data/textpresso/italics/obo_short_form_classes.json"))
+    print("[cas_annotate_server] italics index: %d papers" % len(_ITALICS), file=sys.stderr)
     print(f"cas_annotate_server: indexed {len(_CATEGORY_INDEX['categories'])} categories, "
           f"{len(_CATEGORY_INDEX['synonyms'])} distinct synonyms", file=sys.stderr)
 

@@ -118,8 +118,11 @@ def build_index(ontology_of, ontology_conf=ONTOLOGY_CONF_DEFAULT, obo_dir=OBO_DI
     "by_id": {id: record}, "children_by_type": {rel_type: {parent_id: [child_id, ...]}},
     "parents_by_type": {rel_type: {child_id: [parent_id, ...]}},
     "relationship_types_by_id": {id: [rel_type, ...]},
-    "parent_relationship_types_by_id": {id: [rel_type, ...]}}
-    where each record is {"id", "name", "category", "ontology"}.
+    "parent_relationship_types_by_id": {id: [rel_type, ...]},
+    "surface_forms": {lowercased_text: {original-case spelling, ...}}}
+    where each record is {"id", "name", "category", "ontology"}. surface_forms
+    keeps the case the OBO stores for every name and synonym, which records
+    drop; annotation_hygiene.OntologyView needs it for its abbreviation case check.
 
     children_by_type holds, per relationship type (is_a, part_of, regulates, ...),
     the reverse (parent -> children) edges needed to walk descendant closures --
@@ -139,6 +142,7 @@ def build_index(ontology_of, ontology_conf=ONTOLOGY_CONF_DEFAULT, obo_dir=OBO_DI
     by_id = {}
     children_by_type = {}
     parents_by_type = {}
+    surface_forms = {}
     seen_ids = set()
 
     for obo_path in _active_obo_paths(ontology_conf, obo_dir):
@@ -157,8 +161,10 @@ def build_index(ontology_of, ontology_conf=ONTOLOGY_CONF_DEFAULT, obo_dir=OBO_DI
             }
             categories.append(record)
             by_id[term["id"]] = record
+            surface_forms.setdefault(term["name"].lower(), set()).add(term["name"])
             for syn in term["synonyms"]:
                 synonym_index.setdefault(syn.lower(), []).append(record)
+                surface_forms.setdefault(syn.lower(), set()).add(syn)
             for rel_type, parent_ids in term["parents"].items():
                 for parent_id in parent_ids:
                     children_by_type.setdefault(rel_type, {}).setdefault(
@@ -181,6 +187,7 @@ def build_index(ontology_of, ontology_conf=ONTOLOGY_CONF_DEFAULT, obo_dir=OBO_DI
         "parents_by_type": parents_by_type,
         "relationship_types_by_id": _invert(children_by_type),
         "parent_relationship_types_by_id": _invert(parents_by_type),
+        "surface_forms": surface_forms,
     }
 
 

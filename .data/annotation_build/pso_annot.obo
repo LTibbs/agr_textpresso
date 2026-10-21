@@ -1,0 +1,4906 @@
+format-version: 1.2
+data-version: releases/2026-01-08/annotation-build
+ontology: pso
+remark: matchable strings only; per-term tiers in subset tier_T0..T2
+remark: obsolete stanzas retained for id resolution with their label
+remark: moved to property_value retired_label, so no matcher reads it
+
+[Term]
+id: PSO:0000001
+name: plant stress
+subset: tier_T0
+
+[Term]
+id: PSO:0000004
+name: plant animal damage
+subset: tier_T0
+is_a: PSO:0000011
+
+[Term]
+id: PSO:0000009
+name: grape viral disease
+subset: tier_T0
+is_a: PSO:0100060
+
+[Term]
+id: PSO:0000010
+name: grape oomycete disease
+subset: tier_T0
+is_a: PSO:0100060
+
+[Term]
+id: PSO:0000011
+name: biotic plant stress
+subset: tier_T0
+is_a: BFO:0000016
+is_a: PSO:0000001
+
+[Term]
+id: PSO:0000012
+name: abiotic plant stress
+subset: tier_T0
+is_a: PSO:0000001
+
+[Term]
+id: PSO:0000013
+name: plant disease
+subset: tier_T0
+is_a: OGMS:0000031
+is_a: PSO:0000011
+
+[Term]
+id: PSO:0000014
+name: potato bacterial disease
+subset: tier_T0
+is_a: PSO:0100092
+
+[Term]
+id: PSO:0000015
+name: potato fungal disease
+subset: tier_T0
+is_a: PSO:0100092
+
+[Term]
+id: PSO:0000016
+name: potato viral disease
+subset: tier_T0
+is_a: PSO:0100092
+
+[Term]
+id: PSO:0000017
+name: potato oomycete disease
+subset: tier_T0
+is_a: PSO:0100092
+
+[Term]
+id: PSO:0000018
+name: grape bacterial disease
+subset: tier_T0
+is_a: PSO:0100060
+
+[Term]
+id: PSO:0000019
+name: grape fungal disease
+subset: tier_T0
+is_a: PSO:0100060
+
+[Term]
+id: PSO:0000020
+name: Bipolaris oryzae pecky rice fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000021
+name: Curvularia pecky rice fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000022
+name: Fusarium pecky rice fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000024
+name: maize Alternaria leaf spot fungal disease
+synonym: "maize Alternaria alternata leaf rot fungal disease" EXACT []
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000025
+name: maize Alternaria minor root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000026
+name: maize Aspergillus flavus leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000027
+name: maize Aspergillus glaucus minor leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000028
+name: maize Aspergillus kernel rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000029
+name: maize Aspergillus minor ear rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000030
+name: maize Aspergillus niger leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000031
+name: maize Aureobasidium eyespot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000032
+name: maize bacterial disease
+subset: tier_T0
+is_a: PSO:0100043
+
+[Term]
+id: PSO:0000033
+name: maize bacterial leaf blight and stalk rot disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000034
+name: maize bacterial leaf spot disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000035
+name: maize bacterial stalk and top rot disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000036
+name: maize bacterial stalk rot disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000037
+name: maize bacterial stripe disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000039
+name: maize Bipolaris minor leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000040
+name: maize Bipolaris southern leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000041
+name: maize Botrytis cinerea minor leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000042
+name: maize bushy stunt phytoplasma disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000043
+name: maize Cercospora gray leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000044
+name: maize chocolate spot bacterial disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000045
+name: maize Claviceps ergot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000046
+name: maize Cochliobolus pallescens leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000047
+name: maize Cochliobolus pallescens minor leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000048
+name: maize Colletotrichum falcatum Anthracnose leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000049
+name: maize Colletotrichum falcatum Anthracnose stalk rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000050
+name: maize Colletotrichum graminicola Anthracnose leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000051
+name: maize Colletotrichum graminicola Anthracnose stalk rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000052
+name: maize Culvularia clavata leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000053
+name: maize Cunninghamella minor ear rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000054
+name: maize Curvularia eragrostidis leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000055
+name: maize Curvularia inaequalis leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000056
+name: maize Curvularia intermedia leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000057
+name: maize Curvularia lunata leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000058
+name: maize Curvularia senegalensis leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000059
+name: maize Curvularia tuberculata leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000060
+name: maize Dictyochaeta minor root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000061
+name: maize Didymella leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000062
+name: maize Diplodia leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000063
+name: maize Diplodia leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000064
+name: maize Diplodia leaf streak fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000065
+name: maize Diplodia stalk rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000066
+name: maize Doratomyces leafonitis minor leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000067
+name: maize Epicoccum minor leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000069
+name: maize fungal disease
+subset: tier_T0
+is_a: PSO:0100043
+
+[Term]
+id: PSO:0000070
+name: maize Fusarium culmorum minor leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000071
+name: maize Fusarium verticillioides leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000072
+name: maize Fusarium graminearum leaf rot fungal disease
+synonym: "maize Gibberella leaf rot fungal disease" EXACT []
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000073
+name: maize Fusarium seedling blight fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000074
+name: maize Fusarium seed rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000075
+name: maize Gaeumannomyces sheath rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000077
+name: maize Gibberella stalk rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000078
+name: maize Goss's bacterial wilt disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000079
+name: maize holcus spot bacterial disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000080
+name: maize Hyalothyridium leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000081
+name: maize Lasiodiplodia black kernel rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000082
+name: maize Macrophomina charcoal rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000083
+name: maize Magnaporthiopsis late wilt fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000084
+name: maize Marasmiellus borde blanco fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000085
+name: maize Microdochium zonate leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000086
+name: maize Myrothecium shuck rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000087
+name: maize Nigrospora dry leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000088
+name: maize northern leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000089
+name: maize northern leaf spot fungal disease
+synonym: "maize Bipolaris leaf rot fungal disease" EXACT []
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000090
+name: maize Peronosclerospora java downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0000187
+
+[Term]
+id: PSO:0000091
+name: maize Peronosclerospora sorghum downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0000187
+
+[Term]
+id: PSO:0000092
+name: maize Peronosclerospora sugarcane downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0000187
+
+[Term]
+id: PSO:0000093
+name: maize yellow leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000094
+name: maize Phaeosphaeria leaf spot fungal disease
+synonym: "maize white spot" EXACT []
+synonym: "MWS" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000095
+name: maize Phyllachora tar spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000096
+name: maize Physoderma brown spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000097
+name: maize Pithomyces maydicus minor leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000098
+name: maize Pythium stalk rot oomycete disease
+subset: tier_T0
+is_a: PSO:0000187
+
+[Term]
+id: PSO:0000099
+name: maize Ramulispora grey leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000100
+name: maize Rhizoctonia banded leaf fungal disease
+synonym: "maize Rhizoctonia corticium leaf rot fungal disease" EXACT []
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000102
+name: maize Rhizoctonia sheath spot fungal disease
+subset: tier_T0
+is_a: PSO:0000100
+
+[Term]
+id: PSO:0000103
+name: maize Rhizopus microsporus minor leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000104
+name: maize Rhizopus stolonifer minor leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000105
+name: maize Sarocladium black bundle fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000106
+name: maize Sarocladium kernel rot fungal disease
+subset: tier_T0
+is_a: PSO:0000105
+
+[Term]
+id: PSO:0000107
+name: maize Sclerophthora crazy top downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0000187
+
+[Term]
+id: PSO:0000108
+name: maize Sclerospora green leaf downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0000187
+
+[Term]
+id: PSO:0000109
+name: maize Scopulariopsis brumptii minor leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000110
+name: maize seed rot and seedling blight bacterial disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000111
+name: maize Setosphaeria minor leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000112
+name: maize Setosphaeria root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000113
+name: maize Sphacelotheca head smut fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000115
+name: maize Stewart's bacterial disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000116
+name: maize stunt bacterial disease
+subset: tier_T0
+is_a: PSO:0000032
+
+[Term]
+id: PSO:0000117
+name: maize Ustilaginoidea false smut fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000118
+name: maize Ustilago smut fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000119
+name: maize viral disease
+subset: tier_T0
+is_a: PSO:0100043
+
+[Term]
+id: PSO:0000120
+name: rice Pantoea ananatis bacterial leaf blight
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000121
+name: rice Pantoea ananatis bacterial grain blight
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000122
+name: rice brown stripe bacterial disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000123
+name: rice palea browning bacterial disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000124
+name: rice Achlya conspicua water-mold oomycete disease
+subset: tier_T0
+is_a: PSO:0000186
+
+[Term]
+id: PSO:0000125
+name: rice Achlya klebsiana water-mold oomycete disease
+subset: tier_T0
+is_a: PSO:0000186
+
+[Term]
+id: PSO:0000126
+name: rice aggregate sheath spot fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000127
+name: rice Athelia rolfsii seedling blight fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000128
+name: rice bacterial blight disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000129
+name: rice bacterial disease
+subset: tier_T0
+is_a: PSO:0100097
+
+[Term]
+id: PSO:0000130
+name: rice bacterial leaf streak disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000131
+name: rice bacterial panicle blight disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000132
+name: rice bakanae fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000133
+name: rice Bipolaris oryzae seedling blight fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000134
+name: rice black kernel fungal disease
+subset: tier_T0
+is_a: PSO:0000021
+
+[Term]
+id: PSO:0000135
+name: rice black streak dwarf viral disease
+subset: tier_T0
+is_a: PSO:0000173
+
+[Term]
+id: PSO:0000136
+name: rice blast fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000137
+name: rice brown spot fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000138
+name: rice crown sheath rot fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000139
+name: rice Curvularia seedling blight fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000140
+name: rice downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0000186
+
+[Term]
+id: PSO:0000141
+name: rice dwarf viral disease
+subset: tier_T0
+is_a: PSO:0000173
+
+[Term]
+id: PSO:0000142
+name: rice eyespot fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000143
+name: rice false smut fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000144
+name: rice foot rot bacterial disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000145
+name: rice fungal disease
+subset: tier_T0
+is_a: PSO:0100097
+
+[Term]
+id: PSO:0000146
+name: rice Fusarium root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000147
+name: rice Fusarium sp. seedling blight fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000149
+name: rice giallume viral disease
+subset: tier_T0
+is_a: PSO:0000173
+
+[Term]
+id: PSO:0000150
+name: rice grassy stunt viral disease
+subset: tier_T0
+is_a: PSO:0000173
+
+[Term]
+id: PSO:0000151
+name: rice hoja blanca viral disease
+subset: tier_T0
+is_a: PSO:0000173
+
+[Term]
+id: PSO:0000152
+name: rice kernel smut fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000153
+name: rice grain rot bacterial disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000154
+name: rice leaf rot fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000155
+name: rice narrow brown leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000156
+name: rice necrotic mosaic viral disease
+subset: tier_T0
+is_a: PSO:0000173
+
+[Term]
+id: PSO:0000157
+name: rice phytoplasma disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000158
+name: rice Pythium dissotocum root rot oomycete disease
+subset: tier_T0
+is_a: PSO:0000159
+is_a: PSO:0000160
+
+[Term]
+id: PSO:0000159
+name: rice Pythium dissotocum water-mold oomycete disease
+subset: tier_T0
+is_a: PSO:0000163
+
+[Term]
+id: PSO:0000160
+name: rice Pythium root rot oomycete disease
+subset: tier_T0
+is_a: PSO:0000163
+
+[Term]
+id: PSO:0000161
+name: rice Pythium spinosum root rot oomycete disease
+subset: tier_T0
+is_a: PSO:0000162
+
+[Term]
+id: PSO:0000162
+name: rice Pythium spinosum water-mold oomycete disease
+subset: tier_T0
+is_a: PSO:0000186
+
+[Term]
+id: PSO:0000163
+name: rice Pythium water-mold oomycete disease
+subset: tier_T0
+is_a: PSO:0000186
+
+[Term]
+id: PSO:0000164
+name: rice Rhizoctonia solani seedling blight fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000165
+name: rice ragged stunt viral disease
+subset: tier_T0
+is_a: PSO:0000173
+
+[Term]
+id: PSO:0000166
+name: rice leaf sheath blight fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000167
+name: rice leaf sheath brown rot bacterial disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000168
+name: rice leaf sheath rot fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000169
+name: rice leaf sheath spot fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000170
+name: rice stackburn fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000171
+name: rice stripe viral disease
+subset: tier_T0
+is_a: PSO:0000173
+
+[Term]
+id: PSO:0000172
+name: rice transitory yellowing viral disease
+subset: tier_T0
+is_a: PSO:0000173
+
+[Term]
+id: PSO:0000173
+name: rice viral disease
+subset: tier_T0
+is_a: PSO:0100097
+
+[Term]
+id: PSO:0000174
+name: rice yellow dwarf phytoplasma disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000175
+name: rice yellow mottle viral disease
+subset: tier_T0
+is_a: PSO:0000173
+
+[Term]
+id: PSO:0000176
+name: rice Sarocladium oryzae pecky rice fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000177
+name: wheat bacterial disease
+subset: tier_T0
+is_a: PSO:0100117
+
+[Term]
+id: PSO:0000178
+name: wheat bacterial leaf blight disease
+subset: tier_T0
+is_a: PSO:0000177
+
+[Term]
+id: PSO:0000179
+name: wheat fungal disease
+subset: tier_T0
+is_a: PSO:0100117
+
+[Term]
+id: PSO:0000180
+name: wheat viral disease
+subset: tier_T0
+is_a: PSO:0100117
+
+[Term]
+id: PSO:0000181
+name: maize Gonatobotrys simplex minor ear rot fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000182
+name: maize Ascochyta ischaemi yellow leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0000069
+
+[Term]
+id: PSO:0000183
+name: rice leaf smut fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000184
+name: Microdochium oryzae pecky rice fungal disease
+subset: tier_T0
+is_a: PSO:0000145
+
+[Term]
+id: PSO:0000185
+name: wheat oomycete disease
+subset: tier_T0
+is_a: PSO:0100117
+
+[Term]
+id: PSO:0000186
+name: rice oomycete disease
+subset: tier_T0
+is_a: PSO:0100097
+
+[Term]
+id: PSO:0000187
+name: maize oomycete disease
+subset: tier_T0
+is_a: PSO:0100043
+
+[Term]
+id: PSO:0000188
+name: cassava oomycete disease
+subset: tier_T0
+is_a: PSO:0100033
+
+[Term]
+id: PSO:0000189
+name: cassava fungal disease
+subset: tier_T0
+is_a: PSO:0100033
+
+[Term]
+id: PSO:0000190
+name: cassava bacterial disease
+subset: tier_T0
+is_a: PSO:0100033
+
+[Term]
+id: PSO:0000191
+name: cassava viral disease
+subset: tier_T0
+is_a: PSO:0100033
+
+[Term]
+id: PSO:0000192
+name: cassava African mosaic viral disease
+synonym: "ACMV00" EXACT []
+synonym: "cassava latent" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000191
+
+[Term]
+id: PSO:0000193
+name: cassava antholysis bacterial disease
+subset: tier_T0
+is_a: PSO:0000190
+
+[Term]
+id: PSO:0000194
+name: cassava Colletotrichum graminicola Anthracnose fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000195
+name: cassava Colletotrichum gloeosporioides Anthracnose fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000196
+name: cassava Armillaria root rot fungal disease
+synonym: "shoestring root rot" EXACT []
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000197
+name: cassava angular leaf spot bacterial disease
+subset: tier_T0
+is_a: PSO:0000190
+
+[Term]
+id: PSO:0000198
+name: cassava bacterial blight disease
+synonym: "bacterial blight of cassava" EXACT []
+synonym: "XANTMN" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000190
+
+[Term]
+id: PSO:0000199
+name: cassava bacterial stem gall disease
+subset: tier_T0
+is_a: PSO:0000190
+
+[Term]
+id: PSO:0000200
+name: cassava bacterial stem rot disease
+subset: tier_T0
+is_a: PSO:0000190
+
+[Term]
+id: PSO:0000201
+name: cassava bacterial wilt disease
+subset: tier_T0
+is_a: PSO:0000190
+
+[Term]
+id: PSO:0000202
+name: cassava black root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000203
+name: cassava black stem rot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000204
+name: cassava blight leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000205
+name: cassava brown leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000206
+name: cassava ash fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000207
+name: cassava common mosaic viral disease
+synonym: "CSCMV0" EXACT []
+synonym: "mosaic of cassava" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000191
+
+[Term]
+id: PSO:0000208
+name: cassava frogskin viral disease
+synonym: "CVFS00" EXACT []
+synonym: "frogskin of cassava" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000191
+
+[Term]
+id: PSO:0000209
+name: cassava green mottle viral disease
+subset: tier_T0
+is_a: PSO:0000191
+
+[Term]
+id: PSO:0000210
+name: cassava Ivorian bacilliform viral disease
+synonym: "cassava symptomless infections" EXACT []
+subset: tier_T0
+is_a: PSO:0000191
+
+[Term]
+id: PSO:0000211
+name: cassava vein mosaic viral disease
+subset: tier_T0
+is_a: PSO:0000191
+
+[Term]
+id: PSO:0000212
+name: cassava concentric ring leaf spot fungal disease
+synonym: "Rosellinia root rot" EXACT []
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000213
+name: cassava dematophora root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000214
+name: cassava Diplodia root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000215
+name: cassava Diplodia stem rot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000216
+name: cassava Fusarium solani root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000217
+name: cassava Fusarium oxysporum root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000218
+name: cassava Indian mosaic viral disease
+subset: tier_T0
+is_a: PSO:0000191
+
+[Term]
+id: PSO:0000219
+name: cassava Phytophthora cryptogea root rot oomycete disease
+subset: tier_T0
+is_a: PSO:0000188
+
+[Term]
+id: PSO:0000220
+name: cassava Phytophthora drechsleri root rot oomycete disease
+subset: tier_T0
+is_a: PSO:0000188
+
+[Term]
+id: PSO:0000221
+name: cassava Phytophthora erythroseptica root rot oomycete disease
+subset: tier_T0
+is_a: PSO:0000188
+
+[Term]
+id: PSO:0000222
+name: cassava Phytophthora nicotianae root rot oomycete disease
+subset: tier_T0
+is_a: PSO:0000188
+
+[Term]
+id: PSO:0000223
+name: cassava Pythium root rot oomycete disease
+subset: tier_T0
+is_a: PSO:0000188
+
+[Term]
+id: PSO:0000224
+name: cassava Rigidopurus root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000225
+name: cassava Uromyces rust fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000226
+name: cassava Sclerotium root rot fungal disease
+synonym: "cassava Southern blight" EXACT []
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000227
+name: cassava Spheceloma Superelongation fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000228
+name: cassava Verticillium stem rot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000229
+name: cassava Verticillium root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000230
+name: cassava white leaf spot fungal disease
+synonym: "CERCCB" EXACT []
+synonym: "white leaf spot of cassava" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000231
+name: cassava witches' broom fungal disease
+synonym: "CVWB00" EXACT []
+synonym: "witches' broom of cassava" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000232
+name: cassava scale damage
+synonym: "tapioca scale|AONMAL" EXACT []
+subset: tier_T0
+is_a: PSO:0000502
+
+[Term]
+id: PSO:0000233
+name: cassava whitefly damage
+synonym: "Bemisia tabaci disease|BEMITA" EXACT []
+subset: tier_T0
+is_a: PSO:0000502
+
+[Term]
+id: PSO:0000234
+name: cassava Caliothrips masculinus damage
+synonym: "CALHMA" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000502
+
+[Term]
+id: PSO:0000235
+name: cassava brown streak viral disease
+synonym: "cassava brown streak disease" EXACT []
+synonym: "CBSAV0" EXACT []
+synonym: "CBSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000191
+
+[Term]
+id: PSO:0000236
+name: cassava green mite damage
+synonym: "cassava mite|MONNTA" EXACT []
+subset: tier_T0
+is_a: PSO:0000503
+
+[Term]
+id: PSO:0000237
+name: cassava Acaro solitario damage
+synonym: "OLIGPE" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000503
+
+[Term]
+id: PSO:0000238
+name: cassava mealybug damage
+synonym: "cassava mealybug disease|PHENMA" EXACT []
+subset: tier_T0
+is_a: PSO:0000502
+
+[Term]
+id: PSO:0000239
+name: cassava Piptoporellus root rot fungal disease
+synonym: "PSPHBA" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000189
+
+[Term]
+id: PSO:0000240
+name: cassava animal damage
+subset: tier_T0
+is_a: PSO:0000004
+
+[Term]
+id: PSO:0000243
+name: grape bacterial blight bacterial disease
+subset: tier_T0
+is_a: PSO:0000018
+
+[Term]
+id: PSO:0000244
+name: grape crown gall bacterial disease
+subset: tier_T0
+is_a: PSO:0000018
+
+[Term]
+id: PSO:0000245
+name: grape Pierce’s bacterial disease
+subset: tier_T0
+is_a: PSO:0000018
+
+[Term]
+id: PSO:0000246
+name: grape Acetobacter sour rot bacterial disease
+subset: tier_T0
+is_a: PSO:0000018
+
+[Term]
+id: PSO:0000247
+name: grape Gluconobacter sour rot bacterial disease
+subset: tier_T0
+is_a: PSO:0000018
+
+[Term]
+id: PSO:0000248
+name: grape powdery mildew fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000249
+name: grape angular leaf scorch fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000250
+name: grape Anthracnose fungal disease
+synonym: "Bird’s-eye rot" EXACT []
+synonym: "Black spot" EXACT []
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000251
+name: grape Armillaria root rot fungal disease
+synonym: "Oak root rot" EXACT []
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000252
+name: grape Alternaria rot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000253
+name: grape Aspergillus rot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000254
+name: grape blue mold fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000255
+name: grape Cladosporium rot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000256
+name: grape Rhizopus rot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000257
+name: grape bitter rot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000258
+name: grape black foot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000259
+name: grape Botryosphaeria dieback fungal disease
+synonym: "Black dead arm" EXACT []
+synonym: "Botryosphaeria canker" EXACT []
+synonym: "Diplodia cane dieback" EXACT []
+subset: tier_T0
+is_a: PSO:0000269
+
+[Term]
+id: PSO:0000260
+name: grape Botrytis bunch rot and blight
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000261
+name: grape Brulure fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000262
+name: grape Cercospora leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000263
+name: grape Passalora leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000264
+name: grape Dematophora root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000265
+name: grape Eutypa dieback fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000266
+name: grape leaf rust fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000267
+name: grape leaf stripe fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000268
+name: grape leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000269
+name: grape Macrophoma rot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000270
+name: grape Phomopsis cane and leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000271
+name: grape Phymatotrichopsis root rot fungal disease
+synonym: "grape cotton root rot" EXACT []
+synonym: "Phymatotrichum root rot" EXACT []
+synonym: "Texas root rot" EXACT []
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000272
+name: grape ripe rot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000273
+name: grape Rotbrenner fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000274
+name: grape sour rot fungal disease
+subset: tier_T0
+is_a: PSO:0000253
+
+[Term]
+id: PSO:0000275
+name: grape Verticillium wilt fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000276
+name: grape white rot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000277
+name: grape Zonate leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000019
+
+[Term]
+id: PSO:0000278
+name: grape Phytophthora crown and root rot oomycete disease
+subset: tier_T0
+is_a: PSO:0000010
+
+[Term]
+id: PSO:0000279
+name: grape downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0000010
+
+[Term]
+id: PSO:0000280
+name: grape Corky bark viral disease
+synonym: "Rugose Wood complex" EXACT []
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000281
+name: grape Fanleaf degeneration viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000282
+name: grape Asteroid mosaic viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000283
+name: grape Fleck viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000284
+name: grape redglobe viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000285
+name: grape Rupestris vein feathering viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000286
+name: grape angular mosaic viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000287
+name: grape berry inner necrosis viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000288
+name: grape leafroll disease viral disease
+subset: tier_T0
+is_a: PSO:0000289
+
+[Term]
+id: PSO:0000289
+name: grape graft incompatibility viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000290
+name: grape line pattern viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000291
+name: grape little berry viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000292
+name: grape red blotch viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000293
+name: grape Roditis leaf discoloration viral disease
+subset: tier_T0
+is_a: PSO:0000280
+
+[Term]
+id: PSO:0000294
+name: grape yellow mottle viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000295
+name: grape yellow speckle disease viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000296
+name: grape yellow vein viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000297
+name: grape Rupestris stem pitting viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000298
+name: grape vein banding viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000299
+name: grape virus-induced grapevine decline viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000300
+name: grape Kober stem grooving viral disease
+subset: tier_T0
+is_a: PSO:0000009
+
+[Term]
+id: PSO:0000301
+name: maize animal damage
+subset: tier_T0
+is_a: PSO:0000004
+
+[Term]
+id: PSO:0000302
+name: maize arachnid damage
+subset: tier_T0
+is_a: PSO:0000301
+
+[Term]
+id: PSO:0000303
+name: maize bird damage
+subset: tier_T0
+is_a: PSO:0000301
+
+[Term]
+id: PSO:0000304
+name: maize insect damage
+subset: tier_T0
+is_a: PSO:0000301
+
+[Term]
+id: PSO:0000305
+name: maize nematode damage
+subset: tier_T0
+is_a: PSO:0000301
+
+[Term]
+id: PSO:0000306
+name: maize rodent damage
+subset: tier_T0
+is_a: PSO:0000301
+
+[Term]
+id: PSO:0000349
+name: grape animal damage
+subset: tier_T0
+is_a: PSO:0000004
+
+[Term]
+id: PSO:0000351
+name: grape nematode damage
+subset: tier_T0
+is_a: PSO:0000349
+
+[Term]
+id: PSO:0000352
+name: grape citrus nematode damage
+subset: tier_T0
+is_a: PSO:0000351
+
+[Term]
+id: PSO:0000353
+name: grape dagger nematode damage
+subset: tier_T0
+is_a: PSO:0000351
+
+[Term]
+id: PSO:0000354
+name: grape needle nematode damage
+subset: tier_T0
+is_a: PSO:0000351
+
+[Term]
+id: PSO:0000355
+name: grape ring nematode damage
+subset: tier_T0
+is_a: PSO:0000351
+
+[Term]
+id: PSO:0000356
+name: grape root-knot nematode damage
+subset: tier_T0
+is_a: PSO:0000351
+
+[Term]
+id: PSO:0000357
+name: grape root-lesion nematode damage
+subset: tier_T0
+is_a: PSO:0000351
+
+[Term]
+id: PSO:0000358
+name: grape insect damage
+subset: tier_T0
+is_a: PSO:0000349
+
+[Term]
+id: PSO:0000359
+name: grape arachnid damage
+subset: tier_T0
+is_a: PSO:0000349
+
+[Term]
+id: PSO:0000360
+name: grape bird damage
+subset: tier_T0
+is_a: PSO:0000349
+
+[Term]
+id: PSO:0000361
+name: grape rodent damage
+subset: tier_T0
+is_a: PSO:0000349
+
+[Term]
+id: PSO:0000400
+name: rice halo blight bacterial disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000401
+name: rice Burkholderia plantarii seedling blight bacterial disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000402
+name: rice leaf sheath rot bacterial disease
+subset: tier_T0
+is_a: PSO:0000129
+
+[Term]
+id: PSO:0000403
+name: rice animal damage
+subset: tier_T0
+is_a: PSO:0000004
+
+[Term]
+id: PSO:0000404
+name: rice arachnid damage
+subset: tier_T0
+is_a: PSO:0000403
+
+[Term]
+id: PSO:0000405
+name: rice bird damage
+subset: tier_T0
+is_a: PSO:0000403
+
+[Term]
+id: PSO:0000406
+name: rice insect damage
+subset: tier_T0
+is_a: PSO:0000403
+
+[Term]
+id: PSO:0000407
+name: rice nematode damage
+subset: tier_T0
+is_a: PSO:0000403
+
+[Term]
+id: PSO:0000408
+name: rice rodent damage
+subset: tier_T0
+is_a: PSO:0000403
+
+[Term]
+id: PSO:0000500
+name: potato animal damage
+subset: tier_T0
+is_a: PSO:0000004
+
+[Term]
+id: PSO:0000501
+name: cassava nematode damage
+subset: tier_T0
+is_a: PSO:0000240
+
+[Term]
+id: PSO:0000502
+name: cassava insect damage
+subset: tier_T0
+is_a: PSO:0000240
+
+[Term]
+id: PSO:0000503
+name: cassava arachnid damage
+subset: tier_T0
+is_a: PSO:0000240
+
+[Term]
+id: PSO:0000504
+name: cassava bird damage
+subset: tier_T0
+is_a: PSO:0000240
+
+[Term]
+id: PSO:0000505
+name: cassava rodent damage
+subset: tier_T0
+is_a: PSO:0000240
+
+[Term]
+id: PSO:0000506
+name: potato nematode damage
+subset: tier_T0
+is_a: PSO:0000500
+
+[Term]
+id: PSO:0000507
+name: potato insect damage
+subset: tier_T0
+is_a: PSO:0000500
+
+[Term]
+id: PSO:0000508
+name: potato arachnid damage
+subset: tier_T0
+is_a: PSO:0000500
+
+[Term]
+id: PSO:0000509
+name: potato bird damage
+subset: tier_T0
+is_a: PSO:0000500
+
+[Term]
+id: PSO:0000510
+name: potato rodent damage
+subset: tier_T0
+is_a: PSO:0000500
+
+[Term]
+id: PSO:0000600
+name: potato black dot fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000601
+name: potato brown spot fungal disease
+synonym: "potato black pit disease" EXACT []
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000602
+name: potato Cercospora leaf blotch fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000603
+name: potato charcoal rot fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000604
+name: potato Choanephora blight fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000605
+name: potato common rust fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000606
+name: potato deforming rust fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000607
+name: potato early blight fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000608
+name: potato Fusarium dry rot fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000609
+name: potato Fusarium wilt fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000610
+name: potato Gangrene fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000611
+name: potato gray mold fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000612
+name: potato Phoma leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000613
+name: potato Pleospora herbarum fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000614
+name: potato powdery mildew fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000616
+name: potato black scurf fungal disease
+synonym: "Rhizoctonia canker" EXACT []
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000617
+name: potato Septoria leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000618
+name: potato silver scurf fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000619
+name: potato skin spot fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000620
+name: potato stem rot fungal disease
+synonym: "potato Southern blight" EXACT []
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000621
+name: potato Thecaphora smut fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000622
+name: potato Ulocladium blight fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000623
+name: Potato Verticillium wilt fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000624
+name: potato wart fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000625
+name: potato white mold fungal disease
+subset: tier_T0
+is_a: PSO:0000015
+
+[Term]
+id: PSO:0000626
+name: potato bacterial wilt disease
+subset: tier_T0
+is_a: PSO:0000014
+
+[Term]
+id: PSO:0000627
+name: potato blackleg and bacterial soft rot disease
+subset: tier_T0
+is_a: PSO:0000014
+
+[Term]
+id: PSO:0000628
+name: potato pink eye bacterial disease
+subset: tier_T0
+is_a: PSO:0000014
+
+[Term]
+id: PSO:0000629
+name: potato ring rot bacterial disease
+subset: tier_T0
+is_a: PSO:0000014
+
+[Term]
+id: PSO:0000630
+name: potato common scab bacterial disease
+subset: tier_T0
+is_a: PSO:0000014
+
+[Term]
+id: PSO:0000631
+name: potato soft rot bacterial disease
+subset: tier_T0
+is_a: PSO:0000014
+
+[Term]
+id: PSO:0000632
+name: potato zebra chip bacterial disease
+subset: tier_T0
+is_a: PSO:0000014
+
+[Term]
+id: PSO:0000633
+name: potato late blight oomycete disease
+subset: tier_T0
+is_a: PSO:0000017
+
+[Term]
+id: PSO:0000634
+name: potato Phytophthora spp. pink rot oomycete disease
+subset: tier_T0
+is_a: PSO:0000017
+
+[Term]
+id: PSO:0000635
+name: potato leaf spot oomycete disease
+subset: tier_T0
+is_a: PSO:0000017
+
+[Term]
+id: PSO:0000636
+name: potato Pythium spp. leak oomycete disease
+subset: tier_T0
+is_a: PSO:0000017
+
+[Term]
+id: PSO:0000637
+name: potato spindle tuber viroid disease
+synonym: "PSTV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000638
+name: potato alfalfa mosaic virus disease
+synonym: "AMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000639
+name: potato Andean potato latent virus disease
+synonym: "APLV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000640
+name: potato Andean potato mottle virus viral disease
+synonym: "APMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000641
+name: potato beet curly top virus disease
+synonym: "BCTV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000642
+name: potato cucumber mosaic virus disease
+synonym: "PCMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000643
+name: potato eggplant mottled dwarf virus disease
+synonym: "EMDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000644
+name: potato aucuba mosaic virus disease
+synonym: "PAMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000645
+name: potato black ringspot virus disease
+synonym: "PBRSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000646
+name: potato latent virus disease
+synonym: "PLV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000647
+name: potato leaf roll virus disease
+synonym: "PLRV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000648
+name: potato mop-top virus disease
+synonym: "PMTV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000649
+name: potato stem mottle virus disease
+synonym: "TRV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000650
+name: potato yellow dwarf virus disease
+synonym: "PYDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000651
+name: potato yellow mosaic virus disease
+synonym: "PYMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000652
+name: potato yellow vein virus disease
+synonym: "PYVV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000653
+name: potato yellowing virus disease
+synonym: "PYV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000654
+name: potato virus A disease
+synonym: "PVA" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000655
+name: potato virus M disease
+synonym: "PVM" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000656
+name: potato virus S disease
+subset: tier_T0
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000657
+name: potato virus T disease
+subset: tier_T0
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000658
+name: potato virus U disease
+synonym: "PVU" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000659
+name: potato virus V disease
+synonym: "PVV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000660
+name: potato virus X disease
+synonym: "PVX" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000661
+name: potato virus Y disease
+synonym: "PVY" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000662
+name: potato Solanum apical leaf curling virus disease
+subset: tier_T0
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000663
+name: potato sowbane mosaic virus disease
+synonym: "SoMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000664
+name: potato tobacco mosaic virus disease
+synonym: "PTMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000665
+name: potato tobacco necrosis virus disease
+synonym: "PTNV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000666
+name: potato tobacco streak virus disease
+synonym: "PTSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000667
+name: potato tomato black ring virus disease
+synonym: "ToBRV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000668
+name: potato tomato mosaic virus disease
+synonym: "ToMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000669
+name: potato tomato spotted wilt virus disease
+synonym: "PTSWV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000670
+name: potato tomato yellow mosaic virus disease
+synonym: "ToYMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000671
+name: potato wild mosaic virus disease
+synonym: "WPMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000016
+
+[Term]
+id: PSO:0000672
+name: potato corky ringspot virus disease
+synonym: "spraing" EXACT []
+subset: tier_T0
+is_a: PSO:0000649
+
+[Term]
+id: PSO:0000673
+name: potato cyst nematode damage
+synonym: "potato golden nematode damage|PCN" EXACT []
+subset: tier_T0
+is_a: PSO:0000506
+
+[Term]
+id: PSO:0000674
+name: potato root knot nematode damage
+subset: tier_T0
+is_a: PSO:0000506
+
+[Term]
+id: PSO:0000675
+name: potato Columbia root knot nematode damage
+subset: tier_T0
+is_a: PSO:0000674
+
+[Term]
+id: PSO:0000676
+name: potato root lesion nematode damage
+subset: tier_T0
+is_a: PSO:0000506
+
+[Term]
+id: PSO:0000677
+name: potato dry rot nematode damage
+subset: tier_T0
+is_a: PSO:0000506
+
+[Term]
+id: PSO:0000678
+name: potato Northern root knot nematode damage
+subset: tier_T0
+is_a: PSO:0000674
+
+[Term]
+id: PSO:0000679
+name: potato pale cyst nematode damage
+subset: tier_T0
+is_a: PSO:0000506
+
+[Term]
+id: PSO:0000700
+name: wheat bacterial leaf streak disease
+synonym: "BLS" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000177
+
+[Term]
+id: PSO:0000701
+name: wheat bacterial mosaic disease
+subset: tier_T0
+is_a: PSO:0000177
+
+[Term]
+id: PSO:0000702
+name: wheat bacterial sheath rot disease
+subset: tier_T0
+is_a: PSO:0000177
+
+[Term]
+id: PSO:0000703
+name: wheat basal glume rot bacterial disease
+subset: tier_T0
+is_a: PSO:0000177
+
+[Term]
+id: PSO:0000704
+name: wheat gumming bacterial disease
+subset: tier_T0
+is_a: PSO:0000177
+
+[Term]
+id: PSO:0000705
+name: wheat pink seed bacterial disease
+subset: tier_T0
+is_a: PSO:0000177
+
+[Term]
+id: PSO:0000706
+name: wheat spike blight bacterial disease
+subset: tier_T0
+is_a: PSO:0000177
+
+[Term]
+id: PSO:0000707
+name: wheat stem melanosis bacterial disease
+subset: tier_T0
+is_a: PSO:0000177
+
+[Term]
+id: PSO:0000708
+name: wheat Alternaria leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000709
+name: wheat Anthracnose fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000710
+name: wheat blast disease fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000711
+name: wheat leaf rust fungal disease
+synonym: "brown rust" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000712
+name: wheat stripe rust fungal disease
+synonym: "yellow rust" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000713
+name: wheat stem rust fungal disease
+synonym: "black rust" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000714
+name: wheat fusarium head blight fungal disease
+synonym: "scab" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000715
+name: wheat Aureobasidium decay fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000716
+name: wheat brown root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000717
+name: wheat Cephalosporium stripe fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000718
+name: wheat common bunt fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000719
+name: wheat common root rot fungal disease
+synonym: "Seedling blight" EXACT []
+subset: tier_T0
+is_a: PSO:0000743
+
+[Term]
+id: PSO:0000720
+name: wheat cottony snow mold fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000721
+name: wheat damping-off fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000722
+name: wheat Dilophospora leaf spot fungal disease
+synonym: "Twist" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000723
+name: wheat dwarf bunt fungal disease
+synonym: "dwarf smut" EXACT []
+synonym: "stinking smut" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000724
+name: wheat ergot fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000725
+name: wheat eyespot fungal disease
+synonym: "foot rot" EXACT []
+synonym: "strawbreaker" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000726
+name: wheat flag smut fungal disease
+synonym: "leaf smut" EXACT []
+synonym: "stem smut" EXACT []
+synonym: "stripe smut" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000727
+name: wheat halo spot fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000728
+name: wheat karnal bunt fungal disease
+synonym: "partial bunt" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000729
+name: wheat Leptosphaeria leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000730
+name: wheat loose smut fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000731
+name: wheat Microscopica leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000732
+name: wheat powdery mildew fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000733
+name: wheat Septoria tritici blotch fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000734
+name: wheat tan spot fungal disease
+synonym: "Red smudge" EXACT []
+synonym: "Yellow leaf spot" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000735
+name: wheat Stagonospora nodorum blotch fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000736
+name: wheat Stagonospora avenae blotch fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000737
+name: wheat pink snow mold fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000738
+name: wheat Rhizoctonia root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000739
+name: wheat Sclerotinia snow mold fungal disease
+synonym: "Snow scald" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000740
+name: wheat take-all fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000741
+name: wheat speckled snow mold fungal disease
+synonym: "Gray snow mold" EXACT []
+synonym: "Typhula blight" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000742
+name: wheat sharp eyespot fungal disease
+synonym: "bare patch" EXACT []
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000743
+name: wheat spot blotch fungal disease
+subset: tier_T0
+is_a: PSO:0000179
+
+[Term]
+id: PSO:0000744
+name: wheat barley yellow dwarf viral disease
+synonym: "cereal yellow dwarf" EXACT []
+synonym: "WBYDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000180
+
+[Term]
+id: PSO:0000745
+name: wheat soilborne mosaic viral disease
+synonym: "SBWMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000180
+
+[Term]
+id: PSO:0000746
+name: wheat streak mosaic viral disease
+synonym: "WSMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000180
+
+[Term]
+id: PSO:0000750
+name: wheat animal damage
+subset: tier_T0
+is_a: PSO:0000004
+
+[Term]
+id: PSO:0000751
+name: wheat arachnid damage
+subset: tier_T0
+is_a: PSO:0000750
+
+[Term]
+id: PSO:0000752
+name: wheat bird damage
+subset: tier_T0
+is_a: PSO:0000750
+
+[Term]
+id: PSO:0000753
+name: wheat insect damage
+subset: tier_T0
+is_a: PSO:0000750
+
+[Term]
+id: PSO:0000754
+name: wheat nematode damage
+subset: tier_T0
+is_a: PSO:0000750
+
+[Term]
+id: PSO:0000755
+name: wheat rodent damage
+subset: tier_T0
+is_a: PSO:0000750
+
+[Term]
+id: PSO:0000756
+name: wheat cereal cyst nematode damage
+subset: tier_T0
+is_a: PSO:0000754
+
+[Term]
+id: PSO:0000757
+name: wheat root-knot nematode damage
+subset: tier_T0
+is_a: PSO:0000754
+
+[Term]
+id: PSO:0000758
+name: wheat root-lesion nematode damage
+subset: tier_T0
+is_a: PSO:0000754
+
+[Term]
+id: PSO:0000800
+name: banana bacterial disease
+subset: tier_T0
+is_a: PSO:0100020
+
+[Term]
+id: PSO:0000801
+name: banana fungal disease
+subset: tier_T0
+is_a: PSO:0100020
+
+[Term]
+id: PSO:0000802
+name: banana viral disease
+subset: tier_T0
+is_a: PSO:0100020
+
+[Term]
+id: PSO:0000803
+name: banana oomycete disease
+subset: tier_T0
+is_a: PSO:0100020
+
+[Term]
+id: PSO:0000804
+name: banana Anthracnose fungal disease
+synonym: "Colletotrichum musae fungal scald disease" EXACT []
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000805
+name: banana Armillaria corm rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000806
+name: banana Desarmillaria corm rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000807
+name: banana Fusarium wilt fungal disease
+synonym: "Panama disease" EXACT []
+subset: tier_T0
+is_a: PSO:0000830
+
+[Term]
+id: PSO:0000808
+name: banana black leaf streak fungal disease
+synonym: "Black Sigatoka" EXACT []
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000809
+name: banana black root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000810
+name: banana brown spot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000811
+name: banana Ceratocystis fruit rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000812
+name: banana cigar-end rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000813
+name: banana Cladosporium leaf speckle fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000814
+name: banana corm dry rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000815
+name: banana Cordana leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000817
+name: banana damping-off fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000818
+name: banana Deightoniella fruit speckle fungal disease
+synonym: "banana Deightoniella fruit speckle tip rot fungal disease" EXACT []
+subset: tier_T0
+is_a: PSO:0000817
+
+[Term]
+id: PSO:0000819
+name: banana Deightoniella leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000817
+
+[Term]
+id: PSO:0000821
+name: banana diamond leaf spot fungal disease
+synonym: "Malayan leaf spot" EXACT []
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000822
+name: banana Diamond fruit spot fungal disease
+subset: tier_T0
+is_a: PSO:0000810
+
+[Term]
+id: PSO:0000823
+name: banana Eumusae leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000824
+name: banana eyespot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000825
+name: banana fruit freckle fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000826
+name: banana Neofusicoccum ribis fruit rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000827
+name: banana Sarocladium strictum fruit rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000828
+name: banana Curvularia spicifera fruit rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000829
+name: banana fruit rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000830
+name: banana Fusarium oxysporum fungal root-rot disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000831
+name: banana Fusarium solani fungal root-rot disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000833
+name: banana Uredo musae Leaf rust fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000834
+name: banana Uromyces musae leaf rust fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000835
+name: banana Acrodontium simplex leaf speckle fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000836
+name: banana Mycosphaerella leaf speckle fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000837
+name: banana Lasiodiplodia finger rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000838
+name: banana main stalk rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000839
+name: banana Marasmiellus pseudostem rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000840
+name: banana Marasmiellus root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000841
+name: banana Pestalotiopsis leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000842
+name: banana Phaeoseptoria leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000843
+name: banana Pitting fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000844
+name: banana Pseudostem heart rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000845
+name: banana Sclerotinia fruit rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000846
+name: banana sheath rot fungal disease
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000847
+name: banana Sigatoka leaf spot fungal disease
+synonym: "Yellow Sigatoka" EXACT []
+subset: tier_T0
+is_a: PSO:0000846
+
+[Term]
+id: PSO:0000849
+name: banana animal damage
+subset: tier_T0
+is_a: PSO:0000004
+
+[Term]
+id: PSO:0000850
+name: banana arachnid damage
+subset: tier_T0
+is_a: PSO:0000849
+
+[Term]
+id: PSO:0000851
+name: banana bird damage
+subset: tier_T0
+is_a: PSO:0000849
+
+[Term]
+id: PSO:0000852
+name: banana insect damage
+subset: tier_T0
+is_a: PSO:0000849
+
+[Term]
+id: PSO:0000853
+name: banana nematode damage
+subset: tier_T0
+is_a: PSO:0000849
+
+[Term]
+id: PSO:0000854
+name: banana rodent damage
+subset: tier_T0
+is_a: PSO:0000849
+
+[Term]
+id: PSO:0000855
+name: banana squirter fungal disease
+synonym: "black end disease" EXACT []
+subset: tier_T0
+is_a: PSO:0000801
+
+[Term]
+id: PSO:0000856
+name: banana stem-end rot fungal disease
+subset: tier_T0
+is_a: PSO:0000804
+
+[Term]
+id: PSO:0000858
+name: banana Moko bacterial wilt disease
+synonym: "Bacterial hard pulp" EXACT []
+synonym: "banana Bugtok bacterial disease" EXACT []
+subset: tier_T0
+is_a: PSO:0000800
+
+[Term]
+id: PSO:0000860
+name: banana Xanthomonas bacterial wilt
+synonym: "BXW, BBW" EXACT []
+subset: tier_T0
+is_a: PSO:0000800
+
+[Term]
+id: PSO:0000861
+name: banana bract mosaic viral disease
+subset: tier_T0
+is_a: PSO:0000802
+
+[Term]
+id: PSO:0000862
+name: banana bunchy top viral disease
+synonym: "bunchy top of banana" EXACT []
+subset: tier_T0
+is_a: PSO:0000802
+
+[Term]
+id: PSO:0000863
+name: banana streak viral disease
+synonym: "BSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000802
+
+[Term]
+id: PSO:0000864
+name: banana nematode root rot damage
+subset: tier_T0
+is_a: PSO:0000853
+
+[Term]
+id: PSO:0000865
+name: banana root-knot nematode damage
+subset: tier_T0
+is_a: PSO:0000853
+
+[Term]
+id: PSO:0000866
+name: banana root-lesion nematode damage
+subset: tier_T0
+is_a: PSO:0000853
+
+[Term]
+id: PSO:0000900
+name: bean bacterial disease
+subset: tier_T0
+is_a: PSO:0100022
+
+[Term]
+id: PSO:0000901
+name: bean fungal disease
+subset: tier_T0
+is_a: PSO:0100022
+
+[Term]
+id: PSO:0000902
+name: bean viral disease
+subset: tier_T0
+is_a: PSO:0100022
+
+[Term]
+id: PSO:0000903
+name: bean oomycete disease
+subset: tier_T0
+is_a: PSO:0100022
+
+[Term]
+id: PSO:0000904
+name: bean bacterial brown spot disease
+subset: tier_T0
+is_a: PSO:0000900
+
+[Term]
+id: PSO:0000905
+name: bean bacterial wilt disease
+subset: tier_T0
+is_a: PSO:0000900
+
+[Term]
+id: PSO:0000906
+name: bean common bacterial blight disease
+subset: tier_T0
+is_a: PSO:0000900
+
+[Term]
+id: PSO:0000907
+name: bean halo blight disease
+subset: tier_T0
+is_a: PSO:0000900
+
+[Term]
+id: PSO:0000908
+name: bean Alternaria leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000909
+name: bean Alternaria pod spot fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000910
+name: bean angular leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000911
+name: bean anthracnose fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000912
+name: bean Aphanomyces root and hypocotyl rot ooymycete disease
+subset: tier_T0
+is_a: PSO:0000903
+
+[Term]
+id: PSO:0000913
+name: bean ashy stem blight fungal disease
+synonym: "Charcoal rot" EXACT []
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000914
+name: bean black node fungal disease
+synonym: "Ascochyta leaf spot" EXACT []
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000915
+name: bean black root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000916
+name: bean Cercospora leaf spot and blotch fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000917
+name: bean damping-off fungal disease
+synonym: "stem rot" EXACT []
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000918
+name: bean Diaporthe pod blight fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000919
+name: bean floury leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000920
+name: bean Fusarium root rot fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000921
+name: bean Fusarium yellows fungal disease
+synonym: "Fusarium wilt" EXACT []
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000922
+name: bean gray mold fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000923
+name: bean Phyllosticta leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0000914
+
+[Term]
+id: PSO:0000924
+name: bean Phymatotrichum root rot fungal disease
+synonym: "Bean cotton root rot" EXACT []
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000925
+name: bean pink pod rot fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000926
+name: bean powdery mildew fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000927
+name: bean rust fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000928
+name: bean scab fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000929
+name: bean southern blight fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000930
+name: bean speckle fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000931
+name: bean web blight fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000932
+name: bean white mold fungal disease
+synonym: "Sclerotinia rot" EXACT []
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000933
+name: bean yeast spot fungal disease
+subset: tier_T0
+is_a: PSO:0000901
+
+[Term]
+id: PSO:0000934
+name: bean downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0000903
+
+[Term]
+id: PSO:0000935
+name: lima bean downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0000903
+
+[Term]
+id: PSO:0000936
+name: bean Globisporangium omycete disease
+subset: tier_T0
+is_a: PSO:0000903
+
+[Term]
+id: PSO:0000937
+name: bean Pythium omycete disease
+subset: tier_T0
+is_a: PSO:0000903
+
+[Term]
+id: PSO:0000938
+name: bean alfalfa mosaic viral disease
+subset: tier_T0
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000939
+name: bean angular mosaic viral disease
+synonym: "Cowpea mild mottle virus" EXACT []
+synonym: "CPMMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000940
+name: bean calico mosaic  viral disease
+subset: tier_T0
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000941
+name: bean common mosaic necrosis viral disease
+synonym: "Black root" EXACT []
+subset: tier_T0
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000942
+name: bean common mosaic viral disease
+synonym: "BCMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000943
+name: bean dwarf mosaic viral disease
+synonym: "BDMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000944
+name: bean golden mosaic viral disease
+synonym: "bean golden yellow mosaic viral disease" EXACT []
+synonym: "BGMV" EXACT []
+synonym: "BGYMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000947
+name: bean necrosis mosaic viral disease
+synonym: "BTSWV" EXACT []
+synonym: "Tomato spotted wilt virus" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000948
+name: bean pod mottle viral disease
+synonym: "BPMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000949
+name: bean rugose mosaic viral disease
+synonym: "BRMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000950
+name: bean severe mosaic viral disease
+synonym: "Cowpea severe mosaic virus" EXACT []
+synonym: "CPSMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000951
+name: bean southern mosaic viral disease
+synonym: "SBMV" EXACT []
+synonym: "Southern bean mosaic virus" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000952
+name: bean summer death viral disease
+synonym: "Tobacco yellow dwarf virus" EXACT []
+synonym: "TYDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000953
+name: bean yellow dwarf viral disease
+synonym: "BeYDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000954
+name: bean yellow mosaic viral disease
+synonym: "BYMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000955
+name: bean yellow stipple viral disease
+synonym: "BCCMV" EXACT []
+synonym: "cowpea chlorotic mottle virus" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000956
+name: bean clover yellow vein viral disease
+synonym: "CYVV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000957
+name: bean cucumber mosaic viral disease
+subset: tier_T0
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000958
+name: bean curly top viral disease
+synonym: "BCTV" EXACT []
+synonym: "Beet curly top virus" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000959
+name: bean peanut mottle viral disease
+synonym: "PeMoV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000960
+name: bean peanut stunt viral disease
+synonym: "BPSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000961
+name: bean red node viral disease
+synonym: "BTSV" EXACT []
+synonym: "tobacco streak virus" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000962
+name: bean soybean mosaic viral disease
+synonym: "BSMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000963
+name: bean stipple streak viral disease
+synonym: "BTNV" EXACT []
+synonym: "Tobacco necrosis virus" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000902
+
+[Term]
+id: PSO:0000970
+name: bean animal damage
+subset: tier_T0
+is_a: PSO:0000004
+
+[Term]
+id: PSO:0000971
+name: bean nematode damage
+subset: tier_T0
+is_a: PSO:0000970
+
+[Term]
+id: PSO:0000972
+name: bean insect damage
+subset: tier_T0
+is_a: PSO:0000970
+
+[Term]
+id: PSO:0000973
+name: bean arachnid damage
+subset: tier_T0
+is_a: PSO:0000970
+
+[Term]
+id: PSO:0000974
+name: bean bird damage
+subset: tier_T0
+is_a: PSO:0000970
+
+[Term]
+id: PSO:0000975
+name: bean rodent damage
+subset: tier_T0
+is_a: PSO:0000970
+
+[Term]
+id: PSO:0001000
+name: sorghum bacterial disease
+subset: tier_T0
+is_a: PSO:0100102
+
+[Term]
+id: PSO:0001001
+name: sorghum fungal disease
+subset: tier_T0
+is_a: PSO:0100102
+
+[Term]
+id: PSO:0001002
+name: sorghum viral disease
+subset: tier_T0
+is_a: PSO:0100102
+
+[Term]
+id: PSO:0001003
+name: sorghum oomycete disease
+subset: tier_T0
+is_a: PSO:0100102
+
+[Term]
+id: PSO:0001004
+name: sorghum bacterial leaf blight disease
+subset: tier_T0
+is_a: PSO:0001000
+
+[Term]
+id: PSO:0001005
+name: sorghum bacterial leaf spot disease
+subset: tier_T0
+is_a: PSO:0001000
+
+[Term]
+id: PSO:0001006
+name: sorghum bacterial leaf streak disease
+subset: tier_T0
+is_a: PSO:0001000
+
+[Term]
+id: PSO:0001007
+name: sorghum bacterial leaf stripe disease
+subset: tier_T0
+is_a: PSO:0001000
+
+[Term]
+id: PSO:0001008
+name: sorghum bacterial top and stalk rot disease
+subset: tier_T0
+is_a: PSO:0001000
+
+[Term]
+id: PSO:0001009
+name: sorghum Acremonium wilt fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001010
+name: sorghum anthracnose fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001011
+name: sorghum banded leaf and sheath blight fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001012
+name: sorghum charcoal rot fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001013
+name: sorghum razy top downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0001003
+
+[Term]
+id: PSO:0001014
+name: sorghum ergot fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001015
+name: sorghum Fusarium head blight fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001016
+name: sorghum Fusarium root rot fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001017
+name: sorghum Fusarium stalk rot fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001018
+name: sorghum gray leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001019
+name: sorghum ladder leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001020
+name: sorghum leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001021
+name: sorghum Milo fungal disease
+synonym: "Periconia root rot" EXACT []
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001022
+name: sorghum oval leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001023
+name: sorghum Pokkah Boeng fungal disease
+synonym: "Twisted top" EXACT []
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001024
+name: sorghum Pythium root rot oomycete disease
+subset: tier_T0
+is_a: PSO:0001003
+
+[Term]
+id: PSO:0001025
+name: sorghum rough leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001026
+name: sorghum rust fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001027
+name: sorghum southern sclerotial rot fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001028
+name: sorghum covered kernel smut fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001029
+name: sorghum head smut fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001030
+name: sorghum loose kernel smut fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001031
+name: sorghum sooty stripe fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001032
+name: sorghum downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0001003
+
+[Term]
+id: PSO:0001033
+name: Sorghum tar spot fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001034
+name: sorghum target leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001035
+name: sorghum zonate leaf spot and sheath blight fungal disease
+subset: tier_T0
+is_a: PSO:0001001
+
+[Term]
+id: PSO:0001036
+name: sorghum Fiji virus disease
+synonym: "FDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001037
+name: sorghum maize chlorotic dwarf viral disease
+synonym: "SMCDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001038
+name: sorghum maize mosaic viral disease
+synonym: "SMMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001039
+name: sorghum maize rough dwarf viral disease
+synonym: "SMRDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001040
+name: sorghum maize streak viral disease
+synonym: "SMSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001041
+name: sorghum maize stripe viral disease
+synonym: "SMStV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001042
+name: sorghum Mal de Rio Cuarto viral disease
+synonym: "MCRV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001043
+name: sorghum sugarcane streak mosaic virus disease
+synonym: "SCSMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001044
+name: sorghum wheat streak mosaic virus disease
+synonym: "SWSMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001045
+name: sorghum Johnsongrass mosaic virus disease
+synonym: "SJGMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001046
+name: sorghum maize dwarf mosaic virus disease
+synonym: "SMDMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001047
+name: sorghum sorghum mosaic virus disease
+synonym: "SCMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001048
+name: sorghum sugarcane mosaic virus disease
+synonym: "SSCMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001049
+name: sorghum peanut clump virus disease
+synonym: "PCV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001050
+name: sorghum chlorotic spot virus disease
+synonym: "SgCSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0001002
+
+[Term]
+id: PSO:0001100
+name: sorghum animal damage
+subset: tier_T0
+is_a: PSO:0000004
+
+[Term]
+id: PSO:0001101
+name: sorghum nematode damage
+subset: tier_T0
+is_a: PSO:0001100
+
+[Term]
+id: PSO:0001102
+name: sorghum insect damage
+subset: tier_T0
+is_a: PSO:0001100
+
+[Term]
+id: PSO:0001103
+name: sorghum arachnid damage
+subset: tier_T0
+is_a: PSO:0001100
+
+[Term]
+id: PSO:0001104
+name: sorghum bird damage
+subset: tier_T0
+is_a: PSO:0001100
+
+[Term]
+id: PSO:0001105
+name: sorghum rodent damage
+subset: tier_T0
+is_a: PSO:0001100
+
+[Term]
+id: PSO:0002000
+name: soybean bacterial disease
+subset: tier_T0
+is_a: PSO:0100103
+
+[Term]
+id: PSO:0002001
+name: soybean fungal disease
+subset: tier_T0
+is_a: PSO:0100103
+
+[Term]
+id: PSO:0002002
+name: soybean viral disease
+subset: tier_T0
+is_a: PSO:0100103
+
+[Term]
+id: PSO:0002003
+name: soybean oomycete disease
+subset: tier_T0
+is_a: PSO:0100103
+
+[Term]
+id: PSO:0002004
+name: soybean Bacillus seed decay bacterial disease
+subset: tier_T0
+is_a: PSO:0002000
+
+[Term]
+id: PSO:0002005
+name: soybean bacterial blight disease
+subset: tier_T0
+is_a: PSO:0002000
+
+[Term]
+id: PSO:0002006
+name: soybean bacterial pustule disease
+subset: tier_T0
+is_a: PSO:0002000
+
+[Term]
+id: PSO:0002007
+name: soybean bacterial tan spot disease
+subset: tier_T0
+is_a: PSO:0002000
+
+[Term]
+id: PSO:0002008
+name: soybean bacterial wilt disease
+subset: tier_T0
+is_a: PSO:0002007
+
+[Term]
+id: PSO:0002009
+name: soybean wildfire bacterial disease
+subset: tier_T0
+is_a: PSO:0002000
+
+[Term]
+id: PSO:0002010
+name: soybean Alternaria leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002011
+name: soybean Alternaria pod necrosis fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002012
+name: soybean Alternaria seed decay fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002013
+name: soybean anthracnose fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002014
+name: soybean Aristastoma leaf spot and yellowing fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002015
+name: soybean brown spot fungal disease
+synonym: "Septoria leaf spot" EXACT []
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002016
+name: soybean Cercospora leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002017
+name: soybean Cercospora purple seed stain fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002018
+name: soybean Choanephora leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002019
+name: soybean Drechslera blight fungal disease
+synonym: "Cercospora leaf spot" EXACT []
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002020
+name: soybean frogeye leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002021
+name: soybean Fusarium seed rot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002022
+name: soybean Leptosphaerulina leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002023
+name: soybean Phomopsis seed decay fungal disease
+synonym: "Phyllosticta leaf blight" EXACT []
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002024
+name: soybean Phyllosticta leaf spot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002025
+name: soybean pod and stem blight fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002026
+name: soybean powdery mildew fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002027
+name: soybean red leaf blotch fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002028
+name: soybean Rhizoctonia foliar blight fungal disease
+subset: tier_T0
+is_a: PSO:0002042
+
+[Term]
+id: PSO:0002029
+name: soybean rust fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002030
+name: soybean scab fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002031
+name: soybean Sclerotinia stem rot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002032
+name: soybean Stemphylium leaf blight fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002033
+name: soybean target spot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002034
+name: soybean yeast spot of pods and seeds fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002035
+name: soybean brown stem rot  fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002036
+name: soybean charcoal rot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002037
+name: soybean Fusarium blight fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002038
+name: soybean Fusarium pod and collar rot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002039
+name: soybean Fusarium root rot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002040
+name: soybean red crown rot fungal disease
+synonym: "Calonectria root rot" EXACT []
+synonym: "Cylindrocladium root rot" EXACT []
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002042
+name: soybean Rhizoctonia damping-off and root rot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002043
+name: soybean Sclerotium blight fungal disease
+synonym: "southern stem rot" EXACT []
+synonym: "soybean southern blight" EXACT []
+synonym: "white mold" EXACT []
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002044
+name: soybean Stachybotrys root rot fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002045
+name: soybean stem canker fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002046
+name: soybean sudden death syndrome fungal disease
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002047
+name: soybean Thielaviopsis root rot fungal disease
+synonym: "black root rot" EXACT []
+subset: tier_T0
+is_a: PSO:0002001
+
+[Term]
+id: PSO:0002048
+name: soybean Phytophthora root and stem rot oomycete disease
+subset: tier_T0
+is_a: PSO:0002003
+
+[Term]
+id: PSO:0002049
+name: soybean downy mildew oomycete disease
+subset: tier_T0
+is_a: PSO:0002003
+
+[Term]
+id: PSO:0002050
+name: soybean Pythium seed rot oomycete disease
+subset: tier_T0
+is_a: PSO:0002003
+
+[Term]
+id: PSO:0002051
+name: soybean Pythium damping-off oomycete disease
+subset: tier_T0
+is_a: PSO:0002003
+
+[Term]
+id: PSO:0002052
+name: soybean Pythium root rot oomycete disease
+subset: tier_T0
+is_a: PSO:0002003
+
+[Term]
+id: PSO:0002053
+name: soybean alfalfa mosaic virus disease
+subset: tier_T0
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002054
+name: soybean bean pod mottle virus disease
+synonym: "SBPMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002055
+name: soybean bean common mosaic virus disease
+synonym: "Azuki bean mosaic strain" EXACT []
+synonym: "peanut stripe strain" EXACT []
+synonym: "SBCMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002056
+name: soybean cucumber mosaic virus disease
+synonym: "CMV-SS" EXACT []
+synonym: "CuMV" EXACT []
+synonym: "SCMV" EXACT []
+synonym: "Soybean stunt" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002057
+name: soybean cowpea chlorotic mottle virus disease
+synonym: "bean yellow stipple strain" EXACT []
+synonym: "CCMV-S" EXACT []
+synonym: "SCCMV" EXACT []
+synonym: "soybean strain" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002058
+name: soybean cowpea mild mottle virus disease
+synonym: "CMMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002059
+name: soybean cowpea severe mosaic virus disease
+synonym: "SCPSMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002060
+name: soybean mungbean yellow mosaic virus disease
+synonym: "Mungbean yellow mosaic India virus" EXACT []
+synonym: "MYMIV" EXACT []
+synonym: "MYMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002061
+name: soybean peanut stunt virus disease
+synonym: "SPSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002062
+name: soybean crinkle leaf virus disease
+synonym: "SCLV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002063
+name: soybean chlorotic mottle virus disease
+synonym: "SbCMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002064
+name: soybean mild mottle virus disease
+synonym: "SbMMV" EXACT []
+synonym: "SMMV" EXACT []
+synonym: "Soybean mild mosaic virus" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002065
+name: soybean mosaic virus disease
+synonym: "SSMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002066
+name: soybean dwarf virus disease
+synonym: "SbDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002067
+name: soybean tobacco streak virus disease
+synonym: "STSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002068
+name: soybean tobacco ringspot virus disease
+synonym: "TRSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002069
+name: soybean tobacco mosaic virus disease
+synonym: "soybean strain" EXACT []
+synonym: "STMV" EXACT []
+synonym: "TMV-S" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0002002
+
+[Term]
+id: PSO:0002100
+name: soybean animal damage
+subset: tier_T0
+is_a: PSO:0000004
+
+[Term]
+id: PSO:0002101
+name: soybean nematode damage
+subset: tier_T0
+is_a: PSO:0002100
+
+[Term]
+id: PSO:0002102
+name: soybean insect damage
+subset: tier_T0
+is_a: PSO:0002100
+
+[Term]
+id: PSO:0002103
+name: soybean arachnid damage
+subset: tier_T0
+is_a: PSO:0002100
+
+[Term]
+id: PSO:0002104
+name: soybean bird damage
+subset: tier_T0
+is_a: PSO:0002100
+
+[Term]
+id: PSO:0002105
+name: soybean rodent damage
+subset: tier_T0
+is_a: PSO:0002100
+
+[Term]
+id: PSO:0003001
+name: maize barley yellow dwarf virus disease
+synonym: "MBYDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003002
+name: maize brome mosaic virus disease
+synonym: "BMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003003
+name: maize cereal yellow dwarf virus disease
+synonym: "CYDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003004
+name: maize cereal chlorotic mottle virus disease
+synonym: "MCCMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003005
+name: maize cucumber mosaic virus disease
+synonym: "MCMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003006
+name: maize High Plains virus disease
+synonym: "High Plains virus" EXACT []
+synonym: "HPV" EXACT []
+synonym: "Maize red stripe virus" EXACT []
+synonym: "MRStV" EXACT []
+synonym: "WMoV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003007
+name: maize chlorotic dwarf virus disease
+synonym: "MCDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003008
+name: maize chlorotic mottle virus disease
+synonym: "MCMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003009
+name: maize dwarf mosaic virus disease
+synonym: "MDMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003010
+name: maize Johnsongrass mosaic virus disease
+synonym: "MJGMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003011
+name: maize Pennisetum mosaic virus disease
+synonym: "PenMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003012
+name: maize sorghum mosaic virus disease
+synonym: "SrMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003013
+name: maize sugarcane mosaic virus disease
+synonym: "MSCMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003014
+name: maize Zea mosaic virus disease
+synonym: "ZeMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003015
+name: maize wheat streak mosaic virus disease
+synonym: "MWSMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003016
+name: maize mosaic virus disease
+synonym: "MMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003017
+name: maize fine streak virus disease
+synonym: "MFSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003018
+name: maize necrotic streak virus disease
+synonym: "MNeSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003019
+name: maize rayado fino virus disease
+synonym: "maize fine striping disease" EXACT []
+synonym: "MRFV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003020
+name: maize rough dwarf virus disease
+synonym: "MRDV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003021
+name: maize streak virus disease
+synonym: "MSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003022
+name: maize stripe virus disease
+synonym: "MStV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003023
+name: maize white line mosaic virus disease
+synonym: "MWLMV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003024
+name: maize Mal de Rio Cuarto virus disease
+synonym: "MRCV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0003025
+name: maize rice stripe virus disease
+synonym: "RSV" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: PSO:0000119
+
+[Term]
+id: PSO:0100020
+name: diseases of banana
+subset: tier_T0
+is_a: PSO:0000013
+
+[Term]
+id: PSO:0100022
+name: diseases of bean
+subset: tier_T0
+is_a: PSO:0000013
+
+[Term]
+id: PSO:0100033
+name: diseases of cassava
+subset: tier_T0
+is_a: PSO:0000013
+
+[Term]
+id: PSO:0100043
+name: diseases of maize
+subset: tier_T0
+is_a: PSO:0000013
+
+[Term]
+id: PSO:0100060
+name: diseases of grape
+subset: tier_T0
+is_a: PSO:0000013
+
+[Term]
+id: PSO:0100092
+name: diseases of potato
+subset: tier_T0
+is_a: PSO:0000013
+
+[Term]
+id: PSO:0100097
+name: diseases of rice
+subset: tier_T0
+is_a: PSO:0000013
+
+[Term]
+id: PSO:0100102
+name: diseases of sorghum
+subset: tier_T0
+is_a: PSO:0000013
+
+[Term]
+id: PSO:0100103
+name: diseases of soybean
+subset: tier_T0
+is_a: PSO:0000013
+
+[Term]
+id: PSO:0100117
+name: diseases of wheat
+subset: tier_T0
+is_a: PSO:0000013
+
+[Term]
+id: BFO:0000016
+property_value: graph_stub "true" xsd:string
+
+[Term]
+id: OGMS:0000031
+property_value: graph_stub "true" xsd:string
+
