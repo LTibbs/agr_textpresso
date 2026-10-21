@@ -31,6 +31,7 @@ build.log
 .data/tmp/
 .data/tmp-test/
 .data/tmp-obo/
+.data/italics/jats_cache/
 .data/obofilesbackup/
 .data/postgres/
 .data/oboheaderfiles/

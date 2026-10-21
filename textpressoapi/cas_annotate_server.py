@@ -95,10 +95,11 @@ _VIEW = None            # hygiene.OntologyView over _CATEGORY_INDEX, see main()
 _ITALICS = {}           # per-paper italic counts, see main()
 _OBO_CLASS = None       # surface form -> OBO provenance class, see main()
 
-# Default OFF for one release so published API scripts keep their current
-# results; announce, then flip to "1". The `hygiene` field in the response makes
-# the change self-documenting either way.
-_HYGIENE_DEFAULT = os.environ.get("TEXTPRESSO_HYGIENE_DEFAULT", "0")
+# Default ON since the 2026-10 rollout (the instance had not been shared
+# publicly, so no published scripts depended on the unfiltered default).
+# hygiene=0 returns the unfiltered set; the `hygiene` field in the response
+# reports what was dropped and why. TEXTPRESSO_HYGIENE_DEFAULT=0 reverts.
+_HYGIENE_DEFAULT = os.environ.get("TEXTPRESSO_HYGIENE_DEFAULT", "1")
 
 
 def _load_annotation(identifier, ontology_filter, include_related,
