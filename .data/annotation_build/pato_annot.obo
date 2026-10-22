@@ -2137,6 +2137,7 @@ property_value: retired_label "obsolete unidirectional" xsd:string
 [Term]
 id: PATO:0000370
 property_value: unmatchable_label "up" xsd:string
+property_value: stub_label "up" xsd:string
 subset: value_slim
 is_a: PATO:0000039
 

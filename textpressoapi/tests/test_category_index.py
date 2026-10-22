@@ -230,3 +230,36 @@ def test_iter_obo_terms_resolves_obo_escapes(tmp_path):
     (term,) = list(category_index._iter_obo_terms(str(p)))
     assert term["name"] == "8-{(Z)-pent-2-en-1-yl}octanoic acid"
     assert term["synonyms"] == ['the "blue" form']
+
+
+def test_annotation_build_stubs_are_named_and_lose_to_full_terms(tmp_path, monkeypatch):
+    # *_annot.obo writes pruned parents as nameless stubs with a stub_label;
+    # the same parent can be a stub in one channel and a full term in another
+    to_annot = tmp_path / "to_annot.obo"
+    to_annot.write_text(
+        'format-version: 1.2\n\n[Term]\nid: TO:0000387\nname: plant phenotype\n'
+        'is_a: PATO:0000001\n\n'
+        '[Term]\nid: PATO:0000001\nproperty_value: graph_stub "true" xsd:string\n'
+        'property_value: stub_label "quality" xsd:string\nis_a: BFO:0000020\n')
+    pato_annot = tmp_path / "pato_annot.obo"
+    pato_annot.write_text(
+        'format-version: 1.2\n\n[Term]\nid: PATO:0000001\nname: quality\n'
+        'synonym: "trait" RELATED []\n')
+    monkeypatch.setattr(category_index, "_active_obo_paths",
+                        lambda *a, **k: [str(to_annot), str(pato_annot)])
+    index = category_index.build_index(ontology_of=lambda category: "OTHER")
+    assert index["by_id"]["PATO:0000001"]["category"] == "quality (PATO:0000001)"
+    # the full PATO term won, so its synonym is indexed
+    assert index["synonyms"]["trait"][0]["id"] == "PATO:0000001"
+    assert index["parents_by_type"]["is_a"]["TO:0000387"] == ["PATO:0000001"]
+
+
+def test_stub_label_names_a_stub(tmp_path):
+    p = tmp_path / "c.obo"
+    p.write_text('format-version: 1.2\n\n[Term]\nid: GO:0009059\n'
+                 'property_value: graph_stub "true" xsd:string\n'
+                 'property_value: stub_label "macromolecule biosynthetic process" xsd:string\n'
+                 'is_a: GO:0009058\n')
+    (term,) = list(category_index._iter_obo_terms(str(p)))
+    assert (term["name"], term["stub"]) == ("macromolecule biosynthetic process", True)
+    assert term["parents"] == {"is_a": ["GO:0009058"]}

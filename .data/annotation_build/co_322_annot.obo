@@ -1338,6 +1338,7 @@ is_a: CO_322:Estimation
 [Term]
 id: CO_322:0000206
 property_value: unmatchable_label "mm" xsd:string
+property_value: stub_label "mm" xsd:string
 is_a: CO_322:Numerical
 
 [Term]
@@ -1854,6 +1855,7 @@ is_a: CO_322:Computation
 [Term]
 id: CO_322:0000302
 property_value: unmatchable_label "g" xsd:string
+property_value: stub_label "g" xsd:string
 is_a: CO_322:Numerical
 
 [Term]
@@ -1985,6 +1987,7 @@ is_a: CO_322:Estimation
 [Term]
 id: CO_322:0000332
 property_value: unmatchable_label "¡C" xsd:string
+property_value: stub_label "¡C" xsd:string
 is_a: CO_322:Numerical
 
 [Term]
@@ -2032,6 +2035,7 @@ is_a: CO_322:Measurement
 [Term]
 id: CO_322:0000348
 property_value: unmatchable_label "cm" xsd:string
+property_value: stub_label "cm" xsd:string
 is_a: CO_322:Numerical
 
 [Term]
@@ -2043,6 +2047,7 @@ is_a: CO_322:Measurement
 [Term]
 id: CO_322:0000350
 property_value: unmatchable_label "%" xsd:string
+property_value: stub_label "%" xsd:string
 is_a: CO_322:Numerical
 
 [Term]
@@ -2344,6 +2349,7 @@ is_a: CO_322:Numerical
 [Term]
 id: CO_322:0000512
 property_value: unmatchable_label "uF" xsd:string
+property_value: stub_label "uF" xsd:string
 is_a: CO_322:Numerical
 
 [Term]

@@ -32,6 +32,10 @@ def obo_unescape(s):
     tpso stores it (ChEBI writes "\\{(Z)-pent-2-en-1-yl\\}")."""
     return _OBO_ESCAPE_RE.sub(lambda m: _OBO_ESCAPES.get(m.group(1), m.group(1)), s)
 _OBSOLETE_RE = re.compile(r"^is_obsolete:\s*true\b")
+# build_match_dictionary.py writes pruned parents (and terms whose label is not
+# a match string) without a name: line, so they add no match string; their
+# category name is this property instead, as in tpso's CategoryLabel().
+_STUB_LABEL_RE = re.compile(r'^property_value:\s*stub_label\s+"((?:[^"\\]|\\.)*)"')
 _IS_A_RE = re.compile(r"^is_a:\s*(\S+)")
 _REL_RE = re.compile(r"^relationship:\s*(\S+)\s+(\S+)")
 
@@ -49,9 +53,12 @@ def _iter_obo_terms(obo_path):
     parents = {}
     obsolete = False
 
+    stub = False
+
     def _flush():
         if stanza == "Term" and term_id and term_name and not obsolete:
-            return {"id": term_id, "name": term_name, "synonyms": synonyms, "parents": parents}
+            return {"id": term_id, "name": term_name, "synonyms": synonyms, "parents": parents,
+                    "stub": stub}
         return None
 
     with open(obo_path, encoding="utf-8", errors="replace") as fh:
@@ -67,6 +74,7 @@ def _iter_obo_terms(obo_path):
                 synonyms = []
                 parents = {}
                 obsolete = False
+                stub = False
                 continue
             if stanza != "Term":
                 continue
@@ -77,6 +85,13 @@ def _iter_obo_terms(obo_path):
             m = _NAME_RE.match(line)
             if m:
                 term_name = obo_unescape(m.group(1).strip())
+                continue
+            m = _STUB_LABEL_RE.match(line)
+            if m:
+                term_name = term_name or obo_unescape(m.group(1))
+                continue
+            if line.startswith("property_value: graph_stub"):
+                stub = True
                 continue
             m = _SYN_RE.match(line)
             if m:
@@ -154,32 +169,35 @@ def build_index(ontology_of, ontology_conf=ONTOLOGY_CONF_DEFAULT, obo_dir=OBO_DI
     surface_forms = {}
     seen_ids = set()
 
-    for obo_path in _active_obo_paths(ontology_conf, obo_dir):
-        if not os.path.exists(obo_path):
+    # A pruned parent is written as a stub in every annotation-build file whose
+    # terms point at it (BFO:0000001 in PSO and PECO; PATO:0000001 in TO and,
+    # as a full term, in PATO), so full terms are read first and win.
+    terms = [t for obo_path in _active_obo_paths(ontology_conf, obo_dir)
+             if os.path.exists(obo_path) for t in _iter_obo_terms(obo_path)]
+    terms.sort(key=lambda t: t["stub"])
+    for term in terms:
+        if term["id"] in seen_ids:
             continue
-        for term in _iter_obo_terms(obo_path):
-            if term["id"] in seen_ids:
-                continue
-            seen_ids.add(term["id"])
-            category = f"{term['name']} ({term['id']})"
-            record = {
-                "id": term["id"],
-                "name": term["name"],
-                "category": category,
-                "ontology": ontology_of(category),
-            }
-            categories.append(record)
-            by_id[term["id"]] = record
-            surface_forms.setdefault(term["name"].lower(), set()).add(term["name"])
-            for syn in term["synonyms"]:
-                synonym_index.setdefault(syn.lower(), []).append(record)
-                surface_forms.setdefault(syn.lower(), set()).add(syn)
-            for rel_type, parent_ids in term["parents"].items():
-                for parent_id in parent_ids:
-                    children_by_type.setdefault(rel_type, {}).setdefault(
-                        parent_id, []).append(term["id"])
-                    parents_by_type.setdefault(rel_type, {}).setdefault(
-                        term["id"], []).append(parent_id)
+        seen_ids.add(term["id"])
+        category = f"{term['name']} ({term['id']})"
+        record = {
+            "id": term["id"],
+            "name": term["name"],
+            "category": category,
+            "ontology": ontology_of(category),
+        }
+        categories.append(record)
+        by_id[term["id"]] = record
+        surface_forms.setdefault(term["name"].lower(), set()).add(term["name"])
+        for syn in term["synonyms"]:
+            synonym_index.setdefault(syn.lower(), []).append(record)
+            surface_forms.setdefault(syn.lower(), set()).add(syn)
+        for rel_type, parent_ids in term["parents"].items():
+            for parent_id in parent_ids:
+                children_by_type.setdefault(rel_type, {}).setdefault(
+                    parent_id, []).append(term["id"])
+                parents_by_type.setdefault(rel_type, {}).setdefault(
+                    term["id"], []).append(parent_id)
 
     def _invert(edges_by_type):
         inverted = {}
