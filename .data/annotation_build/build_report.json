@@ -11,12 +11,13 @@
     },
     "ChEBI": {
       "dropped_tier3": 177,
-      "graph_stubs": 1290,
+      "graph_stubs": 1678,
       "obsolete_retained": 1,
       "skipped_out_of_scope": 211771,
       "strings_T0": 41290,
       "strings_T1": 1501,
       "strings_T2": 131,
+      "strings_TD": 6,
       "terms_matchable": 7240
     },
     "ECO": {
@@ -30,15 +31,15 @@
       "terms_matchable": 2217
     },
     "GO": {
-      "dropped_species_scoped": 409,
-      "dropped_tier3": 22,
-      "graph_stubs": 219,
+      "dropped_species_scoped": 413,
+      "dropped_tier3": 21,
+      "graph_stubs": 0,
       "obsolete_retained": 10248,
-      "skipped_gocheck": 459,
-      "strings_T0": 116441,
-      "strings_T1": 991,
-      "strings_T2": 11,
-      "terms_matchable": 37633
+      "strings_T0": 117610,
+      "strings_T1": 999,
+      "strings_T2": 12,
+      "strings_TD": 2,
+      "terms_matchable": 38092
     },
     "NCBITaxon": {
       "graph_stubs": 0,
@@ -59,23 +60,29 @@
       "terms_unmatchable": 1
     },
     "PECO": {
-      "graph_stubs": 1,
+      "dropped_trait_code": 61,
+      "graph_stubs": 4,
       "obsolete_retained": 57,
       "skipped_imported": 2010,
-      "strings_T0": 857,
+      "strings_T0": 787,
+      "strings_T1": 4,
+      "strings_T2": 5,
       "terms_matchable": 518
     },
     "PO": {
+      "dropped_non_english": 2557,
+      "dropped_species_scoped": 509,
+      "dropped_trait_code": 8,
       "graph_stubs": 3,
       "obsolete_retained": 134,
-      "strings_T0": 6408,
-      "strings_T1": 19,
-      "strings_T2": 11,
+      "strings_T0": 3321,
+      "strings_T1": 30,
+      "strings_T2": 13,
       "terms_matchable": 1659
     },
     "PSO": {
       "dropped_tier3": 1,
-      "graph_stubs": 2,
+      "graph_stubs": 6,
       "skipped_imported": 4145,
       "strings_T0": 859,
       "strings_T1": 135,
@@ -92,11 +99,14 @@
       "terms_matchable": 2409
     },
     "TO": {
-      "graph_stubs": 63,
+      "dropped_tier3": 11,
+      "dropped_trait_code": 462,
+      "graph_stubs": 106,
       "obsolete_retained": 110,
       "skipped_imported": 2979,
-      "strings_T0": 2989,
-      "strings_T1": 2,
+      "strings_T0": 2821,
+      "strings_T1": 12,
+      "strings_T2": 13,
       "terms_matchable": 1587
     }
   },
@@ -122,40 +132,45 @@
     "plant hormone": 82,
     "plant metabolite": 3588
   },
-  "collection": "/Users/laura/.claude-science/orgs/46bf2510-f10c-45d2-982d-6e53e0a47e4b/workspaces/cb87aecf-64e8-43a9-ad72-3aeb64f864b5/maize-ontology-collection",
+  "collection": "/private/tmp/claude-505/-Users-laura-Documents-GitHub-maizegdb-textpresso-implementation/49486613-80b6-4992-9586-f68ba4e6bd86/scratchpad/collection/maize-ontology-collection",
+  "curated_abbreviations_missing": [],
   "drops": {
     "chebi_out_of_scope": 211771,
-    "gocheck_do_not_annotate": 459,
     "imported_stanza": 9134,
-    "non_maize_species_scoped": 422,
-    "tier_T3_blocked": 284
+    "non_english_synonym": 2557,
+    "non_maize_species_scoped": 935,
+    "suffixed_abbreviation_code": 531,
+    "tier_T3_blocked": 294
   },
   "totals": {
     "by_channel": {
       "CO_322": 1118,
-      "ChEBI": 42922,
+      "ChEBI": 42928,
       "ECO": 3088,
-      "GO": 117443,
+      "GO": 118623,
       "NCBITaxon": 5038,
       "PATO": 2758,
-      "PECO": 857,
-      "PO": 6438,
+      "PECO": 796,
+      "PO": 3364,
       "PSO": 994,
       "SO": 6561,
-      "TO": 2991
+      "TO": 2846
     },
     "by_kind": {
-      "exact": 72394,
-      "label": 59504,
-      "related": 58310
+      "curated": 7,
+      "derived": 328,
+      "exact": 70442,
+      "label": 59963,
+      "related": 57374
     },
     "by_tier": {
-      "T0": 186242,
-      "T1": 3640,
-      "T2": 326
+      "T0": 184086,
+      "T1": 3673,
+      "T2": 347,
+      "TD": 8
     },
-    "strings": 190208,
-    "terms": 59504
+    "strings": 188114,
+    "terms": 59963
   },
   "versions": {
     "CO_322": "cropontology-live/2026-09-22",

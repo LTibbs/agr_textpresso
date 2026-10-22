@@ -81,6 +81,7 @@ from urllib.parse import urlparse, parse_qs
 import access
 import annotation_hygiene as hygiene
 import annotation_italics as italics
+import annotation_tiers as tiers_mod
 import casannot
 import category_index
 
@@ -94,6 +95,7 @@ _ACCESS = None          # access.AccessControl, built once at startup, see main(
 _VIEW = None            # hygiene.OntologyView over _CATEGORY_INDEX, see main()
 _ITALICS = {}           # per-paper italic counts, see main()
 _OBO_CLASS = None       # surface form -> OBO provenance class, see main()
+_TIERS = None           # annotation_tiers.TierIndex, or None when not configured
 
 # Default ON since the 2026-10 rollout (the instance had not been shared
 # publicly, so no published scripts depended on the unfiltered default).
@@ -103,7 +105,8 @@ _HYGIENE_DEFAULT = os.environ.get("TEXTPRESSO_HYGIENE_DEFAULT", "1")
 
 
 def _load_annotation(identifier, ontology_filter, include_related,
-                     clean=False, drop_sections=None, use_italics=True):
+                     clean=False, drop_sections=None, use_italics=True,
+                     use_tiers=True):
     """Return {sentences, annotations, sections} for identifier, or None if no CAS2 file.
 
     With clean=True, applies the shared hygiene layer: references/acknowledgments
@@ -134,7 +137,13 @@ def _load_annotation(identifier, ontology_filter, include_related,
         section_types_at=casannot.section_types_at,
         italics=paper_italics,
         italic_rule=italics.never_italicised,
-        obo_class_of=_OBO_CLASS)
+        obo_class_of=_OBO_CLASS,
+        tiers=_TIERS if use_tiers else None,
+        tier_rule=tiers_mod.tier_rule,
+        sentence_at=casannot.sentence_lookup(sentences),
+        # the TD long-form test always reads the body without references and
+        # acknowledgments, whatever drop_sections a request asks for
+        body_text=casannot.body_text(sentences, sections, hygiene.DEFAULT_DROP_SECTIONS))
     out["annotations"] = annotations
     out["hygiene"] = hygiene.hygiene_report(annotations, dropped)
     if paper_italics:
@@ -200,12 +209,13 @@ class Handler(BaseHTTPRequestHandler):
         include_related = (qs.get("related_synonyms") or ["0"])[0] == "1"
         clean = (qs.get("hygiene") or [_HYGIENE_DEFAULT])[0] == "1"
         use_italics = (qs.get("italics") or ["1"])[0] != "0"
+        use_tiers = (qs.get("tiers") or ["1"])[0] != "0"
         drop_sections = set(qs.get("exclude_sections") or ()) or None
 
         try:
             result = _load_annotation(identifier, ontology_filter, include_related,
                                       clean=clean, drop_sections=drop_sections,
-                                      use_italics=use_italics)
+                                      use_italics=use_italics, use_tiers=use_tiers)
         except Exception as e:
             self._send_json(500, {"error": str(e)})
             return
@@ -265,7 +275,7 @@ def main():
 
     print("cas_annotate_server: building category index from OBO files...", file=sys.stderr)
     _CATEGORY_INDEX = category_index.build_index(casannot._ontology_of)
-    global _VIEW, _ITALICS, _OBO_CLASS
+    global _VIEW, _ITALICS, _OBO_CLASS, _TIERS
     # reuse the index already built above rather than parsing the OBO twice
     _VIEW = hygiene.OntologyView.from_category_index(_CATEGORY_INDEX)
     _ITALICS = italics.load_index(os.environ.get(
@@ -276,6 +286,24 @@ def main():
     _OBO_CLASS = italics.load_class_map(os.environ.get(
         "TEXTPRESSO_OBO_CLASS_MAP", "/data/textpresso/italics/obo_short_form_classes.json"))
     print("[cas_annotate_server] italics index: %d papers" % len(_ITALICS), file=sys.stderr)
+    # The tier gate is on by default (2026-10-22): it reads the
+    # match_dictionary.csv(.gz) from build_match_dictionary.py, by default the
+    # annotation build's. TEXTPRESSO_MATCH_DICTIONARY names another file, or
+    # "0" turns the gate off. Tiers are read at startup, so a rebuilt
+    # dictionary needs a restart, not a re-index. tiers=0 on a request skips
+    # the gate for that request.
+    tiers_path = os.environ.get("TEXTPRESSO_MATCH_DICTIONARY",
+                                "/data/textpresso/annotation_build/match_dictionary.csv.gz")
+    if tiers_path not in ("", "0") and os.path.exists(tiers_path):
+        _TIERS = tiers_mod.TierIndex.from_csv(tiers_path)
+        print("[cas_annotate_server] tier gate: %d strings from %s" % (len(_TIERS), tiers_path),
+              file=sys.stderr)
+    elif tiers_path in ("", "0"):
+        print("[cas_annotate_server] tier gate: off (TEXTPRESSO_MATCH_DICTIONARY=0)",
+              file=sys.stderr)
+    else:
+        print("[cas_annotate_server] tier gate: off -- WARNING %s not found" % tiers_path,
+              file=sys.stderr)
     print(f"cas_annotate_server: indexed {len(_CATEGORY_INDEX['categories'])} categories, "
           f"{len(_CATEGORY_INDEX['synonyms'])} distinct synonyms", file=sys.stderr)
 

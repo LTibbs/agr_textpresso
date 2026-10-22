@@ -1056,6 +1056,8 @@ void Viewer::PrepareAnnotationIds() {
             rawsource_ = pdf;
         else if (uvalue.compare("tai") == 0)
             rawsource_ = tai;
+        else if (uvalue.compare("jats") == 0)
+            rawsource_ = tai;   // clean text without inline tags, like tai
     }
     firstallbeginnings_ = -1;
     lastallbeginnings_ = -1;

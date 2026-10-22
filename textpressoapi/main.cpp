@@ -175,6 +175,8 @@ tpc::index::Query get_query(const crow::json::rvalue& json_req, const IndexManag
             query.type = QueryType::materials;
         else if (type == "references")
             query.type = QueryType::references;
+        else if (type == "supplementary")
+            query.type = QueryType::supplementary;
         else if (type == "result")
             query.type = QueryType::result;
         else if (type == "sentence")

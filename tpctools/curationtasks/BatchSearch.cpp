@@ -9,6 +9,7 @@
 #include <iostream>
 
 #include "lucene++/LuceneHeaders.h"
+#include "CaseInsensitiveAnalyzer.h" // StandardAnalyzer + Greek synonyms, as indexed
 #include <boost/regex.hpp>
 #include <boost/filesystem.hpp>
 
@@ -17,15 +18,14 @@ const int MAXHITS = 100000;
 
 namespace {
 
+    // 2026-10-21: UTF-8 decode/encode; these copied one byte per character,
+    // so a non-ASCII keyword never matched the (correctly decoded) index.
     std::wstring str2wstr(const std::string & s) {
-        std::wstring temp(s.length(), L' ');
-        std::copy(s.begin(), s.end(), temp.begin());
-        return temp;
+        return Lucene::StringUtils::toUnicode(s);
     }
 
     std::string wstr2str(const std::wstring & wstring) {
-        std::string str(wstring.begin(), wstring.end());
-        return str;
+        return Lucene::StringUtils::toUTF8(wstring);
     }
 
     std::string lucenestr2str(const Lucene::String & lstring) {
@@ -48,7 +48,7 @@ namespace {
         }
         Lucene::MultiReaderPtr mr = Lucene::newLucene<Lucene::MultiReader > (subReaders, true);
         searcher = Lucene::newLucene<Lucene::IndexSearcher > (mr);
-        Lucene::AnalyzerPtr analyzer = Lucene::newLucene<Lucene::StandardAnalyzer > (Lucene::LuceneVersion::LUCENE_30);
+        Lucene::AnalyzerPtr analyzer = Lucene::newLucene<CaseInsensitiveAnalyzer> (Lucene::LuceneVersion::LUCENE_30);
         Lucene::QueryParserPtr parser = Lucene::newLucene<Lucene::QueryParser > (Lucene::LuceneVersion::LUCENE_30, field, analyzer);
         Lucene::String keyword = identifier;
         Lucene::QueryPtr query = parser->parse(keyword);
@@ -115,7 +115,7 @@ void BatchSearch::doSearch() {
         Lucene::MultiReaderPtr mr = Lucene::newLucene<Lucene::MultiReader> (subReaders, true);
         //
         Lucene::SearcherPtr keyword_searcher = Lucene::newLucene<Lucene::IndexSearcher> (mr);
-        Lucene::AnalyzerPtr analyzer = Lucene::newLucene<Lucene::StandardAnalyzer> (Lucene::LuceneVersion::LUCENE_30);
+        Lucene::AnalyzerPtr analyzer = Lucene::newLucene<CaseInsensitiveAnalyzer> (Lucene::LuceneVersion::LUCENE_30);
         Lucene::QueryParserPtr parser = Lucene::newLucene<Lucene::QueryParser > (Lucene::LuceneVersion::LUCENE_30, field, analyzer);
         //
         Lucene::String keyword = Lucene::StringUtils::toString(str2wstr(keyword_));

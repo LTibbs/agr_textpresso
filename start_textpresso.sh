@@ -4,6 +4,7 @@ cron
 mkdir -p /data/textpresso/textpressoapi_data
 mkdir -p /data/textpresso/postgres
 ln -s /usr/local/bin/tai.sh /usr/local/bin/convert_text
+ln -s /usr/local/bin/03jats2cas.sh /usr/local/bin/jats2cas
 ln -s /usr/local/bin/03pdf2cas4tai.sh /usr/local/bin/tokenize
 ln -s /usr/local/bin/07cas1tocas2.sh /usr/local/bin/annotate
 ln -s /usr/local/bin/12index.sh /usr/local/bin/index

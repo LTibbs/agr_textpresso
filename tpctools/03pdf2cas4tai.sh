@@ -6,6 +6,7 @@ function usage {
     echo "usage: $(basename $0) [-pcPh]"
     echo "  -p --pdf-dir      directory where raw pdf files are"
     echo "  -c --cas1-dir     directory where generated cas1 files will be stored"
+    echo "  -j --jats-dir     staged JATS (03jats2cas.sh input); papers staged there are skipped here"
     echo "  -P --num-proc     maximum number of parallel processes"
     echo "  -h --help         display help"
     rm ${LOCKFILE}
@@ -14,6 +15,7 @@ function usage {
 
 PDF_DIR="/data/textpresso/raw_files/pdf"
 CAS1_DIR="/data/textpresso/tpcas-1"
+JATS_DIR="/data/textpresso/raw_files/xml"
 N_PROC=8
 LOCKFILE="/data/textpresso/tmp/03pdf2cas.lock"
 if [[ -f "${LOCKFILE}" ]]
@@ -37,6 +39,11 @@ else
         CAS1_DIR="$1"
           shift
           ;;
+          -j|--jats-dir)
+        shift
+        JATS_DIR="$1"
+        shift
+        ;;
           -P|--num-proc)
         shift
         N_PROC=$1
@@ -73,9 +80,15 @@ else
       rm -f /tmp/"${folder}".*.processed
       for i in "${folder}"/*
       do
+          d=${i#"${folder}"/}
+          # main text comes from JATS (03jats2cas.sh) -- don't let the PDF
+          # version overwrite that paper's CAS
+          if [[ -f "${JATS_DIR}/${folder}/${d}/${d}.jats.json" ]]
+          then
+              continue
+          fi
           if [[ $i -nt "${CAS1_DIR}/$i" ]]
           then
-        d=${i#"${folder}"/}
         bin=$(($counter % $N_PROC))
         echo $d >> "/tmp/${folder}.${bin}.list"
         touch "/tmp/${folder}.${bin}.processed"
@@ -88,8 +101,15 @@ else
     cd ${CAS1_DIR}
     for folder in *
     do
-      while [[ $(ls -l "${folder}" | wc -l) -lt $(ls -l "${PDF_DIR}/${folder}" | wc -l) ]]
+      # (run 03jats2cas.sh first: JATS papers are skipped above, so their CAS
+      # must already exist for these counts to meet.) The retry passes rely on
+      # AGRKB ids in the .processed files; with other accessions (DOIs) a
+      # paper that fails to convert would otherwise loop forever, so stop
+      # after a few passes.
+      passes=0
+      while [[ $(ls -l "${folder}" | wc -l) -lt $(ls -l "${PDF_DIR}/${folder}" | wc -l) ]] && [[ ${passes} -lt 3 ]]
       do
+          passes=$((passes+1))
           for ((j=0; j<${N_PROC}; j++))
           do
             grep -v -x -f <(sort "/tmp/${folder}.$j.processed" | uniq) "/tmp/${folder}.$j.list" > "/tmp/${folder}.$j.list.tmp"

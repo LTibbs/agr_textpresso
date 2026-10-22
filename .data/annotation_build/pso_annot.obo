@@ -1,5 +1,32 @@
 format-version: 1.2
 data-version: releases/2026-01-08/annotation-build
+subsetdef: Angiosperm ""
+subsetdef: Arabidopsis ""
+subsetdef: Bryophytes ""
+subsetdef: Citrus ""
+subsetdef: CL ""
+subsetdef: common_anatomy ""
+subsetdef: Gymnosperms ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_gp2term ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_ontology ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_gocam ""
+subsetdef: human_subset ""
+subsetdef: Maize ""
+subsetdef: mouse_subset ""
+subsetdef: Musa ""
+subsetdef: Poaceae ""
+subsetdef: Potato ""
+subsetdef: Pteridophytes ""
+subsetdef: reference ""
+subsetdef: Rice ""
+subsetdef: ro-eco ""
+subsetdef: RO:0002259 ""
+subsetdef: Tomato ""
+subsetdef: TraitNet ""
+subsetdef: upper_level ""
+subsetdef: tier_T0 "match-string tier T0 (annotation build)"
+subsetdef: tier_T1 "match-string tier T1 (annotation build)"
 ontology: pso
 remark: matchable strings only; per-term tiers in subset tier_T0..T2
 remark: obsolete stanzas retained for id resolution with their label
@@ -4897,10 +4924,37 @@ subset: tier_T0
 is_a: PSO:0000013
 
 [Term]
+id: BFO:0000001
+property_value: graph_stub "true" xsd:string
+property_value: stub_label "entity" xsd:string
+
+[Term]
+id: BFO:0000002
+property_value: graph_stub "true" xsd:string
+property_value: stub_label "continuant" xsd:string
+is_a: BFO:0000001
+
+[Term]
 id: BFO:0000016
 property_value: graph_stub "true" xsd:string
+property_value: stub_label "disposition" xsd:string
+is_a: BFO:0000017
+
+[Term]
+id: BFO:0000017
+property_value: graph_stub "true" xsd:string
+property_value: stub_label "realizable" xsd:string
+is_a: BFO:0000020
+
+[Term]
+id: BFO:0000020
+property_value: graph_stub "true" xsd:string
+property_value: stub_label "characteristic" xsd:string
+is_a: BFO:0000002
 
 [Term]
 id: OGMS:0000031
 property_value: graph_stub "true" xsd:string
+property_value: stub_label "disease" xsd:string
+is_a: BFO:0000016
 

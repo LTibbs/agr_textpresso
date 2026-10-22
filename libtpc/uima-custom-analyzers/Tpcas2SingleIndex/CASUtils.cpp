@@ -120,7 +120,7 @@ wstring getCleanText(CAS& tcas) {
             w_fulltext += L" "; //adding a space between words
             aait.moveToNext();
         }
-    } else if (castype == "tai") // text and images
+    } else if (castype == "tai" || castype == "jats") // text and images; JATS (also clean text)
         w_fulltext = getFulltext(tcas); //get full clean text
     try {
         //boost::wregex tagregex(L"\<[! ].*\>");

@@ -1,5 +1,17 @@
 format-version: 1.2
 data-version: releases/2026-07-10/annotation-build
+subsetdef: go_groupings "Grouping classes used by GO"
+subsetdef: valid_with_biological_process "GO biological process terms should be used in the GO with/from field"
+subsetdef: valid_with_cellular_component "GO cellular component terms should be used in the GO with/from field"
+subsetdef: valid_with_chemical_entity "Chemical entity IDs should be used in the GO with/from field"
+subsetdef: valid_with_gene "Gene IDs should be used in the GO with/from field"
+subsetdef: valid_with_molecular_function "GO molecular function terms should be used in the GO with/from field"
+subsetdef: valid_with_protein "Protein IDs should be used in the GO with/from field"
+subsetdef: valid_with_protein_complex "Protein complex IDs should be used in the GO with/from field"
+subsetdef: valid_with_transcript "Transcript IDs should be used in the GO with/from field"
+subsetdef: tier_T0 "match-string tier T0 (annotation build)"
+subsetdef: tier_T1 "match-string tier T1 (annotation build)"
+subsetdef: tier_T2 "match-string tier T2 (annotation build)"
 ontology: eco
 remark: matchable strings only; per-term tiers in subset tier_T0..T2
 remark: obsolete stanzas retained for id resolution with their label
@@ -50,6 +62,7 @@ is_a: ECO:0000002
 id: ECO:0000006
 name: experimental evidence
 subset: tier_T0
+subset: go_groupings
 is_a: ECO:0000000
 
 [Term]
@@ -1307,6 +1320,9 @@ synonym: "inferred from reviewed computational analysis" EXACT []
 synonym: "RCA" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_gene
+subset: valid_with_protein
+subset: valid_with_protein_complex
 is_a: ECO:0000244
 is_a: ECO:0007673
 
@@ -1322,6 +1338,8 @@ synonym: "inferred from sequence alignment" EXACT []
 synonym: "ISA" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_gene
+subset: valid_with_protein
 is_a: ECO:0000200
 is_a: ECO:0000250
 
@@ -1347,6 +1365,9 @@ synonym: "inferred from sequence or structural similarity" EXACT []
 synonym: "ISS" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_gene
+subset: valid_with_protein
+subset: valid_with_protein_complex
 is_a: ECO:0000044
 is_a: ECO:0000252
 is_a: ECO:0007668
@@ -1364,6 +1385,7 @@ id: ECO:0000252
 name: similarity evidence used in manual assertion
 synonym: "inferred from similarity" RELATED []
 subset: tier_T0
+subset: go_groupings
 is_a: ECO:0000041
 is_a: ECO:0000352
 
@@ -1478,6 +1500,9 @@ synonym: "ISO" EXACT []
 synonym: "Ortholog evidence" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_gene
+subset: valid_with_protein
+subset: valid_with_protein_complex
 is_a: ECO:0000201
 is_a: ECO:0000250
 
@@ -1759,6 +1784,9 @@ id: ECO:0000305
 name: curator inference used in manual assertion
 synonym: "inferred by curator" EXACT []
 subset: tier_T0
+subset: valid_with_biological_process
+subset: valid_with_cellular_component
+subset: valid_with_molecular_function
 is_a: ECO:0000205
 is_a: ECO:0007751
 
@@ -1825,6 +1853,7 @@ synonym: "IDA" EXACT []
 synonym: "inferred from direct assay" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_chemical_entity
 is_a: ECO:0000002
 is_a: ECO:0000269
 
@@ -1835,6 +1864,10 @@ synonym: "IMP" EXACT []
 synonym: "inferred from mutant phenotype" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_chemical_entity
+subset: valid_with_gene
+subset: valid_with_protein
+subset: valid_with_protein_complex
 is_a: ECO:0000015
 is_a: ECO:0007634
 
@@ -1845,6 +1878,9 @@ synonym: "IGI" EXACT []
 synonym: "inferred from genetic interaction" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_gene
+subset: valid_with_protein
+subset: valid_with_protein_complex
 is_a: ECO:0000011
 is_a: ECO:0007634
 
@@ -1855,6 +1891,8 @@ synonym: "IGC" EXACT []
 synonym: "inferred from genomic context" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_gene
+subset: valid_with_protein
 is_a: ECO:0000177
 is_a: ECO:0000252
 
@@ -1865,6 +1903,8 @@ synonym: "IBA" EXACT []
 synonym: "inferred from biological aspect of ancestor" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_gene
+subset: valid_with_protein
 is_a: ECO:0000252
 is_a: ECO:0000308
 
@@ -1875,6 +1915,8 @@ synonym: "IBD" EXACT []
 synonym: "inferred from biological aspect of descendant" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_gene
+subset: valid_with_protein
 is_a: ECO:0000214
 is_a: ECO:0000252
 
@@ -1897,6 +1939,8 @@ synonym: "inferred from rapid divergence" EXACT []
 synonym: "IRD" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_gene
+subset: valid_with_protein
 is_a: ECO:0000215
 is_a: ECO:0000252
 
@@ -2119,6 +2163,10 @@ synonym: "inferred from physical interaction" EXACT []
 synonym: "IPI" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_chemical_entity
+subset: valid_with_gene
+subset: valid_with_protein
+subset: valid_with_protein_complex
 is_a: ECO:0000021
 is_a: ECO:0000314
 
@@ -2197,6 +2245,9 @@ synonym: "IEA" EXACT []
 synonym: "inferred from electronic annotation" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: valid_with_gene
+subset: valid_with_protein
+subset: valid_with_protein_complex
 is_a: ECO:0000000
 
 [Term]

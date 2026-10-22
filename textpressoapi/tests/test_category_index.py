@@ -220,3 +220,13 @@ def test_search_results_include_parent_relationship_types(index):
     assert by_id["PO:0009010"]["parent_relationship_types"] == []
     assert by_id["PO:0030124"]["parent_relationship_types"] == ["part_of"]
     assert by_id["PO:0040001"]["parent_relationship_types"] == ["is_a"]
+
+
+def test_iter_obo_terms_resolves_obo_escapes(tmp_path):
+    # ChEBI escapes braces in names; an escaped quote must not end a synonym.
+    p = tmp_path / "esc.obo"
+    p.write_text('[Term]\nid: CHEBI:1\nname: 8-\\{(Z)-pent-2-en-1-yl\\}octanoic acid\n'
+                 'synonym: "the \\"blue\\" form" EXACT []\n', encoding="utf-8")
+    (term,) = list(category_index._iter_obo_terms(str(p)))
+    assert term["name"] == "8-{(Z)-pent-2-en-1-yl}octanoic acid"
+    assert term["synonyms"] == ['the "blue" form']

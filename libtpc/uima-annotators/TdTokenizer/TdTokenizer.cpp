@@ -8,7 +8,9 @@
 #include "TdTokenizer.h"
 #include "../uimaglobaldefinitions.h"
 #include "textAndImageManager.h"
+#include "../PdfTextNormalizer.h"
 #include <boost/regex.hpp>
+#include <algorithm>
 #include <map>
 #include <boost/filesystem.hpp>
 #include <sstream>
@@ -593,18 +595,110 @@ namespace {
         }
         return false;
     }
+
+    // --- appended supplements (2026-10-22) ---------------------------------
+    // The MaizeGDB literature pipeline appends supplementary files to the
+    // article PDF behind a banner page:
+    //   SUPPLEMENTARY MATERIAL\n<file name>\n<description>\n\ninserted by the
+    //   MaizeGDB literature pipeline
+    // No heading follows the reference list, so everything appended used to
+    // be labelled "references" (1,052 MaizeOpenAccess papers, 224k
+    // annotations), and the default references exclusion dropped it. Now
+    // everything from the banner on is one "supplementary" section, and the
+    // supplement's own headings ("Methods", "References" inside an appended
+    // PDF) are not headings: they neither label text nor count towards the
+    // section-detection score. Same rule as casannot.py's
+    // split_supplementary(), which applies it at read time to older CAS2s.
+
+    // Offset of the first pipeline supplement banner in text, or -1. The
+    // pattern is casannot.py's _SUPPLEMENT_BANNER_RE; keep the two in step.
+    int32_t FindSupplementBanner(const UnicodeString & text) {
+        static const UnicodeString head("SUPPLEMENTARY MATERIAL");
+        static const boost::regex banner(
+                "SUPPLEMENTARY MATERIAL\\s*\\n(?:[^\\n]*\\n){0,6}?\\s*"
+                "inserted by the MaizeGDB literature pipeline");
+        for (int32_t pos = text.indexOf(head); pos >= 0; pos = text.indexOf(head, pos + 1)) {
+            UnicodeString window;
+            text.extract(pos, min(text.length() - pos, (int32_t) 20000), window);
+            string utf8;
+            window.toUTF8String(utf8);
+            if (boost::regex_search(utf8, banner, boost::match_continuous)) return pos;
+        }
+        return -1;
+    }
+
+    // What a heading is judged on (2026-10-22): the text after its line, up
+    // to the supplement banner, 3000 characters or the next references-
+    // heading line -- the whole window for the reference-list test, its
+    // first non-blank line for the citation test, its first non-blank
+    // character for the mid-sentence test. It used to be the raw segment up
+    // to the next heading of any kind, which a false heading inside a
+    // reference list cut short. The window stops at a references heading
+    // because a reference list belongs to the nearest one above it:
+    // otherwise a "Reference" table column header just before "LITERATURE
+    // CITED" (10.1534_g3.112.005207) took the list as its own.
+    // casannot.py's following_text() is the same window over the
+    // sofaString, so read-time repair agrees with this whichever CAS2 it
+    // reads; keep the two in step.
+    const int32_t kFollowingChars = 3000;
+
+    // A line that is only a references heading: letters and spaces, PDF tags
+    // aside, whose letters are one of the references heading words (spacing
+    // and case ignored, as for letter-spaced headings). casannot.py's
+    // _is_references_heading_line().
+    bool IsReferencesHeadingLine(const UnicodeString & raw) {
+        static const std::set<UnicodeString>* keys = []() {
+            auto* k = new std::set<UnicodeString>();
+            for (const auto & h : tp_uima_globals::sectionReferences()) k->insert(LettersLower(h));
+            return k;
+        }();
+        UnicodeString line(StripPdfTags(raw));
+        int32_t i = 0, end = line.length();
+        while (i < end && IsBlank(line.charAt(i))) i++;
+        while (end > i && IsBlank(line.charAt(end - 1))) end--;
+        if (i == end) return false;
+        for (int32_t k = i; k < end; k++) {
+            UChar c = line.charAt(k);
+            if (!IsAsciiLetter(c) && c != ' ' && c != '\t') return false;
+        }
+        return keys->count(LettersLower(line)) > 0;
+    }
+
+    UnicodeString FollowingText(const UnicodeString & text, size_t headingBegin, size_t limit) {
+        UnicodeString out;
+        int32_t nl = text.indexOf((UChar) '\n', (int32_t) headingBegin);
+        if (nl < 0) return out;
+        int32_t start = nl + 1;
+        int32_t end = min((int32_t) min(limit, (size_t) text.length()), start + kFollowingChars);
+        if (end > start) text.extract(start, end - start, out);
+        for (int32_t ls = 0; ls < out.length();) {
+            int32_t le = out.indexOf((UChar) '\n', ls);
+            if (le < 0) le = out.length();
+            UnicodeString line;
+            out.extract(ls, le - ls, line);
+            if (IsReferencesHeadingLine(line)) {
+                out.truncate(ls);
+                break;
+            }
+            ls = le + 1;
+        }
+        return out;
+    }
 }
 
 void TdTokenizer::validateSectionHeadings(const UnicodeString & text,
         const vector<UnicodeString>& sections,
         const vector<size_t>& b, const vector<size_t>& e,
+        size_t supplementStart,
         vector<bool>& valid, vector<size_t>& spanEnd) {
     size_t n = sections.size();
     vector<unsigned> mask(n);
     for (size_t i = 0; i < n; i++) mask[i] = SectionMask(sections[i]);
-    auto following = [&](size_t i) {
-        return (i + 1 < n && e[i] == b[i + 1]) ? sections[i + 1] : UnicodeString();
-    };
+    // A heading inside an appended supplement is supplement text (see
+    // FindSupplementBanner); the article frames are left alone.
+    for (size_t i = 0; i < n; i++)
+        if (b[i] >= supplementStart && !(mask[i] & kSecFrames)) mask[i] = 0;
+    auto following = [&](size_t i) { return FollowingText(text, b[i], supplementStart); };
     auto isImplicitRefs = [](const UnicodeString & f) { return f.startsWith(UnicodeString("(implicit")); };
     // 1. a mid-sentence "heading" (see HeadingMisplaced) isn't a heading
     valid.assign(n, false);
@@ -649,6 +743,9 @@ void TdTokenizer::validateSectionHeadings(const UnicodeString & text,
         for (size_t j = i + 2; j < n; j++)
             if (valid[j]) { end = b[j]; break; }
         spanEnd[i] = (i + 1 < n) ? max(end, e[i + 1]) : e[i];
+        // the article's last section ends where the supplement begins
+        if (b[i] < supplementStart && !(mask[i] & kSecFrames))
+            spanEnd[i] = min(spanEnd[i], supplementStart);
     }
 }
 
@@ -667,65 +764,27 @@ void TdTokenizer::combineSectionAnnotations(CAS & cas,
         const UnicodeString type,
         AnnotationCounter ac) {
     FSIndexRepository & indexRep = cas.getIndexRepository();
+    UnicodeStringRef text = cas.getDocumentText();
     for (size_t i = 0; i + 1 < sections.size(); i++) {
         if (valid[i] && sectionNames.find(sections[i]) != sectionNames.end())
             if (e[i] == b[i + 1]) {
                 AnnotationFS fsSection = cas.createAnnotation(sectiontype_, b[i], spanEnd[i]);
                 fsSection.setStringValue(sectiontype_type_, type);
-                fsSection.setStringValue(sectiontype_content_, sections[i + 1]);
+                // content is what Tpcas2SingleIndex indexes for the section
+                // field, so it covers the whole span: everything up to the
+                // next *real* heading, but not past a supplement banner.
+                // (sections[i + 1] stopped at the next heading of any kind,
+                // so section-scoped search missed text after a false heading
+                // and, once spans were clipped at the banner, would have
+                // still searched the supplement as "references".)
+                UnicodeString content;
+                if (spanEnd[i] > e[i]) text.extract(e[i], spanEnd[i] - e[i], content);
+                fsSection.setStringValue(sectiontype_content_, content);
                 Feature faid = sectiontype_.getFeatureByBaseName("aid");
                 if (faid.isValid()) fsSection.setIntValue(faid, ac.GetNextId());
                 indexRep.addFS(fsSection);
             }
     }
-}
-
-std::string utf8Printable(const string & string) {
-    int c, i;
-    std::string ret("");
-    int ix(string.length());
-    for (i = 0; i < ix; i++) {
-        c = (unsigned char) string[i];
-        if (c == 0x09 || c == 0x0a || c == 0x0d || (0x20 <= c && c <= 0x7e)) // is_printable
-            ret += string[i];
-        else if (c == 0xc2) {
-            if (i + 1 < ix)
-                if (((unsigned char) string[i + 1]) == 0xb0) {
-                    ret += " degree ";
-                    i++;
-                } else if (((unsigned char) string[i + 1]) == 0xb5) {
-                    ret += " micro ";
-                    i++;
-                } else if (((unsigned char) string[i + 1]) == 0xb1) {
-                    ret += " plus/minus ";
-                    i++;
-                } else if (((unsigned char) string[i + 1]) == 0xa9) {
-                    ret += " copyright ";
-                    i++;
-                }
-        } else if (c == 0xe2) {
-            if (i + 2 < ix)
-                if (((unsigned char) string[i + 1]) == 0x80)
-                    if (((unsigned char) string[i + 2]) == 0x94) {
-                        ret += "-";
-                        i += 2;
-                    }
-        } else if (c == 0xef) {
-            if (i + 2 < ix) {
-                if (((unsigned char) string[i + 1]) == 0xac) {
-                    if (((unsigned char) string[i + 2]) == 0x82)
-                        ret += "fl";
-                    if (((unsigned char) string[i + 2]) == 0x81)
-                        ret += "fi";
-                    if (((unsigned char) string[i + 2]) == 0x80)
-                        ret += "ff";
-                    i += 2;
-
-                }
-            }
-        }
-    }
-    return ret;
 }
 
 TdTokenizer::TdTokenizer() {
@@ -901,13 +960,16 @@ TyErrorId TdTokenizer::process(CAS & tcas, ResultSpecification const & crResultS
     string doc("\nBeginning of Article\n");
     vector<int> pageLengths;
     for (auto x : taim.textFile()) {
-        std::string s(utf8Printable(x.second));
+        // 2026-10-21: PdfTextNormalizer.h replaces utf8Printable(), which
+        // dropped all non-ASCII. Page lengths are UIMA offsets, i.e. UTF-16
+        // units of the normalised text; the old count read the unfiltered
+        // string over the filtered length, so pages drifted in any paper
+        // with non-ASCII characters.
+        UnicodeString page(tp_pdf_text::normalize(x.second));
+        std::string s;
+        page.toUTF8String(s);
         doc += s;
-        int len = 0;
-        // for utf8 encoding, characters can be encoded with more than 1 byte.
-        for (int i = 0; i != s.length(); i++)
-            len += (x.second[i] & 0xc0) != 0x80;
-        pageLengths.push_back(len);
+        pageLengths.push_back(page.length());
     }
     doc += "\nEnd of Article\n";
     UnicodeString ustrInputText;
@@ -965,9 +1027,13 @@ TyErrorId TdTokenizer::process(CAS & tcas, ResultSpecification const & crResultS
     // 2026-10-14 note above validateSectionHeadings), including the score
     // below -- a false "Materials" + "Reference" pair shouldn't be enough to
     // turn section labelling on.
+    // 2026-10-22: an appended supplement is its own section (see
+    // FindSupplementBanner); headings inside it are ignored throughout.
+    int32_t supplementStart = FindSupplementBanner(dst);
+    size_t sectionCut = supplementStart >= 0 ? (size_t) supplementStart : (size_t) dst.length();
     vector<bool> sectionValid;
     vector<size_t> sectionSpanEnd;
-    validateSectionHeadings(dst, sections, sectionsB, sectionsE, sectionValid, sectionSpanEnd);
+    validateSectionHeadings(dst, sections, sectionsB, sectionsE, sectionCut, sectionValid, sectionSpanEnd);
     vector<UnicodeString> realHeadings;
     for (size_t i = 0; i < sections.size(); i++)
         if (sectionValid[i]) realHeadings.push_back(sections[i]);
@@ -985,7 +1051,12 @@ TyErrorId TdTokenizer::process(CAS & tcas, ResultSpecification const & crResultS
     // "References"-family heading at all.
     pair<int32_t, int32_t> implicitRefSpan(-1, -1);
     if (!hasReferences) {
-        pair<int32_t, int32_t> cleanedSpan = DetectImplicitReferencesSpan(dstForSections);
+        // only the article's own text: a numbered list in a supplement
+        // isn't its reference list
+        int32_t cleanedCut = (int32_t) (lower_bound(sectionPosMap.begin(), sectionPosMap.end(),
+                (int32_t) sectionCut) - sectionPosMap.begin());
+        UnicodeString articleForSections(dstForSections, 0, cleanedCut);
+        pair<int32_t, int32_t> cleanedSpan = DetectImplicitReferencesSpan(articleForSections);
         if (cleanedSpan.first >= 0) {
             int32_t endIdx = min(cleanedSpan.second, (int32_t) sectionPosMap.size() - 1);
             implicitRefSpan = make_pair(sectionPosMap[cleanedSpan.first], sectionPosMap[endIdx]);
@@ -1042,6 +1113,19 @@ TyErrorId TdTokenizer::process(CAS & tcas, ResultSpecification const & crResultS
             indexRepImplicit.addFS(fsImplicitRef);
         }
     }
+    // Written whatever the score: the banner is the pipeline's own marker,
+    // not a guessed heading (casannot.split_supplementary does the same).
+    if (supplementStart >= 0) {
+        FSIndexRepository & indexRepSupp = tcas.getIndexRepository();
+        AnnotationFS fsSupp = tcas.createAnnotation(sectiontype_, supplementStart, usdocref.length());
+        fsSupp.setStringValue(sectiontype_type_, "supplementary");
+        UnicodeString suppContent;
+        usdocref.extract(supplementStart, usdocref.length() - supplementStart, suppContent);
+        fsSupp.setStringValue(sectiontype_content_, suppContent);
+        Feature faidSupp = sectiontype_.getFeatureByBaseName("aid");
+        if (faidSupp.isValid()) fsSupp.setIntValue(faidSupp, ac.GetNextId());
+        indexRepSupp.addFS(fsSupp);
+    }
     FSIndexRepository & indexRep = tcas.getIndexRepository();
     AnnotationFS fsNewTok = tcas.createAnnotation(tpfnvhashtype_, 0, usdocref.length());
     string shex = tpfnv(usdocref);
@@ -1082,10 +1166,11 @@ TyErrorId TdTokenizer::process(CAS & tcas, ResultSpecification const & crResultS
             fsImage.setIntValue(faid, ac.GetNextId());
         indexRep.addFS(fsImage);
     }
-    size_t found(0);
-    while (found < std::string::npos) {
-        size_t pos = found + 1;
-        found = doc.find("\n\n", pos);
+    // UTF-16 offsets like every other annotation: doc.find() gave UTF-8 byte
+    // offsets, which only agreed while the text was pure ASCII (and the old
+    // loop also annotated one bogus break at npos after the last match).
+    for (int32_t found = ustrInputText.indexOf(UnicodeString("\n\n"), 1); found >= 0;
+            found = ustrInputText.indexOf(UnicodeString("\n\n"), found + 1)) {
         AnnotationFS fsPage = tcas.createAnnotation(dblbrktype_, found, found + 2);
         Feature faid = dblbrktype_.getFeatureByBaseName("aid");
         if (faid.isValid())

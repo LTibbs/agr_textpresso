@@ -35,6 +35,14 @@ void CASManager::convert_raw_file_to_cas1(const string& file_path, FileType type
     if (extPos != std::string::npos) {
         file_name_no_ext.erase(extPos);
     }
+    // <accession>.jats.json -> <accession>.tpcas: the same identifier the
+    // PDF (tai) path gives the paper, so the JATS version replaces it rather
+    // than being indexed as a second document.
+    const std::string jatsExt(".jats");
+    if (type == FileType::jats && file_name_no_ext.size() > jatsExt.size() &&
+            file_name_no_ext.compare(file_name_no_ext.size() - jatsExt.size(), jatsExt.size(), jatsExt) == 0) {
+        file_name_no_ext.erase(file_name_no_ext.size() - jatsExt.size());
+    }
     file_name_tpcas = file_name_no_ext + ".tpcas";
     string foutname;
     string fimageoutname;
@@ -80,6 +88,16 @@ void CASManager::convert_raw_file_to_cas1(const string& file_path, FileType type
             sout << textFile.rdbuf();
             textFile.close();
             const char *descriptor = PDF2TPCAS_DESCRIPTOR.c_str();
+            Stream2Tpcas stp(sout, foutname, descriptor);
+            stp.processInputStream();
+        }
+            break;
+        case FileType::jats:
+        {
+            // like tai: TjTokenizer reads the staged file itself, given its path
+            std::stringstream sout;
+            sout << boost::filesystem::path(file_path).string();
+            const char *descriptor = JATS2TPCAS_DESCRIPTOR.c_str();
             Stream2Tpcas stp(sout, foutname, descriptor);
             stp.processInputStream();
         }

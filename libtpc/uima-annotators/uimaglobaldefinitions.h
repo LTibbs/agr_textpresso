@@ -12,21 +12,51 @@
 // This applies to token and sentence delimiter
 namespace tp_uima_globals {
 
+// 2026-10-21: the em dash was written as a UTF-8 char* literal, which
+// UnicodeString decodes with the platform default codepage, so it never
+// matched U+2014 ("packages—" stayed one token). Non-ASCII delimiters are now
+// given by code point. Curly quotes, bullet, en dash and minus were added
+// when tai text stopped dropping non-ASCII (PdfTextNormalizer.h): without
+// them a lexicon term inside quotes ("“tagging”") or next to a bullet could
+// not match, because matches must start and end at a delimiter. jats text
+// keeps these characters too.
+// Punctuation before a line break (".\n", ",\n", ...) likewise: only ". " was a
+// delimiter, so a term ending a line before its full stop or comma (1.2% of
+// words in pdftotext output, which wraps lines) could never match.
 inline const UnicodeString* token_delimiters() {
-    static const auto* values = new const UnicodeString[19]{
+    static const auto* values = new const UnicodeString[31]{
         " ", "\n", "\t", "'", "\"",
-        "/", "—", "(", ")", "[",
+        "/", UnicodeString((UChar32) 0x2014), "(", ")", "[",
         "]", "{", "}", ":", ". ",
-        "; ", ", ", "! ", "? "
+        "; ", ", ", "! ", "? ",
+        ".\n", ";\n", ",\n", "!\n", "?\n",
+        UnicodeString((UChar32) 0x2013), // en dash
+        UnicodeString((UChar32) 0x2212), // minus sign
+        UnicodeString((UChar32) 0x2018), UnicodeString((UChar32) 0x2019), // single quotes
+        UnicodeString((UChar32) 0x201c), UnicodeString((UChar32) 0x201d), // double quotes
+        UnicodeString((UChar32) 0x2022) // bullet
     };
     return values;
 }
 
+// 2026-10-21: plus end punctuation + closing quote + whitespace (`weight.”\n`),
+// 27 more. utf8Printable used to drop curly quotes, so ". " still matched;
+// with them kept, a quoted sentence end ran into the next sentence. The
+// ASCII double quote had the same gap and is covered too. Keep the array
+// size equal to G_initS_No below.
 inline const UnicodeString* sentence_delimiters() {
-    static const auto* values = new const UnicodeString[12]{
-        ".\n", "!\n", "?\n", ". ", "! ", "? ",
-        ".\t", "!\t", "?\t", ".<", "!<", "?<"
-    };
+    static const UnicodeString* values = [] {
+        UnicodeString* v = new UnicodeString[39]{
+            ".\n", "!\n", "?\n", ". ", "! ", "? ",
+            ".\t", "!\t", "?\t", ".<", "!<", "?<"
+        };
+        int n = 12;
+        for (UChar32 p : {0x2e, 0x21, 0x3f}) // . ! ?
+            for (UChar32 q : {0x201d, 0x2019, 0x22}) // closing double, closing single, ASCII "
+                for (UChar32 w : {0x20, 0x0a, 0x09})
+                    v[n++] = UnicodeString(p).append(q).append(w);
+        return v;
+    }();
     return values;
 }
 
@@ -222,8 +252,8 @@ inline const UnicodeString& pdf_tag_end() {
 
 }  // namespace tp_uima_globals
 
-const int G_initT_No = 19;
-const int G_initS_No = 12;
+const int G_initT_No = 31;
+const int G_initS_No = 39;
 const int G_initP_No = 8;
 const int ServerNames_No = 3;
 

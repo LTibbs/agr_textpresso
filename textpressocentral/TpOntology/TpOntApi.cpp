@@ -6,6 +6,7 @@
  */
 
 #include "TpOntApi.h"
+#include "../PgCopyLine.h" // tablewriter rows: see there
 #include "tree.h"
 #include <iostream>
 #include <fstream>
@@ -217,7 +218,7 @@ namespace {
             std::stringstream ss;
             ss << time(0);
             d.push_back(ss.str());
-            tt.push_back(d);
+            pg_copy::push_back(tt, d);
             ret++;
         }
         while (!synonyms.empty()) {
@@ -242,7 +243,7 @@ namespace {
                 std::stringstream ss;
                 ss << time(0);
                 d.push_back(ss.str());
-                tt.push_back(d);
+                pg_copy::push_back(tt, d);
                 ret++;
             }
         }
@@ -269,7 +270,7 @@ namespace {
                 std::stringstream ss;
                 ss << time(0);
                 d.push_back(ss.str());
-                tt.push_back(d);
+                pg_copy::push_back(tt, d);
                 ret++;
             }
         }
@@ -290,7 +291,7 @@ namespace {
             std::vector<std::string> d;
             d.push_back(((*it).first).substr(0, CATEGORYCOLUMNWIDTH));
             d.push_back(((*it).second).substr(0, CATEGORYCOLUMNWIDTH));
-            ttpc.push_back(d);
+            pg_copy::push_back(ttpc, d);
             ctpc++;
         }
         ttpc.complete();
@@ -313,7 +314,7 @@ namespace {
             d.push_back(((*it).first).substr(0, CATEGORYCOLUMNWIDTH));
 //            d.push_back(((*it).second).substr(0, CATEGORYCOLUMNWIDTH));
             d.push_back(((*it).second));
-            ttpc.push_back(d);
+            pg_copy::push_back(ttpc, d);
             ctpc++;
         }
         ttpc.complete();
@@ -538,7 +539,7 @@ void TpOntApi::PopulatePcRelationsFromFile(const char* filename) {
         std::vector<std::string> d;
         d.push_back(splits[0].substr(0, CATEGORYCOLUMNWIDTH));
         d.push_back(splits[1].substr(0, CATEGORYCOLUMNWIDTH));
-        tt.push_back(d);
+        pg_copy::push_back(tt, d);
         ct++;
     }
     f.close();
@@ -626,7 +627,7 @@ void TpOntApi::PopulateTpOntologyFromFile(const char* filename) {
         std::stringstream ss;
         ss << time(0);
         d.push_back(ss.str());
-        tt.push_back(d);
+        pg_copy::push_back(tt, d);
         ct++;
     }
     f.close();
@@ -737,7 +738,7 @@ void TpOntApi::PopulateTpOntologyFromOboFile(const char * filename,
                 std::stringstream ss;
                 ss << time(0);
                 d.push_back(ss.str());
-                tt.push_back(d);
+                pg_copy::push_back(tt, d);
                 ct++;
                 while (!synonyms.empty()) {
                     std::vector<std::string> d;
@@ -760,7 +761,7 @@ void TpOntApi::PopulateTpOntologyFromOboFile(const char * filename,
                     std::stringstream ss;
                     ss << time(0);
                     d.push_back(ss.str());
-                    tt.push_back(d);
+                    pg_copy::push_back(tt, d);
                     ct++;
                 }
                 while (!related_synonyms.empty()) {
@@ -785,7 +786,7 @@ void TpOntApi::PopulateTpOntologyFromOboFile(const char * filename,
                     std::stringstream ss;
                     ss << time(0);
                     d.push_back(ss.str());
-                    tt.push_back(d);
+                    pg_copy::push_back(tt, d);
                     ct++;
                 }
             }

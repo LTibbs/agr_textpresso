@@ -21,7 +21,16 @@ OBO_DIR_DEFAULT = "/data/textpresso/obofiles4production"
 _STANZA_RE = re.compile(r"^\[(\S+)\]\s*$")
 _ID_RE = re.compile(r"^id:\s*(\S+)")
 _NAME_RE = re.compile(r"^name:\s*(.*)$")
-_SYN_RE = re.compile(r'^synonym:\s*"([^"]*)"')
+# Escaped quotes stay inside the synonym (a bare [^"]* cut "a \"b\" c" at a).
+_SYN_RE = re.compile(r'^synonym:\s*"((?:[^"\\]|\\.)*)"')
+_OBO_ESCAPE_RE = re.compile(r"\\(.)")
+_OBO_ESCAPES = {"n": "\n", "t": "\t", "W": " "}
+
+
+def obo_unescape(s):
+    """OBO 1.2 escapes (\\{ \\" \\\\ \\W ...) -> the text they stand for, as
+    tpso stores it (ChEBI writes "\\{(Z)-pent-2-en-1-yl\\}")."""
+    return _OBO_ESCAPE_RE.sub(lambda m: _OBO_ESCAPES.get(m.group(1), m.group(1)), s)
 _OBSOLETE_RE = re.compile(r"^is_obsolete:\s*true\b")
 _IS_A_RE = re.compile(r"^is_a:\s*(\S+)")
 _REL_RE = re.compile(r"^relationship:\s*(\S+)\s+(\S+)")
@@ -67,11 +76,11 @@ def _iter_obo_terms(obo_path):
                 continue
             m = _NAME_RE.match(line)
             if m:
-                term_name = m.group(1)
+                term_name = obo_unescape(m.group(1).strip())
                 continue
             m = _SYN_RE.match(line)
             if m:
-                synonyms.append(m.group(1))
+                synonyms.append(obo_unescape(m.group(1)))
                 continue
             m = _IS_A_RE.match(line)
             if m:

@@ -1,0 +1,3875 @@
+format-version: 1.2
+data-version: releases/2025-12-02/annotation-build
+ontology: peco
+remark: matchable strings only; per-term tiers in subset tier_T0..T2
+remark: obsolete stanzas retained for id resolution with their label
+remark: moved to property_value retired_label, so no matcher reads it
+
+[Term]
+id: PECO:0001001
+name: plant exposure
+subset: tier_T0
+is_a: PECO:0007359
+
+[Term]
+id: PECO:0001002
+is_obsolete: true
+property_value: retired_label "OBSOLETE plant growth environment" xsd:string
+
+[Term]
+id: PECO:0001003
+name: organic chemical exposure
+subset: tier_T0
+is_a: PECO:0007189
+
+[Term]
+id: PECO:0001004
+name: inorganic chemical exposure
+subset: tier_T0
+is_a: PECO:0007189
+
+[Term]
+id: PECO:0001005
+name: nickel exposure
+subset: tier_T0
+is_a: PECO:0001016
+is_a: PECO:0007044
+
+[Term]
+id: PECO:0001006
+name: phosphate exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007240
+
+[Term]
+id: PECO:0001007
+is_obsolete: true
+property_value: retired_label "OBSOLETE mineral salt exposure" xsd:string
+
+[Term]
+id: PECO:0001008
+name: sulfate exposure
+subset: tier_T0
+is_a: PECO:0001009
+is_a: PECO:0007295
+
+[Term]
+id: PECO:0001009
+name: inorganic anion exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0001004
+
+[Term]
+id: PECO:0001010
+name: carbohydrate exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0001003
+
+[Term]
+id: PECO:0001011
+name: monosaccharide exposure
+subset: tier_T0
+is_a: PECO:0001010
+
+[Term]
+id: PECO:0001012
+name: hexose exposure
+subset: tier_T0
+is_a: PECO:0001011
+
+[Term]
+id: PECO:0001013
+name: glucose exposure
+subset: tier_T0
+is_a: PECO:0001012
+
+[Term]
+id: PECO:0001014
+name: disaccharide exposure
+subset: tier_T0
+is_a: PECO:0001010
+
+[Term]
+id: PECO:0001015
+name: sucrose exposure
+subset: tier_T0
+is_a: PECO:0001014
+
+[Term]
+id: PECO:0001016
+name: inorganic cation exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0001004
+
+[Term]
+id: PECO:0001017
+name: ammonium exposure
+subset: tier_T0
+is_a: PECO:0001016
+
+[Term]
+id: PECO:0001018
+name: cadmium exposure
+subset: tier_T0
+is_a: PECO:0001016
+
+[Term]
+id: PECO:0001019
+is_obsolete: true
+property_value: retired_label "OBSOLETE organic gas exposure" xsd:string
+
+[Term]
+id: PECO:0001020
+name: carbon dioxide exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007023
+
+[Term]
+id: PECO:0001021
+name: ozone exposure
+subset: tier_T0
+is_a: PECO:0007023
+is_a: PECO:0007041
+
+[Term]
+id: PECO:0001022
+name: gamma radiation exposure
+synonym: "gamma rays (exact)" EXACT []
+subset: tier_T0
+is_a: PECO:0007154
+
+[Term]
+id: PECO:0001023
+name: agar growth medium exposure
+subset: tier_T0
+is_a: PECO:0007262
+
+[Term]
+id: PECO:0001024
+name: vertical agar growth medium exposure
+subset: tier_T0
+is_a: PECO:0001023
+
+[Term]
+id: PECO:0001025
+is_obsolete: true
+property_value: retired_label "OBSOLETE urea nitrogen exposure" xsd:string
+
+[Term]
+id: PECO:0001026
+name: MTA nitrogen exposure
+subset: tier_T0
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0001027
+name: alanine nitrogen exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0001028
+name: glutamate nitrogen exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0001029
+name: arginine nitrogen exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0001030
+name: ornithine nitrogen exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0001031
+name: glutamine nitrogen exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0001032
+name: Hymenoptera insect plant exposure
+subset: tier_T0
+is_a: PECO:0007333
+
+[Term]
+id: PECO:0001033
+name: parasitic wasp insect plant exposure
+subset: tier_T0
+is_a: PECO:0001032
+
+[Term]
+id: PECO:0001034
+name: Pseudomonas syringae plant exposure
+subset: tier_T0
+is_a: PECO:0007144
+
+[Term]
+id: PECO:0001035
+name: stratification exposure
+subset: tier_T0
+is_a: PECO:0007316
+
+[Term]
+id: PECO:0001036
+name: chemical stress exposure
+subset: tier_T0
+is_a: PECO:0007189
+
+[Term]
+id: PECO:0001037
+name: oxidative stress exposure
+subset: tier_T0
+is_a: PECO:0001036
+
+[Term]
+id: PECO:0001038
+name: osmotic stress exposure
+subset: tier_T0
+is_a: PECO:0001036
+
+[Term]
+id: PECO:0001039
+name: radiation mutagen exposure
+subset: tier_T0
+is_a: PECO:0007151
+
+[Term]
+id: PECO:0001040
+name: light-induced photooxidative stress exposure
+subset: tier_T0
+is_a: PECO:0007224
+
+[Term]
+id: PECO:0001041
+name: limited zinc exposure
+subset: tier_T0
+is_a: PECO:0007309
+
+[Term]
+id: PECO:0001042
+name: limited boron exposure
+subset: tier_T0
+is_a: PECO:0007273
+
+[Term]
+id: PECO:0001043
+name: limited glucose exposure
+subset: tier_T0
+is_a: PECO:0001013
+
+[Term]
+id: PECO:0001044
+name: limited carbon exposure
+subset: tier_T0
+is_a: PECO:0007303
+
+[Term]
+id: PECO:0001045
+name: limited sulfate exposure
+subset: tier_T0
+is_a: PECO:0001008
+
+[Term]
+id: PECO:0001046
+name: limited phosphate exposure
+subset: tier_T0
+is_a: PECO:0001006
+
+[Term]
+id: PECO:0001047
+name: limited iron exposure
+subset: tier_T0
+is_a: PECO:0007242
+
+[Term]
+id: PECO:0001048
+name: limited molybdenum exposure
+subset: tier_T0
+is_a: PECO:0007253
+
+[Term]
+id: PECO:0001049
+name: limited magnesium exposure
+subset: tier_T0
+is_a: PECO:0007288
+
+[Term]
+id: PECO:0001050
+name: limited nitrogen exposure
+subset: tier_T0
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0001051
+name: limited potassium exposure
+subset: tier_T0
+is_a: PECO:0007293
+
+[Term]
+id: PECO:0001052
+name: limited sulfur exposure
+subset: tier_T0
+is_a: PECO:0007295
+
+[Term]
+id: PECO:0001053
+name: limited manganese exposure
+subset: tier_T0
+is_a: PECO:0007387
+
+[Term]
+id: PECO:0001054
+name: limited nitrate exposure
+subset: tier_T0
+is_a: PECO:0007406
+
+[Term]
+id: PECO:0001055
+is_obsolete: true
+property_value: retired_label "OBSOLETE inorganic gas exposure" xsd:string
+
+[Term]
+id: PECO:0001056
+name: elevated carbon dioxide exposure
+subset: tier_T0
+is_a: PECO:0001020
+
+[Term]
+id: PECO:0001057
+name: abnormal stratification exposure
+subset: tier_T0
+is_a: PECO:0001035
+
+[Term]
+id: PECO:0001058
+name: Glomeromycota exposure
+subset: tier_T0
+is_a: PECO:0007233
+
+[Term]
+id: PECO:0001059
+name: arbuscular mycorrhizal fungal exposure
+subset: tier_T0
+is_a: PECO:0001058
+
+[Term]
+id: PECO:0001060
+name: sodium hydroxide exposure
+synonym: "NaOH treatment (exact)" EXACT []
+subset: tier_T0
+is_a: PECO:0001009
+
+[Term]
+id: PECO:0001061
+name: polyethylene glycol exposure
+synonym: "PEG treatment (exact)" EXACT []
+synonym: "poly(ethylene glycol) treatment (exact)" EXACT []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0001003
+
+[Term]
+id: PECO:0001062
+name: control exposure
+subset: tier_T0
+is_a: PECO:0001001
+
+[Term]
+id: PECO:0001063
+name: paper towel growth medium
+synonym: "ragdoll method (exact)" EXACT []
+subset: tier_T0
+is_a: PECO:0007262
+
+[Term]
+id: PECO:0001064
+is_obsolete: true
+property_value: retired_label "OBSOLETE potassium fertilizer exposure" xsd:string
+
+[Term]
+id: PECO:0001065
+name: potassium chloride exposure
+synonym: "muriate of potash exposure (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007044
+is_a: PECO:0007293
+
+[Term]
+id: PECO:0001066
+name: nematicide exposure
+subset: tier_T0
+is_a: PECO:0007167
+
+[Term]
+id: PECO:0001067
+name: castor meal exposure
+synonym: "castor meal treatment (exact)" EXACT []
+subset: tier_T0
+is_a: PECO:0007087
+
+[Term]
+id: PECO:0001068
+name: rapeseed meal exposure
+subset: tier_T0
+is_a: PECO:0007087
+
+[Term]
+id: PECO:0001069
+name: green manure exposure
+subset: tier_T0
+is_a: PECO:0007087
+
+[Term]
+id: PECO:0001070
+name: calcium carbonate exposure
+subset: tier_T0
+is_a: PECO:0007297
+
+[Term]
+id: PECO:0001071
+name: Zymoseptoria tritici exposure
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0001072
+name: Rhizobium leguminosarum exposure
+subset: tier_T0
+is_a: PECO:0007246
+
+[Term]
+id: PECO:0001073
+name: aeroponic plant growth media exposure
+subset: tier_T0
+is_a: PECO:0007147
+
+[Term]
+id: PECO:0001074
+name: Knop's solution exposure
+synonym: "Knop ME (related)" RELATED []
+synonym: "Knop medium (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007067
+
+[Term]
+id: PECO:0001075
+name: Oomycota exposure
+subset: tier_T0
+is_a: PECO:0007106
+
+[Term]
+id: PECO:0007001
+name: UV-B light exposure
+synonym: "UVB exposure (exact)" EXACT []
+subset: tier_T0
+is_a: PECO:0007222
+
+[Term]
+id: PECO:0007002
+name: UV-A light exposure
+synonym: "UV-A light treatment (exact)" EXACT []
+synonym: "UVA exposure (exact)" EXACT []
+subset: tier_T0
+is_a: PECO:0007222
+
+[Term]
+id: PECO:0007003
+name: temperate region exposure
+subset: tier_T0
+is_a: PECO:0007064
+
+[Term]
+id: PECO:0007004
+is_obsolete: true
+property_value: retired_label "OBSOLETE loam content exposure" xsd:string
+
+[Term]
+id: PECO:0007005
+name: Viridiplantae plant exposure
+synonym: "green plant (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007357
+
+[Term]
+id: PECO:0007006
+is_obsolete: true
+property_value: retired_label "OBSOLETE monocot mixed crop neighbor" xsd:string
+
+[Term]
+id: PECO:0007007
+is_obsolete: true
+property_value: retired_label "OBSOLETE monocot weed plant neighbor" xsd:string
+
+[Term]
+id: PECO:0007008
+name: Monochoria vaginalis exposure
+synonym: "Asian pickerel weed (related)" RELATED []
+synonym: "heartshape false pickerelweed (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007022
+
+[Term]
+id: PECO:0007009
+name: Eudicotyledon exposure
+synonym: "dicot (related)" RELATED []
+synonym: "Eudicot (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007005
+
+[Term]
+id: PECO:0007010
+name: Sagittaria montevidensis exposure
+synonym: "giant arrowhead (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007139
+
+[Term]
+id: PECO:0007011
+name: Sagittaria longiloba exposure
+synonym: "Flecha de Agua (related)" RELATED []
+synonym: "longlobe arrowhead (related)" RELATED []
+synonym: "narrow-leaf arrowhead (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007139
+
+[Term]
+id: PECO:0007012
+name: Heteranthera limosa exposure
+synonym: "blue mud-plantain (related)" RELATED []
+synonym: "ducksalad (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007022
+
+[Term]
+id: PECO:0007013
+name: Echinodorus berteroi exposure
+synonym: "upright burhead (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007138
+
+[Term]
+id: PECO:0007014
+name: Echinodorus cordifolius exposure
+synonym: "creeping burhead (related)" RELATED []
+synonym: "Texas mudbaby (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007138
+
+[Term]
+id: PECO:0007015
+name: Ammannia spp. exposure
+subset: tier_T0
+is_a: PECO:0007009
+
+[Term]
+id: PECO:0007016
+name: Bacopa spp. exposure
+subset: tier_T0
+is_a: PECO:0007009
+
+[Term]
+id: PECO:0007017
+name: Cyperus difformis exposure
+synonym: "flatsedge (related)" RELATED []
+synonym: "smallflower umbrellaplant (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007141
+
+[Term]
+id: PECO:0007018
+name: Scirpus fluviatilis exposure
+synonym: "river bulrush (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007140
+
+[Term]
+id: PECO:0007019
+name: Cyperus iria exposure
+synonym: "rice field flatsedge (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007141
+
+[Term]
+id: PECO:0007020
+name: Scirpus mucronatus exposure
+synonym: "ricefield bulrush (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007140
+
+[Term]
+id: PECO:0007021
+name: Alisma plantago-aquatica exposure
+synonym: "water plantain (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007022
+
+[Term]
+id: PECO:0007022
+name: Liliopsida exposure
+synonym: "monocot (related)" RELATED []
+synonym: "monocotyledon (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007005
+
+[Term]
+id: PECO:0007023
+name: gaseous exposure
+subset: tier_T0
+is_a: PECO:0007316
+
+[Term]
+id: PECO:0007024
+name: aerobic environment exposure
+subset: tier_T0
+is_a: PECO:0007023
+
+[Term]
+id: PECO:0007025
+name: anaerobic environment exposure
+subset: tier_T0
+is_a: PECO:0007023
+
+[Term]
+id: PECO:0007026
+name: Echinochloa glabrescens exposure
+synonym: "barnyardgrass (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007137
+
+[Term]
+id: PECO:0007027
+name: seasonal environment exposure
+subset: tier_T0
+is_a: PECO:0001001
+
+[Term]
+id: PECO:0007028
+name: Echinochloa crus-galli exposure
+synonym: "barnyardgrass (related)" RELATED []
+synonym: "cockspur grass (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007137
+
+[Term]
+id: PECO:0007029
+name: Typha spp. exposure
+synonym: "cattail (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007022
+
+[Term]
+id: PECO:0007030
+name: Leptochloa fascicularis exposure
+synonym: "bearded sprangeltop (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007022
+
+[Term]
+id: PECO:0007031
+name: Mammalia exposure
+synonym: "mammal (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007349
+
+[Term]
+id: PECO:0007033
+name: rabi season exposure
+subset: tier_T0
+is_a: PECO:0007027
+
+[Term]
+id: PECO:0007034
+name: kharif season exposure
+subset: tier_T0
+is_a: PECO:0007027
+
+[Term]
+id: PECO:0007035
+name: winter season exposure
+subset: tier_T0
+is_a: PECO:0007027
+
+[Term]
+id: PECO:0007036
+name: summer season exposure
+subset: tier_T0
+is_a: PECO:0007027
+
+[Term]
+id: PECO:0007037
+name: spring season exposure
+subset: tier_T0
+is_a: PECO:0007027
+
+[Term]
+id: PECO:0007038
+name: autumn season exposure
+subset: tier_T0
+is_a: PECO:0007027
+
+[Term]
+id: PECO:0007039
+is_obsolete: true
+property_value: retired_label "OBSOLETE dicot weed plant neighbor" xsd:string
+
+[Term]
+id: PECO:0007040
+is_obsolete: true
+property_value: retired_label "OBSOLETE dicot mixed crop neighbor" xsd:string
+
+[Term]
+id: PECO:0007041
+name: antibiotic exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007189
+
+[Term]
+id: PECO:0007043
+name: non-mineral nutrient exposure
+subset: tier_T0
+is_a: PECO:0007241
+
+[Term]
+id: PECO:0007044
+name: mineral exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0001004
+
+[Term]
+id: PECO:0007045
+is_obsolete: true
+property_value: retired_label "OBSOLETE primary plant macronutrient exposure" xsd:string
+
+[Term]
+id: PECO:0007046
+name: secondary macronutrient exposure
+subset: tier_T0
+is_a: PECO:0007240
+
+[Term]
+id: PECO:0007047
+name: other nutrient exposure
+subset: tier_T0
+is_a: PECO:0007241
+
+[Term]
+id: PECO:0007048
+name: sodium chloride exposure
+synonym: "NaCl treatment (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0001004
+
+[Term]
+id: PECO:0007049
+name: soil environment exposure
+subset: tier_T0
+is_a: PECO:0007147
+
+[Term]
+id: PECO:0007050
+name: soil texture exposure
+subset: tier_T0
+is_a: PECO:0007049
+
+[Term]
+id: PECO:0007051
+name: sand content exposure
+subset: tier_T0
+is_a: PECO:0007050
+
+[Term]
+id: PECO:0007052
+name: organic matter content exposure
+subset: tier_T0
+is_a: PECO:0007049
+
+[Term]
+id: PECO:0007053
+name: silt content exposure
+subset: tier_T0
+is_a: PECO:0007050
+
+[Term]
+id: PECO:0007054
+name: clay content exposure
+subset: tier_T0
+is_a: PECO:0007050
+
+[Term]
+id: PECO:0007055
+name: Cochliobolus spp. exposure
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007056
+is_obsolete: true
+property_value: retired_label "OBSOLETE soil flora" xsd:string
+
+[Term]
+id: PECO:0007057
+is_obsolete: true
+property_value: retired_label "OBSOLETE soil fauna" xsd:string
+
+[Term]
+id: PECO:0007058
+name: soil pH exposure
+subset: tier_T0
+is_a: PECO:0007049
+
+[Term]
+id: PECO:0007059
+name: acidic pH soil exposure
+subset: tier_T0
+is_a: PECO:0007058
+is_a: PECO:0007134
+
+[Term]
+id: PECO:0007060
+name: Sphaerulina oryzina exposure
+synonym: "Cercospora janseana (related)" RELATED []
+synonym: "Cercospora oryzae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007061
+name: tropical region exposure
+subset: tier_T0
+is_a: PECO:0007064
+
+[Term]
+id: PECO:0007062
+name: basic pH soil exposure
+subset: tier_T0
+is_a: PECO:0007058
+is_a: PECO:0007133
+
+[Term]
+id: PECO:0007063
+name: diuron exposure
+synonym: "3-(3,4-dichloro-phenyl)-1,1-dimethylurea (related)" RELATED []
+synonym: "dichlorophenyldimethyl urea (related)" RELATED []
+synonym: "diuron (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007183
+
+[Term]
+id: PECO:0007064
+name: ecological environment exposure
+subset: tier_T0
+is_a: PECO:0001001
+
+[Term]
+id: PECO:0007065
+name: Entyloma oryzae exposure
+synonym: "Entyloma dactylidis (related)" RELATED []
+synonym: "Entyloma lineatum (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007073
+
+[Term]
+id: PECO:0007066
+name: cytokinin exposure
+subset: tier_T0
+is_a: PECO:0007165
+
+[Term]
+id: PECO:0007067
+name: hydroponic plant culture media exposure
+synonym: "soilless pant culture media (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007147
+
+[Term]
+id: PECO:0007068
+name: ethylene exposure
+subset: tier_T0
+is_a: PECO:0007023
+is_a: PECO:0007165
+
+[Term]
+id: PECO:0007069
+name: gibberellic acid exposure
+synonym: "GA regimen (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007165
+
+[Term]
+id: PECO:0007070
+name: indole acetic acid exposure
+synonym: "IAA regimen (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007074
+
+[Term]
+id: PECO:0007071
+name: suspension cell culture medium exposure
+subset: tier_T0
+is_a: PECO:0007265
+
+[Term]
+id: PECO:0007072
+name: Microdochium oryzae exposure
+synonym: "Rhynchosporium oryzae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007073
+name: Basidiomycota exposure
+synonym: "basidiomycetes (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007233
+
+[Term]
+id: PECO:0007074
+name: auxin exposure
+subset: tier_T0
+is_a: PECO:0007165
+
+[Term]
+id: PECO:0007075
+name: high light intensity exposure
+subset: tier_T0
+is_a: PECO:0007224
+
+[Term]
+id: PECO:0007076
+name: moderate light intensity exposure
+subset: tier_T0
+is_a: PECO:0007224
+
+[Term]
+id: PECO:0007077
+name: Tilletia barclayana exposure
+synonym: "Neovossia horrida (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007073
+
+[Term]
+id: PECO:0007078
+name: light quantity exposure
+synonym: "photoperiod regimen (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007153
+
+[Term]
+id: PECO:0007079
+is_obsolete: true
+property_value: retired_label "OBSOLETE sulfate fertilizer exposure" xsd:string
+
+[Term]
+id: PECO:0007080
+name: jasmonic acid exposure
+synonym: "JA regimen (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007165
+
+[Term]
+id: PECO:0007081
+name: riverbank region exposure
+synonym: "river bank region exposure (exact)" EXACT []
+subset: tier_T0
+is_a: PECO:0007396
+
+[Term]
+id: PECO:0007082
+name: sea coast region exposure
+subset: tier_T0
+is_a: PECO:0007396
+
+[Term]
+id: PECO:0007083
+name: Phoma sorghina exposure
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007084
+name: other animals exposure
+subset: tier_T0
+is_a: PECO:0007349
+
+[Term]
+id: PECO:0007085
+is_obsolete: true
+property_value: retired_label "OBSOLETE fertilizer exposure" xsd:string
+
+[Term]
+id: PECO:0007086
+is_obsolete: true
+property_value: retired_label "OBSOLETE chemical fertilizer exposure" xsd:string
+
+[Term]
+id: PECO:0007087
+name: natural fertilizer exposure
+synonym: "organic fertilizer regimen (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007241
+
+[Term]
+id: PECO:0007088
+name: Ceratobasidium oryzae-sativae exposure
+synonym: "Ceratobasidium oryzae-sativae (related)" RELATED []
+synonym: "Ceratobasidium sativae (related)" RELATED []
+synonym: "Rhizoctonia oryzae-sativae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007073
+
+[Term]
+id: PECO:0007089
+name: bone meal exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007087
+
+[Term]
+id: PECO:0007090
+name: ammonium nitrate exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0007091
+name: seaweed extract exposure
+subset: tier_T0
+is_a: PECO:0007087
+
+[Term]
+id: PECO:0007092
+name: wood ash exposure
+subset: tier_T0
+is_a: PECO:0007087
+
+[Term]
+id: PECO:0007093
+name: fish meal exposure
+subset: tier_T0
+is_a: PECO:0007087
+
+[Term]
+id: PECO:0007094
+name: sodium nitrate exposure
+subset: tier_T0
+is_a: PECO:0007406
+
+[Term]
+id: PECO:0007095
+name: calcium nitrate exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0007096
+name: potassium nitrate exposure
+subset: tier_T0
+is_a: PECO:0007406
+
+[Term]
+id: PECO:0007097
+name: ammonium sulfate exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0007098
+name: ferrous sulfate exposure
+subset: tier_T0
+is_a: PECO:0001008
+
+[Term]
+id: PECO:0007099
+name: potassium sulfate exposure
+subset: tier_T0
+is_a: PECO:0001008
+is_a: PECO:0007044
+
+[Term]
+id: PECO:0007100
+name: superphosphate exposure
+subset: tier_T0
+is_a: PECO:0001006
+
+[Term]
+id: PECO:0007101
+name: urea exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0007102
+name: nitrogen exposure
+subset: tier_T0
+is_a: PECO:0007240
+
+[Term]
+id: PECO:0007103
+is_obsolete: true
+property_value: retired_label "OBSOLETE phosphate fertilizer exposure" xsd:string
+
+[Term]
+id: PECO:0007104
+name: NPK fertilizer exposure
+subset: tier_T0
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0007105
+name: abscisic acid exposure
+synonym: "ABA regimen (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007165
+
+[Term]
+id: PECO:0007106
+name: Stramenopiles exposure
+synonym: "chromophyta (related)" RELATED []
+synonym: "heterokont (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007357
+
+[Term]
+id: PECO:0007107
+name: Ascomycota exposure
+synonym: "ascomycetes (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007233
+
+[Term]
+id: PECO:0007108
+is_obsolete: true
+property_value: retired_label "OBSOLETE Proteobacterial plant exposure" xsd:string
+
+[Term]
+id: PECO:0007109
+name: ssRNA positive-strand virus with no DNA stage exposure
+subset: tier_T0
+is_a: PECO:0007210
+
+[Term]
+id: PECO:0007110
+name: dsRNA virus exposure
+synonym: "dsRNA nonenveloped viruses (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007210
+
+[Term]
+id: PECO:0007111
+name: ssRNA negative-strand virus exposure
+subset: tier_T0
+is_a: PECO:0007210
+
+[Term]
+id: PECO:0007112
+name: retroid virus exposure
+subset: tier_T0
+is_a: PECO:0007210
+
+[Term]
+id: PECO:0007113
+name: rice necrosis mosaic virus exposure
+synonym: "rice necrosis mosaic virus (related)" RELATED []
+synonym: "RNMV (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007109
+
+[Term]
+id: PECO:0007114
+name: Lepidoptera exposure
+synonym: "butterfly (related)" RELATED []
+synonym: "moth (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007333
+
+[Term]
+id: PECO:0007115
+name: Spodoptera spp. exposure
+subset: tier_T0
+is_a: PECO:0007114
+
+[Term]
+id: PECO:0007116
+name: Hemiptera insect plant exposure
+synonym: "bug (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007333
+
+[Term]
+id: PECO:0007117
+name: Pseudaletia spp. exposure
+synonym: "armyworm (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007114
+
+[Term]
+id: PECO:0007118
+name: Gibberella spp. exposure
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007119
+name: Dipteran insect plant exposure
+synonym: "fly (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007333
+
+[Term]
+id: PECO:0007120
+name: Coleoptera exposure
+synonym: "beetle (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007333
+
+[Term]
+id: PECO:0007121
+name: Thysanoptera exposure
+synonym: "thrips (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007333
+
+[Term]
+id: PECO:0007122
+name: Chilo exposure
+synonym: "stalk borer (related)" RELATED []
+synonym: "stemborer (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007114
+
+[Term]
+id: PECO:0007123
+name: Eysarcoris trimaculatus exposure
+synonym: "rice spotting bug (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007116
+
+[Term]
+id: PECO:0007124
+is_obsolete: true
+property_value: retired_label "OBSOLETE pest/pathogen/animal/plant environment" xsd:string
+
+[Term]
+id: PECO:0007125
+is_obsolete: true
+property_value: retired_label "OBSOLETE genetic environment" xsd:string
+
+[Term]
+id: PECO:0007126
+name: Hirschmaniella spp. exposure
+subset: tier_T0
+is_a: PECO:0007337
+
+[Term]
+id: PECO:0007127
+name: Meloidogyne spp. exposure
+synonym: "Meloidogyne spp. treatment (related)" RELATED []
+synonym: "root-knot nematode (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007337
+
+[Term]
+id: PECO:0007128
+name: intermittent light exposure
+subset: tier_T0
+is_a: PECO:0007078
+
+[Term]
+id: PECO:0007129
+name: UV-C light exposure
+synonym: "UVC exposure (exact)" EXACT []
+subset: tier_T0
+is_a: PECO:0007222
+
+[Term]
+id: PECO:0007130
+name: near infrared light exposure
+synonym: "near IR light regimen (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007202
+
+[Term]
+id: PECO:0007131
+name: middle infrared light exposure
+subset: tier_T0
+is_a: PECO:0007202
+
+[Term]
+id: PECO:0007132
+name: far infrared light exposure
+subset: tier_T0
+is_a: PECO:0007202
+
+[Term]
+id: PECO:0007133
+name: basic pH growth media environment exposure
+synonym: "basic pH environment (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007171
+
+[Term]
+id: PECO:0007134
+name: acidic pH growth media environment exposure
+synonym: "acidic pH environment (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007171
+
+[Term]
+id: PECO:0007135
+name: Magnaporthe spp. exposure
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007136
+name: Achlya sp. exposure
+subset: tier_T0
+is_a: PECO:0001075
+
+[Term]
+id: PECO:0007137
+name: Echinochloa spp. exposure
+subset: tier_T0
+is_a: PECO:0007022
+
+[Term]
+id: PECO:0007138
+name: Echinodorus spp. exposure
+synonym: "burhead (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007022
+
+[Term]
+id: PECO:0007139
+name: Sagittaria spp. exposure
+synonym: "arrowhead (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007022
+
+[Term]
+id: PECO:0007140
+name: Scirpus spp. exposure
+subset: tier_T0
+is_a: PECO:0007022
+
+[Term]
+id: PECO:0007141
+name: Cyperus spp. exposure
+subset: tier_T0
+is_a: PECO:0007022
+
+[Term]
+id: PECO:0007142
+name: Scirpophaga spp. exposure
+subset: tier_T0
+is_a: PECO:0007114
+
+[Term]
+id: PECO:0007143
+name: Erwinia plant exposure
+subset: tier_T0
+is_a: PECO:0007246
+
+[Term]
+id: PECO:0007144
+name: Pseudomonas plant exposure
+subset: tier_T0
+is_a: PECO:0007246
+
+[Term]
+id: PECO:0007145
+name: Xanthomonas plant exposure
+subset: tier_T0
+is_a: PECO:0007246
+
+[Term]
+id: PECO:0007146
+name: gravity exposure
+subset: tier_T0
+is_a: PECO:0007316
+
+[Term]
+id: PECO:0007147
+name: plant growth medium exposure
+subset: tier_T0
+is_a: PECO:0007191
+
+[Term]
+id: PECO:0007148
+name: Xanthomonas oryzae exposure
+synonym: "Pseudomonas oryzae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007145
+
+[Term]
+id: PECO:0007149
+name: chemical mutagen exposure
+subset: tier_T0
+is_a: PECO:0007189
+
+[Term]
+id: PECO:0007150
+is_obsolete: true
+property_value: retired_label "OBSOLETE facultative anaerobic environment" xsd:string
+
+[Term]
+id: PECO:0007151
+name: radiation exposure
+synonym: "light regimen (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007316
+
+[Term]
+id: PECO:0007152
+name: radiation intensity exposure
+subset: tier_T0
+is_a: PECO:0007151
+
+[Term]
+id: PECO:0007153
+name: radiation quantity exposure
+subset: tier_T0
+is_a: PECO:0007151
+
+[Term]
+id: PECO:0007154
+name: radiation quality exposure
+subset: tier_T0
+is_a: PECO:0007151
+
+[Term]
+id: PECO:0007155
+name: soil type exposure
+subset: tier_T0
+is_a: PECO:0007049
+
+[Term]
+id: PECO:0007156
+name: clay soil exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007155
+
+[Term]
+id: PECO:0007157
+name: loam soil exposure
+subset: tier_T0
+is_a: PECO:0007155
+
+[Term]
+id: PECO:0007158
+name: sandy soil exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007155
+
+[Term]
+id: PECO:0007159
+name: sandy loam soil exposure
+subset: tier_T0
+is_a: PECO:0007155
+
+[Term]
+id: PECO:0007160
+is_obsolete: true
+property_value: retired_label "OBSOLETE water temperature exposure" xsd:string
+
+[Term]
+id: PECO:0007161
+is_obsolete: true
+property_value: retired_label "OBSOLETE air temperature exposure" xsd:string
+
+[Term]
+id: PECO:0007162
+name: continuous light exposure
+subset: tier_T0
+is_a: PECO:0007078
+
+[Term]
+id: PECO:0007163
+name: day light exposure
+subset: tier_T0
+is_a: PECO:0007128
+
+[Term]
+id: PECO:0007164
+name: standing deep water exposure
+subset: tier_T0
+is_a: PECO:0007282
+
+[Term]
+id: PECO:0007165
+name: plant growth hormone exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007189
+
+[Term]
+id: PECO:0007166
+name: Pythium spinosum exposure
+subset: tier_T0
+is_a: PECO:0007328
+
+[Term]
+id: PECO:0007167
+name: pesticide exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007189
+
+[Term]
+id: PECO:0007168
+name: hygromycin exposure
+synonym: "Antibiotic A-396-II (related)" RELATED []
+synonym: "hygromycin B regimen (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007041
+
+[Term]
+id: PECO:0007171
+name: pH exposure
+subset: tier_T0
+is_a: PECO:0007189
+
+[Term]
+id: PECO:0007172
+name: flood water exposure
+subset: tier_T0
+is_a: PECO:0007282
+
+[Term]
+id: PECO:0007173
+name: high temperature exposure
+subset: tier_T0
+is_a: PECO:0007175
+
+[Term]
+id: PECO:0007174
+name: cold temperature exposure
+subset: tier_T0
+is_a: PECO:0007175
+
+[Term]
+id: PECO:0007175
+name: temperature exposure
+subset: tier_T0
+is_a: PECO:0007316
+
+[Term]
+id: PECO:0007176
+name: altitude exposure
+subset: tier_T0
+is_a: PECO:0007064
+
+[Term]
+id: PECO:0007177
+name: Pythium myriotylum exposure
+subset: tier_T0
+is_a: PECO:0007328
+
+[Term]
+id: PECO:0007178
+name: atmospheric pressure exposure
+synonym: "barometric pressure (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007064
+
+[Term]
+id: PECO:0007179
+name: Pythium irregulare exposure
+subset: tier_T0
+is_a: PECO:0007328
+
+[Term]
+id: PECO:0007180
+name: 2,4-dichlorophenoxyacetic acid exposure
+synonym: "2,4-D exposure (related)" RELATED []
+synonym: "Amidox (related)" RELATED []
+synonym: "B-Selektonon (related)" RELATED []
+synonym: "Crotilin (related)" RELATED []
+synonym: "Decamine (related)" RELATED []
+synonym: "Dicopur (related)" RELATED []
+synonym: "U-5043 (related)" RELATED []
+synonym: "Weed Tox (related)" RELATED []
+synonym: "Weedar 64A (related)" RELATED []
+synonym: "Weedone-2,4-DP (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007074
+is_a: PECO:0007183
+
+[Term]
+id: PECO:0007181
+name: rainfall exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007198
+
+[Term]
+id: PECO:0007182
+name: Pythium graminicola exposure
+subset: tier_T0
+is_a: PECO:0007328
+
+[Term]
+id: PECO:0007183
+name: herbicide exposure
+subset: tier_T0
+is_a: PECO:0007167
+
+[Term]
+id: PECO:0007184
+name: Pythium dissotocum exposure
+subset: tier_T0
+is_a: PECO:0007328
+
+[Term]
+id: PECO:0007185
+is_obsolete: true
+property_value: retired_label "OBSOLETE salt exposure" xsd:string
+
+[Term]
+id: PECO:0007186
+name: Pythium catenulatum exposure
+subset: tier_T0
+is_a: PECO:0007328
+
+[Term]
+id: PECO:0007187
+name: salicylic acid exposure
+subset: tier_T0
+is_a: PECO:0001003
+is_a: PECO:0007041
+
+[Term]
+id: PECO:0007188
+name: Pythium arrhenomanes exposure
+subset: tier_T0
+is_a: PECO:0007328
+
+[Term]
+id: PECO:0007189
+name: chemical exposure
+synonym: "other chemical regimen (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007191
+
+[Term]
+id: PECO:0007190
+name: Ustilaginoidea virens exposure
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007191
+name: abiotic plant exposure
+subset: tier_T0
+is_a: PECO:0001001
+
+[Term]
+id: PECO:0007192
+name: Drechslera gigantea exposure
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007193
+is_obsolete: true
+property_value: retired_label "OBSOLETE day light intensity exposure" xsd:string
+
+[Term]
+id: PECO:0007194
+name: Sclerophthora macrospora exposure
+subset: tier_T0
+is_a: PECO:0001075
+
+[Term]
+id: PECO:0007195
+name: rice ragged stunt virus exposure
+synonym: "rice ragged stunt oryzavirus (related)" RELATED []
+synonym: "rice ragged stunt virus (related)" RELATED []
+synonym: "RRSV (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007110
+
+[Term]
+id: PECO:0007196
+is_obsolete: true
+property_value: retired_label "OBSOLETE light exposure" xsd:string
+
+[Term]
+id: PECO:0007197
+name: humidity exposure
+subset: tier_T0
+is_a: PECO:0007198
+
+[Term]
+id: PECO:0007198
+name: water environment exposure
+subset: tier_T0
+is_a: PECO:0007316
+
+[Term]
+id: PECO:0007199
+name: long day length exposure
+subset: tier_T0
+is_a: PECO:0007128
+
+[Term]
+id: PECO:0007200
+name: short day length exposure
+subset: tier_T0
+is_a: PECO:0007128
+
+[Term]
+id: PECO:0007202
+name: infrared light exposure
+subset: tier_T0
+is_a: PECO:0007154
+
+[Term]
+id: PECO:0007203
+name: far red light exposure
+synonym: "Pfr light (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007154
+
+[Term]
+id: PECO:0007204
+name: 1-naphthaleneacetic acid exposure
+synonym: "NAA (related)" RELATED []
+synonym: "Naphthylacetic acid (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007074
+
+[Term]
+id: PECO:0007205
+name: rice grassy stunt 2 virus exposure
+synonym: "RGSV-2 (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007358
+
+[Term]
+id: PECO:0007206
+name: Gaeumannomyces graminis exposure
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007207
+name: red light exposure
+synonym: "Pr light (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007221
+
+[Term]
+id: PECO:0007208
+name: rice grassy stunt 1 virus exposure
+synonym: "RGSV-1 (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007358
+
+[Term]
+id: PECO:0007209
+name: Phomopsis oryzae-sativae exposure
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007210
+name: virus plant exposure
+subset: tier_T0
+is_a: PECO:0007357
+
+[Term]
+id: PECO:0007211
+name: Cochliobolus miyabeanus exposure
+synonym: "Bipolaris oryzae (related)" RELATED []
+synonym: "Dreschlera oryzae (related)" RELATED []
+synonym: "Helminthosporium oryzae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007055
+
+[Term]
+id: PECO:0007212
+name: Mycoplasma exposure
+subset: tier_T0
+is_a: PECO:0007357
+
+[Term]
+id: PECO:0007214
+name: Alternaria spp. exposure
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007215
+name: orange light exposure
+subset: tier_T0
+is_a: PECO:0007221
+
+[Term]
+id: PECO:0007216
+name: yellow light exposure
+subset: tier_T0
+is_a: PECO:0007221
+
+[Term]
+id: PECO:0007217
+name: green light exposure
+subset: tier_T0
+is_a: PECO:0007221
+
+[Term]
+id: PECO:0007218
+name: blue light exposure
+subset: tier_T0
+is_a: PECO:0007221
+
+[Term]
+id: PECO:0007219
+name: indigo light exposure
+subset: tier_T0
+is_a: PECO:0007221
+
+[Term]
+id: PECO:0007220
+name: violet light exposure
+subset: tier_T0
+is_a: PECO:0007221
+
+[Term]
+id: PECO:0007221
+name: visible light exposure
+subset: tier_T0
+is_a: PECO:0007154
+
+[Term]
+id: PECO:0007222
+name: ultraviolet light exposure
+synonym: "ultraviolet light treatment (exact)" EXACT []
+synonym: "UV light exposure (exact)" EXACT []
+subset: tier_T0
+is_a: PECO:0007154
+
+[Term]
+id: PECO:0007223
+name: cadmium chloride exposure
+synonym: "CdCl2 (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0001018
+
+[Term]
+id: PECO:0007224
+name: light intensity exposure
+subset: tier_T0
+is_a: PECO:0007152
+
+[Term]
+id: PECO:0007225
+name: fluorine nutrient exposure
+subset: tier_T0
+is_a: PECO:0007047
+is_a: PECO:0007239
+
+[Term]
+id: PECO:0007226
+name: Magnaporthe grisea exposure
+synonym: "Piricularia grisea (related)" RELATED []
+synonym: "Pyricularia grisea (related)" RELATED []
+synonym: "Pyricularia oryzae (related)" RELATED []
+synonym: "rice blast fungus (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007135
+
+[Term]
+id: PECO:0007227
+name: Cochliobolus lunatus exposure
+subset: tier_T0
+is_a: PECO:0007055
+
+[Term]
+id: PECO:0007228
+name: chromium nutrient exposure
+subset: tier_T0
+is_a: PECO:0007047
+
+[Term]
+id: PECO:0007229
+name: Gibberella fujikuroi exposure
+synonym: "Fusarium fujikuroi (related)" RELATED []
+synonym: "Fusarium moniliforme (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007341
+
+[Term]
+id: PECO:0007230
+name: iodine nutrient exposure
+subset: tier_T0
+is_a: PECO:0007047
+is_a: PECO:0007239
+
+[Term]
+id: PECO:0007231
+name: plant study condition
+subset: tier_T0
+is_a: PECO:0007359
+
+[Term]
+id: PECO:0007232
+name: selenium nutrient exposure
+subset: tier_T0
+is_a: PECO:0007047
+is_a: PECO:0007239
+
+[Term]
+id: PECO:0007233
+name: fungal plant exposure
+subset: tier_T0
+is_a: PECO:0007357
+
+[Term]
+id: PECO:0007234
+name: Pseudomonas fuscovaginae exposure
+synonym: "Pseudomonas fuscivaginae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007144
+
+[Term]
+id: PECO:0007235
+name: silicon nutrient exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007047
+
+[Term]
+id: PECO:0007236
+name: Pseudomonas plantarii exposure
+synonym: "Burkholderia plantarii (related)" RELATED []
+synonym: "Burkholderia vandii (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007144
+
+[Term]
+id: PECO:0007237
+is_obsolete: true
+property_value: retired_label "OBSOLETE normal temperature regimen" xsd:string
+
+[Term]
+id: PECO:0007238
+is_obsolete: true
+property_value: retired_label "OBSOLETE optimal temperature regimen" xsd:string
+
+[Term]
+id: PECO:0007239
+name: micronutrient exposure
+synonym: "trace element regimen (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007241
+
+[Term]
+id: PECO:0007240
+name: plant macronutrient exposure
+subset: tier_T0
+is_a: PECO:0007241
+
+[Term]
+id: PECO:0007241
+name: plant nutrient exposure
+subset: tier_T0
+is_a: PECO:0007189
+
+[Term]
+id: PECO:0007242
+name: iron nutrient exposure
+subset: tier_T0
+is_a: PECO:0007239
+
+[Term]
+id: PECO:0007243
+name: Pseudomonas glumae exposure
+synonym: "Burkholderia glumae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007144
+
+[Term]
+id: PECO:0007244
+name: chlorine nutrient exposure
+subset: tier_T0
+is_a: PECO:0007239
+
+[Term]
+id: PECO:0007245
+name: Erwinia chrysanthemi exposure
+subset: tier_T0
+is_a: PECO:0007143
+
+[Term]
+id: PECO:0007246
+name: bacterial plant exposure
+synonym: "eubacteria (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007357
+
+[Term]
+id: PECO:0007247
+name: Erwinia herbicola exposure
+synonym: "Pantoea agglomerans (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007143
+
+[Term]
+id: PECO:0007248
+name: greenhouse study
+subset: tier_T0
+is_a: PECO:0007231
+
+[Term]
+id: PECO:0007249
+name: Xanthomonas oryzae pv. oryzicola exposure
+synonym: "Xanthomonas campestris pv. oryzicola (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007148
+
+[Term]
+id: PECO:0007250
+name: Recilia dorsalis exposure
+synonym: "zigzag leafhopper (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007116
+
+[Term]
+id: PECO:0007251
+name: Pseudomonas syringae pv. panici exposure
+subset: tier_T0
+is_a: PECO:0001034
+
+[Term]
+id: PECO:0007252
+name: Sogatella furcifera exposure
+synonym: "white-backed planthopper (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007116
+
+[Term]
+id: PECO:0007253
+name: molybdenum nutrient exposure
+subset: tier_T0
+is_a: PECO:0007239
+
+[Term]
+id: PECO:0007254
+name: Pseudomonas avenae exposure
+synonym: "Acidovorax avenae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007144
+
+[Term]
+id: PECO:0007255
+name: laboratory study
+subset: tier_T0
+is_a: PECO:0007231
+
+[Term]
+id: PECO:0007256
+name: field study
+synonym: "open field study (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007231
+
+[Term]
+id: PECO:0007257
+name: Xanthomonas oryzae pv. oryzae exposure
+synonym: "Xanthomonas campestris pv. oryza (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007148
+
+[Term]
+id: PECO:0007258
+name: Oebalus pugnax exposure
+synonym: "rice stink bug (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007116
+
+[Term]
+id: PECO:0007259
+name: soil water content exposure
+subset: tier_T0
+is_a: PECO:0007049
+is_a: PECO:0007198
+
+[Term]
+id: PECO:0007260
+name: Diopsis macrophthalma exposure
+synonym: "rice stem borer (related)" RELATED []
+synonym: "stalked-eyed fly (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007119
+
+[Term]
+id: PECO:0007261
+name: copper nutrient exposure
+subset: tier_T0
+is_a: PECO:0007239
+
+[Term]
+id: PECO:0007262
+name: in vitro solid growth medium exposure
+subset: tier_T0
+is_a: PECO:0007266
+
+[Term]
+id: PECO:0007263
+name: Maliarpha separatella exposure
+synonym: "African white stemborer (related)" RELATED []
+synonym: "African whiteheads (related)" RELATED []
+synonym: "white rice borer (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007114
+
+[Term]
+id: PECO:0007264
+name: Sesamia inferens exposure
+synonym: "pink stem borer (related)" RELATED []
+synonym: "purple borer (related)" RELATED []
+synonym: "purple stem borer (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007114
+
+[Term]
+id: PECO:0007265
+name: in vitro liquid growth medium exposure
+subset: tier_T0
+is_a: PECO:0007266
+
+[Term]
+id: PECO:0007266
+name: in vitro growth medium exposure
+subset: tier_T0
+is_a: PECO:0007147
+
+[Term]
+id: PECO:0007267
+name: benzothiadiazole exposure
+subset: tier_T0
+is_a: PECO:0007268
+
+[Term]
+id: PECO:0007268
+name: fungicide exposure
+subset: tier_T0
+is_a: PECO:0007041
+is_a: PECO:0007167
+
+[Term]
+id: PECO:0007269
+name: growth chamber study
+subset: tier_T0
+is_a: PECO:0007231
+
+[Term]
+id: PECO:0007270
+name: continuous dark (no light) exposure
+synonym: "continuous night regimen (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007078
+
+[Term]
+id: PECO:0007271
+name: low light intensity exposure
+subset: tier_T0
+is_a: PECO:0007224
+
+[Term]
+id: PECO:0007272
+name: Scirpophaga innotata exposure
+synonym: "Tipanaea sericea (related)" RELATED []
+synonym: "white rice stemborer (related)" RELATED []
+synonym: "white stemborer (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007142
+
+[Term]
+id: PECO:0007273
+name: boron nutrient exposure
+subset: tier_T0
+is_a: PECO:0007239
+
+[Term]
+id: PECO:0007274
+name: Scirpophaga incertulas exposure
+synonym: "yellow stem borer (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007142
+
+[Term]
+id: PECO:0007275
+name: Rupela albinella exposure
+synonym: "rice stemborer (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007114
+
+[Term]
+id: PECO:0007276
+name: cobalt nutrient exposure
+subset: tier_T0
+is_a: PECO:0007047
+is_a: PECO:0007239
+
+[Term]
+id: PECO:0007277
+name: Chilo polychrysus exposure
+synonym: "dark-headed stemborer (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007122
+
+[Term]
+id: PECO:0007278
+name: oxygen exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007043
+
+[Term]
+id: PECO:0007279
+name: Chilo suppressalis exposure
+synonym: "Asiatic rice borer (related)" RELATED []
+synonym: "striped stemborer (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007122
+
+[Term]
+id: PECO:0007280
+is_obsolete: true
+property_value: retired_label "OBSOLETE unknown study type" xsd:string
+
+[Term]
+id: PECO:0007281
+is_obsolete: true
+property_value: retired_label "OBSOLETE environment term" xsd:string
+
+[Term]
+id: PECO:0007282
+name: standing water exposure
+subset: tier_T0
+is_a: PECO:0007198
+
+[Term]
+id: PECO:0007283
+name: Stenchaetothrips biformis exposure
+synonym: "oriental rice thrips (related)" RELATED []
+synonym: "rice thrips (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007121
+
+[Term]
+id: PECO:0007284
+is_obsolete: true
+property_value: retired_label "OBSOLETE nitrogen macronutrient exposure" xsd:string
+
+[Term]
+id: PECO:0007285
+name: rainy season exposure
+synonym: "monsoon season (related)" RELATED []
+synonym: "wet season (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007027
+
+[Term]
+id: PECO:0007286
+name: dry season exposure
+subset: tier_T0
+is_a: PECO:0007027
+
+[Term]
+id: PECO:0007287
+name: dibromothymoquinone exposure
+synonym: "2,5-dibromo -6-isopropyl-3-methyl-1,4-benzoquinone (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007183
+
+[Term]
+id: PECO:0007288
+name: magnesium nutrient exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007046
+
+[Term]
+id: PECO:0007289
+name: Hydrellia philippina exposure
+synonym: "rice whorl maggot (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007119
+
+[Term]
+id: PECO:0007290
+name: kinetin exposure
+subset: tier_T0
+is_a: PECO:0007066
+
+[Term]
+id: PECO:0007291
+name: benzyladenine exposure
+synonym: "6-benzylaminopurine (exact)" EXACT []
+synonym: "BAP (related)" RELATED []
+synonym: "Benzylaminopurine (related)" RELATED []
+synonym: "N-(Phenylmethyl)-1H-purin-6-amine (related)" RELATED []
+synonym: "N-benzyl-adenine (related)" RELATED []
+synonym: "verdan senescence inhibitor (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007066
+
+[Term]
+id: PECO:0007292
+name: ethylphosphine exposure
+synonym: "carbonyl cyanide phenylhydrazone (related)" RELATED []
+synonym: "carbonylcyanide-m-chlorophenylhydrazone (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007183
+
+[Term]
+id: PECO:0007293
+name: potassium exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007240
+
+[Term]
+id: PECO:0007294
+name: Pelopidas mathias exposure
+synonym: "black branded swift (related)" RELATED []
+synonym: "lesser millet skipper (related)" RELATED []
+synonym: "small branded swift (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007114
+
+[Term]
+id: PECO:0007295
+name: sulfur nutrient exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007046
+
+[Term]
+id: PECO:0007296
+name: Dicladispa armigera exposure
+synonym: "rice hispa (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007120
+
+[Term]
+id: PECO:0007297
+name: calcium nutrient exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007046
+
+[Term]
+id: PECO:0007298
+name: Sogatodes oryzicola exposure
+synonym: "rice delpahcid (related)" RELATED []
+synonym: "Tagosodes orizicolus (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007116
+
+[Term]
+id: PECO:0007300
+name: Leptocorisa oratorius exposure
+synonym: "paddy bug (related)" RELATED []
+synonym: "rice bug (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007116
+
+[Term]
+id: PECO:0007302
+name: T-DNA insert exposure
+subset: tier_T0
+is_a: PECO:0007532
+
+[Term]
+id: PECO:0007303
+name: carbon nutrient exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007043
+
+[Term]
+id: PECO:0007304
+name: Marasmia patnalis exposure
+synonym: "leaffolder (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007114
+
+[Term]
+id: PECO:0007305
+name: Cnaphalocrocis medinalis exposure
+synonym: "defloiator (related)" RELATED []
+synonym: "leaffolder (related)" RELATED []
+synonym: "rice leaffolder (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007114
+
+[Term]
+id: PECO:0007306
+name: aluminum nutrient exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007047
+
+[Term]
+id: PECO:0007307
+name: transposable element insert exposure
+synonym: "TE insert (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007532
+
+[Term]
+id: PECO:0007308
+name: Nephotettix spp exposure
+synonym: "green leafhopper (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007116
+
+[Term]
+id: PECO:0007309
+name: zinc nutrient exposure
+subset: tier_T0
+is_a: PECO:0007239
+
+[Term]
+id: PECO:0007310
+name: Ac/Ds transposable element exposure
+subset: tier_T0
+is_a: PECO:0007307
+
+[Term]
+id: PECO:0007311
+name: Orseolia oryzae exposure
+synonym: "Asian rice gall midge (related)" RELATED []
+synonym: "gall midge (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007119
+
+[Term]
+id: PECO:0007312
+name: Tos-17 transposable element exposure
+subset: tier_T0
+is_a: PECO:0007307
+
+[Term]
+id: PECO:0007313
+name: Pseudaletia separata exposure
+synonym: "armyworm (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007117
+
+[Term]
+id: PECO:0007314
+name: Nymphula depunctalis exposure
+synonym: "caseworm (related)" RELATED []
+synonym: "rice caseworm (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007114
+
+[Term]
+id: PECO:0007315
+name: zero gravity exposure
+subset: tier_T0
+is_a: PECO:0007146
+
+[Term]
+id: PECO:0007316
+name: physical plant exposure
+subset: tier_T0
+is_a: PECO:0007191
+
+[Term]
+id: PECO:0007317
+name: Nilaparvata lugens exposure
+synonym: "brown planthopper (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007116
+
+[Term]
+id: PECO:0007318
+name: rice yellow mottle virus exposure
+synonym: "RYMV (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007109
+
+[Term]
+id: PECO:0007319
+name: high air temperature exposure
+subset: tier_T0
+is_a: PECO:0007173
+
+[Term]
+id: PECO:0007320
+name: Meloidogyne arenaria exposure
+synonym: "Meloidogyne arenaria treatment (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007127
+
+[Term]
+id: PECO:0007321
+name: Hirschmaniella spinicaudata exposure
+subset: tier_T0
+is_a: PECO:0007126
+
+[Term]
+id: PECO:0007322
+name: Hirschmaniella oryzae exposure
+subset: tier_T0
+is_a: PECO:0007126
+
+[Term]
+id: PECO:0007323
+name: Hirschmaniella mucronata exposure
+subset: tier_T0
+is_a: PECO:0007126
+
+[Term]
+id: PECO:0007324
+name: Hirschmaniella imamuri exposure
+synonym: "rice root nematode (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007126
+
+[Term]
+id: PECO:0007325
+name: Hirschmaniella caudacrena exposure
+subset: tier_T0
+is_a: PECO:0007126
+
+[Term]
+id: PECO:0007326
+name: mycoplasma like organism exposure
+synonym: "MLO (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007212
+
+[Term]
+id: PECO:0007327
+name: Mycovellosiella oryzae exposure
+synonym: "Ramularia oryzae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007328
+name: Pythium sp. exposure
+subset: tier_T0
+is_a: PECO:0001075
+
+[Term]
+id: PECO:0007329
+name: Spodoptera praefica exposure
+synonym: "western yellowstriped armyworm (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007115
+
+[Term]
+id: PECO:0007330
+name: Spodoptera mauritia exposure
+synonym: "lawn armyworm (related)" RELATED []
+synonym: "Prodenia acronyctoides (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007115
+
+[Term]
+id: PECO:0007331
+name: Pseudaletia unipuncta exposure
+synonym: "armyworm (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007117
+
+[Term]
+id: PECO:0007332
+name: cold air temperature exposure
+subset: tier_T0
+is_a: PECO:0007174
+
+[Term]
+id: PECO:0007333
+name: insect plant exposure
+synonym: "insect (related)" RELATED []
+synonym: "true insects (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007349
+
+[Term]
+id: PECO:0007334
+name: Pomacea canaliculata exposure
+synonym: "apple snail (related)" RELATED []
+synonym: "golden apple snail (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007335
+
+[Term]
+id: PECO:0007335
+name: Mollusca exposure
+synonym: "mollusc (related)" RELATED []
+synonym: "mollusk (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007349
+
+[Term]
+id: PECO:0007336
+name: Ditylenchus angustus exposure
+synonym: "rice stem nematode (related)" RELATED []
+synonym: "ufra nematode (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007337
+
+[Term]
+id: PECO:0007337
+name: plant nematode exposure
+synonym: "Nematode treatment (related)" RELATED []
+synonym: "round worm (related)" RELATED []
+synonym: "roundworm (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007349
+
+[Term]
+id: PECO:0007338
+name: cold water temperature exposure
+subset: tier_T0
+is_a: PECO:0007174
+
+[Term]
+id: PECO:0007339
+name: rice tungro spherical virus exposure
+synonym: "rice leaf yellowing virus (related)" RELATED []
+synonym: "rice penyakit mentek virus (related)" RELATED []
+synonym: "rice tungro spherical waikavirus (related)" RELATED []
+synonym: "rice waika virus (related)" RELATED []
+synonym: "rice yellow leaf virus (related)" RELATED []
+synonym: "RTSV (related)" RELATED []
+synonym: "tungro virus (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007109
+
+[Term]
+id: PECO:0007340
+name: Achlya conspicua exposure
+subset: tier_T0
+is_a: PECO:0007136
+
+[Term]
+id: PECO:0007341
+name: Fusarium exposure
+synonym: "Fusarium spp. (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007118
+
+[Term]
+id: PECO:0007342
+name: Achlya klebsiana exposure
+subset: tier_T0
+is_a: PECO:0007136
+
+[Term]
+id: PECO:0007343
+name: Bovinae exposure
+synonym: "cattle (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007031
+
+[Term]
+id: PECO:0007344
+name: rice tungro bacilliform virus exposure
+synonym: "rice yellow orange leaf virus (related)" RELATED []
+synonym: "RTBV (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007112
+
+[Term]
+id: PECO:0007345
+name: Rodentia exposure
+synonym: "mouse (related)" RELATED []
+synonym: "rat (related)" RELATED []
+synonym: "rodent (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007031
+
+[Term]
+id: PECO:0007346
+name: rice yellow stunt virus exposure
+synonym: "rice transitory yellowing virus (related)" RELATED []
+synonym: "rice yellow stunt rhabdovirus (related)" RELATED []
+synonym: "RTYV (related)" RELATED []
+synonym: "RYSV (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007111
+
+[Term]
+id: PECO:0007347
+name: Aves exposure
+synonym: "bird (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007349
+
+[Term]
+id: PECO:0007348
+name: rice stripe necrosis virus exposure
+synonym: "RSNV (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007109
+
+[Term]
+id: PECO:0007349
+name: metazoan plant exposure
+synonym: "Animalia (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007357
+
+[Term]
+id: PECO:0007350
+name: rice stripe virus exposure
+synonym: "RSV (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007111
+
+[Term]
+id: PECO:0007351
+is_obsolete: true
+property_value: retired_label "OBSOLETE genetic background" xsd:string
+
+[Term]
+id: PECO:0007353
+is_obsolete: true
+property_value: retired_label "OBSOLETE germplasm" xsd:string
+
+[Term]
+id: PECO:0007355
+is_obsolete: true
+property_value: retired_label "OBSOLETE genotype" xsd:string
+
+[Term]
+id: PECO:0007356
+name: rice hoja blanca virus exposure
+synonym: "hoja blanca (related)" RELATED []
+synonym: "rice hoja blanca tenuivirus (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007111
+
+[Term]
+id: PECO:0007357
+name: biotic plant exposure
+subset: tier_T0
+is_a: PECO:0001001
+
+[Term]
+id: PECO:0007358
+name: rice grassy stunt virus exposure
+synonym: "RGSV (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007111
+
+[Term]
+id: PECO:0007359
+name: plant experimental condition
+synonym: "plant treatment (related)" RELATED []
+subset: tier_T0
+
+[Term]
+id: PECO:0007360
+name: barley yellow dwarf virus exposure
+synonym: "BYDV (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007109
+
+[Term]
+id: PECO:0007361
+name: rice gall dwarf virus exposure
+synonym: "RGDV (related)" RELATED []
+synonym: "rice gall dwarf virus RGDV (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007110
+
+[Term]
+id: PECO:0007362
+name: Balansia oryzae-sativae exposure
+synonym: "Ephelis japonica (related)" RELATED []
+synonym: "Ephelis oryzae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007363
+name: Magnaporthe salvinii exposure
+synonym: "Helminthosporium sigmoideum (related)" RELATED []
+synonym: "Helminthosporium sigmoideum var.irregulare. (related)" RELATED []
+synonym: "Leptosphaeria salvinii (related)" RELATED []
+synonym: "Nakataea sigmoidae (related)" RELATED []
+synonym: "Sclerotium oryzae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007135
+
+[Term]
+id: PECO:0007364
+name: Rhizoctonia oryzae exposure
+synonym: "Rhizoctonia zeae (related)" RELATED []
+synonym: "Waitea circinata (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007073
+
+[Term]
+id: PECO:0007365
+name: rice dwarf virus exposure
+synonym: "RDV (related)" RELATED []
+synonym: "rice dwarf phytoreovirus (related)" RELATED []
+synonym: "rice dwarf phytoreovirus RDV (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007110
+
+[Term]
+id: PECO:0007366
+name: rice black streak dwarf virus exposure
+synonym: "RBSDV (related)" RELATED []
+synonym: "Rice black streak virus (related)" RELATED []
+synonym: "rice black-streaked dwarf fijivirus (related)" RELATED []
+synonym: "Rice black-streaked dwarf virus (related)" RELATED []
+synonym: "rice black-streaked dwarf virus RBSDV (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007110
+
+[Term]
+id: PECO:0007367
+name: Aphelenchoides besseyi exposure
+synonym: "rice white-tip nematode (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007337
+
+[Term]
+id: PECO:0007368
+name: high water temperature exposure
+subset: tier_T0
+is_a: PECO:0007173
+
+[Term]
+id: PECO:0007369
+name: Meloidogyne salasi exposure
+synonym: "Meloidogyne salasi treatment (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007127
+
+[Term]
+id: PECO:0007370
+name: Meloidogyne oryzae exposure
+synonym: "Meloidogyne oryzae treatment (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007127
+
+[Term]
+id: PECO:0007371
+name: Meloidogyne javanica exposure
+synonym: "Meloidogyne javanica treatment (related)" RELATED []
+synonym: "root-knot nematode (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007127
+
+[Term]
+id: PECO:0007372
+name: Meloidogyne incognita exposure
+synonym: "Meloidogyne incognita treatment (related)" RELATED []
+synonym: "southern root-knot nematode (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007127
+
+[Term]
+id: PECO:0007373
+name: mechanical damage exposure
+synonym: "wound (related)" RELATED []
+synonym: "wound treatment (related)" RELATED []
+synonym: "wounding (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007316
+
+[Term]
+id: PECO:0007374
+name: Cylindrocladium scoparium exposure
+synonym: "Calonectria morganii (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007375
+name: Meloidogyne graminicola exposure
+synonym: "Meloidogyne graminicola treatment (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007127
+
+[Term]
+id: PECO:0007376
+name: Pyrenochaeta oryzae exposure
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007377
+name: Athelia rolfsii exposure
+synonym: "Sclerotium rolfsii (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007073
+
+[Term]
+id: PECO:0007378
+name: Sarocladium oryzae exposure
+synonym: "Acrocylindrium oryzae (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007379
+name: Thanatephorus cucumeris exposure
+synonym: "black scurf of potato (related)" RELATED []
+synonym: "Rhizoctonia praticola (related)" RELATED []
+synonym: "Rhizoctonia solani (related)" RELATED []
+synonym: "Thanatephorus praticola (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007073
+
+[Term]
+id: PECO:0007380
+is_obsolete: true
+property_value: retired_label "OBSOLETE cytoplasmic genetic background" xsd:string
+
+[Term]
+id: PECO:0007381
+is_obsolete: true
+property_value: retired_label "OBSOLETE nuclear genetic background" xsd:string
+
+[Term]
+id: PECO:0007382
+name: wind environment exposure
+subset: tier_T0
+is_a: PECO:0007316
+
+[Term]
+id: PECO:0007383
+name: watering exposure
+subset: tier_T0
+is_a: PECO:0007198
+
+[Term]
+id: PECO:0007384
+name: freezing air temperature exposure
+subset: tier_T0
+is_a: PECO:0007332
+
+[Term]
+id: PECO:0007385
+name: irrigated land region exposure
+subset: tier_T0
+is_a: PECO:0007064
+
+[Term]
+id: PECO:0007386
+name: Gerlachia oryzae exposure
+synonym: "Monographella albescens (related)" RELATED []
+synonym: "rice leaf scald (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007107
+
+[Term]
+id: PECO:0007387
+name: manganese nutrient exposure
+subset: tier_T0
+is_a: PECO:0007239
+
+[Term]
+id: PECO:0007388
+name: Alternaria padwickii exposure
+synonym: "Trichoconis padwickii (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007214
+
+[Term]
+id: PECO:0007389
+name: Gibberella zeae exposure
+synonym: "Fusarium graminearum (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007341
+
+[Term]
+id: PECO:0007391
+name: lowland region exposure
+synonym: "rainfed lowland region (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007064
+
+[Term]
+id: PECO:0007392
+name: upland region exposure
+subset: tier_T0
+is_a: PECO:0007064
+
+[Term]
+id: PECO:0007393
+is_obsolete: true
+property_value: retired_label "OBSOLETE sub-sahara region" xsd:string
+
+[Term]
+id: PECO:0007394
+name: desert-like region exposure
+subset: tier_T0
+is_a: PECO:0007064
+
+[Term]
+id: PECO:0007395
+name: river delta region exposure
+subset: tier_T0
+is_a: PECO:0007396
+
+[Term]
+id: PECO:0007396
+name: flood-prone region exposure
+synonym: "deep water (related)" RELATED []
+synonym: "flooding (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007064
+
+[Term]
+id: PECO:0007397
+name: phosphorus nutrient exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007240
+
+[Term]
+id: PECO:0007398
+name: sub-tropical region exposure
+subset: tier_T0
+is_a: PECO:0007064
+
+[Term]
+id: PECO:0007399
+name: freezing water temperature exposure
+subset: tier_T0
+is_a: PECO:0007338
+
+[Term]
+id: PECO:0007400
+name: arid region exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007394
+
+[Term]
+id: PECO:0007401
+name: semiarid region exposure
+subset: tier_T0
+is_a: PECO:0007064
+
+[Term]
+id: PECO:0007402
+name: fungal elicitor exposure
+subset: tier_T0
+is_a: PECO:0007189
+
+[Term]
+id: PECO:0007403
+is_obsolete: true
+property_value: retired_label "OBSOLETE unknown exposure" xsd:string
+
+[Term]
+id: PECO:0007404
+name: drought exposure
+subset: tier_T0
+is_a: PECO:0007198
+
+[Term]
+id: PECO:0007405
+name: Hoagland solution exposure
+subset: tier_T0
+is_a: PECO:0007067
+
+[Term]
+id: PECO:0007406
+name: nitrate exposure
+subset: tier_T0
+is_a: PECO:0001009
+is_a: PECO:0007102
+
+[Term]
+id: PECO:0007407
+name: methyl jasmonate exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0001003
+
+[Term]
+id: PECO:0007408
+name: 5-methyltryptophan exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0001003
+
+[Term]
+id: PECO:0007409
+name: brassinosteroid exposure
+subset: tier_T0
+is_a: PECO:0007165
+
+[Term]
+id: PECO:0007410
+name: cerebroside elicitor exposure
+subset: tier_T0
+is_a: PECO:0007402
+
+[Term]
+id: PECO:0007411
+name: Pseudomonas fluorescens exposure
+synonym: "Bacillus fluorescens (related)" RELATED []
+synonym: "Bacillus fluorescens liquefaciens (related)" RELATED []
+synonym: "Bacterium fluorescen (related)" RELATED []
+synonym: "Liquidomonas fluorescens (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007144
+
+[Term]
+id: PECO:0007412
+name: zinc sulphate exposure
+synonym: "ZnSO4 (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007309
+
+[Term]
+id: PECO:0007413
+name: manganese sulfate exposure
+synonym: "MnSO4 (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007387
+
+[Term]
+id: PECO:0007414
+name: peroxide exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007189
+
+[Term]
+id: PECO:0007415
+name: hydrogen peroxide exposure
+subset: tier_T0
+is_a: PECO:0007041
+is_a: PECO:0007414
+
+[Term]
+id: PECO:0007503
+name: 1,2-dibromoethane exposure
+synonym: "DBE (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007149
+is_a: PECO:0007167
+
+[Term]
+id: PECO:0007504
+name: 1,2-dichloroethane exposure
+synonym: "DCE (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007505
+name: 1,2:5,6-dibenzanthracene exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007506
+name: 1,4-dimethanesulfonoxy-1:4-dimethylbutane exposure
+synonym: "CB2348 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007507
+name: 1,4-dimethanesulfonoxybut-2-yne exposure
+synonym: "CB2058 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007508
+name: 1,4-dimethanesulfonoxybutane exposure
+synonym: "busulfan (related)" RELATED []
+synonym: "CB2041 (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007149
+is_a: PECO:0007632
+
+[Term]
+id: PECO:0007509
+name: 1,6-dimethylsulfonoxy D-mannitol exposure
+synonym: "CB2511 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007510
+name: 1,6-dimethylsulfonoxy L-mannitol exposure
+synonym: "CB2628 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007511
+name: 1-amino-2-naphthol-4-sulfonic acid exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007512
+name: 1-bromo-2-chloroethane exposure
+synonym: "BCE (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007513
+name: 1-diethylaminoethylethylamino-4-methyl-thioxanthenone exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007514
+name: 2,5,-bisethylene-imine-1,4-benzoquinone exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007515
+name: 2-chloroethyl methanesulfonate exposure
+synonym: "CB1506 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007516
+name: 2-fluoroethyl methanesulfonate exposure
+synonym: "CB1522 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007517
+name: 2-methoxyethanol exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007518
+name: 5-bromouracil exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007519
+name: 5-bromouridine exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007520
+name: 7-bromomethyl 12 methyl benz or agr/anthracine exposure
+subset: tier_T0
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007521
+name: actinomycin D exposure
+subset: tier_T0
+is_a: PECO:0007041
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007522
+name: aminopterin exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007523
+name: benzo (or agr)pyrene exposure
+subset: tier_T0
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007524
+name: caffeine exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007525
+name: cisplatin exposure
+synonym: "cis-dichlorodiammineplatinum(II) (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007526
+name: colchicine exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007527
+name: cupric sulfate exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007528
+name: diepoxybutane exposure
+synonym: "DEB (related)" RELATED []
+synonym: "erythritol anhydride (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007529
+name: diepoxyoctane exposure
+subset: tier_T0
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007530
+name: diethyl sulfate exposure
+synonym: "DES (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007531
+name: dimethyl sulfoxide exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007532
+name: DNA exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007533
+name: ethyl ether exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007534
+name: ethyl methanesulfonate exposure
+synonym: "CB1528 (related)" RELATED []
+synonym: "EMS (related)" RELATED []
+synonym: "Methanesulfonic acid ethyl ester (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007535
+name: ethyl nitrosourea exposure
+synonym: "ENU (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007536
+name: ethylene oxide exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007537
+name: ethylenimine exposure
+synonym: "EI (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007538
+name: fagaronine exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007539
+name: formaldehyde exposure
+subset: tier_T0
+is_a: PECO:0007041
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007540
+name: boric acid exposure
+synonym: "H3BO3 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007541
+name: hesperidine exposure
+subset: tier_T0
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007542
+name: hexamethylmelamine exposure
+synonym: "altretamine (related)" RELATED []
+synonym: "HMM (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007543
+name: hexamethylphosphoramide exposure
+synonym: "HMPA (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007149
+is_a: PECO:0007632
+
+[Term]
+id: PECO:0007544
+name: hycanthon methanesulfonate exposure
+synonym: "HMS (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007545
+name: ICR 100 exposure
+synonym: "2-methoxy-6-[3-(ethyl-2-chloroethyl)aminopropylamino]acridine (related)" RELATED []
+synonym: "quinacrine mustard (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007546
+name: ICR 170 exposure
+synonym: "2-methoxy-6-dichloro-9-(3-ethyl-2-chloroethyl-aminopropylamino)acridine-dihydrochloride (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007547
+name: iodine exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007548
+name: Janus green B exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007549
+name: methoxy diethylnitrosamine exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007550
+name: methyl methanesulfonate exposure
+synonym: "CB1540 (related)" RELATED []
+synonym: "MMS (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007551
+name: mitomycin C exposure
+subset: tier_T0
+is_a: PECO:0007041
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007552
+name: mustard gas exposure
+synonym: "1,1'-thiobis[2-chloroethane (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007553
+name: N-methyl-N'-nitro-N-nitrosoguanidine exposure
+synonym: "MNNG (related)" RELATED []
+synonym: "NNG (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007554
+name: N-nitrosodimethylamine exposure
+synonym: "DMN (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007555
+name: natural gas exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007556
+name: nitrogen mustard exposure
+synonym: "2-chloro-N-(2-chloroethyl)-N-methylethanamine (related)" RELATED []
+synonym: "CB1414 (related)" RELATED []
+synonym: "HN2 (related)" RELATED []
+synonym: "mechlorethamine (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007557
+name: nitrosomethyl urea exposure
+synonym: "MNU (related)" RELATED []
+synonym: "N-methyl-N-nitrosourea (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007558
+name: p-N,N-di(2-chloroethyl)aminophenylvaleric acid exposure
+synonym: "CB1356 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007559
+name: p-N,N-di-(2-chloroethyl)amino-D-phenylalanine exposure
+synonym: "CB3026 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007560
+name: p-N,N-di-(2-chloroethyl)amino-DL-phenylalanine exposure
+synonym: "CB3007 (related)" RELATED []
+synonym: "melphalan (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007556
+
+[Term]
+id: PECO:0007561
+name: p-N,N-di-(2-chloroethyl)amino-L-phenylalanine exposure
+synonym: "CB3025 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007562
+name: p-N,N-di-(2-chloroethyl)aminophenylbutyric acid exposure
+synonym: "CB1348 (related)" RELATED []
+synonym: "chlorambucil (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007556
+
+[Term]
+id: PECO:0007563
+name: p-N,N-di-(2-chloroethyl)aminophenylethylamine exposure
+synonym: "CB3034 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007564
+name: p-p'-N,N-di(2-chloroethyl)aminophenoxyphenylalanine exposure
+synonym: "CB3051 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007565
+name: quinhydrone exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007566
+name: S-2-chloroethylcysteine exposure
+synonym: "CB1592 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007567
+name: sodium bisulfite exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007568
+name: sodium fluoride exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007569
+name: styryl quinoline exposure
+synonym: "CB3086 (related)" RELATED []
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007570
+is_obsolete: true
+property_value: retired_label "OBSOLETE sulfur mustard exposure" xsd:string
+
+[Term]
+id: PECO:0007571
+name: triaziquone exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007572
+name: triethylenemelamine exposure
+synonym: "CB1246 (related)" RELATED []
+synonym: "TEM (related)" RELATED []
+subset: tier_T0
+is_a: PECO:0007149
+is_a: PECO:0007632
+
+[Term]
+id: PECO:0007573
+name: urethane exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007574
+name: vinyl carbamate exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007149
+
+[Term]
+id: PECO:0007610
+is_obsolete: true
+property_value: retired_label "OBSOLETE 3-H exposure" xsd:string
+
+[Term]
+id: PECO:0007611
+is_obsolete: true
+property_value: retired_label "OBSOLETE 3-H-deoxycytidine exposure" xsd:string
+
+[Term]
+id: PECO:0007612
+is_obsolete: true
+property_value: retired_label "OBSOLETE 3-H-thymidine exposure" xsd:string
+
+[Term]
+id: PECO:0007613
+is_obsolete: true
+property_value: retired_label "OBSOLETE 32-P exposure" xsd:string
+
+[Term]
+id: PECO:0007614
+is_obsolete: true
+property_value: retired_label "OBSOLETE agr ray exposure" xsd:string
+
+[Term]
+id: PECO:0007615
+is_obsolete: true
+property_value: retired_label "OBSOLETE Bevatron irradiation exposure" xsd:string
+
+[Term]
+id: PECO:0007616
+is_obsolete: true
+property_value: retired_label "OBSOLETE deuteron irradiation exposure" xsd:string
+
+[Term]
+id: PECO:0007617
+is_obsolete: true
+property_value: retired_label "OBSOLETE ggr ray exposure" xsd:string
+
+[Term]
+id: PECO:0007618
+is_obsolete: true
+property_value: retired_label "OBSOLETE 137-Cs or ggr ray exposure" xsd:string
+
+[Term]
+id: PECO:0007619
+is_obsolete: true
+property_value: retired_label "OBSOLETE 226-Ra or agr ray exposure" xsd:string
+
+[Term]
+id: PECO:0007620
+is_obsolete: true
+property_value: retired_label "OBSOLETE 60-Co or ggr ray exposure" xsd:string
+
+[Term]
+id: PECO:0007621
+is_obsolete: true
+property_value: retired_label "OBSOLETE magnetic field exposure" xsd:string
+
+[Term]
+id: PECO:0007622
+is_obsolete: true
+property_value: retired_label "OBSOLETE neutrons exposure" xsd:string
+
+[Term]
+id: PECO:0007623
+is_obsolete: true
+property_value: retired_label "OBSOLETE 252-Cf fission neutrons exposure" xsd:string
+
+[Term]
+id: PECO:0007624
+is_obsolete: true
+property_value: retired_label "OBSOLETE radio wave exposure" xsd:string
+
+[Term]
+id: PECO:0007625
+is_obsolete: true
+property_value: retired_label "OBSOLETE stratosphere exposure" xsd:string
+
+[Term]
+id: PECO:0007626
+is_obsolete: true
+property_value: retired_label "OBSOLETE supersonic exposure" xsd:string
+
+[Term]
+id: PECO:0007628
+name: X-ray exposure
+subset: tier_T0
+is_a: PECO:0007154
+
+[Term]
+id: PECO:0007629
+name: hydrogen exposure
+subset: tier_T0
+is_a: COB:0001000
+is_a: PECO:0007043
+
+[Term]
+id: PECO:0007630
+name: Sclerospora sp. exposure
+synonym: "downy mildews (exact)" EXACT []
+subset: tier_T0
+is_a: PECO:0001075
+
+[Term]
+id: PECO:0007631
+name: Sclerospora graminicola exposure
+subset: tier_T0
+is_a: PECO:0007630
+
+[Term]
+id: PECO:0007632
+name: insecticide exposure
+subset: tier_T0
+is_a: PECO:0007167
+
+[Term]
+id: PECO:0007633
+name: imidazolinone exposure
+subset: tier_T0
+is_a: PECO:0007183
+
+[Term]
+id: PECO:0007634
+name: Spodoptera litura exposure
+subset: tier_T0
+is_a: PECO:0007115
+
+[Term]
+id: COB:0001000
+property_value: graph_stub "true" xsd:string
+

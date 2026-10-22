@@ -10,6 +10,7 @@
 #include <lucene++/FileUtils.h>
 #include "CASUtils.h"
 #include <lucene++/LuceneHeaders.h>
+#include "../../lucene-custom/CaseInsensitiveAnalyzer.h" // StandardAnalyzer + Greek synonyms
 #include <iomanip>
 #include <boost/lexical_cast.hpp>
 #include <boost/regex.hpp>
@@ -195,7 +196,7 @@ TyErrorId Tpcas2Lpp::initialize(AnnotatorContext & rclAnnotatorContext) {
     }
     String TokenIndexDir = StringUtils::toString(tokenindexdirectory.c_str());
     tokenwriter = newLucene<IndexWriter > (FSDirectory::open(TokenIndexDir),
-                                           newLucene<StandardAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
+                                           newLucene<CaseInsensitiveAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
                                            IndexWriter::MaxFieldLengthUNLIMITED);
 
     if (!rclAnnotatorContext.isParameterDefined("TokenCaseSensitiveLuceneIndexDirectory") ||
@@ -221,7 +222,7 @@ TyErrorId Tpcas2Lpp::initialize(AnnotatorContext & rclAnnotatorContext) {
     }
     String SentenceIndexDir = StringUtils::toString(sentenceindexdirectory.c_str());
     sentencewriter = newLucene<IndexWriter > (FSDirectory::open(SentenceIndexDir),
-                                              newLucene<StandardAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
+                                              newLucene<CaseInsensitiveAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
                                               IndexWriter::MaxFieldLengthUNLIMITED);
 
     if (!rclAnnotatorContext.isParameterDefined("SentenceCaseSensitiveLuceneIndexDirectory") ||
@@ -246,7 +247,7 @@ TyErrorId Tpcas2Lpp::initialize(AnnotatorContext & rclAnnotatorContext) {
     }
     String LexicalIndexDir = StringUtils::toString(lexicalindexdirectory.c_str());
     lexicalwriter = newLucene<IndexWriter > (FSDirectory::open(LexicalIndexDir),
-                                             newLucene<StandardAnalyzer> (LuceneVersion::LUCENE_30), b_newindex, //create new index
+                                             newLucene<CaseInsensitiveAnalyzer> (LuceneVersion::LUCENE_30), b_newindex, //create new index
                                              IndexWriter::MaxFieldLengthUNLIMITED);
 
     if (!rclAnnotatorContext.isParameterDefined("LexicalCaseSensitiveLuceneIndexDirectory") ||
@@ -271,7 +272,7 @@ TyErrorId Tpcas2Lpp::initialize(AnnotatorContext & rclAnnotatorContext) {
     }
     String FulltextIndexDir = StringUtils::toString(fulltextindexdirectory.c_str());
     fulltextwriter = newLucene<IndexWriter > (FSDirectory::open(FulltextIndexDir),
-                                              newLucene<StandardAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
+                                              newLucene<CaseInsensitiveAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
                                               IndexWriter::MaxFieldLengthUNLIMITED);
 
     if (!rclAnnotatorContext.isParameterDefined("FulltextCaseSensitiveLuceneIndexDirectory") ||
@@ -297,7 +298,7 @@ TyErrorId Tpcas2Lpp::initialize(AnnotatorContext & rclAnnotatorContext) {
     }
     String BibIndexDir = StringUtils::toString(bibindexdirectory.c_str());
     bibwriter = newLucene<IndexWriter > (FSDirectory::open(BibIndexDir),
-                                         newLucene<StandardAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
+                                         newLucene<CaseInsensitiveAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
                                          IndexWriter::MaxFieldLengthUNLIMITED);
 
     if (!rclAnnotatorContext.isParameterDefined("BibliographyCaseSensitiveLuceneIndexDirectory") ||

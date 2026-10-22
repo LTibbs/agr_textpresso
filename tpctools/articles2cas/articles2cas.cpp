@@ -24,6 +24,7 @@ void convert_dir_recursively(const string& inputDir, const string& outputDir, co
         bool use_parent_dir_as_outname) {
     for (directory_iterator dit(inputDir); dit != directory_iterator(); ++dit) {
         if ((is_regular_file(*dit) && (dit->path().filename().string().find(".nxml.gz") != string::npos ||
+                dit->path().filename().string().find(".jats.json") != string::npos ||
                 dit->path().filename().string().find(".pdf") != string::npos ||
                 dit->path().filename().string().find(".txt") != string::npos)) && ((filelist_set.empty() ||
                 filelist_set.find(dit->path().filename().string()) != filelist_set.end()) &&
@@ -44,6 +45,14 @@ void convert_dir_recursively(const string& inputDir, const string& outputDir, co
                     }
                 } catch (const std::exception &e) {
                     std::cerr << "Error " << e.what() << std::endl;
+                }
+            } else if (fileType == FileType::jats) {
+                // only the staged JSON; <accession>.nxml.gz and .suppl.txt sit beside it
+                const string fn = dit->path().filename().string();
+                if (fn.size() > 10 && fn.compare(fn.size() - 10, 10, ".jats.json") == 0) {
+                    cout << dit->path().string() << endl;
+                    CASManager::convert_raw_file_to_cas1(dit->path().string(), fileType, outputDir,
+                            use_parent_dir_as_outname);
                 }
             } else if (fileType == FileType::tai) {
                 if (dit->path().filename().string().find(".pdf") != string::npos) {
@@ -83,7 +92,8 @@ int main(int argc, const char* argv[]) {
                 ("cas-output-directory,o", po::value<string>(&outputDir)->required(),
                 "directory where to write cas files")
                 ("input-files-type,t", po::value<int>(&fileType)->default_value(1),
-                "type of files to process. 1 for pdf, 2 for xml, 3 for text")
+                "type of files to process. 1 for pdf, 2 for xml, 3 for text, 4 for tai, "
+                "5 for jats (<accession>.jats.json)")
                 ("dir-list,l", po::value<string>(&dirlist)->default_value(""),
                 "optional list of directory names containing the final files to be processed. Other "
                 "directories are ignored")
@@ -118,6 +128,8 @@ int main(int argc, const char* argv[]) {
         ft = FileType::txt;
     } else if (fileType == 4) {
         ft = FileType::tai;
+    } else if (fileType == 5) {
+        ft = FileType::jats;
     }
     if (is_directory(inputDir)) {
         path p(inputDir);

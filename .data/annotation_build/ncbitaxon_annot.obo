@@ -1,5 +1,8 @@
 format-version: 1.2
 data-version: 2026-07-12 [pruned]/annotation-build
+subsetdef: tier_T0 "match-string tier T0 (annotation build)"
+subsetdef: tier_T1 "match-string tier T1 (annotation build)"
+subsetdef: tier_T2 "match-string tier T2 (annotation build)"
 ontology: ncbitaxon
 remark: matchable strings only; per-term tiers in subset tier_T0..T2
 remark: obsolete stanzas retained for id resolution with their label

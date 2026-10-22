@@ -1,5 +1,8 @@
 format-version: 1.2
 data-version: cropontology-live/2026-09-22/annotation-build
+subsetdef: tier_T0 "match-string tier T0 (annotation build)"
+subsetdef: tier_T1 "match-string tier T1 (annotation build)"
+subsetdef: tier_T2 "match-string tier T2 (annotation build)"
 ontology: co_322
 remark: matchable strings only; per-term tiers in subset tier_T0..T2
 remark: obsolete stanzas retained for id resolution with their label

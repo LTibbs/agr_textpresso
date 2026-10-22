@@ -1,5 +1,12 @@
 format-version: 1.2
 data-version: 2026-08-07/annotation-build
+subsetdef: Alliance_of_Genome_Resources "Alliance of Genome Resources Gene Biotype Slim"
+subsetdef: biosapiens "biosapiens protein feature ontology"
+subsetdef: DBVAR "database of genomic structural variation"
+subsetdef: SOFA "SO feature annotation"
+subsetdef: tier_T0 "match-string tier T0 (annotation build)"
+subsetdef: tier_T1 "match-string tier T1 (annotation build)"
+subsetdef: tier_T2 "match-string tier T2 (annotation build)"
 ontology: so
 remark: matchable strings only; per-term tiers in subset tier_T0..T2
 remark: obsolete stanzas retained for id resolution with their label
@@ -16,6 +23,7 @@ name: region
 synonym: "sequence" EXACT []
 subset: tier_T0
 subset: tier_T2
+subset: SOFA
 is_a: SO:0000110
 
 [Term]
@@ -44,6 +52,7 @@ id: SO:0000004
 name: interior_coding_exon
 synonym: "interior coding exon" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000195
 
 [Term]
@@ -52,6 +61,7 @@ name: satellite_DNA
 synonym: "INSDC_qualifier:satellite" EXACT []
 synonym: "satellite DNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000705
 
 [Term]
@@ -60,6 +70,7 @@ name: PCR_product
 synonym: "PCR product" EXACT []
 synonym: "amplicon" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000695
 
 [Term]
@@ -68,6 +79,7 @@ name: read_pair
 synonym: "mate pair" EXACT []
 synonym: "read-pair" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000150
 
 [Term]
@@ -112,6 +124,7 @@ synonym: "INSDC_qualifier:scRNA" EXACT []
 synonym: "small cytoplasmic RNA" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000655
 
 [Term]
@@ -326,6 +339,7 @@ id: SO:0000039
 name: match_part
 synonym: "match part" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001410
 
 [Term]
@@ -433,6 +447,7 @@ id: SO:0000057
 name: operator
 synonym: "operator segment" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001055
 
 [Term]
@@ -445,6 +460,7 @@ id: SO:0000059
 name: nuclease_binding_site
 synonym: "nuclease binding site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001654
 
 [Term]
@@ -731,6 +747,7 @@ name: transposable_element
 synonym: "transposable element" EXACT []
 synonym: "transposon" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001039
 
 [Term]
@@ -738,6 +755,7 @@ id: SO:0000102
 name: expressed_sequence_match
 synonym: "expressed sequence match" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000347
 
 [Term]
@@ -745,6 +763,7 @@ id: SO:0000103
 name: clone_insert_end
 synonym: "clone insert end" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000699
 
 [Term]
@@ -753,6 +772,7 @@ name: polypeptide
 synonym: "protein" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -797,6 +817,7 @@ synonym: "located_sequence_feature" EXACT []
 synonym: "sequence feature" EXACT []
 synonym: "located sequence feature" RELATED []
 subset: tier_T0
+subset: SOFA
 
 [Term]
 id: SO:0000111
@@ -814,6 +835,7 @@ synonym: "primer polynucleotide" EXACT []
 synonym: "primer sequence" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000441
 
 [Term]
@@ -822,6 +844,7 @@ name: proviral_region
 synonym: "proviral region" EXACT []
 synonym: "proviral sequence" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001039
 
 [Term]
@@ -833,6 +856,7 @@ synonym: "methylated cytosine base" EXACT []
 synonym: "methylated cytosine residue" EXACT []
 synonym: "methylated_C" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000306
 is_a: SO:0001963
 
@@ -871,6 +895,7 @@ name: protein_coding_primary_transcript
 synonym: "protein coding primary transcript" EXACT []
 synonym: "pre mRNA" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000185
 
 [Term]
@@ -1019,6 +1044,7 @@ name: ribosome_entry_site
 synonym: "INSDC_qualifier:ribosome_binding_site" EXACT []
 synonym: "ribosome entry site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000836
 
 [Term]
@@ -1027,6 +1053,7 @@ name: attenuator
 synonym: "attenuator sequence" EXACT []
 synonym: "INSDC_qualifier:attenuator" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001680
 
 [Term]
@@ -1036,6 +1063,7 @@ synonym: "INSDC_qualifier:terminator" EXACT []
 synonym: "terminator sequence" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001055
 
 [Term]
@@ -1050,6 +1078,7 @@ id: SO:0000143
 name: assembly_component
 synonym: "assembly component" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001410
 
 [Term]
@@ -1076,6 +1105,7 @@ name: exon
 synonym: "INSDC_feature:exon" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000833
 
 [Term]
@@ -1084,12 +1114,14 @@ name: supercontig
 synonym: "scaffold" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001876
 
 [Term]
 id: SO:0000149
 name: contig
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000143
 is_a: SO:0000353
 
@@ -1097,12 +1129,14 @@ is_a: SO:0000353
 id: SO:0000150
 name: read
 subset: tier_T2
+subset: SOFA
 is_a: SO:0000143
 
 [Term]
 id: SO:0000151
 name: clone
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000695
 
 [Term]
@@ -1166,6 +1200,7 @@ synonym: "nucleotide deletion" EXACT []
 synonym: "nucleotide_deletion" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001059
 is_a: SO:0001411
 
@@ -1183,6 +1218,7 @@ synonym: "methylated adenine base" EXACT []
 synonym: "methylated adenine residue" EXACT []
 synonym: "methylated_A" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000306
 is_a: SO:0001962
 
@@ -1191,6 +1227,7 @@ id: SO:0000162
 name: splice_site
 synonym: "splice site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000835
 
 [Term]
@@ -1202,6 +1239,7 @@ synonym: "five prime splice site" EXACT []
 synonym: "splice donor site" EXACT []
 synonym: "donor" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001419
 
 [Term]
@@ -1214,6 +1252,7 @@ synonym: "3' splice site" RELATED []
 synonym: "acceptor" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001419
 
 [Term]
@@ -1222,6 +1261,7 @@ name: enhancer
 synonym: "INSDC_qualifier:enhancer" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000727
 
 [Term]
@@ -1237,6 +1277,7 @@ name: promoter
 synonym: "INSDC_qualifier:promoter" EXACT []
 synonym: "promoter sequence" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000842
 is_a: SO:0001055
 
@@ -1329,6 +1370,7 @@ id: SO:0000177
 name: cross_genome_match
 synonym: "cross genome match" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000347
 
 [Term]
@@ -1336,6 +1378,7 @@ id: SO:0000178
 name: operon
 synonym: "INSDC_feature:operon" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0005855
 
 [Term]
@@ -1343,6 +1386,7 @@ id: SO:0000179
 name: clone_insert_start
 synonym: "clone insert start" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000699
 
 [Term]
@@ -1359,6 +1403,7 @@ id: SO:0000181
 name: translated_nucleotide_match
 synonym: "translated nucleotide match" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000347
 
 [Term]
@@ -1378,6 +1423,7 @@ synonym: "non-transcribed sequence" EXACT []
 synonym: "nontranscribed region" EXACT []
 synonym: "nontranscribed sequence" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000842
 
 [Term]
@@ -1393,6 +1439,7 @@ name: primary_transcript
 synonym: "INSDC_feature:prim_transcript" EXACT []
 synonym: "primary transcript" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000673
 
 [Term]
@@ -1413,6 +1460,7 @@ id: SO:0000188
 name: intron
 synonym: "INSDC_feature:intron" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000835
 
 [Term]
@@ -1455,6 +1503,7 @@ synonym: "RFLP" EXACT []
 synonym: "RFLP fragment" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000412
 
 [Term]
@@ -1473,6 +1522,7 @@ id: SO:0000195
 name: coding_exon
 synonym: "coding exon" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000147
 
 [Term]
@@ -1480,6 +1530,7 @@ id: SO:0000196
 name: five_prime_coding_exon_coding_region
 synonym: "five prime exon coding region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001215
 
 [Term]
@@ -1487,6 +1538,7 @@ id: SO:0000197
 name: three_prime_coding_exon_coding_region
 synonym: "three prime exon coding region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001215
 
 [Term]
@@ -1494,6 +1546,7 @@ id: SO:0000198
 name: noncoding_exon
 synonym: "noncoding exon" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000147
 
 [Term]
@@ -1503,6 +1556,7 @@ synonym: "translocated sequence" EXACT []
 synonym: "transchr" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: DBVAR
 is_a: SO:0001785
 
 [Term]
@@ -1511,6 +1565,7 @@ name: five_prime_coding_exon
 synonym: "5' coding exon" EXACT []
 synonym: "five prime coding exon" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000195
 
 [Term]
@@ -1534,6 +1589,7 @@ name: UTR
 synonym: "untranslated region" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000836
 
 [Term]
@@ -1544,6 +1600,7 @@ synonym: "five prime UTR" EXACT []
 synonym: "five_prime_untranslated_region" EXACT []
 synonym: "INSDC_feature:5'UTR" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000203
 
 [Term]
@@ -1553,6 +1610,7 @@ synonym: "INSDC_feature:3'UTR" EXACT []
 synonym: "three prime untranslated region" EXACT []
 synonym: "three prime UTR" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000203
 
 [Term]
@@ -1588,6 +1646,7 @@ name: rRNA_primary_transcript
 synonym: "ribosomal RNA primary transcript" EXACT []
 synonym: "rRNA primary transcript" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000483
 
 [Term]
@@ -1756,6 +1815,7 @@ id: SO:0000233
 name: mature_transcript
 synonym: "mature transcript" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000673
 
 [Term]
@@ -1766,6 +1826,7 @@ synonym: "messenger RNA" EXACT []
 synonym: "protein_coding_transcript" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000233
 
 [Term]
@@ -1774,6 +1835,7 @@ name: TF_binding_site
 synonym: "TF binding site" EXACT []
 synonym: "transcription factor binding site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001055
 is_a: SO:0001654
 
@@ -1783,6 +1845,7 @@ name: ORF
 synonym: "open reading frame" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000717
 
 [Term]
@@ -1806,6 +1869,7 @@ id: SO:0000239
 name: flanking_region
 synonym: "flanking region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001412
 
 [Term]
@@ -1894,6 +1958,7 @@ synonym: "ribosomal ribonucleic acid" EXACT []
 synonym: "ribosomal RNA" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000655
 
 [Term]
@@ -1904,6 +1969,7 @@ synonym: "transfer ribonucleic acid" RELATED []
 synonym: "transfer RNA" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0002247
 
 [Term]
@@ -2091,6 +2157,7 @@ synonym: "INSDC_qualifier:snRNA" EXACT []
 synonym: "small nuclear RNA" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0002247
 
 [Term]
@@ -2100,6 +2167,7 @@ synonym: "INSDC_qualifier:snoRNA" EXACT []
 synonym: "small nucleolar RNA" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0002247
 
 [Term]
@@ -2112,6 +2180,7 @@ synonym: "small temporal RNA" EXACT []
 synonym: "stRNA" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000370
 
 [Term]
@@ -2215,6 +2284,7 @@ synonym: "short tandem repeat" EXACT []
 synonym: "STR" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000005
 
 [Term]
@@ -2257,6 +2327,7 @@ synonym: "INSDC_qualifier:inverted" EXACT []
 synonym: "inverted repeat" EXACT []
 synonym: "inverted repeat sequence" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000657
 
 [Term]
@@ -2275,6 +2346,7 @@ synonym: "ori" EXACT []
 synonym: "origin of replication" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -2328,6 +2400,7 @@ is_a: SO:0000939
 id: SO:0000303
 name: clip
 subset: tier_T2
+subset: SOFA
 is_a: SO:0000835
 
 [Term]
@@ -2341,6 +2414,7 @@ name: modified_DNA_base
 synonym: "INSDC_feature:modified_base" EXACT []
 synonym: "modified base site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001236
 is_a: SO:0001720
 
@@ -2349,6 +2423,7 @@ id: SO:0000306
 name: methylated_DNA_base_feature
 synonym: "methylated base feature" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000305
 
 [Term]
@@ -2357,6 +2432,7 @@ name: CpG_island
 synonym: "CG island" EXACT []
 synonym: "CpG island" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -2402,6 +2478,7 @@ name: direct_repeat
 synonym: "direct repeat" EXACT []
 synonym: "INSDC_qualifier:direct" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000657
 
 [Term]
@@ -2412,6 +2489,7 @@ synonym: "transcription start site" EXACT []
 synonym: "transcription_start_site" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000835
 is_a: SO:0002309
 
@@ -2423,6 +2501,7 @@ synonym: "coding_sequence" EXACT []
 synonym: "INSDC_feature:CDS" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000836
 
 [Term]
@@ -2438,6 +2517,7 @@ name: start_codon
 synonym: "initiation codon" EXACT []
 synonym: "start codon" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000360
 
 [Term]
@@ -2445,6 +2525,7 @@ id: SO:0000319
 name: stop_codon
 synonym: "stop codon" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000360
 
 [Term]
@@ -2482,6 +2563,7 @@ is_a: SO:0000851
 id: SO:0000324
 name: tag
 subset: tier_T2
+subset: SOFA
 is_a: SO:0000696
 
 [Term]
@@ -2490,6 +2572,7 @@ name: rRNA_large_subunit_primary_transcript
 synonym: "35S rRNA primary transcript" EXACT []
 synonym: "rRNA large subunit primary transcript" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000209
 
 [Term]
@@ -2497,6 +2580,7 @@ id: SO:0000326
 name: SAGE_tag
 synonym: "SAGE tag" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000324
 
 [Term]
@@ -2529,6 +2613,7 @@ name: conserved_region
 synonym: "conserved region" EXACT []
 synonym: "INSDC_note:conserved_region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001410
 
 [Term]
@@ -2538,6 +2623,7 @@ synonym: "INSDC_feature:STS" EXACT []
 synonym: "sequence tag site" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000324
 
 [Term]
@@ -2545,6 +2631,7 @@ id: SO:0000332
 name: coding_conserved_region
 synonym: "coding conserved region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000330
 
 [Term]
@@ -2552,6 +2639,7 @@ id: SO:0000333
 name: exon_junction
 synonym: "exon junction" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000699
 
 [Term]
@@ -2562,6 +2650,7 @@ synonym: "conserved non-coding sequence" EXACT []
 synonym: "nc conserved region" EXACT []
 synonym: "noncoding conserved region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000330
 
 [Term]
@@ -2577,6 +2666,8 @@ name: pseudogene
 synonym: "INSDC_qualifier:pseudo" EXACT []
 synonym: "INSDC_qualifier:unknown" EXACT []
 subset: tier_T0
+subset: Alliance_of_Genome_Resources
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -2584,6 +2675,7 @@ id: SO:0000337
 name: RNAi_reagent
 synonym: "RNAi reagent" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000442
 
 [Term]
@@ -2605,6 +2697,7 @@ is_a: SO:0000298
 id: SO:0000340
 name: chromosome
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001235
 
 [Term]
@@ -2614,6 +2707,7 @@ synonym: "chromosome band" EXACT []
 synonym: "cytoband" EXACT []
 synonym: "cytological band" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000830
 
 [Term]
@@ -2627,6 +2721,7 @@ is_a: SO:0000299
 id: SO:0000343
 name: match
 subset: tier_T2
+subset: SOFA
 is_a: SO:0001410
 
 [Term]
@@ -2634,6 +2729,7 @@ id: SO:0000344
 name: splice_enhancer
 synonym: "splice enhancer" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001056
 
 [Term]
@@ -2642,6 +2738,7 @@ name: EST
 synonym: "expressed sequence tag" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000324
 
 [Term]
@@ -2657,6 +2754,7 @@ id: SO:0000347
 name: nucleotide_match
 synonym: "nucleotide match" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000343
 
 [Term]
@@ -2671,6 +2769,7 @@ id: SO:0000349
 name: protein_match
 synonym: "protein match" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000343
 
 [Term]
@@ -2699,6 +2798,7 @@ id: SO:0000353
 name: sequence_assembly
 synonym: "sequence assembly" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001248
 
 [Term]
@@ -2737,6 +2837,7 @@ is_a: SO:0000357
 id: SO:0000360
 name: codon
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000851
 
 [Term]
@@ -2778,6 +2879,7 @@ id: SO:0000366
 name: insertion_site
 synonym: "insertion site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000699
 
 [Term]
@@ -2792,6 +2894,7 @@ id: SO:0000368
 name: transposable_element_insertion_site
 synonym: "transposable element insertion site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000366
 
 [Term]
@@ -2804,6 +2907,7 @@ id: SO:0000370
 name: small_regulatory_ncRNA
 synonym: "small regulatory ncRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0002247
 
 [Term]
@@ -2818,6 +2922,7 @@ id: SO:0000372
 name: enzymatic_RNA
 synonym: "enzymatic RNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000655
 
 [Term]
@@ -2832,6 +2937,7 @@ id: SO:0000374
 name: ribozyme
 synonym: "INSDC_qualifier:ribozyme" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000372
 
 [Term]
@@ -2842,6 +2948,7 @@ synonym: "cytosolic 5.8S ribosomal RNA" EXACT []
 synonym: "cytosolic 5.8S rRNA" EXACT []
 synonym: "cytosolic rRNA 5 8S" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000651
 
 [Term]
@@ -2881,6 +2988,7 @@ name: hammerhead_ribozyme
 synonym: "hammerhead ribozyme" EXACT []
 synonym: "INSDC_qualifier:hammerhead_ribozyme" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000715
 
 [Term]
@@ -2917,6 +3025,7 @@ name: RNase_MRP_RNA
 synonym: "INSDC_qualifier:RNase_MRP_RNA" EXACT []
 synonym: "RNase MRP RNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000372
 
 [Term]
@@ -2925,6 +3034,7 @@ name: RNase_P_RNA
 synonym: "INSDC_qualifier:RNase_P_RNA" EXACT []
 synonym: "RNase P RNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000372
 
 [Term]
@@ -2954,6 +3064,7 @@ name: telomerase_RNA
 synonym: "INSDC_qualifier:telomerase_RNA" EXACT []
 synonym: "telomerase RNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000655
 
 [Term]
@@ -2964,6 +3075,7 @@ synonym: "snRNA U1" EXACT []
 synonym: "U1 small nuclear RNA" EXACT []
 synonym: "U1 snRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000274
 
 [Term]
@@ -2974,6 +3086,7 @@ synonym: "snRNA U2" EXACT []
 synonym: "U2 small nuclear RNA" EXACT []
 synonym: "U2 snRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000274
 
 [Term]
@@ -2984,6 +3097,7 @@ synonym: "snRNA U4" EXACT []
 synonym: "U4 small nuclear RNA" EXACT []
 synonym: "U4 snRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000274
 
 [Term]
@@ -2994,6 +3108,7 @@ synonym: "snRNA U4atac" EXACT []
 synonym: "U4atac small nuclear RNA" EXACT []
 synonym: "U4atac snRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000274
 
 [Term]
@@ -3004,6 +3119,7 @@ synonym: "snRNA U5" EXACT []
 synonym: "U5 small nuclear RNA" EXACT []
 synonym: "U5 snRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000274
 
 [Term]
@@ -3014,6 +3130,7 @@ synonym: "snRNA U6" EXACT []
 synonym: "U6 small nuclear RNA" EXACT []
 synonym: "U6 snRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000274
 
 [Term]
@@ -3023,6 +3140,7 @@ synonym: "snRNA U6atac" EXACT []
 synonym: "U6atac small nuclear RNA" EXACT []
 synonym: "U6atac snRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000274
 
 [Term]
@@ -3033,6 +3151,7 @@ synonym: "snRNA U11" EXACT []
 synonym: "U11 small nuclear RNA" EXACT []
 synonym: "U11 snRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000274
 
 [Term]
@@ -3043,6 +3162,7 @@ synonym: "snRNA U12" EXACT []
 synonym: "U12 small nuclear RNA" EXACT []
 synonym: "U12 snRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000274
 
 [Term]
@@ -3071,6 +3191,7 @@ synonym: "snoRNA U14" EXACT []
 synonym: "U14 small nucleolar RNA" EXACT []
 synonym: "U14 snoRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000593
 
 [Term]
@@ -3079,6 +3200,7 @@ name: vault_RNA
 synonym: "INSDC_qualifier:vault_RNA" EXACT []
 synonym: "vault RNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000655
 
 [Term]
@@ -3088,6 +3210,7 @@ synonym: "INSDC_qualifier:Y_RNA" EXACT []
 synonym: "Y RNA" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000655
 
 [Term]
@@ -3103,6 +3226,7 @@ synonym: "cytosolic 18S ribosomal RNA" EXACT []
 synonym: "cytosolic 18S rRNA" EXACT []
 synonym: "cytosolic rRNA 18S" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000650
 
 [Term]
@@ -3119,6 +3243,8 @@ synonym: "INSDC_feature:misc_binding" EXACT []
 synonym: "site" RELATED []
 subset: tier_T0
 subset: tier_T2
+subset: biosapiens
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -3127,6 +3253,7 @@ name: protein_binding_site
 synonym: "INSDC_feature:protein_bind" EXACT []
 synonym: "protein binding site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000409
 
 [Term]
@@ -3143,6 +3270,7 @@ id: SO:0000412
 name: restriction_fragment
 synonym: "restriction fragment" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000143
 
 [Term]
@@ -3151,6 +3279,7 @@ name: sequence_difference
 synonym: "INSDC_feature:misc_difference" EXACT []
 synonym: "sequence difference" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000700
 
 [Term]
@@ -3180,6 +3309,7 @@ name: polypeptide_domain
 synonym: "polypeptide domain" EXACT []
 synonym: "polypeptide_structural_domain" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001070
 is_a: SO:0100021
 
@@ -3191,6 +3321,8 @@ synonym: "signal peptide" EXACT []
 synonym: "signal peptide coding sequence" EXACT []
 synonym: "signal" RELATED []
 subset: tier_T0
+subset: biosapiens
+subset: SOFA
 is_a: SO:0001527
 
 [Term]
@@ -3201,6 +3333,8 @@ synonym: "mature protein region" EXACT []
 synonym: "chain" RELATED []
 synonym: "mature peptide" RELATED []
 subset: tier_T0
+subset: biosapiens
+subset: SOFA
 is_a: SO:0000839
 
 [Term]
@@ -3342,6 +3476,7 @@ name: ARS
 synonym: "autonomously replicating sequence" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000296
 
 [Term]
@@ -3379,6 +3514,7 @@ synonym: "single stranded oligonucleotide" EXACT []
 synonym: "ss oligo" EXACT []
 synonym: "ss oligonucleotide" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000696
 
 [Term]
@@ -3388,6 +3524,7 @@ synonym: "double stranded oligonucleotide" EXACT []
 synonym: "ds oligo" EXACT []
 synonym: "ds-oligonucleotide" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000696
 
 [Term]
@@ -3473,6 +3610,7 @@ name: rasiRNA
 synonym: "INSDC_qualifier:rasiRNA" EXACT []
 synonym: "repeat associated small interfering RNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001035
 
 [Term]
@@ -3533,6 +3671,7 @@ id: SO:0000462
 name: pseudogenic_region
 synonym: "pseudogenic region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -3547,6 +3686,7 @@ id: SO:0000464
 name: decayed_exon
 synonym: "decayed exon" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000462
 
 [Term]
@@ -3582,6 +3722,7 @@ id: SO:0000468
 name: golden_path_fragment
 synonym: "golden path fragment" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000143
 
 [Term]
@@ -3613,6 +3754,7 @@ id: SO:0000472
 name: tiling_path
 synonym: "tiling path" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000353
 
 [Term]
@@ -3628,6 +3770,7 @@ id: SO:0000474
 name: tiling_path_fragment
 synonym: "tiling path fragment" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000143
 
 [Term]
@@ -3701,6 +3844,7 @@ name: nc_primary_transcript
 synonym: "nc primary transcript" EXACT []
 synonym: "noncoding primary transcript" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000185
 
 [Term]
@@ -3709,6 +3853,7 @@ name: three_prime_coding_exon_noncoding_region
 synonym: "three prime coding exon noncoding region" EXACT []
 synonym: "three_prime_exon_noncoding_region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001214
 
 [Term]
@@ -3725,6 +3870,7 @@ name: five_prime_coding_exon_noncoding_region
 synonym: "five prime coding exon noncoding region" EXACT []
 synonym: "five_prime_exon_noncoding_region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001214
 
 [Term]
@@ -3833,6 +3979,7 @@ id: SO:0000499
 name: virtual_sequence
 synonym: "virtual sequence" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000353
 
 [Term]
@@ -4238,6 +4385,7 @@ synonym: "poly(A) signal" EXACT []
 synonym: "polyA signal sequence" EXACT []
 synonym: "polyadenylation termination signal" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001055
 
 [Term]
@@ -4261,6 +4409,7 @@ synonym: "polyA site" EXACT []
 synonym: "polyA_junction" EXACT []
 synonym: "polyadenylation site" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000699
 
 [Term]
@@ -4445,6 +4594,7 @@ id: SO:0000577
 name: centromere
 synonym: "INSDC_feature:centromere" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000628
 
 [Term]
@@ -4472,6 +4622,7 @@ is_a: SO:0000232
 id: SO:0000581
 name: cap
 subset: tier_T2
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -4520,6 +4671,7 @@ id: SO:0000587
 name: group_I_intron
 synonym: "group I intron" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000588
 
 [Term]
@@ -4528,6 +4680,7 @@ name: autocatalytically_spliced_intron
 synonym: "autocatalytically spliced intron" EXACT []
 synonym: "INSDC_qualifier:autocatalytically_spliced_intron" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000188
 
 [Term]
@@ -4545,6 +4698,7 @@ synonym: "SRP RNA" EXACT []
 synonym: "7S RNA" RELATED []
 synonym: "signal recognition particle RNA" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000655
 
 [Term]
@@ -4573,6 +4727,7 @@ synonym: "C/D box snoRNA" EXACT []
 synonym: "SNORD" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000275
 
 [Term]
@@ -4633,6 +4788,7 @@ synonym: "guide RNA" EXACT []
 synonym: "INSDC_qualifier:guide_RNA" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000655
 
 [Term]
@@ -4640,6 +4796,7 @@ id: SO:0000603
 name: group_II_intron
 synonym: "group II intron" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000588
 
 [Term]
@@ -4654,6 +4811,7 @@ id: SO:0000605
 name: intergenic_region
 synonym: "intergenic region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -4689,6 +4847,7 @@ id: SO:0000610
 name: polyA_sequence
 synonym: "polyA sequence" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -4698,6 +4857,7 @@ synonym: "branch point" EXACT []
 synonym: "branch site" EXACT []
 synonym: "branch_point" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000841
 
 [Term]
@@ -4705,6 +4865,7 @@ id: SO:0000612
 name: polypyrimidine_tract
 synonym: "polypyrimidine tract" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000841
 
 [Term]
@@ -4733,6 +4894,7 @@ id: SO:0000616
 name: transcription_end_site
 synonym: "transcription end site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000835
 
 [Term]
@@ -4793,6 +4955,7 @@ synonym: "INSDC_feature:telomere" EXACT []
 synonym: "telomeric DNA" EXACT []
 synonym: "telomeric sequence" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000628
 
 [Term]
@@ -4801,6 +4964,7 @@ name: silencer
 synonym: "INSDC_qualifier:silencer" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000727
 
 [Term]
@@ -4817,6 +4981,7 @@ synonym: "INSDC_qualifier:insulator" EXACT []
 synonym: "insulator element" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000727
 
 [Term]
@@ -4824,6 +4989,7 @@ id: SO:0000628
 name: chromosomal_structural_element
 synonym: "chromosomal structural element" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000830
 
 [Term]
@@ -4942,6 +5108,7 @@ synonym: "INSDC_qualifier:minisatellite" EXACT []
 synonym: "VNTR" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000005
 
 [Term]
@@ -4950,6 +5117,7 @@ name: antisense_RNA
 synonym: "antisense RNA" EXACT []
 synonym: "INSDC_qualifier:antisense_RNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000655
 
 [Term]
@@ -4957,6 +5125,7 @@ id: SO:0000645
 name: antisense_primary_transcript
 synonym: "antisense primary transcript" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000185
 
 [Term]
@@ -4966,6 +5135,7 @@ synonym: "INSDC_qualifier:siRNA" EXACT []
 synonym: "small interfering RNA" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000370
 
 [Term]
@@ -4986,6 +5156,7 @@ synonym: "cytosolic small subunit rRNA" EXACT []
 synonym: "cytosolic SSU ribosomal RNA" EXACT []
 synonym: "cytosolic SSU rRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0002343
 
 [Term]
@@ -4995,6 +5166,7 @@ synonym: "cytosolic large subunit rRNA" EXACT []
 synonym: "cytosolic LSU RNA" EXACT []
 synonym: "cytosolic LSU rRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0002343
 
 [Term]
@@ -5005,6 +5177,7 @@ synonym: "cytosolic 5S ribosomal RNA" EXACT []
 synonym: "cytosolic 5S rRNA" EXACT []
 synonym: "cytosolic rRNA 5S" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000651
 
 [Term]
@@ -5015,6 +5188,7 @@ synonym: "cytosolic 28S ribosomal RNA" EXACT []
 synonym: "cytosolic 28S rRNA" EXACT []
 synonym: "cytosolic rRNA 28S" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000651
 
 [Term]
@@ -5032,6 +5206,7 @@ synonym: "known_ncrna" EXACT []
 synonym: "noncoding RNA" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000233
 
 [Term]
@@ -5047,6 +5222,7 @@ name: repeat_region
 synonym: "INSDC_qualifier:other" EXACT []
 synonym: "repeat region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -5056,6 +5232,7 @@ synonym: "dispersed repeat" EXACT []
 synonym: "INSDC_qualifier:dispersed" EXACT []
 synonym: "interspersed repeat" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000657
 
 [Term]
@@ -5080,6 +5257,7 @@ id: SO:0000662
 name: spliceosomal_intron
 synonym: "spliceosomal intron" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000188
 
 [Term]
@@ -5119,6 +5297,8 @@ synonym: "nucleotide insertion" EXACT []
 synonym: "nucleotide_insertion" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: DBVAR
+subset: SOFA
 is_a: SO:0001059
 is_a: SO:0001411
 
@@ -5127,6 +5307,7 @@ id: SO:0000668
 name: EST_match
 synonym: "EST match" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000102
 
 [Term]
@@ -5161,6 +5342,7 @@ is_a: SO:0000669
 id: SO:0000673
 name: transcript
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000831
 
 [Term]
@@ -5244,6 +5426,7 @@ id: SO:0000684
 name: nuclease_sensitive_site
 synonym: "nuclease sensitive site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000059
 
 [Term]
@@ -5268,6 +5451,7 @@ id: SO:0000687
 name: deletion_junction
 synonym: "deletion junction" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000699
 
 [Term]
@@ -5275,6 +5459,7 @@ id: SO:0000688
 name: golden_path
 synonym: "golden path" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000353
 
 [Term]
@@ -5282,6 +5467,7 @@ id: SO:0000689
 name: cDNA_match
 synonym: "cDNA match" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000102
 
 [Term]
@@ -5298,6 +5484,7 @@ synonym: "cleaved initiator methionine" EXACT []
 synonym: "init_met" RELATED []
 synonym: "initiator methionine" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100011
 
 [Term]
@@ -5320,12 +5507,14 @@ name: SNP
 synonym: "single nucleotide polymorphism" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001483
 
 [Term]
 id: SO:0000695
 name: reagent
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001409
 
 [Term]
@@ -5333,6 +5522,7 @@ id: SO:0000696
 name: oligo
 synonym: "oligonucleotide" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000695
 
 [Term]
@@ -5355,12 +5545,14 @@ name: junction
 synonym: "boundary" EXACT []
 synonym: "breakpoint" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000110
 
 [Term]
 id: SO:0000700
 name: remark
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001410
 
 [Term]
@@ -5368,6 +5560,7 @@ id: SO:0000701
 name: possible_base_call_error
 synonym: "possible base call error" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000413
 
 [Term]
@@ -5375,6 +5568,7 @@ id: SO:0000702
 name: possible_assembly_error
 synonym: "possible assembly error" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000413
 
 [Term]
@@ -5382,6 +5576,7 @@ id: SO:0000703
 name: experimental_result_region
 synonym: "experimental result region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000700
 
 [Term]
@@ -5390,6 +5585,7 @@ name: gene
 synonym: "INSDC_feature:gene" EXACT []
 subset: tier_T0
 subset: tier_T2
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -5398,6 +5594,7 @@ name: tandem_repeat
 synonym: "INSDC_qualifier:tandem" EXACT []
 synonym: "tandem repeat" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000657
 
 [Term]
@@ -5406,6 +5603,7 @@ name: trans_splice_acceptor_site
 synonym: "trans splice acceptor site" EXACT []
 synonym: "3' trans splice site" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001420
 
 [Term]
@@ -5465,6 +5663,7 @@ name: nucleotide_motif
 synonym: "INSDC_note:nucleotide_motif" EXACT []
 synonym: "nucleotide motif" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001683
 
 [Term]
@@ -5472,6 +5671,7 @@ id: SO:0000715
 name: RNA_motif
 synonym: "RNA motif" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000714
 
 [Term]
@@ -5488,6 +5688,7 @@ id: SO:0000717
 name: reading_frame
 synonym: "reading frame" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001410
 
 [Term]
@@ -5503,6 +5704,7 @@ name: ultracontig
 synonym: "pseudochromosome" EXACT []
 synonym: "superscaffold" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001876
 
 [Term]
@@ -5542,6 +5744,7 @@ name: oriT
 synonym: "INSDC_feature:oriT" EXACT []
 synonym: "origin of transfer" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000296
 
 [Term]
@@ -5552,6 +5755,8 @@ synonym: "transit peptide" EXACT []
 synonym: "signal" RELATED []
 synonym: "transit" RELATED []
 subset: tier_T0
+subset: biosapiens
+subset: SOFA
 is_a: SO:0001527
 
 [Term]
@@ -5570,6 +5775,7 @@ synonym: "TF module" EXACT []
 synonym: "transcription factor module" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001055
 
 [Term]
@@ -5592,6 +5798,7 @@ name: gap
 synonym: "INSDC_feature:gap" EXACT []
 subset: tier_T0
 subset: tier_T2
+subset: SOFA
 is_a: SO:0000143
 
 [Term]
@@ -5752,6 +5959,7 @@ id: SO:0000753
 name: clone_insert
 synonym: "clone insert" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000695
 
 [Term]
@@ -5912,6 +6120,7 @@ name: pseudogenic_rRNA
 synonym: "INSDC_qualifier:pseudo" EXACT []
 synonym: "pseudogenic rRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000516
 
 [Term]
@@ -5920,6 +6129,7 @@ name: pseudogenic_tRNA
 synonym: "INSDC_qualifier:pseudo" EXACT []
 synonym: "pseudogenic tRNA" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000516
 
 [Term]
@@ -6263,6 +6473,7 @@ synonym: "chromosomal region" EXACT []
 synonym: "chromosomal_region" EXACT []
 synonym: "chromosome part" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -6270,6 +6481,7 @@ id: SO:0000831
 name: gene_member_region
 synonym: "gene member region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -6282,6 +6494,7 @@ id: SO:0000833
 name: transcript_region
 synonym: "transcript region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -6289,6 +6502,7 @@ id: SO:0000834
 name: mature_transcript_region
 synonym: "mature transcript region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000833
 
 [Term]
@@ -6296,6 +6510,7 @@ id: SO:0000835
 name: primary_transcript_region
 synonym: "primary transcript region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000833
 
 [Term]
@@ -6303,6 +6518,7 @@ id: SO:0000836
 name: mRNA_region
 synonym: "mRNA region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000834
 
 [Term]
@@ -6310,6 +6526,7 @@ id: SO:0000837
 name: UTR_region
 synonym: "UTR region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000836
 
 [Term]
@@ -6327,6 +6544,8 @@ synonym: "positional polypeptide feature" RELATED []
 synonym: "region or site annotation" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: biosapiens
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -6341,6 +6560,7 @@ id: SO:0000841
 name: spliceosomal_intron_region
 synonym: "spliceosomal intron region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000835
 
 [Term]
@@ -6348,6 +6568,7 @@ id: SO:0000842
 name: gene_component_region
 synonym: "gene component region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -6406,6 +6627,7 @@ id: SO:0000851
 name: CDS_region
 synonym: "CDS region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000836
 
 [Term]
@@ -6413,6 +6635,7 @@ id: SO:0000852
 name: exon_region
 synonym: "exon region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000833
 
 [Term]
@@ -6822,6 +7045,7 @@ id: SO:0000912
 name: asx_turn
 synonym: "asx turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001128
 
 [Term]
@@ -7406,6 +7630,7 @@ synonym: "cytosolic 16S SSU RNA" EXACT []
 synonym: "cytosolic rRNA 16S" EXACT []
 synonym: "cytosolic 16S rRNA" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000650
 
 [Term]
@@ -7416,6 +7641,7 @@ synonym: "cytosolic 23S rRNA" EXACT []
 synonym: "cytosolic rRNA 23S" EXACT []
 synonym: "cytosolic 23S ribosomal RNA" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000651
 
 [Term]
@@ -7426,6 +7652,7 @@ synonym: "cytosolic 25S ribosomal RNA" EXACT []
 synonym: "cytosolic 25S rRNA" EXACT []
 synonym: "cytosolic rRNA 25S" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000651
 
 [Term]
@@ -7555,6 +7782,7 @@ synonym: "copy number polymorphism" EXACT []
 synonym: "copy number variation" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000248
 
 [Term]
@@ -7684,6 +7912,7 @@ synonym: "MGE" EXACT []
 synonym: "mobile genetic element" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -7698,6 +7927,7 @@ id: SO:0001039
 name: integrated_mobile_genetic_element
 synonym: "integrated mobile genetic element" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001037
 
 [Term]
@@ -7815,6 +8045,7 @@ synonym: "INSDC_qualifier:transcriptional_cis_regulatory_region" EXACT []
 synonym: "transcription-control region" EXACT []
 synonym: "transcriptional cis regulatory region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0005836
 
 [Term]
@@ -7822,6 +8053,7 @@ id: SO:0001056
 name: splicing_regulatory_region
 synonym: "splicing regulatory region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001055
 
 [Term]
@@ -7842,6 +8074,7 @@ synonym: "INSDC_note:sequence_alteration" EXACT []
 synonym: "sequence alteration" EXACT []
 synonym: "sequence variation" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0002072
 
 [Term]
@@ -7858,6 +8091,7 @@ id: SO:0001061
 name: propeptide_cleavage_site
 synonym: "propeptide cleavage site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100011
 
 [Term]
@@ -7866,6 +8100,7 @@ name: propeptide
 synonym: "INSDC_feature:propeptide" EXACT []
 synonym: "propep" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100011
 
 [Term]
@@ -7873,6 +8108,8 @@ id: SO:0001063
 name: immature_peptide_region
 synonym: "immature peptide region" EXACT []
 subset: tier_T0
+subset: biosapiens
+subset: SOFA
 is_a: SO:0000839
 
 [Term]
@@ -7880,6 +8117,7 @@ id: SO:0001064
 name: active_peptide
 synonym: "active peptide" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000419
 
 [Term]
@@ -7891,6 +8129,7 @@ synonym: "compositional bias" RELATED []
 synonym: "compositionally biased" RELATED []
 synonym: "compositionally biased region of peptide" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000839
 
 [Term]
@@ -7898,6 +8137,7 @@ id: SO:0001067
 name: polypeptide_motif
 synonym: "polypeptide motif" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100021
 
 [Term]
@@ -7906,6 +8146,7 @@ name: polypeptide_repeat
 synonym: "polypeptide repeat" EXACT []
 synonym: "repeat" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100021
 
 [Term]
@@ -7914,6 +8155,7 @@ name: polypeptide_structural_region
 synonym: "polypeptide structural region" EXACT []
 synonym: "structural_region" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000839
 
 [Term]
@@ -7921,6 +8163,7 @@ id: SO:0001071
 name: membrane_structure
 synonym: "membrane structure" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001070
 
 [Term]
@@ -7931,6 +8174,7 @@ synonym: "extramembrane" RELATED []
 synonym: "extramembrane_region" RELATED []
 synonym: "topo_dom" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001070
 
 [Term]
@@ -7941,6 +8185,7 @@ synonym: "cytoplasmic polypeptide region" EXACT []
 synonym: "inside" RELATED []
 subset: tier_T0
 subset: tier_T2
+subset: biosapiens
 is_a: SO:0001072
 
 [Term]
@@ -7951,6 +8196,7 @@ synonym: "non_cytoplasm_location" EXACT []
 synonym: "outside" RELATED []
 subset: tier_T0
 subset: tier_T2
+subset: biosapiens
 is_a: SO:0001072
 
 [Term]
@@ -7959,6 +8205,7 @@ name: intramembrane_polypeptide_region
 synonym: "intramembrane polypeptide region" EXACT []
 synonym: "intramembrane" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001070
 
 [Term]
@@ -7967,6 +8214,7 @@ name: membrane_peptide_loop
 synonym: "membrane peptide loop" EXACT []
 synonym: "membrane_loop" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001075
 
 [Term]
@@ -7977,6 +8225,7 @@ synonym: "transmem" RELATED []
 synonym: "transmembrane" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: biosapiens
 is_a: SO:0001075
 
 [Term]
@@ -7988,6 +8237,7 @@ synonym: "secondary structure" RELATED []
 synonym: "secondary structure region" RELATED []
 synonym: "secondary_structure" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001070
 
 [Term]
@@ -7996,6 +8246,7 @@ name: polypeptide_structural_motif
 synonym: "polypeptide structural motif" RELATED []
 synonym: "structural_motif" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001070
 
 [Term]
@@ -8005,6 +8256,7 @@ synonym: "coiled coil" EXACT []
 synonym: "coiled" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: biosapiens
 is_a: SO:0001079
 
 [Term]
@@ -8015,6 +8267,7 @@ synonym: "helix-turn-helix" EXACT []
 synonym: "HTH" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: biosapiens
 is_a: SO:0001079
 
 [Term]
@@ -8022,6 +8275,7 @@ id: SO:0001082
 name: polypeptide_sequencing_information
 synonym: "sequencing_information" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000700
 
 [Term]
@@ -8030,6 +8284,7 @@ name: non_adjacent_residues
 synonym: "non consecutive" EXACT []
 synonym: "non_cons" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001082
 
 [Term]
@@ -8038,6 +8293,7 @@ name: non_terminal_residue
 synonym: "non terminal" EXACT []
 synonym: "non_ter" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001082
 
 [Term]
@@ -8045,6 +8301,7 @@ id: SO:0001085
 name: sequence_conflict
 synonym: "conflict" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001082
 
 [Term]
@@ -8053,6 +8310,7 @@ name: sequence_uncertainty
 synonym: "INSDC_feature:unsure" EXACT []
 synonym: "unsure" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001082
 
 [Term]
@@ -8072,6 +8330,7 @@ synonym: "mod_res" EXACT []
 synonym: "modified residue" EXACT []
 synonym: "post_translational_modification" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100001
 
 [Term]
@@ -8089,6 +8348,7 @@ id: SO:0001092
 name: polypeptide_metal_contact
 synonym: "metal_binding" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001656
 is_a: SO:0100002
 
@@ -8099,6 +8359,7 @@ synonym: "protein protein contact" EXACT []
 synonym: "protein protein contact site" EXACT []
 synonym: "protein_protein_interaction" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000410
 is_a: SO:0100002
 
@@ -8110,6 +8371,7 @@ synonym: "Ca_contact_site" EXACT []
 synonym: "polypeptide calcium ion contact site" EXACT []
 synonym: "ca bind" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001092
 
 [Term]
@@ -8118,6 +8380,7 @@ name: polypeptide_cobalt_ion_contact_site
 synonym: "Co_contact_site" EXACT []
 synonym: "polypeptide cobalt ion contact site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001092
 
 [Term]
@@ -8126,6 +8389,7 @@ name: polypeptide_copper_ion_contact_site
 synonym: "Cu_contact_site" EXACT []
 synonym: "polypeptide copper ion contact site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001092
 
 [Term]
@@ -8134,6 +8398,7 @@ name: polypeptide_iron_ion_contact_site
 synonym: "Fe_contact_site" EXACT []
 synonym: "polypeptide iron ion contact site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001092
 
 [Term]
@@ -8142,6 +8407,7 @@ name: polypeptide_magnesium_ion_contact_site
 synonym: "Mg_contact_site" EXACT []
 synonym: "polypeptide magnesium ion contact site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001092
 
 [Term]
@@ -8150,6 +8416,7 @@ name: polypeptide_manganese_ion_contact_site
 synonym: "Mn_contact_site" EXACT []
 synonym: "polypeptide manganese ion contact site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001092
 
 [Term]
@@ -8158,6 +8425,7 @@ name: polypeptide_molybdenum_ion_contact_site
 synonym: "Mo_contact_site" EXACT []
 synonym: "polypeptide molybdenum ion contact site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001092
 
 [Term]
@@ -8166,6 +8434,7 @@ name: polypeptide_nickel_ion_contact_site
 synonym: "Ni_contact_site" EXACT []
 synonym: "polypeptide nickel ion contact site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001092
 
 [Term]
@@ -8174,6 +8443,7 @@ name: polypeptide_tungsten_ion_contact_site
 synonym: "polypeptide tungsten ion contact site" EXACT []
 synonym: "W_contact_site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001092
 
 [Term]
@@ -8182,6 +8452,7 @@ name: polypeptide_zinc_ion_contact_site
 synonym: "polypeptide zinc ion contact site" EXACT []
 synonym: "Zn_contact_site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001092
 
 [Term]
@@ -8191,6 +8462,7 @@ synonym: "active site residue" EXACT []
 synonym: "catalytic residue" EXACT []
 synonym: "act_site" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001237
 
 [Term]
@@ -8199,6 +8471,7 @@ name: polypeptide_ligand_contact
 synonym: "polypeptide ligand contact" EXACT []
 synonym: "protein-ligand interaction" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001657
 is_a: SO:0100002
 
@@ -8207,6 +8480,7 @@ id: SO:0001106
 name: asx_motif
 synonym: "asx motif" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -8214,6 +8488,7 @@ id: SO:0001107
 name: beta_bulge
 synonym: "beta bulge" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -8221,6 +8496,7 @@ id: SO:0001108
 name: beta_bulge_loop
 synonym: "beta bulge loop" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -8228,6 +8504,7 @@ id: SO:0001109
 name: beta_bulge_loop_five
 synonym: "beta bulge loop five" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001108
 
 [Term]
@@ -8235,6 +8512,7 @@ id: SO:0001110
 name: beta_bulge_loop_six
 synonym: "beta bulge loop six" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001108
 
 [Term]
@@ -8242,6 +8520,7 @@ id: SO:0001111
 name: beta_strand
 synonym: "strand" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -8249,6 +8528,7 @@ id: SO:0001112
 name: antiparallel_beta_strand
 synonym: "antiparallel beta strand" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001111
 
 [Term]
@@ -8256,6 +8536,7 @@ id: SO:0001113
 name: parallel_beta_strand
 synonym: "parallel beta strand" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001111
 
 [Term]
@@ -8264,6 +8545,7 @@ name: peptide_helix
 synonym: "helix" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -8273,6 +8555,7 @@ synonym: "left handed helix" EXACT []
 synonym: "helix-l" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: biosapiens
 is_a: SO:0001114
 
 [Term]
@@ -8282,6 +8565,7 @@ synonym: "right handed helix" EXACT []
 synonym: "helix" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: biosapiens
 is_a: SO:0001114
 
 [Term]
@@ -8291,6 +8575,7 @@ synonym: "a-helix" RELATED []
 synonym: "helix" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: biosapiens
 is_a: SO:0001116
 
 [Term]
@@ -8298,6 +8583,7 @@ id: SO:0001118
 name: pi_helix
 synonym: "pi helix" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001116
 
 [Term]
@@ -8308,6 +8594,7 @@ synonym: "3-10 helix" EXACT []
 synonym: "310 helix" EXACT []
 synonym: "three ten helix" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001116
 
 [Term]
@@ -8318,6 +8605,7 @@ synonym: "nest" RELATED []
 synonym: "polypeptide nest motif" RELATED []
 subset: tier_T0
 subset: tier_T2
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -8327,6 +8615,7 @@ synonym: "nest_left_right" EXACT []
 synonym: "nest_lr" EXACT []
 synonym: "polypeptide nest left right motif" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001120
 
 [Term]
@@ -8336,6 +8625,7 @@ synonym: "nest_right_left" EXACT []
 synonym: "nest_rl" EXACT []
 synonym: "polypeptide nest right left motif" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001120
 
 [Term]
@@ -8345,6 +8635,7 @@ synonym: "schellmann loop" EXACT []
 synonym: "paperclip" RELATED []
 synonym: "paperclip loop" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -8353,6 +8644,7 @@ name: schellmann_loop_seven
 synonym: "schellmann loop seven" EXACT []
 synonym: "seven-residue schellmann loop" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001123
 
 [Term]
@@ -8361,6 +8653,7 @@ name: schellmann_loop_six
 synonym: "schellmann loop six" EXACT []
 synonym: "six-residue schellmann loop" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001123
 
 [Term]
@@ -8370,6 +8663,7 @@ synonym: "serine/threonine motif" EXACT []
 synonym: "st motif" EXACT []
 synonym: "st_motif" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -8378,6 +8672,7 @@ name: serine_threonine_staple_motif
 synonym: "serine threonine staple motif" EXACT []
 synonym: "st_staple" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -8386,6 +8681,7 @@ name: polypeptide_turn_motif
 synonym: "turn" RELATED []
 subset: tier_T0
 subset: tier_T2
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -8394,6 +8690,7 @@ name: asx_turn_left_handed_type_one
 synonym: "asx turn left handed type one" EXACT []
 synonym: "asx_turn_il" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000912
 
 [Term]
@@ -8402,6 +8699,7 @@ name: asx_turn_left_handed_type_two
 synonym: "asx turn left handed type two" EXACT []
 synonym: "asx_turn_iil" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000912
 
 [Term]
@@ -8410,6 +8708,7 @@ name: asx_turn_right_handed_type_two
 synonym: "asx turn right handed type two" EXACT []
 synonym: "asx_turn_iir" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000912
 
 [Term]
@@ -8418,6 +8717,7 @@ name: asx_turn_right_handed_type_one
 synonym: "asx turn type right handed type one" EXACT []
 synonym: "asx_turn_ir" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000912
 
 [Term]
@@ -8425,6 +8725,7 @@ id: SO:0001133
 name: beta_turn
 synonym: "beta turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001128
 
 [Term]
@@ -8435,6 +8736,7 @@ synonym: "beta_turn_il" EXACT []
 synonym: "type I' beta turn" EXACT []
 synonym: "type I' turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001133
 
 [Term]
@@ -8445,6 +8747,7 @@ synonym: "beta_turn_iil" EXACT []
 synonym: "type II' beta turn" EXACT []
 synonym: "type II' turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001133
 
 [Term]
@@ -8455,6 +8758,7 @@ synonym: "beta_turn_ir" EXACT []
 synonym: "type I beta turn" EXACT []
 synonym: "type I turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001133
 
 [Term]
@@ -8465,6 +8769,7 @@ synonym: "beta_turn_iir" EXACT []
 synonym: "type II beta turn" EXACT []
 synonym: "type II turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001133
 
 [Term]
@@ -8472,6 +8777,7 @@ id: SO:0001138
 name: gamma_turn
 synonym: "gamma turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001128
 
 [Term]
@@ -8480,6 +8786,7 @@ name: gamma_turn_classic
 synonym: "classic gamma turn" EXACT []
 synonym: "gamma turn classic" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001138
 
 [Term]
@@ -8487,6 +8794,7 @@ id: SO:0001140
 name: gamma_turn_inverse
 synonym: "gamma turn inverse" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001138
 
 [Term]
@@ -8495,6 +8803,7 @@ name: serine_threonine_turn
 synonym: "serine/threonine turn" EXACT []
 synonym: "st_turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001128
 
 [Term]
@@ -8503,6 +8812,7 @@ name: st_turn_left_handed_type_one
 synonym: "st turn left handed type one" EXACT []
 synonym: "st_turn_il" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001141
 
 [Term]
@@ -8511,6 +8821,7 @@ name: st_turn_left_handed_type_two
 synonym: "st turn left handed type two" EXACT []
 synonym: "st_turn_iil" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001141
 
 [Term]
@@ -8519,6 +8830,7 @@ name: st_turn_right_handed_type_one
 synonym: "st turn right handed type one" EXACT []
 synonym: "st_turn_ir" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001141
 
 [Term]
@@ -8527,6 +8839,7 @@ name: st_turn_right_handed_type_two
 synonym: "st turn right handed type two" EXACT []
 synonym: "st_turn_iir" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001141
 
 [Term]
@@ -8534,12 +8847,14 @@ id: SO:0001146
 name: polypeptide_variation_site
 synonym: "sequence_variations" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000839
 
 [Term]
 id: SO:0001147
 name: natural_variant_site
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001146
 
 [Term]
@@ -8549,6 +8864,7 @@ synonym: "mutagen" EXACT []
 synonym: "mutagenesis" EXACT []
 synonym: "mutated_site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001146
 
 [Term]
@@ -8557,6 +8873,7 @@ name: alternate_sequence_site
 synonym: "alternative_sequence" EXACT []
 synonym: "var_seq" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001146
 
 [Term]
@@ -8567,6 +8884,7 @@ synonym: "cis-proline loop" EXACT []
 synonym: "type VI beta turn" EXACT []
 synonym: "type VI turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001133
 
 [Term]
@@ -8576,6 +8894,7 @@ synonym: "beta turn type six a" EXACT []
 synonym: "type VIa beta turn" EXACT []
 synonym: "type VIa turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001150
 
 [Term]
@@ -8585,6 +8904,7 @@ synonym: "beta turn type six a one" EXACT []
 synonym: "type VIa1 beta turn" EXACT []
 synonym: "type VIa1 turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001151
 
 [Term]
@@ -8594,6 +8914,7 @@ synonym: "beta turn type six a two" EXACT []
 synonym: "type VIa2 beta turn" EXACT []
 synonym: "type VIa2 turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001151
 
 [Term]
@@ -8603,6 +8924,7 @@ synonym: "beta turn type six b" EXACT []
 synonym: "type VIb beta turn" EXACT []
 synonym: "type VIb turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001150
 
 [Term]
@@ -8612,6 +8934,7 @@ synonym: "beta turn type eight" EXACT []
 synonym: "type VIII beta turn" EXACT []
 synonym: "type VIII turn" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001133
 
 [Term]
@@ -9101,6 +9424,7 @@ id: SO:0001214
 name: noncoding_region_of_exon
 synonym: "noncoding region of exon" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000852
 
 [Term]
@@ -9108,6 +9432,7 @@ id: SO:0001215
 name: coding_region_of_exon
 synonym: "coding region of exon" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000852
 
 [Term]
@@ -9122,6 +9447,7 @@ id: SO:0001217
 name: protein_coding_gene
 synonym: "protein coding gene" EXACT []
 subset: tier_T0
+subset: Alliance_of_Genome_Resources
 is_a: SO:0000704
 
 [Term]
@@ -9244,12 +9570,14 @@ is_a: SO:0000733
 id: SO:0001235
 name: replicon
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
 id: SO:0001236
 name: base
 subset: tier_T2
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -9327,6 +9655,7 @@ is_a: SO:0000696
 id: SO:0001248
 name: assembly
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001410
 
 [Term]
@@ -9437,6 +9766,7 @@ name: ncRNA_gene
 synonym: "ncRNA gene" EXACT []
 synonym: "non-coding RNA gene" EXACT []
 subset: tier_T0
+subset: Alliance_of_Genome_Resources
 is_a: SO:0000704
 
 [Term]
@@ -10690,6 +11020,7 @@ id: SO:0001409
 name: biomaterial_region
 synonym: "biomaterial region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000001
 
 [Term]
@@ -10699,6 +11030,7 @@ synonym: "experimental output artefact" EXACT []
 synonym: "experimental_output_artefact" EXACT []
 synonym: "analysis feature" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000001
 
 [Term]
@@ -10707,6 +11039,7 @@ name: biological_region
 synonym: "biological region" EXACT []
 synonym: "INSDC_note:biological_region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000001
 
 [Term]
@@ -10714,6 +11047,7 @@ id: SO:0001412
 name: topologically_defined_region
 synonym: "topologically defined region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000001
 
 [Term]
@@ -10766,6 +11100,7 @@ id: SO:0001419
 name: cis_splice_site
 synonym: "cis splice site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000162
 
 [Term]
@@ -10773,6 +11108,7 @@ id: SO:0001420
 name: trans_splice_site
 synonym: "trans splice site" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000162
 
 [Term]
@@ -11236,6 +11572,7 @@ name: SNV
 synonym: "single nucleotide variant" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:1000002
 
 [Term]
@@ -11549,6 +11886,7 @@ name: peptide_localization_signal
 synonym: "peptide localization signal" EXACT []
 synonym: "localization signal" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000839
 
 [Term]
@@ -12568,6 +12906,7 @@ synonym: "kozak consensus" EXACT []
 synonym: "kozak consensus sequence" EXACT []
 synonym: "kozak sequence" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000139
 
 [Term]
@@ -12610,6 +12949,7 @@ id: SO:0001654
 name: nucleotide_to_protein_binding_site
 synonym: "nucleotide to protein binding site" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000410
 
 [Term]
@@ -12822,6 +13162,7 @@ id: SO:0001683
 name: sequence_motif
 synonym: "sequence motif" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -13103,6 +13444,7 @@ id: SO:0001720
 name: epigenetically_modified_region
 synonym: "epigenetically modified region" RELATED []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0005836
 
 [Term]
@@ -13271,6 +13613,7 @@ synonym: "copy number gain" EXACT []
 synonym: "gain" RELATED []
 subset: tier_T0
 subset: tier_T2
+subset: DBVAR
 is_a: SO:0001019
 
 [Term]
@@ -13280,6 +13623,7 @@ synonym: "copy number loss" EXACT []
 synonym: "loss" RELATED []
 subset: tier_T0
 subset: tier_T2
+subset: DBVAR
 is_a: SO:0001019
 
 [Term]
@@ -13289,6 +13633,7 @@ synonym: "uniparental disomy" EXACT []
 synonym: "UPD" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: DBVAR
 is_a: SO:0001059
 
 [Term]
@@ -13571,6 +13916,7 @@ synonym: "complex chromosomal mutation" EXACT []
 synonym: "complex_chromosomal_mutation" EXACT []
 synonym: "complex" RELATED []
 subset: tier_T0
+subset: DBVAR
 is_a: SO:0001785
 is_a: SO:1000183
 
@@ -13579,6 +13925,7 @@ id: SO:0001785
 name: structural_alteration
 synonym: "structural alteration" EXACT []
 subset: tier_T0
+subset: DBVAR
 is_a: SO:0001059
 
 [Term]
@@ -13588,6 +13935,7 @@ synonym: "LOH" EXACT []
 synonym: "loss of heterozygosity" EXACT []
 subset: tier_T0
 subset: tier_T1
+subset: DBVAR
 is_a: SO:0002218
 
 [Term]
@@ -13616,6 +13964,7 @@ id: SO:0001790
 name: paired_end_fragment
 synonym: "paired end fragment" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000143
 
 [Term]
@@ -18491,6 +18840,7 @@ name: regulatory_region
 synonym: "INSDC_qualifier:other" EXACT []
 synonym: "regulatory region" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0000831
 
 [Term]
@@ -18586,6 +18936,7 @@ id: SO:0005855
 name: gene_group
 synonym: "gene group" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001411
 
 [Term]
@@ -18618,6 +18969,7 @@ synonym: "biochemical motif" EXACT []
 synonym: "biochemical region of peptide" EXACT []
 synonym: "biochemical_region" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001067
 
 [Term]
@@ -18625,6 +18977,7 @@ id: SO:0100002
 name: molecular_contact_region
 synonym: "molecular contact region" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100001
 
 [Term]
@@ -18633,6 +18986,7 @@ name: intrinsically_unstructured_polypeptide_region
 synonym: "intrinsically unstructured polypeptide region" EXACT []
 synonym: "disordered region" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001070
 
 [Term]
@@ -18640,6 +18994,7 @@ id: SO:0100004
 name: catmat_left_handed_three
 synonym: "catmat-3l" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -18647,6 +19002,7 @@ id: SO:0100005
 name: catmat_left_handed_four
 synonym: "catmat-4l" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -18654,6 +19010,7 @@ id: SO:0100006
 name: catmat_right_handed_three
 synonym: "catmat-3r" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -18661,6 +19018,7 @@ id: SO:0100007
 name: catmat_right_handed_four
 synonym: "catmat-4r" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -18668,6 +19026,7 @@ id: SO:0100008
 name: alpha_beta_motif
 synonym: "alpha beta motif" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -18676,6 +19035,7 @@ name: lipoprotein_signal_peptide
 synonym: "lipoprotein signal peptide" EXACT []
 synonym: "prokaryotic membrane lipoprotein lipid attachment site" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100011
 
 [Term]
@@ -18683,6 +19043,7 @@ id: SO:0100010
 name: no_output
 synonym: "no output" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000703
 
 [Term]
@@ -18690,6 +19051,8 @@ id: SO:0100011
 name: cleaved_peptide_region
 synonym: "cleaved peptide region" EXACT []
 subset: tier_T0
+subset: biosapiens
+subset: SOFA
 is_a: SO:0000839
 
 [Term]
@@ -18700,6 +19063,7 @@ synonym: "coil" RELATED []
 synonym: "random coil" RELATED []
 subset: tier_T0
 subset: tier_T2
+subset: biosapiens
 is_a: SO:0001078
 
 [Term]
@@ -18710,6 +19074,7 @@ synonym: "hydropathic" RELATED []
 synonym: "hydrophobic region of peptide" RELATED []
 synonym: "hydrophobicity" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000839
 
 [Term]
@@ -18717,6 +19082,7 @@ id: SO:0100014
 name: n_terminal_region
 synonym: "N-region" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100011
 
 [Term]
@@ -18724,6 +19090,7 @@ id: SO:0100015
 name: c_terminal_region
 synonym: "C-region" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100011
 
 [Term]
@@ -18733,6 +19100,7 @@ synonym: "central hydrophobic region of signal peptide" EXACT []
 synonym: "central_hydrophobic_region" RELATED []
 synonym: "H-region" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100011
 
 [Term]
@@ -18741,6 +19109,7 @@ name: polypeptide_conserved_motif
 synonym: "motif" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: biosapiens
 is_a: SO:0001067
 
 [Term]
@@ -18749,6 +19118,7 @@ name: polypeptide_binding_motif
 synonym: "polypeptide binding motif" EXACT []
 synonym: "binding" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100001
 
 [Term]
@@ -18757,6 +19127,7 @@ name: polypeptide_catalytic_motif
 synonym: "polypeptide catalytic motif" EXACT []
 synonym: "catalytic_motif" RELATED []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0100001
 
 [Term]
@@ -18765,6 +19136,7 @@ name: polypeptide_DNA_contact
 synonym: "DNA_bind" EXACT []
 synonym: "polypeptide DNA contact" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0001429
 is_a: SO:0100002
 
@@ -18773,12 +19145,14 @@ id: SO:0100021
 name: polypeptide_conserved_region
 synonym: "polypeptide conserved region" EXACT []
 subset: tier_T0
+subset: biosapiens
 is_a: SO:0000839
 
 [Term]
 id: SO:1000002
 name: substitution
 subset: tier_T1
+subset: SOFA
 is_a: SO:0001059
 is_a: SO:0001411
 
@@ -18787,6 +19161,7 @@ id: SO:1000005
 name: complex_substitution
 synonym: "complex substitution" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:1000002
 
 [Term]
@@ -18794,6 +19169,7 @@ id: SO:1000008
 name: point_mutation
 synonym: "point mutation" EXACT []
 subset: tier_T0
+subset: SOFA
 is_a: SO:0001483
 
 [Term]
@@ -18987,6 +19363,8 @@ id: SO:1000036
 name: inversion
 synonym: "inversion" EXACT []
 subset: tier_T1
+subset: DBVAR
+subset: SOFA
 is_a: SO:0001059
 is_a: SO:0001411
 
@@ -19740,6 +20118,7 @@ name: tandem_duplication
 synonym: "tandem duplication" EXACT []
 synonym: "erverted" RELATED []
 subset: tier_T0
+subset: DBVAR
 is_a: SO:1000035
 
 [Term]
@@ -20091,6 +20470,7 @@ is_a: SO:1001288
 id: SO:1001284
 name: regulon
 subset: tier_T0
+subset: SOFA
 is_a: SO:0005855
 
 [Term]
@@ -20128,6 +20508,7 @@ synonym: "databank entry" EXACT []
 synonym: "accession" RELATED []
 subset: tier_T0
 subset: tier_T1
+subset: SOFA
 is_a: SO:0000695
 
 [Term]

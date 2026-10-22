@@ -13,6 +13,7 @@
 #include "IndexManager.h"
 #include "Utils.h"
 #include "lucene-custom/CaseSensitiveAnalyzer.h"
+#include "lucene-custom/CaseInsensitiveAnalyzer.h"
 #include "lucene-custom/LazySelector.h"
 #include "uima-custom-analyzers/Tpcas2SingleIndex/CASUtils.h"
 #include <lucene++/LuceneHeaders.h>
@@ -53,7 +54,9 @@ namespace {
             return "";
         }
         String decompressed = CompressionTools::decompressString(value);
-        return string(decompressed.begin(), decompressed.end());
+        // Encode, don't narrow: string(begin, end) kept the low byte of each
+        // wchar_t, so any non-ASCII character came out as invalid UTF-8.
+        return StringUtils::toUTF8(decompressed);
     }
 
     void printQuery(const tpc::index::Query& query) {
@@ -92,6 +95,9 @@ namespace {
                 break;
             case QueryType::references:
                 type = "references";
+                break;
+            case QueryType::supplementary:
+                type = "supplementary";
                 break;
             case QueryType::result:
                 type = "result";
@@ -165,6 +171,9 @@ SearchResults IndexManager::search_documents(const Query& query, bool matches_on
             case QueryType::references:
                 searchfield = L"references";
                 break;
+            case QueryType::supplementary:
+                searchfield = L"supplementary";
+                break;
             case QueryType::result:
                 searchfield = L"result";
                 break;
@@ -182,7 +191,7 @@ SearchResults IndexManager::search_documents(const Query& query, bool matches_on
         if (query.case_sensitive) {
             analyzer = newLucene<CaseSensitiveAnalyzer>(LuceneVersion::LUCENE_30);
         } else {
-            analyzer = newLucene<StandardAnalyzer>(LuceneVersion::LUCENE_30);
+            analyzer = newLucene<CaseInsensitiveAnalyzer>(LuceneVersion::LUCENE_30); // as indexed
         }
         QueryParserPtr parser = newLucene<QueryParser>(
                 LuceneVersion::LUCENE_30, searchfield, analyzer);
@@ -190,7 +199,9 @@ SearchResults IndexManager::search_documents(const Query& query, bool matches_on
         if (query_text.empty()) {
             throw tpc_exception("empty query");
         }
-        String query_str = String(query_text.begin(), query_text.end());
+        // Decode the UTF-8 query; String(begin, end) widened it byte by byte,
+        // so a non-ASCII term (beta, an accented name) could never match.
+        String query_str = StringUtils::toUnicode(query_text);
         string joined_lit = boost::algorithm::join(query.literatures, "ED\" OR corpus:\"BG");
         query_str = L"(corpus:\"BG" + String(joined_lit.begin(), joined_lit.end()) + L"ED\") AND (" + query_str + L")";
         QueryPtr luceneQuery = parser->parse(query_str);
