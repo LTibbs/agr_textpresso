@@ -13,6 +13,14 @@ jmax=$(nproc)
 jct=0
 for i in $LIST
 do
+    # Maize gene ontology synonyms include generic-word fragments (e.g.
+    # "MARK", a real gene symbol) that shouldn't be inflected into forms
+    # like "marked"/"marking" and matched as false positives in full text.
+    case "$i" in
+        tpontology_zmays_genes*)
+            continue
+            ;;
+    esac
     generatelexicalvariations $i &
     jct=$((jct+1))
     if [[ $(($jct % $jmax)) == 0 ]]

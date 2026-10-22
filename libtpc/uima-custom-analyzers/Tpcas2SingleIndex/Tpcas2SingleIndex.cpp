@@ -32,6 +32,7 @@
 #include <regex>
 #include <boost/archive/text_iarchive.hpp>
 #include "../../lucene-custom/CaseSensitiveAnalyzer.h"
+#include "../../lucene-custom/CaseInsensitiveAnalyzer.h" // StandardAnalyzer + Greek synonyms
 #include "../../CASManager.h"
 #include <boost/serialization/map.hpp>
 #include <boost/serialization/set.hpp>
@@ -202,7 +203,7 @@ vector<String> GetBibFromXML(string xml_text) {
     string clean_author = ""; //remove all special chars from title to get a clean title
     for (int i = 0; i < author.length(); i++) {
         char c = author[i];
-        if (std::isspace(c) || std::isalnum(c) || std::ispunct(c)) {
+        if ((unsigned char) c >= 0x80 || std::isspace(c) || std::isalnum(c) || std::ispunct(c)) {
             clean_author += c;
         } else {
             clean_author += " ";
@@ -249,7 +250,7 @@ vector<String> GetBibFromXML(string xml_text) {
     string clean_title = ""; //remove all special chars from title to get a clean title
     for (int i = 0; i < title.length(); i++) {
         char c = title[i];
-        if (std::isspace(c) || std::isalnum(c) || std::ispunct(c)) {
+        if ((unsigned char) c >= 0x80 || std::isspace(c) || std::isalnum(c) || std::ispunct(c)) {
             clean_title += c;
         } else {
             clean_title += " ";
@@ -292,20 +293,20 @@ vector<String> GetBibFromXML(string xml_text) {
     string clean_abstract = ""; //remove all special chars from title to get a clean title
     for (int i = 0; i < abstract.length(); i++) {
         char c = abstract[i];
-        if (std::isspace(c) || std::isalnum(c) || std::ispunct(c)) {
+        if ((unsigned char) c >= 0x80 || std::isspace(c) || std::isalnum(c) || std::ispunct(c)) {
             clean_abstract += c;
         } else {
             clean_abstract += " ";
         }
     }
-    String l_author = StringUtils::toString(clean_author.c_str());
-    String l_accession = StringUtils::toString(accession.c_str());
-    String l_type = StringUtils::toString(type.c_str());
-    String l_title = StringUtils::toString(clean_title.c_str());
-    String l_journal = StringUtils::toString(journal.c_str());
-    String l_citation = StringUtils::toString(citation.c_str());
-    String l_year = StringUtils::toString(year.c_str());
-    String l_abstract = StringUtils::toString(clean_abstract.c_str());
+    String l_author = StringUtils::toUnicode(clean_author);
+    String l_accession = StringUtils::toUnicode(accession);
+    String l_type = StringUtils::toUnicode(type);
+    String l_title = StringUtils::toUnicode(clean_title);
+    String l_journal = StringUtils::toUnicode(journal);
+    String l_citation = StringUtils::toUnicode(citation);
+    String l_year = StringUtils::toUnicode(year);
+    String l_abstract = StringUtils::toUnicode(clean_abstract);
     vector<String> bibinfo;
     bibinfo.push_back(l_author);
     bibinfo.push_back(l_accession);
@@ -354,7 +355,9 @@ vector<String> Tpcas2SingleIndex::GetBib(string fullfilename) {
         string content = items[1].c_str();
         boost::replace_all(content, "\377", "");
         boost::replace_all(content, "\\377", "");
-        String content_conv = StringUtils::toString(content.c_str());
+        // decode UTF-8 (toString(char*) widened byte by byte, so a non-ASCII
+        // author or title was indexed garbled and no query could match it)
+        String content_conv = StringUtils::toUnicode(content);
         boost::replace_all(content_conv, "\377", "");
         boost::replace_all(content_conv, "\\377", "");
         // Process str
@@ -399,14 +402,14 @@ vector<String> GetBibFromWB(string paper) {
     boost::regex sup("\.sup\.d+");
     paper = boost::regex_replace(paper, sup, "");
     string abstract_line = readFromWBfile("abstract", paper);
-    String l_author = StringUtils::toString(author_line.c_str());
-    String l_accession = StringUtils::toString(accession_line.c_str());
-    String l_type = StringUtils::toString(type_line.c_str());
-    String l_title = StringUtils::toString(title_line.c_str());
-    String l_journal = StringUtils::toString(journal_line.c_str());
-    String l_citation = StringUtils::toString(citation_line.c_str());
-    String l_year = StringUtils::toString(year_line.c_str());
-    String l_abstract = StringUtils::toString(abstract_line.c_str());
+    String l_author = StringUtils::toUnicode(author_line);
+    String l_accession = StringUtils::toUnicode(accession_line);
+    String l_type = StringUtils::toUnicode(type_line);
+    String l_title = StringUtils::toUnicode(title_line);
+    String l_journal = StringUtils::toUnicode(journal_line);
+    String l_citation = StringUtils::toUnicode(citation_line);
+    String l_year = StringUtils::toUnicode(year_line);
+    String l_abstract = StringUtils::toUnicode(abstract_line);
     bib.push_back(l_author);
     bib.push_back(l_accession);
     bib.push_back(l_type);
@@ -731,7 +734,7 @@ TyErrorId Tpcas2SingleIndex::initialize(AnnotatorContext & rclAnnotatorContext) 
     }
     String SentenceIndexDir = StringUtils::toString(sentenceindexdirectory.c_str());
     sentencewriter = newLucene<IndexWriter > (FSDirectory::open(SentenceIndexDir),
-            newLucene<StandardAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
+            newLucene<CaseInsensitiveAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
             IndexWriter::MaxFieldLengthUNLIMITED);
     if (!rclAnnotatorContext.isParameterDefined("SentenceCaseSensitiveLuceneIndexDirectory") ||
             rclAnnotatorContext.extractValue("SentenceCaseSensitiveLuceneIndexDirectory", sentenceindexdirectory_casesens) != UIMA_ERR_NONE) {
@@ -755,7 +758,7 @@ TyErrorId Tpcas2SingleIndex::initialize(AnnotatorContext & rclAnnotatorContext) 
     }
     String FulltextIndexDir = StringUtils::toString(fulltextindexdirectory.c_str());
     fulltextwriter = newLucene<IndexWriter > (FSDirectory::open(FulltextIndexDir),
-            newLucene<StandardAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
+            newLucene<CaseInsensitiveAnalyzer > (LuceneVersion::LUCENE_30), b_newindex, //create new index
             IndexWriter::MaxFieldLengthUNLIMITED);
     if (!rclAnnotatorContext.isParameterDefined("FulltextCaseSensitiveLuceneIndexDirectory") ||
             rclAnnotatorContext.extractValue("FulltextCaseSensitiveLuceneIndexDirectory", fulltextindexdirectory_casesens) != UIMA_ERR_NONE) {
@@ -871,7 +874,9 @@ TyErrorId Tpcas2SingleIndex::process(CAS & tcas, ResultSpecification const & crR
         corpora.append(boost::join(papers_lit_map[fn], "ED BG"));
         corpora.append("ED");
     } else {
-        if ((getCASType(tcas) == "pdf") || (getCASType(tcas) == "tai")) {
+        // jats: corpus from the directory, like pdf/tai -- not the PMCOA
+        // journal-regex classification the nxml branch below applies
+        if ((getCASType(tcas) == "pdf") || (getCASType(tcas) == "tai") || (getCASType(tcas) == "jats")) {
             std::string corpusName = filename.substr(0, filename.find("/"));
             corpusName.append("ED");
             corpora.append(corpusName);

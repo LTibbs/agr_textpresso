@@ -9,6 +9,7 @@
 #include "CaseSensitiveAnalyzer.h"
 #include <lucene++/LuceneHeaders.h>
 #include <lucene++/WordlistLoader.h>
+#include "GreekSynonymFilter.h"
 
 using namespace Lucene;
 
@@ -50,6 +51,7 @@ TokenStreamPtr CaseSensitiveAnalyzer::tokenStream(const String& fieldName, const
     TokenStreamPtr result(newLucene<StandardFilter>(tokenStream));
     //result = newLucene<LowerCaseFilter>(result);
     result = newLucene<StopFilter>(enableStopPositionIncrements, result, stopSet);
+    result = newLucene<GreekSynonymFilter>(result); // "β" also indexed/queried as "beta"
     return result;
 }
 
@@ -70,6 +72,7 @@ TokenStreamPtr CaseSensitiveAnalyzer::reusableTokenStream(const String& fieldNam
         streams->filteredTokenStream = newLucene<StandardFilter>(streams->tokenStream);
         //streams->filteredTokenStream = newLucene<LowerCaseFilter>(streams->filteredTokenStream);
         streams->filteredTokenStream = newLucene<StopFilter>(enableStopPositionIncrements, streams->filteredTokenStream, stopSet);
+        streams->filteredTokenStream = newLucene<GreekSynonymFilter>(streams->filteredTokenStream);
     } else {
         streams->tokenStream->reset(reader);
     }

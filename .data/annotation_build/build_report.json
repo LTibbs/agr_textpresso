@@ -1,0 +1,188 @@
+{
+  "channels": {
+    "CO_322": {
+      "dropped_tier3": 20,
+      "graph_stubs": 0,
+      "strings_T0": 992,
+      "strings_T1": 113,
+      "strings_T2": 13,
+      "terms_matchable": 921,
+      "terms_unmatchable": 6
+    },
+    "ChEBI": {
+      "dropped_tier3": 177,
+      "graph_stubs": 1678,
+      "obsolete_retained": 1,
+      "skipped_out_of_scope": 211771,
+      "strings_T0": 41290,
+      "strings_T1": 1501,
+      "strings_T2": 131,
+      "strings_TD": 6,
+      "terms_matchable": 7240
+    },
+    "ECO": {
+      "dropped_species_scoped": 10,
+      "dropped_tier3": 18,
+      "graph_stubs": 0,
+      "obsolete_retained": 37,
+      "strings_T0": 2957,
+      "strings_T1": 130,
+      "strings_T2": 1,
+      "terms_matchable": 2217
+    },
+    "GO": {
+      "dropped_species_scoped": 413,
+      "dropped_tier3": 21,
+      "graph_stubs": 0,
+      "obsolete_retained": 10248,
+      "strings_T0": 117610,
+      "strings_T1": 999,
+      "strings_T2": 12,
+      "strings_TD": 2,
+      "terms_matchable": 38092
+    },
+    "NCBITaxon": {
+      "graph_stubs": 0,
+      "strings_T0": 4976,
+      "strings_T1": 51,
+      "strings_T2": 11,
+      "terms_matchable": 2680
+    },
+    "PATO": {
+      "dropped_species_scoped": 2,
+      "dropped_tier3": 8,
+      "graph_stubs": 0,
+      "obsolete_retained": 898,
+      "strings_T0": 2279,
+      "strings_T1": 375,
+      "strings_T2": 104,
+      "terms_matchable": 1886,
+      "terms_unmatchable": 1
+    },
+    "PECO": {
+      "dropped_trait_code": 61,
+      "graph_stubs": 4,
+      "obsolete_retained": 57,
+      "skipped_imported": 2010,
+      "strings_T0": 787,
+      "strings_T1": 4,
+      "strings_T2": 5,
+      "terms_matchable": 518
+    },
+    "PO": {
+      "dropped_non_english": 2557,
+      "dropped_species_scoped": 509,
+      "dropped_trait_code": 8,
+      "graph_stubs": 3,
+      "obsolete_retained": 134,
+      "strings_T0": 3321,
+      "strings_T1": 30,
+      "strings_T2": 13,
+      "terms_matchable": 1659
+    },
+    "PSO": {
+      "dropped_tier3": 1,
+      "graph_stubs": 6,
+      "skipped_imported": 4145,
+      "strings_T0": 859,
+      "strings_T1": 135,
+      "terms_matchable": 754
+    },
+    "SO": {
+      "dropped_species_scoped": 1,
+      "dropped_tier3": 38,
+      "graph_stubs": 0,
+      "obsolete_retained": 211,
+      "strings_T0": 6194,
+      "strings_T1": 323,
+      "strings_T2": 44,
+      "terms_matchable": 2409
+    },
+    "TO": {
+      "dropped_tier3": 11,
+      "dropped_trait_code": 462,
+      "graph_stubs": 106,
+      "obsolete_retained": 110,
+      "skipped_imported": 2979,
+      "strings_T0": 2821,
+      "strings_T1": 12,
+      "strings_T2": 13,
+      "terms_matchable": 1587
+    }
+  },
+  "chebi_family_added": {
+    "aflatoxin": 9,
+    "beauvericin": 0,
+    "fumonisin": 12,
+    "moniliformin": 1,
+    "trichothecene": 160,
+    "zearalenone": 1
+  },
+  "chebi_role_bearers": {
+    "agrochemical": 613,
+    "fertilizer": 38,
+    "fungicide": 309,
+    "herbicide": 336,
+    "insecticide": 286,
+    "macronutrient": 10,
+    "micronutrient": 51,
+    "mycotoxin": 68,
+    "nutrient": 67,
+    "plant growth regulator": 134,
+    "plant hormone": 82,
+    "plant metabolite": 3588
+  },
+  "collection": "/private/tmp/claude-505/-Users-laura-Documents-GitHub-maizegdb-textpresso-implementation/49486613-80b6-4992-9586-f68ba4e6bd86/scratchpad/collection/maize-ontology-collection",
+  "curated_abbreviations_missing": [],
+  "drops": {
+    "chebi_out_of_scope": 211771,
+    "imported_stanza": 9134,
+    "non_english_synonym": 2557,
+    "non_maize_species_scoped": 935,
+    "suffixed_abbreviation_code": 531,
+    "tier_T3_blocked": 294
+  },
+  "totals": {
+    "by_channel": {
+      "CO_322": 1118,
+      "ChEBI": 42928,
+      "ECO": 3088,
+      "GO": 118623,
+      "NCBITaxon": 5038,
+      "PATO": 2758,
+      "PECO": 796,
+      "PO": 3364,
+      "PSO": 994,
+      "SO": 6561,
+      "TO": 2846
+    },
+    "by_kind": {
+      "curated": 7,
+      "derived": 328,
+      "exact": 70442,
+      "label": 59963,
+      "related": 57374
+    },
+    "by_tier": {
+      "T0": 184086,
+      "T1": 3673,
+      "T2": 347,
+      "TD": 8
+    },
+    "strings": 188114,
+    "terms": 59963
+  },
+  "versions": {
+    "CO_322": "cropontology-live/2026-09-22",
+    "ChEBI": "256",
+    "ECO": "releases/2026-07-10",
+    "GO": "releases/2026-07-26",
+    "NCBITaxon": "2026-07-12 [pruned]",
+    "PATO": "releases/2025-05-14/pato.obo",
+    "PECO": "releases/2025-12-02",
+    "PO": "releases/2026-01-09",
+    "PSO": "releases/2026-01-08",
+    "SO": "2026-08-07",
+    "TO": "releases/2026-01-14"
+  }
+}

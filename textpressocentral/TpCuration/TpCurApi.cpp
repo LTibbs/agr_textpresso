@@ -7,6 +7,7 @@
 
 #include "TextpressoCentralGlobalDefinitions.h"
 #include "TpCurApi.h"
+#include "../PgCopyLine.h" // tablewriter rows: see there
 #include <iostream>
 
 TpCurApi::TpCurApi() : cn_(PGCURATION) {
@@ -97,7 +98,7 @@ void TpCurApi::SubmitRow(dataentry incomingdata) {
     std::stringstream ss;
     ss << incomingdata.last_update;
     d.push_back(ss.str());
-    tt.push_back(d);
+    pg_copy::push_back(tt, d);
     tt.complete();
     w.commit();
 }

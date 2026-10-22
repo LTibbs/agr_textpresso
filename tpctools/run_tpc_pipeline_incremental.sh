@@ -37,6 +37,73 @@ function array_contains {
     echo ${found}
 }
 
+function ensure_pdf_bib_files() {
+    local cas2_root="$1"
+    local metadata_dir="${TPC_METADATA_DIR:-/data/textpresso/imports/metadata}"
+    local script_dir
+    script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+    local helper_path="${TPC_GENERATE_PDF_BIB:-${script_dir}/generate_pdf_bib.py}"
+    if [[ ! -f "${helper_path}" ]]
+    then
+        helper_path="/usr/local/bin/generate_pdf_bib.py"
+    fi
+    find "${cas2_root}" -mindepth 3 -maxdepth 3 -type f -name "*.tpcas.gz" | while read -r tpcas_file
+    do
+        local bib_file="${tpcas_file%.tpcas.gz}.bib"
+        if [[ -e "${bib_file}" ]]
+        then
+            if ! grep -q "<not uploaded>" "${bib_file}"
+            then
+                continue
+            fi
+        fi
+        local paper_id
+        paper_id=$(basename "${tpcas_file}" .tpcas.gz)
+        local relative_tpcas
+        relative_tpcas="${tpcas_file#${cas2_root}/}"
+        local corpus_name
+        corpus_name="${relative_tpcas%%/*}"
+        local pdf_file="${PDF_DIR}/${corpus_name}/${paper_id}/${paper_id}.pdf"
+        if [[ -x "${helper_path}" || -f "${helper_path}" ]]
+        then
+            python3 "${helper_path}" \
+                --pdf "${pdf_file}" \
+                --bib "${bib_file}" \
+                --accession "${paper_id}" \
+                --metadata-dir "${metadata_dir}"
+        else
+            cat > "${bib_file}" <<EOF
+author|<not uploaded>
+accession|${paper_id}
+type|Journal_article
+title|${paper_id}
+journal|<not uploaded>
+citation|<not uploaded>
+year|<not uploaded>
+abstract|<not uploaded>
+EOF
+        fi
+    done
+}
+
+function restart_textpresso_api() {
+    local api_log="/data/textpresso/textpressoapi_data/api.log"
+    local token_db="/data/textpresso/textpressoapi_data/tokens.db"
+    if [[ "${TPC_RESTART_API_AFTER_INDEX:-1}" == "0" ]]
+    then
+        return 0
+    fi
+    if ! command -v textpressoapi >/dev/null 2>&1
+    then
+        echo "Skipping API restart: textpressoapi not found" >&2
+        return 0
+    fi
+    pkill textpressoapi >/dev/null 2>&1 || true
+    nohup textpressoapi -d "${token_db}" > "${api_log}" 2>&1 &
+    # Give the API a short window to reopen the rebuilt Lucene index.
+    sleep 2
+}
+
 PDF_DIR="/data/textpresso/raw_files/pdf"
 XML_DIR="/data/textpresso/raw_files/xml"
 CAS2_DIR="/data/textpresso/tpcas-2"
@@ -247,6 +314,9 @@ fi
 if [[ $(array_contains "${EXCLUDE_STEPS[@]}" "cas2") == "0" ]]
 then
     echo "Generating CAS2 files ..."
+    # Always start from a clean tmp CAS workspace to avoid stale .tpcas/.tpcas.gz
+    # pairs from previous runs that can crash downstream tools.
+    rm -rf "${TMP_DIR}/tpcas-1" "${TMP_DIR}/tpcas-2"
     # 3.1 COPY FILES TO TMP DIR
 
     # 3.1.1 xml - subdirs are processed in parallel
@@ -264,7 +334,7 @@ then
             mkdir -p ${TMP_DIR}/tpcas-1/xml/subdir_${subdir_idx}
         fi
         dirname=$(echo ${line} | awk 'BEGIN{FS="/"}{print $NF}')
-        find -L "${CAS1_DIR}/PMCOA/${dirname}" -name *.tpcas.gz | xargs -I {} cp "{}" "${TMP_DIR}/tpcas-1/xml/subdir_${subdir_idx}/${dirname}.tpcas.gz"
+        find -L "${CAS1_DIR}/PMCOA/${dirname}" -name "*.tpcas.gz" -print0 | xargs -0 -r -I {} cp "{}" "${TMP_DIR}/tpcas-1/xml/subdir_${subdir_idx}/${dirname}.tpcas.gz"
         i=$((i+1))
     done
 
@@ -294,66 +364,136 @@ then
     done
 
     # decompress all tpcas files in tmp dir before processing them
-    find -L ${TMP_DIR}/tpcas-1 -name "*.tpcas.gz" -print0 | xargs -0 -n 1 -P ${N_PROC} gunzip
+    find -L ${TMP_DIR}/tpcas-1 -name "*.tpcas.gz" -print0 | xargs -0 -r -n 1 -P ${N_PROC} gunzip -f
 
     # remove old versions
     awk -F"/" '{print $NF}' ${newxml_local_list} | xargs -I {} rm -rf "${CAS2_DIR}/PMCOA/{}"
 
-    # prepare pcrelations table in postgres
-    echo "drop table pcrelations" | psql www-data
-    TABLELIST=$(echo "select tablename from pg_tables" | psql www-data | grep pcrelations)
-    FIRSTTABLE=$(echo $TABLELIST | cut -f 1 -d " ");
-    echo "create table pcrelations as (select * from $FIRSTTABLE) with no data" | psql www-data
-    for j in $TABLELIST
-    do
-	echo Inserting $j
-	echo "insert into pcrelations select * from $j" | psql www-data
-    done
+    # Prepare pcrelations/tpontology tables in postgres.
+    # Some deployments only have base tables (pcrelations/tpontology), while
+    # others only have the temp lexica tables populated by CreateLexica.bash.
+    # Materialize the base tables when only temp tables are present so
+    # TpLexiconAnnotatorFromPg can start successfully.
+    PCTEMP_CREATED=0
+    if [[ $(psql -At -d www-data -c "select count(*) from pg_tables where schemaname='public' and tablename='pcrelations'") == "0" \
+       && $(psql -At -d www-data -c "select count(*) from pg_tables where schemaname='public' and tablename='tmppcrelations'") != "0" ]]
+    then
+        echo "create table pcrelations as (select * from tmppcrelations)" | psql www-data
+    fi
+    PC_TABLELIST=$(psql -At -d www-data -c "select tablename from pg_tables where schemaname='public' and tablename like 'pcrelations%'")
+    PC_NONBASE_TABLELIST=$(echo "${PC_TABLELIST}" | grep -v '^pcrelations$' || true)
+    if [[ "${PC_NONBASE_TABLELIST}" != "" ]]
+    then
+        echo "drop table if exists pcrelations" | psql www-data
+        FIRSTTABLE=$(echo "${PC_NONBASE_TABLELIST}" | head -n 1)
+        echo "create table pcrelations as (select * from ${FIRSTTABLE}) with no data" | psql www-data
+        for j in ${PC_NONBASE_TABLELIST}
+        do
+            echo Inserting $j
+            echo "insert into pcrelations select * from $j" | psql www-data
+        done
+        PCTEMP_CREATED=1
+    elif [[ $(echo "${PC_TABLELIST}" | grep -c '^pcrelations$') -gt 0 ]]
+    then
+        echo "Using existing pcrelations table"
+    else
+        echo "No pcrelations source table found in www-data" >&2
+    fi
 
-    # prepare tpontology table in postgres
-    echo "drop table tpontology" | psql www-data
-    TABLELIST=$(echo "select tablename from pg_tables" | psql www-data | grep tpontology)
-    FIRSTTABLE=$(echo $TABLELIST | cut -f 1 -d " ");
-    TABLEARRAY=($TABLELIST)
-    echo "create table tpontology as (select * from $FIRSTTABLE) with no data" | psql www-data
+    TPTEMP_CREATED=0
+    if [[ $(psql -At -d www-data -c "select count(*) from pg_tables where schemaname='public' and tablename='tpontology'") == "0" \
+       && $(psql -At -d www-data -c "select count(*) from pg_tables where schemaname='public' and tablename='tmptpontology'") != "0" ]]
+    then
+        echo "create table tpontology as (select * from tmptpontology)" | psql www-data
+    fi
+    TP_TABLELIST=$(psql -At -d www-data -c "select tablename from pg_tables where schemaname='public' and tablename like 'tpontology%'")
+    TP_NONBASE_TABLELIST=$(echo "${TP_TABLELIST}" | grep -v '^tpontology$' || true)
+    if [[ "${TP_NONBASE_TABLELIST}" != "" ]]
+    then
+        echo "drop table if exists tpontology" | psql www-data
+        FIRSTTABLE=$(echo "${TP_NONBASE_TABLELIST}" | head -n 1)
+        TABLEARRAY=(${TP_NONBASE_TABLELIST})
+        echo "create table tpontology as (select * from ${FIRSTTABLE}) with no data" | psql www-data
+        TPTEMP_CREATED=1
+    elif [[ $(echo "${TP_TABLELIST}" | grep -c '^tpontology$') -gt 0 ]]
+    then
+        echo "Using existing tpontology table"
+        TABLEARRAY=("tpontology")
+    else
+        echo "No tpontology source table found in www-data" >&2
+        TABLEARRAY=()
+    fi
+
     FIRSTTIME=1
+    RUNAECPP_LOG="/tmp/runAECpp.$$.log"
+    : > "${RUNAECPP_LOG}"
     i=0
     while (( i < ${#TABLEARRAY[@]}))
     do
-	echo "delete from tpontology" | psql www-data
-	while
-	    if [[ ${TABLEARRAY[$i]} != "" ]]
-	    then
-		echo Inserting ${TABLEARRAY[$i]}
-		echo "insert into tpontology select * from ${TABLEARRAY[$i]}" | psql www-data
-	    fi
-	    i=$[i+1]
-	    s=$(echo "select count(*) from tpontology" | psql www-data )
-	    j=$(echo $s | cut -f 3 -d " ")
-   	    (( j < 5000000)) && (( i < ${#TABLEARRAY[@]}))
-	do true; done
+        if [[ ${TPTEMP_CREATED} -eq 0 && ${TABLEARRAY[$i]} == "tpontology" ]]
+        then
+            # Base tpontology is already the active table; do not truncate/reload it.
+            i=$((i+1))
+        else
+	    echo "delete from tpontology" | psql www-data
+	    while
+	        if [[ ${TABLEARRAY[$i]} != "" ]]
+	        then
+		    echo Inserting ${TABLEARRAY[$i]}
+		    echo "insert into tpontology select * from ${TABLEARRAY[$i]}" | psql www-data
+	        fi
+	        i=$[i+1]
+	        s=$(echo "select count(*) from tpontology" | psql www-data )
+	        j=$(echo $s | cut -f 3 -d " ")
+	        (( j < 5000000)) && (( i < ${#TABLEARRAY[@]}))
+	    do true; done
+        fi
         # UIMA analysis for nxml files
         for subdir in $(ls ${TMP_DIR}/tpcas-1/xml)
         do
+            XML_INPUT_DIR="${TMP_DIR}/tpcas-1/xml/${subdir}"
+            XML_NEXT_INPUT_DIR="${TMP_DIR}/tpcas-2/xml/1.${subdir}"
             if (( $FIRSTTIME > 0 ))
             then
-                runAECpp /usr/local/uima_descriptors/TpLexiconAnnotatorFromPg.xml -xmi ${TMP_DIR}/tpcas-1/xml/${subdir} ${TMP_DIR}/tpcas-2/xml/${subdir} &
+                xml_file_count=$(find "${XML_INPUT_DIR}" -maxdepth 1 -name "*.tpcas" | wc -l)
             else
-                runAECpp /usr/local/uima_descriptors/TpLexiconAnnotatorFromPg.xml -xmi ${TMP_DIR}/tpcas-2/xml/1.${subdir} ${TMP_DIR}/tpcas-2/xml/${subdir} &
+                xml_file_count=$(find "${XML_NEXT_INPUT_DIR}" -maxdepth 1 -name "*.tpcas" | wc -l)
+            fi
+            if [[ "${xml_file_count}" == "0" ]]
+            then
+                continue
+            fi
+            if (( $FIRSTTIME > 0 ))
+            then
+                sh -c 'LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}" runAECpp "$1" -xmi "$2" "$3" || true' _ /usr/local/uima_descriptors/TpLexiconAnnotatorFromPg.xml "${XML_INPUT_DIR}" "${TMP_DIR}/tpcas-2/xml/${subdir}" >> "${RUNAECPP_LOG}" 2>&1 &
+            else
+                sh -c 'LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}" runAECpp "$1" -xmi "$2" "$3" || true' _ /usr/local/uima_descriptors/TpLexiconAnnotatorFromPg.xml "${XML_NEXT_INPUT_DIR}" "${TMP_DIR}/tpcas-2/xml/${subdir}" >> "${RUNAECPP_LOG}" 2>&1 &
             fi
         done
 	wait
         # UIMA analysis for pdf files
         for folder in */ ; do
+            PDF_INPUT_DIR="${TMP_DIR}/tpcas-1/${folder}"
+            PDF_NEXT_INPUT_DIR="${TMP_DIR}/tpcas-2/1.${folder}"
             if (( $FIRSTTIME > 0 ))
             then
-                runAECpp /usr/local/uima_descriptors/TpLexiconAnnotatorFromPg.xml -xmi "${TMP_DIR}/tpcas-1/${folder}" "${TMP_DIR}/tpcas-2/${folder}" &
+                pdf_file_count=$(find "${PDF_INPUT_DIR}" -maxdepth 1 -name "*.tpcas" | wc -l)
             else
-                runAECpp /usr/local/uima_descriptors/TpLexiconAnnotatorFromPg.xml -xmi "${TMP_DIR}/tpcas-2/1.${folder}" "${TMP_DIR}/tpcas-2/${folder}" &
+                pdf_file_count=$(find "${PDF_NEXT_INPUT_DIR}" -maxdepth 1 -name "*.tpcas" | wc -l)
+            fi
+            if [[ "${pdf_file_count}" == "0" ]]
+            then
+                continue
+            fi
+            if (( $FIRSTTIME > 0 ))
+            then
+                sh -c 'LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}" runAECpp "$1" -xmi "$2" "$3" || true' _ /usr/local/uima_descriptors/TpLexiconAnnotatorFromPg.xml "${PDF_INPUT_DIR}" "${TMP_DIR}/tpcas-2/${folder}" >> "${RUNAECPP_LOG}" 2>&1 &
+            else
+                sh -c 'LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}" runAECpp "$1" -xmi "$2" "$3" || true' _ /usr/local/uima_descriptors/TpLexiconAnnotatorFromPg.xml "${PDF_NEXT_INPUT_DIR}" "${TMP_DIR}/tpcas-2/${folder}" >> "${RUNAECPP_LOG}" 2>&1 &
             fi
         done
 	wait
-	FIRSTTIME=0
+		FIRSTTIME=0
         for subdir in $(ls ${TMP_DIR}/tpcas-1/xml)
         do
 	    find ${TMP_DIR}/tpcas-2/xml/${subdir} -name "*tpcas" | xargs -I {} -n 1 -P ${N_PROC} mv {} ${TMP_DIR}/tpcas-2/xml/1.${subdir}/.
@@ -372,11 +512,17 @@ then
 	find ${TMP_DIR}/tpcas-2/1."${folder}" -name "*tpcas" | xargs -I {} -n 1 -P ${N_PROC} mv {} ${TMP_DIR}/tpcas-2/"${folder}"/.
     done
     rmdir ${TMP_DIR}/tpcas-2/xml/*/
-    echo "drop table tpontology" | psql www-data
-    echo "drop table pcrelations" | psql www-data
+    if [[ ${TPTEMP_CREATED} -gt 0 ]]
+    then
+        echo "drop table if exists tpontology" | psql www-data
+    fi
+    if [[ ${PCTEMP_CREATED} -gt 0 ]]
+    then
+        echo "drop table if exists pcrelations" | psql www-data
+    fi
 
     # 3.3 COMPRESS THE RESULTS
-    find -L ${TMP_DIR}/tpcas-2 -name *.tpcas -print0 | xargs -0 -n 1 -P ${N_PROC} gzip
+    find -L ${TMP_DIR}/tpcas-2 -name "*.tpcas" -print0 | xargs -0 -r -n 1 -P ${N_PROC} gzip -f
 
     # 3.4 COPY TPCAS1 to TPCAS2 DIRS AND REPLACE FILES WITH NEW ONES
     mkdir -p "${CAS2_DIR}/PMCOA"
@@ -408,6 +554,10 @@ then
         corpus_name=$(echo ${line} | awk -F"/" '{print $(NF-1)}')
         tpcas_file=$(echo "${CAS1_DIR}/${line}/${dir_name}.tpcas.gz")
         mkdir -p "${CAS2_DIR}/${corpus_name}/"${dir_name}
+        if [[ -e "${CAS2_DIR}/${corpus_name}/${dir_name}/images" ]]
+        then
+            rm -rf "${CAS2_DIR}/${corpus_name}/${dir_name}/images"
+        fi
         ln -s "${CAS1_DIR}/${corpus_name}/${dir_name}/images" "${CAS2_DIR}/${corpus_name}/${dir_name}/images"
         cp "${TMP_DIR}/tpcas-2/${line}.tpcas.gz" "${CAS2_DIR}/${line}/${dir_name}.tpcas.gz"
     done
@@ -456,6 +606,10 @@ then
     make_bib.py --tpcas2_dir /data/textpresso/tpcas-2/xenbase/
 fi
 
+# Create minimal bib files for PDF corpora when bibliography download is skipped
+# or unavailable, otherwise cas2index drops the documents completely.
+ensure_pdf_bib_files "${CAS2_DIR}"
+
 #################################################################################
 #####                     5. INVERT IMAGES                                  #####
 #################################################################################
@@ -484,8 +638,20 @@ then
     then
         INDEX_DIR_CUR="${INDEX_DIR}_new"
     fi
+    if [[ "${INDEX_DIR_CUR}" == "${INDEX_DIR}_new" && -d "${INDEX_DIR_CUR}" ]]
+    then
+        rm -rf "${INDEX_DIR_CUR}"
+    fi
+    if [[ -L "${INDEX_DIR_CUR}/db" || ( -e "${INDEX_DIR_CUR}/db" && ! -d "${INDEX_DIR_CUR}/db" ) ]]
+    then
+        rm -rf "${INDEX_DIR_CUR}/db"
+    fi
     mkdir -p "${INDEX_DIR_CUR}/db"
-    create_single_index.sh -m 100000 ${CAS2_DIR} ${INDEX_DIR_CUR}
+    if ! create_single_index.sh -m 100000 ${CAS2_DIR} ${INDEX_DIR_CUR}
+    then
+        echo "ERROR: create_single_index.sh failed" >&2
+        exit 1
+    fi
     cd "${INDEX_DIR_CUR}"
     num_subidx_step=$(echo "${PAPERS_PER_SUBINDEX}/100000" | bc)
     first_idx_in_master=0
@@ -513,18 +679,29 @@ then
         last_idx_in_master=$((last_idx_in_master + num_subidx_step))
         final_counter=$((final_counter + 1))
     done
-    saveidstodb -i ${INDEX_DIR_CUR}
-    chmod -R 777 "${INDEX_DIR_CUR}/db"
-    rm -rf /data/textpresso/db.bk
-    mv /data/textpresso/db /data/textpresso/db.bk
-    mv "${INDEX_DIR_CUR}/db" /data/textpresso/db
-    ln -s /data/textpresso/db "${INDEX_DIR_CUR}/db"
+    if saveidstodb -i ${INDEX_DIR_CUR}
+    then
+        chmod -R 777 "${INDEX_DIR_CUR}/db"
+        rm -rf /data/textpresso/db.bk
+        if [[ -e /data/textpresso/db ]]
+        then
+            mv /data/textpresso/db /data/textpresso/db.bk
+        fi
+        if [[ -d "${INDEX_DIR_CUR}/db" ]]
+        then
+            mv "${INDEX_DIR_CUR}/db" /data/textpresso/db
+            ln -s /data/textpresso/db "${INDEX_DIR_CUR}/db"
+        fi
+    else
+        echo "WARNING: saveidstodb failed; continuing without db symlink update" >&2
+    fi
     if [[ -d "${INDEX_DIR}_new" ]]
     then
         rm -rf "${INDEX_DIR}.bk"
         mv "${INDEX_DIR}" "${INDEX_DIR}.bk"
         mv ${INDEX_DIR_CUR} ${INDEX_DIR}
     fi
+    restart_textpresso_api
 fi
 
 #################################################################################

@@ -88,6 +88,13 @@ do
 done
 rm -rf ${INDEX_OUT_DIR}/tmpindex*
 rm -rf ${tempdir}
-mkdir "${INDEX_OUT_DIR}/db"
-updatecorpuscounter -i ${INDEX_OUT_DIR} -c ${CAS_ROOT_DIR}
+if [[ -L "${INDEX_OUT_DIR}/db" || ( -e "${INDEX_OUT_DIR}/db" && ! -d "${INDEX_OUT_DIR}/db" ) ]]
+then
+    rm -rf "${INDEX_OUT_DIR}/db"
+fi
+mkdir -p "${INDEX_OUT_DIR}/db"
+if ! updatecorpuscounter -i ${INDEX_OUT_DIR} -c ${CAS_ROOT_DIR}
+then
+    echo "WARNING: updatecorpuscounter failed; continuing with index output" >&2
+fi
 exit 0

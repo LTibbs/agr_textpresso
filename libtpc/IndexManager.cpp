@@ -13,6 +13,7 @@
 #include "IndexManager.h"
 #include "Utils.h"
 #include "lucene-custom/CaseSensitiveAnalyzer.h"
+#include "lucene-custom/CaseInsensitiveAnalyzer.h"
 #include "lucene-custom/LazySelector.h"
 #include "uima-custom-analyzers/Tpcas2SingleIndex/CASUtils.h"
 #include <lucene++/LuceneHeaders.h>
@@ -47,6 +48,16 @@ using namespace xercesc;
 using namespace boost::filesystem;
 
 namespace {
+
+    string safe_decompress_to_utf8(const ByteArray& value) {
+        if (!value || value.size() == 0) {
+            return "";
+        }
+        String decompressed = CompressionTools::decompressString(value);
+        // Encode, don't narrow: string(begin, end) kept the low byte of each
+        // wchar_t, so any non-ASCII character came out as invalid UTF-8.
+        return StringUtils::toUTF8(decompressed);
+    }
 
     void printQuery(const tpc::index::Query& query) {
 
@@ -84,6 +95,9 @@ namespace {
                 break;
             case QueryType::references:
                 type = "references";
+                break;
+            case QueryType::supplementary:
+                type = "supplementary";
                 break;
             case QueryType::result:
                 type = "result";
@@ -157,6 +171,9 @@ SearchResults IndexManager::search_documents(const Query& query, bool matches_on
             case QueryType::references:
                 searchfield = L"references";
                 break;
+            case QueryType::supplementary:
+                searchfield = L"supplementary";
+                break;
             case QueryType::result:
                 searchfield = L"result";
                 break;
@@ -174,7 +191,7 @@ SearchResults IndexManager::search_documents(const Query& query, bool matches_on
         if (query.case_sensitive) {
             analyzer = newLucene<CaseSensitiveAnalyzer>(LuceneVersion::LUCENE_30);
         } else {
-            analyzer = newLucene<StandardAnalyzer>(LuceneVersion::LUCENE_30);
+            analyzer = newLucene<CaseInsensitiveAnalyzer>(LuceneVersion::LUCENE_30); // as indexed
         }
         QueryParserPtr parser = newLucene<QueryParser>(
                 LuceneVersion::LUCENE_30, searchfield, analyzer);
@@ -182,7 +199,9 @@ SearchResults IndexManager::search_documents(const Query& query, bool matches_on
         if (query_text.empty()) {
             throw tpc_exception("empty query");
         }
-        String query_str = String(query_text.begin(), query_text.end());
+        // Decode the UTF-8 query; String(begin, end) widened it byte by byte,
+        // so a non-ASCII term (beta, an accented name) could never match.
+        String query_str = StringUtils::toUnicode(query_text);
         string joined_lit = boost::algorithm::join(query.literatures, "ED\" OR corpus:\"BG");
         query_str = L"(corpus:\"BG" + String(joined_lit.begin(), joined_lit.end()) + L"ED\") AND (" + query_str + L")";
         QueryPtr luceneQuery = parser->parse(query_str);
@@ -280,13 +299,16 @@ Collection<IndexReaderPtr> IndexManager::get_subreaders(QueryType type, bool cas
             string index_id(itr->path().string());
             index_id.append("/");
             index_id.append(index_type);
-            if (readers_map.find(itr->path().string() + "/" + index_type) == readers_map.end()) {
+            if (readers_map.find(index_id) == readers_map.end()) {
                 if (exists(path(index_id + "/segments.gen"))) {
                     readers_map[index_id] = IndexReader::open(FSDirectory::open(String(index_id.begin(),
                             index_id.end())), readonly);
                 }
             }
-            subReaders.add(readers_map[index_id]);
+            auto reader_itr = readers_map.find(index_id);
+            if (reader_itr != readers_map.end() && reader_itr->second) {
+                subReaders.add(reader_itr->second);
+            }
         }
     }
     return subReaders;
@@ -533,42 +555,28 @@ void IndexManager::update_document_details(DocumentDetails &doc_details, String 
         String filepath = doc_ptr->get(StringUtils::toString("filepath"));
         doc_details.filepath = string(filepath.begin(), filepath.end());
     } else if (field == L"accession_compressed") {
-        String accession = CompressionTools::decompressString(
-                doc_ptr->getBinaryValue(StringUtils::toString("accession_compressed")));
-        doc_details.accession = string(accession.begin(), accession.end());
+        doc_details.accession = "";
     } else if (field == L"title_compressed") {
-        String title = CompressionTools::decompressString(
-                doc_ptr->getBinaryValue(StringUtils::toString("title_compressed")));
-        doc_details.title = string(title.begin(), title.end());
+        doc_details.title = "";
     } else if (field == L"author_compressed") {
-        String author = CompressionTools::decompressString(
-                doc_ptr->getBinaryValue(StringUtils::toString("author_compressed")));
-        doc_details.author = string(author.begin(), author.end());
+        doc_details.author = "";
     } else if (field == L"journal_compressed") {
-        String journal = CompressionTools::decompressString(
-                doc_ptr->getBinaryValue(StringUtils::toString("journal_compressed")));
-        doc_details.journal = string(journal.begin(), journal.end());
+        doc_details.journal = "";
     } else if (field == L"abstract_compressed") {
-        String abstract = CompressionTools::decompressString(
-                doc_ptr->getBinaryValue(StringUtils::toString("abstract_compressed")));
-        doc_details.abstract = string(abstract.begin(), abstract.end());
+        doc_details.abstract = "";
     } else if (field == L"corpus") {
         String literature = doc_ptr->get(StringUtils::toString("corpus"));
         string raw_lit = string(literature.begin(), literature.end());
-        raw_lit = raw_lit.substr(2, raw_lit.length() - 4);
-        boost::split_regex(doc_details.corpora, raw_lit, boost::regex("ED BG"));
+        if (raw_lit.length() >= 4) {
+            raw_lit = raw_lit.substr(2, raw_lit.length() - 4);
+            boost::split_regex(doc_details.corpora, raw_lit, boost::regex("ED BG"));
+        }
     } else if (field == L"fulltext_compressed") {
-        String fulltext = CompressionTools::decompressString(
-                doc_ptr->getBinaryValue(StringUtils::toString("fulltext_compressed")));
-        doc_details.fulltext = string(fulltext.begin(), fulltext.end());
+        doc_details.fulltext = "";
     } else if (field == L"type_compressed") {
-        String type = CompressionTools::decompressString(
-                doc_ptr->getBinaryValue(StringUtils::toString("type_compressed")));
-        doc_details.type = string(type.begin(), type.end());
+        doc_details.type = "";
     } else if (field == L"fulltext_cat_compressed") {
-        String fulltext_cat = CompressionTools::decompressString(
-                doc_ptr->getBinaryValue(StringUtils::toString("fulltext_cat_compressed")));
-        doc_details.categories_string = string(fulltext_cat.begin(), fulltext_cat.end());
+        doc_details.categories_string = "";
     }
 }
 
@@ -658,15 +666,13 @@ void IndexManager::update_match_sentences_details_for_document(const DocumentSum
                     sentenceDetails.doc_position_end = StringUtils::toInt(sent_reader->document(
                             sent.lucene_internal_id, fsel)->get(L"end"));
                 } else if (f == L"sentence_compressed") {
-                    String sentence = CompressionTools::decompressString(
+                    sentenceDetails.sentence_text = safe_decompress_to_utf8(
                             sent_reader->document(sent.lucene_internal_id, fsel)->getBinaryValue(
                             L"sentence_compressed"));
-                    sentenceDetails.sentence_text = string(sentence.begin(), sentence.end());
                 } else if (f == L"sentence_cat_compressed") {
-                    String sentence_cat = CompressionTools::decompressString(
+                    sentenceDetails.categories_string = safe_decompress_to_utf8(
                             sent_reader->document(sent.lucene_internal_id, fsel)->getBinaryValue(
                             L"sentence_cat_compressed"));
-                    sentenceDetails.categories_string = string(sentence_cat.begin(), sentence_cat.end());
                 }
             }
             sentenceDetails.score = sent.score;
@@ -710,13 +716,11 @@ void IndexManager::update_match_sentences_details_for_document(const DocumentSum
                         sentenceDetails.doc_position_end = StringUtils::toInt(sentPtr->get(
                                 StringUtils::toString("end")));
                     } else if (f == L"sentence_compressed") {
-                        String sentence = CompressionTools::decompressString(
+                        sentenceDetails.sentence_text = safe_decompress_to_utf8(
                                 sentPtr->getBinaryValue(StringUtils::toString("sentence_compressed")));
-                        sentenceDetails.sentence_text = string(sentence.begin(), sentence.end());
                     } else if (f == L"sentence_cat_compressed") {
-                        String sentence_cat = CompressionTools::decompressString(
+                        sentenceDetails.categories_string = safe_decompress_to_utf8(
                                 sentPtr->getBinaryValue(StringUtils::toString("sentence_cat_compressed")));
-                        sentenceDetails.categories_string = string(sentence_cat.begin(), sentence_cat.end());
                     }
                 }
                 sentenceDetails.score = sentScoreMap[sentenceDetails.sentence_id];
@@ -757,13 +761,11 @@ void IndexManager::update_all_sentences_details_for_document(DocumentDetails &do
                 sentenceDetails.doc_position_end = StringUtils::toInt(sentPtr->get(
                         StringUtils::toString("end")));
             } else if (f == L"sentence_compressed") {
-                String sentence = CompressionTools::decompressString(
+                sentenceDetails.sentence_text = safe_decompress_to_utf8(
                         sentPtr->getBinaryValue(StringUtils::toString("sentence_compressed")));
-                sentenceDetails.sentence_text = string(sentence.begin(), sentence.end());
             } else if (f == L"sentence_cat_compressed") {
-                String sentence_cat = CompressionTools::decompressString(
+                sentenceDetails.categories_string = safe_decompress_to_utf8(
                         sentPtr->getBinaryValue(StringUtils::toString("sentence_cat_compressed")));
-                sentenceDetails.categories_string = string(sentence_cat.begin(), sentence_cat.end());
             }
         }
         doc_details.all_sentences_details.push_back(sentenceDetails);
@@ -1274,6 +1276,9 @@ void IndexManager::update_corpus_counter() {
 int IndexManager::get_num_docs_in_corpus_from_index(const string & corpus) {
     Collection<ScoreDocPtr> matchesCollection;
     Collection<IndexReaderPtr> subReaders = get_subreaders(QueryType::document, false);
+    if (subReaders.size() == 0) {
+        return 0;
+    }
     MultiReaderPtr multireader = newLucene<MultiReader>(subReaders, false);
     SearcherPtr searcher = newLucene<IndexSearcher>(multireader);
     AnalyzerPtr analyzer = newLucene<StandardAnalyzer>(LuceneVersion::LUCENE_30);
@@ -1302,12 +1307,14 @@ void IndexManager::save_all_doc_ids_for_sentences_to_db() {
         typedef dbstl::db_map<int, string> HugeMap;
         HugeMap huge_map(pdb, &env);
         Collection<IndexReaderPtr> subReaders = get_subreaders(QueryType::sentence, false);
-        MultiReaderPtr multireader = newLucene<MultiReader>(subReaders, false);
-        FieldSelectorPtr fsel = newLucene<LazySelector>(set<String>({L"doc_id", L"sentence_id", L"year"}));
-        for (int i = 0; i < multireader->maxDoc(); i++) {
-            String doc_id = multireader->document(i, fsel)->get(L"doc_id");
-            String year = multireader->document(i, fsel)->get(L"year");
-            huge_map[i] = string(doc_id.begin(), doc_id.end()) + "|" + string(year.begin(), year.end());
+        if (subReaders.size() > 0) {
+            MultiReaderPtr multireader = newLucene<MultiReader>(subReaders, false);
+            FieldSelectorPtr fsel = newLucene<LazySelector>(set<String>({L"doc_id", L"sentence_id", L"year"}));
+            for (int i = 0; i < multireader->maxDoc(); i++) {
+                String doc_id = multireader->document(i, fsel)->get(L"doc_id");
+                String year = multireader->document(i, fsel)->get(L"year");
+                huge_map[i] = string(doc_id.begin(), doc_id.end()) + "|" + string(year.begin(), year.end());
+            }
         }
         if (pdb != NULL) {
             pdb->close(0);
@@ -1331,11 +1338,13 @@ void IndexManager::save_all_years_for_documents_to_db() {
         typedef dbstl::db_map<int, string> HugeMap;
         HugeMap huge_map(pdb, &env);
         Collection<IndexReaderPtr> subReaders = get_subreaders(QueryType::document, false);
-        MultiReaderPtr multireader = newLucene<MultiReader>(subReaders, false);
-        FieldSelectorPtr fsel = newLucene<LazySelector>(set<String>({L"year"}));
-        for (int i = 0; i < multireader->maxDoc(); i++) {
-            String year = multireader->document(i, fsel)->get(L"year");
-            huge_map[i] = string(year.begin(), year.end());
+        if (subReaders.size() > 0) {
+            MultiReaderPtr multireader = newLucene<MultiReader>(subReaders, false);
+            FieldSelectorPtr fsel = newLucene<LazySelector>(set<String>({L"year"}));
+            for (int i = 0; i < multireader->maxDoc(); i++) {
+                String year = multireader->document(i, fsel)->get(L"year");
+                huge_map[i] = string(year.begin(), year.end());
+            }
         }
         if (pdb != NULL) {
             pdb->close(0);
@@ -1378,4 +1387,3 @@ set<string> IndexManager::get_words_belonging_to_category_from_document_fulltext
     }
     return result;
 }
-

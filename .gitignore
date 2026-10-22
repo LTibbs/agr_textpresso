@@ -11,3 +11,29 @@ tpcas-1/*
 tpcas-2/*
 tpcas-1*/*
 tpcas-2*/*
+
+# Local runtime/data volume - only the ontology dump and production obo files
+# are versioned; everything else here is regenerable or too large for git.
+.env
+build.log
+.data/raw_files/
+.data/tpcas-1/
+.data/tpcas-2/
+.data/tpcas-1-test/
+.data/tpcas-2-test/
+.data/luceneindex/
+.data/luceneindex.bk/
+.data/libtpc/
+.data/db/
+.data/db.bk/
+.data/imports/
+.data/logs/
+.data/tmp/
+.data/tmp-test/
+.data/tmp-obo/
+.data/italics/jats_cache/
+.data/obofilesbackup/
+.data/postgres/
+.data/oboheaderfiles/
+.data/textpressoapi_data/
+.data/backups/ontology-20260604T173718Z/

@@ -59,8 +59,16 @@ private:
     std::set<UnicodeString> dlsetSection_;
     TpTrie * trieSection_;
     bool hasSection(const set<UnicodeString>& sectionNames, const vector<UnicodeString>& sections);
+    // Which raw-section headings are real, and where each one's section ends
+    // (at the next real heading) -- see the 2026-10-14 note in TdTokenizer.cpp.
+    // Headings at or after supplementStart (an appended supplement's banner;
+    // the text length if none) are not headings, and no section runs past it.
+    void validateSectionHeadings(const UnicodeString & text, const vector<UnicodeString>& sections,
+        const vector<size_t>& b, const vector<size_t>& e, size_t supplementStart,
+        vector<bool>& valid, vector<size_t>& spanEnd);
     void combineSectionAnnotations(CAS & cas, const set<UnicodeString>& sectionNames,
         const vector<UnicodeString>& sections, const vector<size_t>& b, const vector<size_t>& e,
+        const vector<bool>& valid, const vector<size_t>& spanEnd,
         const UnicodeString type, AnnotationCounter ac);
 };
 

@@ -162,15 +162,21 @@ vector< pair<int32_t, int32_t> > RemoveDelimiters(const UnicodeStringRef usdocre
 }
 
 TpTokenizer::TpTokenizer() {
-    dlsetToken = set<UnicodeString > (G_initT, G_initT + G_initT_No);
-    dlsetSentence = set<UnicodeString > (G_initS, G_initS + G_initS_No);
+    dlsetToken = set<UnicodeString >(
+            tp_uima_globals::token_delimiters(),
+            tp_uima_globals::token_delimiters() + G_initT_No);
+    dlsetSentence = set<UnicodeString >(
+            tp_uima_globals::sentence_delimiters(),
+            tp_uima_globals::sentence_delimiters() + G_initS_No);
     disqSentence.push_back("[\\(>\\s][A-Z]\\.[<\\s]$");
     const string part1 = "[\\(>\\s](Prof|Ph\\.D|Dr|[Ff]igs?|[Vv]ol|i\\.e|e\\.g";
     const string part2 = "|[Nn]o|[Vv]s|[Ee]x|al|ca)\\.[<\\s]$";
     disqSentence.push_back(part1 + part2);
     maxfrontdisqcharlength = 4; // sniplet length in front of sentence delimiter
     maxbackdisqcharlength = 0; // sniplet length  following sentence delimiter.
-    PdfTags = set<UnicodeString > (G_initP, G_initP + G_initP_No);
+    PdfTags = set<UnicodeString >(
+            tp_uima_globals::pdf_tags(),
+            tp_uima_globals::pdf_tags() + G_initP_No);
 }
 
 TpTokenizer::TpTokenizer(const TpTokenizer & orig) {

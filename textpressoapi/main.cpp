@@ -5,6 +5,8 @@
 #include <textpresso/IndexManager.h>
 #include <SQLiteCpp/SQLiteCpp.h>
 #include <boost/program_options.hpp>
+#include <fstream>
+#include "access_control.h"
 
 using namespace tpc::index;
 using namespace std;
@@ -12,6 +14,76 @@ using namespace SQLite;
 using namespace boost::filesystem;
 
 namespace po = boost::program_options;
+
+namespace {
+
+struct BibMetadata {
+    string accession;
+    string title;
+    string author;
+    string journal;
+    string year;
+    string type;
+    string abstract_text;
+};
+
+string unwrap_marked_field(const string& value) {
+    static const string prefix = "BEGIN ";
+    static const string suffix = " END";
+    if (value.size() >= prefix.size() + suffix.size() &&
+            value.compare(0, prefix.size(), prefix) == 0 &&
+            value.compare(value.size() - suffix.size(), suffix.size(), suffix) == 0) {
+        return value.substr(prefix.size(), value.size() - prefix.size() - suffix.size());
+    }
+    return value;
+}
+
+string basename_without_suffix(const string& filepath, const string& suffix) {
+    auto slash = filepath.find_last_of('/');
+    string basename = slash == string::npos ? filepath : filepath.substr(slash + 1);
+    if (basename.size() >= suffix.size() &&
+            basename.compare(basename.size() - suffix.size(), suffix.size(), suffix) == 0) {
+        basename.resize(basename.size() - suffix.size());
+    }
+    return basename;
+}
+
+BibMetadata load_bib_metadata(const string& filepath) {
+    BibMetadata metadata;
+    path bib_path = path(CAS_ROOT_LOCATION) / path(filepath);
+    bib_path.replace_extension(".bib");
+    std::ifstream input(bib_path.string());
+    if (!input.good()) {
+        return metadata;
+    }
+    string line;
+    while (getline(input, line)) {
+        auto split = line.find('|');
+        if (split == string::npos) {
+            continue;
+        }
+        string key = line.substr(0, split);
+        string value = line.substr(split + 1);
+        if (key == "accession") {
+            metadata.accession = value;
+        } else if (key == "title") {
+            metadata.title = value;
+        } else if (key == "author") {
+            metadata.author = value;
+        } else if (key == "journal") {
+            metadata.journal = value;
+        } else if (key == "year") {
+            metadata.year = value;
+        } else if (key == "type") {
+            metadata.type = value;
+        } else if (key == "abstract") {
+            metadata.abstract_text = value;
+        }
+    }
+    return metadata;
+}
+
+}
 
 bool is_token_valid(const string& db_path, const string& token) {
     try {
@@ -103,6 +175,8 @@ tpc::index::Query get_query(const crow::json::rvalue& json_req, const IndexManag
             query.type = QueryType::materials;
         else if (type == "references")
             query.type = QueryType::references;
+        else if (type == "supplementary")
+            query.type = QueryType::supplementary;
         else if (type == "result")
             query.type = QueryType::result;
         else if (type == "sentence")
@@ -138,6 +212,9 @@ int main(int argc, const char* argv[]) {
     string ssl_key;
     string index_path;
     string login_database;
+    string oa_manifest;
+    string api_keys_file;
+    int max_anon_snippets = 3;
 
     try {
         desc.add_options()
@@ -146,6 +223,16 @@ int main(int argc, const char* argv[]) {
                 "textpresso index")
                 ("login-database,d", po::value<string>(&login_database)->default_value(""),
                 "database for logins and tokens (optional, authentication disabled if not provided)")
+                ("open-access-manifest", po::value<string>(&oa_manifest)->default_value(
+                "/data/textpresso/open_access_manifest.tsv"),
+                "manifest of per-accession / per-corpus open-access status; if the file is absent, "
+                "every document is treated as open access and no request is restricted")
+                ("api-keys-file", po::value<string>(&api_keys_file)->default_value(
+                "/data/textpresso/textpressoapi_data/api_keys.txt"),
+                "file of API keys (one per line) that grant unrestricted full-text access")
+                ("max-anon-snippets", po::value<int>(&max_anon_snippets)->default_value(3),
+                "maximum matching sentences returned per non-open-access document to "
+                "unauthenticated clients")
                 ("ssl_cert,c", po::value<string>(&ssl_cert)->default_value(""),
                 "ssl certificate file")
                 ("ssl_key,k", po::value<string>(&ssl_key)->default_value(""),
@@ -167,15 +254,40 @@ int main(int argc, const char* argv[]) {
     }
 
     IndexManager indexManager(index_path);
+
+    tpc_access::AccessControl access;
+    access.load(oa_manifest, api_keys_file);
+    if (max_anon_snippets < 0) {
+        max_anon_snippets = 0;
+    }
+    if (access.enforcing()) {
+        cout << "access control: ENFORCING (manifest: " << oa_manifest << "); "
+                << "unauthenticated clients get at most " << max_anon_snippets
+                << " matching sentences per non-open-access document" << endl;
+        if (!access.has_keys()) {
+            cout << "access control: WARNING no API keys loaded from " << api_keys_file
+                    << " -- no client can retrieve full text of a non-open-access document" << endl;
+        }
+    } else {
+        cout << "access control: disabled (no manifest at " << oa_manifest
+                << "); all documents served as open access" << endl;
+    }
+
     crow::SimpleApp app;
 
     CROW_ROUTE(app, "/v1/textpresso/api/search_documents")
             .methods("POST"_method)
-            ([&indexManager, &login_database](const crow::request & req) {
+            ([&indexManager, &login_database, &access, max_anon_snippets](const crow::request & req) {
                 // parse request
                 auto json_req = crow::json::load(req.body);
                 if (!json_req)
                     return crow::response(400);
+                // Open-access gating: an unauthenticated client gets the full
+                // response for open-access documents, but only metadata +
+                // abstract + the first `max_anon_snippets` matching sentences
+                // for non-open-access ones. A valid API key lifts the limit.
+                bool authenticated = access.is_valid_key(tpc_access::extract_api_key(req, json_req));
+                bool enforce = access.enforcing() && !authenticated;
                 int64_t since_num(0);
                 int64_t count(200);
                 if (json_req.has("since_num"))
@@ -225,34 +337,82 @@ int main(int argc, const char* argv[]) {
                 }
                 auto doc_details = indexManager.get_documents_details(
                         vector<tpc::index::DocumentSummary>(first_iter, last_iter), query.sort_by_year,
-                        include_match_sentences, tpc::index::DOCUMENTS_FIELDS_DETAILED, include_match_sentence_fields,
+                        include_match_sentences, {"filepath", "year", "doc_id"}, include_match_sentence_fields,
                         exclude_doc_fields,{}, include_all_sentences, include_all_sentence_fields,{}, true, true);
                 // response
                 crow::json::wvalue json_resp;
                 for (int i = 0; i < doc_details.size(); ++i) {
+                    BibMetadata bib = load_bib_metadata(doc_details[i].filepath);
+                    string accession = doc_details[i].accession.empty() ?
+                            basename_without_suffix(doc_details[i].filepath, ".tpcas") :
+                            doc_details[i].accession;
+                    if (!bib.accession.empty()) {
+                        accession = bib.accession;
+                    }
+                    string title = unwrap_marked_field(doc_details[i].title);
+                    if (title.empty() && !bib.title.empty()) {
+                        title = bib.title;
+                    }
+                    if (title.empty()) {
+                        title = accession;
+                    }
+                    string author = unwrap_marked_field(doc_details[i].author);
+                    if (author.empty() && bib.author != "<not uploaded>") {
+                        author = bib.author;
+                    }
+                    string journal = unwrap_marked_field(doc_details[i].journal);
+                    if (journal.empty() && bib.journal != "<not uploaded>") {
+                        journal = bib.journal;
+                    }
+                    string doc_type = doc_details[i].type;
+                    if (doc_type.empty() && !bib.type.empty() && bib.type != "<not uploaded>") {
+                        doc_type = bib.type;
+                    }
+                    string year = doc_details[i].year;
+                    if (year.empty() && !bib.year.empty() && bib.year != "<not uploaded>") {
+                        year = bib.year;
+                    }
                     json_resp[i]["identifier"] = doc_details[i].filepath;
-                            json_resp[i]["score"] = doc_details[i].score;
-                            json_resp[i]["title"] =
-                            doc_details[i].title.substr(6, doc_details[i].title.length() - 10);
-                            json_resp[i]["author"] =
-                            doc_details[i].author.substr(6, doc_details[i].author.length() - 10);
-                            json_resp[i]["accession"] = doc_details[i].accession;
-                            json_resp[i]["journal"] =
-                            doc_details[i].journal.substr(6, doc_details[i].journal.length() - 10);
-                            json_resp[i]["doc_type"] = doc_details[i].type;
-                            json_resp[i]["year"] = doc_details[i].year;
+                    json_resp[i]["score"] = doc_details[i].score;
+                    json_resp[i]["title"] = title;
+                    json_resp[i]["author"] = author;
+                    json_resp[i]["accession"] = accession;
+                    json_resp[i]["journal"] = journal;
+                    json_resp[i]["doc_type"] = doc_type;
+                    json_resp[i]["year"] = year;
+
+                    bool open_access = access.is_open_access(
+                            tpc_access::AccessControl::corpus_of(doc_details[i].filepath), accession);
+                    if (access.enforcing()) {
+                        json_resp[i]["open_access"] = open_access;
+                    }
+                    bool limited = enforce && !open_access;
+                    if (limited) {
+                        json_resp[i]["access_limited"] = true;
+                    }
+
                     if (include_text) {
-                        json_resp[i]["fulltext"] = doc_details[i].fulltext;
-                                json_resp[i]["abstract"] = doc_details[i].abstract;
+                        if (!limited) {
+                            json_resp[i]["fulltext"] = doc_details[i].fulltext;
+                        }
+                        json_resp[i]["abstract"] = doc_details[i].abstract;
+                        if (doc_details[i].abstract.empty() && !bib.abstract_text.empty() &&
+                                bib.abstract_text != "<not uploaded>") {
+                            json_resp[i]["abstract"] = bib.abstract_text;
+                        }
                     }
                     if (include_match_sentences) {
                         sort(doc_details[i].sentences_details.begin(),
                                 doc_details[i].sentences_details.end(), sentence_before);
-                        for (int j = 0; j < doc_details[i].sentences_details.size(); ++j) {
+                        size_t n_sentences = doc_details[i].sentences_details.size();
+                        if (limited && n_sentences > static_cast<size_t>(max_anon_snippets)) {
+                            n_sentences = static_cast<size_t>(max_anon_snippets);
+                        }
+                        for (size_t j = 0; j < n_sentences; ++j) {
                             json_resp[i]["matched_sentences"][j] = doc_details[i].sentences_details[j].sentence_text;
                         }
                     }
-                    if (include_all_sentences) {
+                    if (include_all_sentences && !limited) {
                         sort(doc_details[i].all_sentences_details.begin(), doc_details[i].all_sentences_details.end(),
                                 sentence_before);
                         for (int j = 0; j < doc_details[i].all_sentences_details.size(); ++j) {
@@ -295,11 +455,13 @@ int main(int argc, const char* argv[]) {
 
     CROW_ROUTE(app, "/v1/textpresso/api/get_category_matches_document_fulltext")
             .methods("POST"_method)
-            ([&indexManager, &login_database](const crow::request & req) {
+            ([&indexManager, &login_database, &access](const crow::request & req) {
                 // parse request
                 auto json_req = crow::json::load(req.body);
                 if (!json_req)
                     return crow::response(400);
+                bool authenticated = access.is_valid_key(tpc_access::extract_api_key(req, json_req));
+                bool enforce = access.enforcing() && !authenticated;
                 int64_t since_num(0);
                 int64_t count(10000000);
                 if (json_req.has("since_num"))
@@ -340,9 +502,19 @@ int main(int argc, const char* argv[]) {
                 crow::json::wvalue json_resp;
                 for (int i = 0; i < doc_details.size(); ++i) {
                     json_resp[i]["identifier"] = doc_details[i].filepath;
-                            matches = indexManager.get_words_belonging_to_category_from_document_fulltext(
+                    // This endpoint derives its result from the full text, so a
+                    // non-open-access document is withheld from unauthenticated
+                    // clients (empty match list, flagged).
+                    bool open_access = access.is_open_access(
+                            tpc_access::AccessControl::corpus_of(doc_details[i].filepath),
+                            basename_without_suffix(doc_details[i].filepath, ".tpcas"));
+                    if (enforce && !open_access) {
+                        json_resp[i]["access_limited"] = true;
+                        continue;
+                    }
+                    matches = indexManager.get_words_belonging_to_category_from_document_fulltext(
                             doc_details[i].fulltext, doc_details[i].categories_string, category);
-                            int j = 0;
+                    int j = 0;
                     for (auto& word : matches) {
                         json_resp[i]["matches"][j++] = word;
                     }

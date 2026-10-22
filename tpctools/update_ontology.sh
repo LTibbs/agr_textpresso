@@ -21,6 +21,19 @@ send_ok() {
 ONTO_DIR="/data/textpresso/tpctools/getOntologies"
 OBO_PROD="/data/textpresso/obofiles4production"
 
+# MaizeGDB (2026-10-22): when the annotation build's *_annot.obo files are in
+# production, the category files come from build_match_dictionary.py
+# (maizegdb_textpresso_implementation), not from the AGR category generator.
+# Moving AGR's go/po/to files in beside them would match those ontologies
+# twice and restore every string the build drops, so skip the whole update.
+shopt -s nullglob
+annot=( "${OBO_PROD}"/*_annot.obo )
+shopt -u nullglob
+if (( ${#annot[@]} > 0 )); then
+    echo "Annotation build in ${OBO_PROD} (${#annot[@]} *_annot.obo); skipping AGR ontology update."
+    exit 0
+fi
+
 echo "Changing to ontology directory..."
 cd "${ONTO_DIR}"
 

@@ -124,6 +124,52 @@ TextElement * PdfInfo::ProcessStreamFromPage(int pg) {
                         pFilter = &pFilter->GetArray()[0];
                     bool bjpeg = (pFilter && pFilter->IsName()
                             && (pFilter->GetName().GetName() == "DCTDecode"));
+
+                    // ImageMask objects ("stencils") carry no color data of their own --
+                    // they're meant to be painted through the current fill color, which
+                    // this code doesn't track. Dumping their raw 1-bit bitmap into an
+                    // 8-bit-per-component PPM (as the old code below does uniformly)
+                    // produces a near-solid-black image instead of the real figure, so
+                    // skip extracting these rather than write out something misleading.
+                    PoDoFo::PdfObject* pImageMask = pImage->
+                            GetDictionary().GetKey(PoDoFo::PdfName("ImageMask"));
+                    bool bIsMask = pImageMask && pImageMask->IsBool()
+                            && pImageMask->GetBool();
+
+                    bool bSkip = bIsMask;
+
+                    // Non-JPEG path: PoDoFo's GetFilteredCopy() is supposed to decode
+                    // CCITTFaxDecode (bilevel scans) but in practice returns an empty
+                    // buffer for these streams in this build -- and separately, the
+                    // code has never accounted for BitsPerComponent at all, just
+                    // dumping whatever bytes it gets into an 8-bit-per-component PPM
+                    // header. Both bugs together turned bilevel scans and stencils
+                    // into near-solid-black images. Rather than guess at a decode we
+                    // can't verify, fetch the stream up front and only proceed if it
+                    // actually contains as much data as an 8-bit RGB/Gray image of
+                    // these dimensions would need -- otherwise skip, since a missing
+                    // figure is less misleading than a black box.
+                    char * pBuffer = NULL;
+                    PoDoFo::pdf_long lLen = 0;
+                    long lWidth = 0, lHeight = 0;
+                    if (!bSkip && !bjpeg) {
+                        lWidth = pImage->GetDictionary().GetKey(PoDoFo::PdfName("Width"))->GetNumber();
+                        lHeight = pImage->GetDictionary().GetKey(PoDoFo::PdfName("Height"))->GetNumber();
+                        pImage->GetStream()->GetFilteredCopy(&pBuffer, &lLen);
+                        PoDoFo::pdf_long lMinExpected = (PoDoFo::pdf_long) lWidth * lHeight; // >=1 byte/pixel
+                        if (lLen < lMinExpected) {
+                            bSkip = true;
+                            if (pBuffer) {
+                                free(pBuffer);
+                                pBuffer = NULL;
+                            }
+                        }
+                    }
+
+                    if (bSkip) {
+                        // nothing to write; don't add a TextElement pointing at a
+                        // non-existent/misleading image file
+                    } else {
                     std::string ext = bjpeg ? ".jpg" : ".ppm";
                     boost::filesystem::path o;
                     do {
@@ -145,19 +191,13 @@ TextElement * PdfInfo::ProcessStreamFromPage(int pg) {
                                 = dynamic_cast<PoDoFo::PdfMemStream*>(pImage->GetStream());
                         fwrite(pStream->Get(), pStream->GetLength(), sizeof (char), hFile);
                     } else {
-                        // long lBitsPerComponent = pObject->GetDictionary().GetKey( PdfName("BitsPerComponent" ) )->GetNumber();
-                        // TODO: Handle colorspaces
+                        // TODO: Handle colorspaces other than DeviceGray/DeviceRGB
                         // Create a ppm image
                         const char * pszPpmHeader = "P6\n# Image extracted by Textpresso\n%li %li\n%li\n";
-                        fprintf(hFile, pszPpmHeader,
-                                pImage->GetDictionary().GetKey(PoDoFo::PdfName("Width"))->GetNumber(),
-                                pImage->GetDictionary().GetKey(PoDoFo::PdfName("Height"))->GetNumber(),
-                                255);
-                        char * pBuffer;
-                        PoDoFo::pdf_long lLen;
-                        pImage->GetStream()->GetFilteredCopy(&pBuffer, &lLen);
+                        fprintf(hFile, pszPpmHeader, lWidth, lHeight, 255);
                         fwrite(pBuffer, lLen, sizeof (char), hFile);
                         free(pBuffer);
+                        pBuffer = NULL;
                     }
                     fclose(hFile);
                     // convert ppm files to jpeg and remove original ones
@@ -182,6 +222,7 @@ TextElement * PdfInfo::ProcessStreamFromPage(int pg) {
                         rtp->AddToChainEnd(pCurTE);
                     } else {
                         rtp = pCurTE;
+                    }
                     }
                 }
             }

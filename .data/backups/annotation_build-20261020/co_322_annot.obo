@@ -1,0 +1,5839 @@
+format-version: 1.2
+data-version: cropontology-live/2026-09-22/annotation-build
+ontology: co_322
+remark: matchable strings only; per-term tiers in subset tier_T0..T2
+remark: obsolete stanzas retained for id resolution with their label
+remark: moved to property_value retired_label, so no matcher reads it
+
+[Term]
+id: CO_322:Abiotic_stress_traits
+name: Abiotic stress
+subset: tier_T0
+
+[Term]
+id: CO_322:Agronomical_traits
+name: Agronomic
+subset: tier_T0
+
+[Term]
+id: CO_322:Biotic_stress_traits
+name: Biotic stress
+subset: tier_T0
+
+[Term]
+id: CO_322:Comparative_ranking_traits
+name: Comparative ranking
+subset: tier_T0
+
+[Term]
+id: CO_322:Computation
+name: Computation
+subset: tier_T1
+
+[Term]
+id: CO_322:Counting
+name: Counting
+subset: tier_T0
+
+[Term]
+id: CO_322:Date
+name: Date
+subset: tier_T2
+
+[Term]
+id: CO_322:Duration
+name: Duration
+subset: tier_T0
+
+[Term]
+id: CO_322:Estimation
+name: Estimation
+subset: tier_T1
+
+[Term]
+id: CO_322:Measurement
+name: Measurement
+subset: tier_T0
+
+[Term]
+id: CO_322:Morphological_traits
+name: Morphological
+subset: tier_T1
+
+[Term]
+id: CO_322:Nominal
+name: Nominal
+subset: tier_T0
+
+[Term]
+id: CO_322:Numerical
+name: Numerical
+subset: tier_T0
+
+[Term]
+id: CO_322:Ordinal
+name: Ordinal
+subset: tier_T1
+
+[Term]
+id: CO_322:Phenological_traits
+name: Phenological
+subset: tier_T0
+
+[Term]
+id: CO_322:Physiological_traits
+name: Physiological
+subset: tier_T0
+
+[Term]
+id: CO_322:Postharvest
+name: Postharvest
+subset: tier_T0
+
+[Term]
+id: CO_322:Pstharvest
+name: Pstharvest
+subset: tier_T0
+
+[Term]
+id: CO_322:Quality_traits
+name: Quality
+subset: tier_T2
+
+[Term]
+id: CO_322:Text
+name: Text
+subset: tier_T2
+
+[Term]
+id: CO_322:Variable
+name: Variable
+subset: tier_T0
+
+[Term]
+id: CO_322:0000001
+name: Anthesis silking interval
+synonym: "ASI" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Phenological_traits
+
+[Term]
+id: CO_322:0000003
+name: Chlorophyll content
+synonym: "Chl" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000005
+name: Grain yield
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000007
+name: Plant height to insertion of first tassel branch
+synonym: "PHTslB" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000008
+name: Plant stand
+synonym: "PStand" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000010
+name: Grain number
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000011
+name: Plant aspect
+synonym: "PAsp" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000012
+name: Senescence
+synonym: "Sen" EXACT []
+subset: tier_T1
+subset: tier_T2
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000013
+name: Silk length
+synonym: "SilkLng" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000014
+name: Silk growth rate
+synonym: "SilkGrwR" EXACT []
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000015
+name: Ear length
+synonym: "ELng" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000016
+name: Ear growth rate
+synonym: "EGrwR" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000017
+name: Ear height
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000018
+name: Ear aspect
+synonym: "EAsp" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000019
+name: Ear leaf length
+synonym: "ELLng" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000020
+name: Ear position
+synonym: "EPo" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000021
+name: Ear number
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000024
+name: Young leaf chlorophyll content
+synonym: "YLChl" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000025
+name: Leaf length
+synonym: "LLng" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000026
+name: Leaf width
+synonym: "LWid" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000027
+name: Tassel branch weight
+synonym: "TslBW" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000028
+name: Tassel branch number
+synonym: "TslBN" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000030
+name: Anthesis time
+synonym: "Ant" EXACT []
+subset: tier_T0
+subset: tier_T2
+is_a: CO_322:Phenological_traits
+
+[Term]
+id: CO_322:0000031
+name: Silking time
+synonym: "Silk" EXACT []
+subset: tier_T0
+subset: tier_T2
+is_a: CO_322:Phenological_traits
+
+[Term]
+id: CO_322:0000032
+name: Maturity time
+subset: tier_T0
+is_a: CO_322:Phenological_traits
+
+[Term]
+id: CO_322:0000033
+name: Grain moisture
+synonym: "GMoi" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000034
+name: Root lodging incidence
+synonym: "RLodgInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000035
+name: Stem lodging incidence
+synonym: "SLodgInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000038
+name: Tassel size
+synonym: "TslSiz" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000039
+name: Grain texture
+synonym: "GTex" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000041
+name: Endosperm hardness
+synonym: "EndoHard" EXACT []
+subset: tier_T0
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000046
+name: Fungal disease presence
+synonym: "FungDis" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000049
+name: Corn stunt incidence
+synonym: "CSCInc" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000050
+name: Stewarts wilt incidence
+synonym: "SteWiltInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000051
+name: Bacterial leaf stripe severity
+synonym: "BCLSSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000052
+name: Bacterial stalk rot incidence
+synonym: "BactSRInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000053
+name: Maize bushy stunt severity
+synonym: "CSCMSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000054
+name: Rust severity
+synonym: "RustSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000055
+name: Polysora rust severity
+synonym: "PpolySev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000056
+name: Tropical rust severity
+synonym: "TRustSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000057
+name: Maydis leaf blight severity
+synonym: "BmaySev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000058
+name: Anthracnose leaf blight incidence
+synonym: "ALBInc" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000059
+name: Tillering
+synonym: "Tillering" EXACT []
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000060
+name: Black bundle incidence
+synonym: "AstriInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000061
+name: Stalk rot incidence
+synonym: "SRInc" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000062
+name: Charcoal rot incidence
+synonym: "CharRInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000063
+name: Fusarium stalk rot incidence
+synonym: "FusSRInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000064
+name: Fusarium moniliforme stalk rot incidence
+synonym: "FmonSRInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000065
+name: Fusarium graminearum stalk rot incidence
+synonym: "FgramSRInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000066
+name: Stenocarpella stalk rot incidence
+synonym: "StenSRInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000067
+name: Pythium stalk rot incidence
+synonym: "PytSRInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000068
+name: Ear rot incidence
+synonym: "ERInc" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000069
+name: Fusarium ear rot severity
+synonym: "FusERSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000070
+name: Fusarium graminearum ear rot severity
+synonym: "FgramERSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000071
+name: Fusarium moniliforme ear rot severity
+synonym: "FmonERSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000072
+name: Aspergillus flavus ear rot severity
+synonym: "AflavERSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000073
+name: Stenocarpella ear rot severity
+synonym: "SmaySev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000074
+name: Penicillium ear rot severity
+synonym: "PERSev" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000075
+name: Downy mildew severity
+synonym: "DMSev" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000076
+name: Philippine downy mildew incidence
+synonym: "PDMInc" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000077
+name: Sugarcane downy mildew incidence
+synonym: "PsacchInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000078
+name: Brown stripe downy mildew incidence
+synonym: "BSDMInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000079
+name: Java downy mildew incidence
+synonym: "DMJInc" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000080
+name: Sorghum downy mildew incidence
+synonym: "DMSInc" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000081
+name: Crazy top downy mildew incidence
+synonym: "CTMInc" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000082
+name: Common smut severity
+synonym: "CSmutSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000083
+name: Head smut incidence
+synonym: "HSmutInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000084
+name: Banded leaf and sheath blight severity
+synonym: "BLSBSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000085
+name: Common rust severity
+synonym: "CRustSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000086
+name: Brown spot severity
+synonym: "BwSpotSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000088
+name: Gray leaf spot severity
+synonym: "GLSSev" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000089
+name: Curvularia leaf spot severity
+synonym: "CLSSev" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000090
+name: Phaeosphaeria leaf spot severity
+synonym: "PLSSev" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000091
+name: Tar spot complex severity
+synonym: "TSCSev" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000092
+name: Turcicum leaf blight severity
+synonym: "EturcSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000093
+name: Seedling disease incidence
+synonym: "SdlngDisInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000094
+name: Mal de rio cuarto virus incidence
+synonym: "MRCVInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000095
+name: Maize rayado fino virus incidence
+synonym: "MRFVInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000097
+name: Maize rough dwarf virus incidence
+synonym: "MRDVInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000098
+name: Maize stripe virus incidence
+synonym: "MSTVInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000099
+name: Maize dwarf mosaic virus incidence
+synonym: "DMVInc" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000100
+name: Maize streak virus incidence
+synonym: "MSVInc" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000101
+name: Sugarcane mosaic virus incidence
+synonym: "SCMVInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000102
+name: Root capacitance
+synonym: "RootCapac" EXACT []
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000103
+name: Grain Tryptophan content
+synonym: "GTrp" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000105
+name: Ear leaf chlorophyll content
+synonym: "ELChl" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000106
+name: Endosperm Tryptophan content
+synonym: "EndoTrp" EXACT []
+subset: tier_T0
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000107
+name: GTrp - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000108
+name: Grain Lysine content
+synonym: "GLys" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000109
+name: Endosperm Lysine content
+synonym: "EndoLys" EXACT []
+subset: tier_T0
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000110
+name: Grain iron content
+synonym: "GIron" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000111
+name: Grain zinc content
+synonym: "GZinc" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000112
+name: Ear leaf weight
+synonym: "ELW" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000113
+name: Grain abscisic acid content
+synonym: "GABA" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000115
+name: Grain glucose content
+synonym: "GGlucose" EXACT []
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000117
+name: Osmotic adjustment
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000118
+name: Osmotic potential
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000119
+name: Root proline content
+synonym: "RProl" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000120
+name: Grain sucrose content
+synonym: "GSucrose" EXACT []
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000122
+name: Grain protein content
+synonym: "GProt" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000123
+name: Endosperm protein content
+synonym: "EndoProt" EXACT []
+subset: tier_T0
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000125
+name: Grain provitaminA content
+synonym: "GVitA" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000126
+name: Grain starch content
+synonym: "GStarch" EXACT []
+subset: tier_T0
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000127
+name: Large grain borer damage
+synonym: "LGBDmg" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000128
+name: Aphid damage
+synonym: "AphDmg" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000129
+name: Maize weevil incidence
+synonym: "WeevInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000130
+name: Maize weevil number in Grain
+synonym: "WeevN" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000131
+name: Grain weight loss by maize weevil
+synonym: "GWLostWeev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000132
+name: Normalized difference vegetation index
+synonym: "NDVI" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000133
+name: Grain weight
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000134
+name: Stomatal conductance
+synonym: "SCond" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000137
+name: Grain ash content
+synonym: "GAsh" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000140
+name: Photochemical radiation index
+synonym: "PRI" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000141
+name: Water index
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000142
+name: Canopy temperature
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000143
+name: Ear leaf senescence time
+synonym: "ELSen" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Phenological_traits
+
+[Term]
+id: CO_322:0000146
+name: Grain color
+synonym: "GCol" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000149
+name: Ear husk cover
+synonym: "HskCov" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000150
+name: Ear bad husk cover incidence
+synonym: "BHskCovInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000151
+name: Multiple cob incidence
+synonym: "MCob" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000152
+name: Busseola incidence
+synonym: "BusseolaInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000153
+name: Earworm incidence
+synonym: "EWormInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000154
+name: Army worm damage
+synonym: "AWormDmg" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000155
+name: Chilo damage
+synonym: "ChiloDmg" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000156
+name: Diabrotica damage
+synonym: "DiabroticaDmg" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000157
+name: Diatraea damage
+synonym: "DiatraeaDmg" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000158
+name: Striga damage
+synonym: "StrigaDmg" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000159
+name: Stem borer damage
+synonym: "StBorDmg" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000160
+name: Leaf rolling severity
+synonym: "LRollSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Abiotic_stress_traits
+
+[Term]
+id: CO_322:0000161
+name: Late wilt incidence
+synonym: "LateWiltInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000162
+name: Stem color
+synonym: "StemCol" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000163
+name: Sheath pubescence
+synonym: "ShtPub" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000164
+name: Tassel branching type
+synonym: "TslTyp" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000165
+name: Ear damage
+synonym: "EDmg" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000166
+name: Grain row arrangement
+synonym: "GRArr" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000167
+name: Grain row number
+synonym: "GRN" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000168
+name: Grain type
+synonym: "GTyp" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000170
+name: Ear diameter
+synonym: "EDia" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000171
+name: Uppermost ear shape
+synonym: "UpESh" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000172
+name: Grain length
+synonym: "GLng" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000175
+name: Grain width
+synonym: "GWid" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000176
+name: FungDis - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000177
+name: PHTslB - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000178
+name: Grain upper surface shape
+synonym: "GUpSSh" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000179
+name: EH - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000181
+name: ASI - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000182
+name: Maize lethal necrosis severity
+synonym: "MLNSev" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000183
+name: GRArr - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000184
+name: Grain thickness
+synonym: "GThk" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000185
+name: StemCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000186
+name: Endosperm color
+synonym: "EndoCol" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000187
+name: TSCSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000188
+name: Tassel blasting severity
+synonym: "TslBlastSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Abiotic_stress_traits
+
+[Term]
+id: CO_322:0000189
+name: Days to anthesis - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000190
+name: Aleurone color
+synonym: "AleuCol" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000191
+name: DTS - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000192
+name: Pericarp color
+synonym: "PericCol" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000193
+name: SLodgInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000194
+name: 1-4 Grain row arrangement scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0000195
+name: GMoi - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000196
+name: GLys - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000197
+name: Adjusted GY - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000199
+name: EAsp - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000200
+name: EndoProt - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000201
+name: PStand - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000202
+name: GProt - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000203
+name: EN - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000204
+name: ppm
+subset: tier_T2
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000205
+name: GCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000206
+property_value: unmatchable_label "mm" xsd:string
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000207
+name: BHskCovInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000208
+name: 1-3 size scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000209
+name: PAsp - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000210
+name: ppb
+subset: tier_T1
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000211
+name: RLodgInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000212
+name: EndoTrp - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000213
+name: GTyp - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000214
+name: Aflatoxin content
+synonym: "Aflatox" EXACT []
+subset: tier_T0
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000215
+name: LRollSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000216
+name: Aflatox - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000217
+name: RGY - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000219
+name: GTex - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000220
+name: HskCov - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000221
+name: GCol - Estimation
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000222
+name: SRInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000223
+name: Sen - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000224
+name: ERInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000225
+name: EPo - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000226
+name: DMSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000227
+name: EndoHard - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000228
+name: RustSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000229
+name: FgramSRInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000230
+name: FusERSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000231
+name: FmonSRInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000232
+name: FusSRInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000233
+name: PytSRInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000234
+name: 1-5 disease scoring scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000235
+name: StenSRInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000236
+name: MLNSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000237
+name: Days to maturity - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000238
+name: ABA - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000239
+name: TslSiz - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000241
+name: CSCInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000242
+name: Chl - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000243
+name: CLSSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000244
+name: MCob - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000245
+name: GLSSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000246
+name: Days to ear leaf senescence date - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000247
+name: PLSSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000249
+name: BmaySev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000251
+name: AflavERSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000252
+name: EGrwR - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000253
+name: FgramERSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000254
+name: ELLng - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000255
+name: FmonERSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000256
+name: ELW - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000257
+name: PERSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000259
+name: SmaySev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000260
+name: Growing degree days to anthesis - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000261
+name: EturcSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000262
+name: Growing degree days to maturity - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000263
+name: PpolySev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000264
+name: GLng - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000265
+name: CRustSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000266
+name: GWid - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000267
+name: CSmutSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000268
+name: LWid - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000269
+name: TRustSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000270
+name: EndoLys - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000271
+name: DMVInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000272
+name: SCMVInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000273
+name: MSVSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000274
+name: MRCVInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000275
+name: HSmutInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000276
+name: MSTVInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000277
+name: ALBInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000278
+name: MRDVInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000279
+name: ChiloDmg - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000280
+name: MRFVInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000281
+name: EDmg - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000283
+name: StBorDmg - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000285
+name: StrigaDmg - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000286
+name: RootCapac - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000287
+name: LGBDmg - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000289
+name: WeevInc - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000291
+name: LLng - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000292
+name: ShtPub - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000293
+name: BSDMInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000295
+name: CTMInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000296
+name: SilkGrwR - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000297
+name: DMJInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000298
+name: SilkLng - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000299
+name: PDMInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000300
+name: TslBW - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000301
+name: DMSInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000302
+property_value: unmatchable_label "g" xsd:string
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000303
+name: PsacchInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000304
+name: TslBN - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000305
+name: BLSBSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000306
+name: Tillering - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000307
+name: AstriInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000308
+name: UpESh - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000309
+name: BwSpotSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000311
+name: CharRInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000313
+name: LateWiltInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000315
+name: SdlngDisInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000317
+name: BCLSSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000318
+name: 1-9 Grain color scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0000319
+name: BactSRInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000320
+name: 0-10 Senescence scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000321
+name: CSCMSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000323
+name: SteWiltInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000324
+name: 1-11 Grain type scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000325
+name: AphDmg - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000327
+name: AWormDmg - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000329
+name: BusseolaInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000331
+name: DiabroticaDmg - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000332
+property_value: unmatchable_label "¡C" xsd:string
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000333
+name: DiatraeaDmg - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000335
+name: EWormInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000337
+name: WeevN - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000339
+name: GWLostWeev - Measurement
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000341
+name: GW DW - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000345
+name: GN - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000347
+name: EDia - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000348
+property_value: unmatchable_label "cm" xsd:string
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000349
+name: ELng - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000350
+property_value: unmatchable_label "%" xsd:string
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000351
+name: TslTyp - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000352
+name: day
+subset: tier_T2
+is_a: CO_322:Duration
+
+[Term]
+id: CO_322:0000353
+name: ELChl - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000354
+name: plant/plot
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000355
+name: YLChl - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000356
+name: ear/plant
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000357
+name: Glucose - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000358
+name: kg/plot
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000360
+name: GUpSSh - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000361
+name: NDVI - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000362
+name: PericCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000363
+name: OA - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000364
+name: AleuCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000365
+name: OP - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000366
+name: EndoCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000367
+name: PRI - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000368
+name: GThk - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000369
+name: Proline - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000370
+name: TslBlastSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000372
+name: index
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000375
+name: SCond - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000377
+name: Sucrose - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000378
+name: CCI
+subset: tier_T1
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000381
+name: GAsh - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000385
+name: WI - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000387
+name: GIron - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000389
+name: GVitA - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000391
+name: GStarch - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000393
+name: GZinc - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000395
+name: CT - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000396
+name: 1-5 rating scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000448
+name: 1-3 density scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000456
+name: 1-3 Tassel branching type scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0000477
+name: 1-5 damage scoring scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000478
+name: 1-5 Endosperm hardness scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000480
+name: 1-5 Grain texture scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000482
+name: 1-5 Leaf rolling severity scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000485
+name: 1-5 Pericarp color scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0000486
+name: 1-5 Aleurone color scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0000487
+name: 1-4 Ear shape scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0000488
+name: Corn stunt spiroplasma severity
+synonym: "CSSSev" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000489
+name: CSSSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000496
+name: 1-5 WeevDmgInc scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000503
+name: cm/day
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000504
+name: 0-1 absent-present scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0000507
+name: 1-5 Tassel blasting severity scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000508
+name: pg/g
+subset: tier_T2
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000510
+name: ¡C day
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000511
+name: Mpa
+subset: tier_T1
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000512
+property_value: unmatchable_label "uF" xsd:string
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000513
+name: mmol /m2/s
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000514
+name: tiller/plant
+subset: tier_T1
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000515
+name: row/ear
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000517
+name: branch
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000518
+name: weevil
+subset: tier_T1
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000519
+name: grain/plant
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000520
+name: Aspergillus ear rot severity
+synonym: "AspERSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000521
+name: AspERSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000522
+name: DMSSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000523
+name: Ear harvested number
+synonym: "EHvst" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000524
+name: Ear weight
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000526
+name: Ear shelling ratio
+synonym: "Shell" EXACT []
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000533
+name: Grain oil content
+synonym: "GOil" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0000537
+name: Leaf color
+synonym: "LCol" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000538
+name: Leaf erectness
+synonym: "LErect" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000539
+name: Silk Anthocyanin coloration
+synonym: "SilkCol" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000540
+name: Standard germination
+synonym: "StdGerm" EXACT []
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000541
+name: Tassel Anthocyanin coloration
+synonym: "TslCol" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000542
+name: Tassel density
+synonym: "TslDen" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000543
+name: Tassel exertion
+synonym: "TslExer" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000544
+name: Tassel opening
+synonym: "TslOpen" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000545
+name: Plant uniformity
+synonym: "PUnif" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000546
+name: Plant vigor
+synonym: "PVig" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000549
+name: StrigaPN - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000550
+name: Plants harvested
+synonym: "PHvst" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000555
+name: BHskCovInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000556
+name: Common smut incidence
+synonym: "CSmutInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000557
+name: CSmutInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000558
+name: CSCInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000559
+name: EPo - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000560
+name: 1-3 Ear position scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000561
+name: ERInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000562
+name: FusSRInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000563
+name: FgramSRInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000564
+name: FmonSRInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000565
+name: HSmutInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000566
+name: DMVInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000567
+name: MSVInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000568
+name: MSVInc - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000569
+name: RLodgInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000570
+name: SLodgInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000571
+name: MCob - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000572
+name: CTMInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000573
+name: DMJInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000574
+name: PytSRInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000575
+name: DMSInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000576
+name: PDMInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000577
+name: PsacchInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000578
+name: SCMVInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000579
+name: SRInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000580
+name: ALBInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000581
+name: BactSRInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000582
+name: AstriInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000583
+name: BSDMInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000584
+name: CharRInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000585
+name: EWormInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000586
+name: LateWiltInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000587
+name: MRFVInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000588
+name: MRDVInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000589
+name: MSTVInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000590
+name: MRCVInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000591
+name: StenSRInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000592
+name: SteWiltInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000593
+name: PHvst - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000594
+name: EHvst - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000597
+name: ug/g
+subset: tier_T1
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000607
+name: EarW Dry weight - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000608
+name: FW GY - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000609
+name: Shell - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000621
+name: GOil - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000622
+name: t/ha
+subset: tier_T2
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000625
+name: PUnif - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000626
+name: PVig - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000630
+name: LCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000631
+name: LErect - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000632
+name: SilkAnCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000633
+name: StdGerm - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000634
+name: TslAnCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000635
+name: TslDen - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000636
+name: TslExer - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000637
+name: TslOpen - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000640
+name: 1-5 Leaf color scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0000641
+name: 1-4 Leaf erectness scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000642
+name: 1-5 Anthocyanin coloration scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000643
+name: 1-5 Standard germination scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000645
+name: 1-3 Tassel density scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000646
+name: 1-5 Tassel exertion scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000647
+name: 1-5 Tassel opening scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000648
+name: 1-3 Plant uniformity scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000649
+name: 1-5 Vigor scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000650
+name: AleuCol_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000651
+name: Anther Anthocyanin coloration
+synonym: "AntCol" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000652
+name: AntAnCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000653
+name: AntAnCol_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000654
+name: AflavERSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000655
+name: AspERSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000656
+name: BHskCovInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000657
+name: BHskCovInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000658
+name: BHskCovInc - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000659
+name: BHskCovInc_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000660
+name: CSmutSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000661
+name: EAsp_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000662
+name: EDia_M_cm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000663
+name: EDmg_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000664
+name: Ear shape
+synonym: "EShape" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000665
+name: EShape - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000666
+name: 1-3 Ear shape scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0000667
+name: EShape_E_1to3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000670
+name: EH_M_cm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000671
+name: ear/plot
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000672
+name: EHvst_Ct_earPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000673
+name: ELng_M_cm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000674
+name: EN_Cmp_earplnt
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000675
+name: Ear position ratio
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000676
+name: EPo_Cmp_ratio
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000677
+name: EPo_E_1to3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000678
+name: ERInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000679
+name: ERInc_Ct_earPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000682
+name: EarW Field weight - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000683
+name: EW_DW_kgPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000684
+name: EW_FW_kgPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000685
+name: Earworm damage
+synonym: "EWormDmg" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000686
+name: EWormDmg - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000687
+name: EWormDmg_M_cm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000688
+name: EWormInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000689
+name: EWormInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000690
+name: FgramERSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000691
+name: FmonERSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000692
+name: FusERSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000693
+name: GRArr_E_1to4
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000694
+name: GRN_Ct_rowear
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000695
+name: HskCov_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000696
+name: PERSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000697
+name: Shell_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000699
+name: Ear shelling ratio
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000700
+name: Shell_Cmp_ratio
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000701
+name: SmaySev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000702
+name: ELLng_M_cm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000703
+name: ELW_M_g
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000704
+name: ELChl_M_CCI
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000705
+name: 1-6 Endosperm color scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0000706
+name: EndoCol_E_1to6
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000707
+name: EndoHard_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000708
+name: EndoLys_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000709
+name: EndoProt_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000710
+name: EndoTrp_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000711
+name: Aflatox_M_ppb
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000712
+name: GCol_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000713
+name: GLng_M_mm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000714
+name: GMoi_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000715
+name: NIRS Moi - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000716
+name: GMoi_NIRS_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000717
+name: GN_Cmp_grnplnt
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000718
+name: GTex_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000719
+name: GThk_M_mm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000720
+name: GTyp_E_1to11
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000721
+name: GUpSSh_E_1to6
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000722
+name: g/1000grain
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000723
+name: GW_DW_g1000grn
+synonym: "1000KW" RELATED []
+synonym: "TGW" RELATED []
+synonym: "TKW" RELATED []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000724
+name: g/100grain
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000725
+name: GW_DW_g100grn
+synonym: "100KW" RELATED []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000726
+name: g/200grain
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000727
+name: GW_DW_g200grn
+synonym: "200KW" RELATED []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000728
+name: GWid_M_mm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000729
+name: kg/ha
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000730
+name: GY_Adj_kgha
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000731
+name: GY_Adj_tha
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000732
+name: DW GY - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000733
+name: g/plot
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000734
+name: GY_DW_gPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000735
+name: Dry weight basis GY - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000737
+name: GY_DW_kgha
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000738
+name: DW GY - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000740
+name: GY_DW_kgPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000741
+name: DW GY - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000742
+name: GY_DW_tha
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000744
+name: GY_FW_gPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000745
+name: FW GY - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000747
+name: GY_FW_kgha
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000749
+name: GY_FW_kgPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000750
+name: FW GY - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000751
+name: GY_FW_tha
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000752
+name: GYRank - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000753
+name: Rank number
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000754
+name: GY_Rank_number
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000755
+name: Relative to check - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000756
+name: GY_RelChk_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000757
+name: GY_RGY_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000758
+name: LGBDmg_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000759
+name: StdGerm_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000760
+name: WeevInc_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000761
+name: WeevN_Ct_weevil
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000762
+name: BCLSSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000763
+name: BLSBSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000764
+name: BmaySev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000765
+name: BwSpotSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000766
+name: Chl_M_CCI
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000767
+name: CLSSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000768
+name: CRustSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000769
+name: DMSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000770
+name: EturcSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000771
+name: GLSSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000772
+name: Leaf ash content
+synonym: "LAsh" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000773
+name: LAsh- Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000774
+name: LAsh_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000776
+name: NIRS LAsh - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000777
+name: LAsh_NIRS_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000778
+name: LCol_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000779
+name: LErect_E_1to4
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000780
+name: LLng_M_cm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000781
+name: LRollSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000782
+name: LWid_M_cm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000783
+name: PLSSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000784
+name: PpolySev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000785
+name: RustSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000786
+name: SCond_M_mmolm2s
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000787
+name: Sen_E_0to10
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000788
+name: Sen_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000789
+name: TRustSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000790
+name: TSCSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000791
+name: PericCol_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000792
+name: ALBInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000793
+name: ALBInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000794
+name: Ant_Cmp_Cday
+synonym: "AnthesisGDU" RELATED []
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000795
+name: Anthesis date - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000796
+name: yyyymmdd
+subset: tier_T0
+is_a: CO_322:Date
+
+[Term]
+id: CO_322:0000797
+name: Ant_Date_ymd
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000798
+name: Ant_DT_day
+synonym: "DTA" RELATED []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000799
+name: AphDmg_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000800
+name: ASI_Cmp_day
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000801
+name: AstriInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000802
+name: AstriInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000803
+name: AWormDmg_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000804
+name: BactSRInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000805
+name: BactSRInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000806
+name: BSDMInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000807
+name: BSDMInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000808
+name: Busseola damage
+synonym: "BusseolaDmg" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000809
+name: BusseolaDmg_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000810
+name: BusseolaInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000811
+name: CharRInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000812
+name: CharRInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000813
+name: ChiloDmg_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000814
+name: CSCInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000815
+name: CSCInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000816
+name: CSCMSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000817
+name: CSmutInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000818
+name: CSmutInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000819
+name: CSSSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000820
+name: CT_M_C
+subset: tier_T1
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000821
+name: CTMInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000822
+name: CTMInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000823
+name: DiabroticaDmg_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000824
+name: DiatraeaDmg_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000825
+name: DMJInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000826
+name: DMJInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000827
+name: DMSInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000828
+name: DMSInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000829
+name: Sorghum downy mildew severity
+synonym: "DMSSev" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000830
+name: DMSSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000831
+name: DMVInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000832
+name: DMVInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000833
+name: Ear leaf senescence date - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000835
+name: ELSen_Date_ymd
+synonym: "ELSenD" RELATED []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000836
+name: ELSen_DT_day
+synonym: "DTELSen" RELATED []
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000837
+name: FgramSRInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000838
+name: FgramSRInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000839
+name: FmonSRInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000840
+name: FmonSRInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000841
+name: Fusarium moniliforme stalk rot severity
+synonym: "FmonSRSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000842
+name: FmonSRSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000843
+name: FmonSRSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000844
+name: FungDis_E_0to1
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000845
+name: Text
+subset: tier_T2
+is_a: CO_322:Text
+
+[Term]
+id: CO_322:0000846
+name: FungDis_E_text
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000847
+name: FusSRInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000848
+name: FusSRInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000849
+name: GWLostWeev_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000850
+name: HSmutInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000851
+name: HSmutInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000852
+name: Head smut severity
+synonym: "HSmutSev" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000853
+name: HSmutSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000854
+name: HSmutSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000855
+name: LateWiltInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000856
+name: LateWiltInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000857
+name: Lodging incidence
+synonym: "LodgInc" EXACT []
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000858
+name: LodgInc - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000859
+name: LodgInc_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000860
+name: Mat_Cmp_Cday
+synonym: "MaturityGDU" RELATED []
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000861
+name: Maturity date - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000863
+name: Mat_Date_ymd
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000864
+name: Mat_DT_day
+synonym: "DTM" RELATED []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000865
+name: MCob_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000866
+name: MCob_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000867
+name: MLNSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000868
+name: MRCVInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000869
+name: MRCVInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000870
+name: MRDVInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000871
+name: MRDVInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000872
+name: MRFVInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000873
+name: MRFVInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000874
+name: MSTVInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000875
+name: MSTVInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000876
+name: MSVInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000877
+name: MSVInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000878
+name: Maize streak virus severity
+synonym: "MSVSev" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000879
+name: MSVSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000880
+name: NDVI_M_idx
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000881
+name: OA_M_Mpa
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000882
+name: OP_M_Mpa
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000883
+name: PAsp_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000884
+name: PDMInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000885
+name: PDMInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000886
+name: PHTslB_M_cm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000887
+name: PHvst_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000888
+name: PRI_M_idx
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000889
+name: PsacchInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000890
+name: PsacchInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000891
+name: PStand_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000892
+name: PUnif_E_1to3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000893
+name: PVig_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000894
+name: PytSRInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000895
+name: PytSRInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000896
+name: RLodgInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000897
+name: RLodgInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000900
+name: SCMVInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000901
+name: SCMVInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000902
+name: SdlngDisInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000903
+name: SdlngDisInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000904
+name: SdlngDisInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000905
+name: Silking date - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000907
+name: Silk_Date_ymd
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000908
+name: Silk_DT_day
+synonym: "DTS" RELATED []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000909
+name: SLodgInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000910
+name: SLodgInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000913
+name: SRInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000914
+name: SRInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000915
+name: StBorDmg_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000916
+name: StenSRInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000917
+name: StenSRInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000918
+name: SteWiltInc_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000919
+name: SteWiltInc_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000920
+name: StrigaDmg_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000921
+name: Tillering_Ct_tllrplnt
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000922
+name: WI_M_idx
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000923
+name: RootCapac_M_uF
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000924
+name: ShtPub_E_1to3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000925
+name: Shelled cob weight
+synonym: "ShellCobW" EXACT []
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000926
+name: ShellCobW - Measurement (duplicate)
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000928
+name: ShellCobW_FW_gPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000931
+name: ShellCobW_FW_kgPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000932
+name: SilkAnCol_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000934
+name: SilkGrwR_Cmp_cmday
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000935
+name: SilkLng_M_cm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000936
+name: 1-5 Stem color scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0000937
+name: StemCol_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000938
+name: Striga plant number
+synonym: "StrigaPN" EXACT []
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0000939
+name: StrigaPN_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000940
+name: TslBlastSev_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000941
+name: TslAnCol_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000942
+name: TslDen_E_1to3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000943
+name: TslExer_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000944
+name: Tassel glumes base Anthocyanin coloration
+synonym: "TslGlBCol" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000945
+name: TslGlBAnCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000946
+name: TslGlBAnCol_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000947
+name: Tassel glumes Anthocyanin coloration
+synonym: "TslGlCol" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0000948
+name: TslGlAnCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0000949
+name: TslGlAnCol_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000950
+name: TslOpen_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000951
+name: TslSiz_E_1to3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000952
+name: TslTyp_E_1to3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000953
+name: TslBN_Ct_branch
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000954
+name: TslBW_DW_g
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000955
+name: UpESh_E_1to4
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000956
+name: GAsh_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000957
+name: NIRS GAsh - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000958
+name: GAsh_NIRS_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000959
+name: GIron_M_ppm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000960
+name: GLys_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000961
+name: GOil_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000962
+name: NIRS GOil - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000963
+name: GOil_NIRS_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000964
+name: GProt_Cmp_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000965
+name: NIRS GProt- Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000966
+name: GProt_NIRS_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000967
+name: GStarch_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000968
+name: GTrp_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000969
+name: NIRS GTrp- Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000970
+name: GTrp_NIRS_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000971
+name: GVitA_M_µgg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000972
+name: GZinc_M_ppm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000973
+name: YLChl_M_CCI
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000974
+name: GABA_M_ugg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000975
+name: GGlucose_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000976
+name: RProl_M_ugg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000977
+name: GSucrose_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000978
+name: Leaf sucrose content
+synonym: "LSucrose" EXACT []
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0000979
+name: GW Adjusted - Computation
+subset: tier_T0
+is_a: CO_322:Computation
+
+[Term]
+id: CO_322:0000980
+name: GW FW - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000981
+name: 1-9 disease scoring scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000982
+name: 1-9 Anthocyanin coloration scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000983
+name: 1-2 absent-present scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0000984
+name: umol/g
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000985
+name: mg/g
+subset: tier_T2
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000986
+name: ng/g
+subset: tier_T2
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000987
+name: ng/µg
+subset: tier_T1
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0000988
+name: EN - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0000989
+name: EN_Ct_earPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000994
+name: Plant height
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000995
+name: PH - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000996
+name: PH_M_cm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0000997
+name: Plant height to ligule of the flag leaf
+synonym: "PHFL" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0000998
+name: PHFL - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0000999
+name: PHFL_M_cm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001000
+name: g/plant/day
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0001001
+name: EGrwR_Cmp_gplntday
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001002
+name: EW_FW_gPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001003
+name: EarW Individual - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0001004
+name: EW_M_gear
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001005
+name: Grain test weight
+synonym: "GTW" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0001006
+name: GTW - Computation
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0001007
+name: lb/bsh
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0001008
+name: GTW_M_lbbsh
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001009
+name: GW_Adj_g1000grn
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001010
+name: GW_Adj_g100grn
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001011
+name: GW_Adj_g200grn
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001012
+name: GW_FW_g200grn
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001013
+name: GW_FW_g1000grn
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001014
+name: GW_FW_g100grn
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001015
+name: lb/plot
+subset: tier_T0
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0001016
+name: GY_FW_lbPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001017
+name: Seedling vigor
+synonym: "SdlngVig" EXACT []
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0001018
+name: SdlngVig_E_1to5
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001019
+name: AspERSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001020
+name: AspERSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001021
+name: AflavERSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001022
+name: AflavERSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001023
+name: BCLSSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001024
+name: BCLSSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001025
+name: BLSBSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001026
+name: BLSBSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001027
+name: BwSpotSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001028
+name: BwSpotSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001029
+name: CRustSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001030
+name: CRustSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001031
+name: CSmutInc - Counting
+subset: tier_T0
+is_a: CO_322:Counting
+
+[Term]
+id: CO_322:0001032
+name: CSmutSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001033
+name: CSmutSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001034
+name: CSSSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001035
+name: CSSSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001036
+name: CLSSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001037
+name: CLSSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001038
+name: DMSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001039
+name: DMSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001040
+name: FusERSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001041
+name: FusERSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001042
+name: FgramERSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001043
+name: FgramERSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001044
+name: FmonERSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001045
+name: FmonERSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001046
+name: FmonSRSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001047
+name: FmonSRSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001048
+name: GLSSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001049
+name: GLSSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001050
+name: HSmutSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001051
+name: HSmutSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001052
+name: CSCMSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001053
+name: CSCMSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001054
+name: Maize dwarf mosaic virus severity
+synonym: "DMVSev" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0001055
+name: DMVSev - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0001056
+name: DMVSev_Ct_plntPlot
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001057
+name: MLNSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001058
+name: MLNSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001059
+name: MSVSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001060
+name: MSVSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001061
+name: BmaySev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001062
+name: BmaySev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001063
+name: PERSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001064
+name: PERSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001065
+name: PLSSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001066
+name: PLSSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001067
+name: PpolySev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001068
+name: PpolySev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001069
+name: RustSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001070
+name: RustSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001071
+name: DMSSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001072
+name: DMSSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001073
+name: SmaySev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001074
+name: SmaySev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001075
+name: TSCSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001076
+name: TSCSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001077
+name: TRustSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001078
+name: TRustSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001079
+name: EturcSev_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001080
+name: EturcSev_E_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001081
+name: AntAnCol_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001082
+name: AntAnCol_E_1to2
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001083
+name: Cob glumes Anthocyanin coloration
+synonym: "CobGlCol" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0001084
+name: CobGlAnCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0001085
+name: CobGlAnCol_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001086
+name: Cob glumes color
+synonym: "CobGlCol" EXACT []
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0001087
+name: CobGlCol - Estimation
+subset: tier_T0
+is_a: CO_322:Estimation
+
+[Term]
+id: CO_322:0001088
+name: 1-3 Cob color scale
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0001089
+name: CobGlCol_E_1to3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001090
+name: ELng_M_mm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001091
+name: Ear width
+synonym: "EWid" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0001092
+name: EWid - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0001093
+name: EWid_M_mm
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001094
+name: 1-6 Grain upper surface shape scale
+subset: tier_T0
+is_a: CO_322:Nominal
+
+[Term]
+id: CO_322:0001095
+name: TslGlAnCol_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001096
+name: TslGlAnCol_E_1to2
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001097
+name: TslGlBAnCol_E_1to9
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001098
+name: TslGlBAnCol_E_1to2
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001099
+name: Cob sucrose content
+synonym: "CSucrose" EXACT []
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0001100
+name: CSucrose_M_umolg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001101
+name: GABA_M_pgg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001102
+name: ug/mg
+subset: tier_T1
+is_a: CO_322:Numerical
+
+[Term]
+id: CO_322:0001103
+name: GGlucose_M_ugmg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001104
+name: Grain proline content
+synonym: "GProline" EXACT []
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0001105
+name: GProline_M_mgg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001106
+name: GSucrose_M_umolg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001108
+name: Leaf abscisic acid content
+synonym: "LABA" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0001109
+name: LABA_M_ngg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001110
+name: Leaf proline content
+synonym: "LProline" EXACT []
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0001111
+name: LProline_M_ugg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001112
+name: LSucrose_M_umolg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001113
+name: LSucrose_M_mgg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001114
+name: Root abscisic acid content
+synonym: "RABA" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0001115
+name: RABA_M_ngg
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001116
+name: Root glucose content
+synonym: "RGlucose" EXACT []
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0001117
+name: RGlucose_M_ngug
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001118
+name: Root sucrose content
+synonym: "RSucrose" EXACT []
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0001119
+name: RSucrose_M_ngug
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001120
+name: Grain Nitrogen content
+synonym: "GNC" EXACT []
+subset: tier_T0
+subset: tier_T1
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0001121
+name: GNC - Measurement
+subset: tier_T0
+is_a: CO_322:Measurement
+
+[Term]
+id: CO_322:0001122
+name: GNC_M_pct
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001155
+name: Gcol_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001156
+name: Comparative ranking by farmers method
+subset: tier_T0
+is_a: CO_322:Comparative_ranking_traits
+
+[Term]
+id: CO_322:0001157
+name: Ranking:3
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0001158
+name: GLng_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001159
+name: GY_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001160
+name: Ranking of phenotypes based on field observations/on  testing of food products ​
+subset: tier_T0
+is_a: CO_322:Comparative_ranking_traits
+
+[Term]
+id: CO_322:0001161
+name: AWornDmg_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001162
+name: Comparative ranking by users method
+subset: tier_T0
+is_a: CO_322:Comparative_ranking_traits
+
+[Term]
+id: CO_322:0001163
+name: MatT_CompRank_BL3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001164
+name: GmRt_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001165
+name: Germination rate
+subset: tier_T0
+is_a: CO_322:Physiological_traits
+
+[Term]
+id: CO_322:0001166
+name: Rank: 3
+subset: tier_T0
+is_a: CO_322:Ordinal
+
+[Term]
+id: CO_322:0001167
+name: DsTol_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001168
+name: Disease tolerance
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0001169
+name: PstTol_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001170
+name: Pest tolerance
+subset: tier_T0
+is_a: CO_322:Biotic_stress_traits
+
+[Term]
+id: CO_322:0001171
+name: AbStr_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001172
+name: Abiotic stress tolerance
+subset: tier_T0
+is_a: CO_322:Abiotic_stress_traits
+
+[Term]
+id: CO_322:0001173
+name: CobNb_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001174
+name: Cob number
+subset: tier_T0
+is_a: CO_322:Morphological_traits
+
+[Term]
+id: CO_322:0001175
+name: SdSizUse_compRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001176
+name: Seed size for target use/market
+subset: tier_T0
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0001177
+name: GrTast_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001178
+name: Grain taste
+subset: tier_T0
+is_a: CO_322:Quality_traits
+
+[Term]
+id: CO_322:0001179
+name: GrMark_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001180
+name: Grain marketability
+subset: tier_T0
+is_a: CO_322:Pstharvest
+
+[Term]
+id: CO_322:0001181
+name: OvPerf_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001182
+name: Overall performance
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0001183
+name: CompLoc_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001184
+name: Comparison with local
+subset: tier_T0
+is_a: CO_322:Agronomical_traits
+
+[Term]
+id: CO_322:0001185
+name: GrStor_CompRank_Bl3
+subset: tier_T0
+is_a: CO_322:Variable
+
+[Term]
+id: CO_322:0001186
+name: Grain storability
+subset: tier_T0
+is_a: CO_322:Postharvest
+

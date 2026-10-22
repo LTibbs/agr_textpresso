@@ -1,0 +1,173 @@
+{
+  "channels": {
+    "CO_322": {
+      "dropped_tier3": 20,
+      "graph_stubs": 0,
+      "strings_T0": 992,
+      "strings_T1": 113,
+      "strings_T2": 13,
+      "terms_matchable": 921,
+      "terms_unmatchable": 6
+    },
+    "ChEBI": {
+      "dropped_tier3": 177,
+      "graph_stubs": 1290,
+      "obsolete_retained": 1,
+      "skipped_out_of_scope": 211771,
+      "strings_T0": 41290,
+      "strings_T1": 1501,
+      "strings_T2": 131,
+      "terms_matchable": 7240
+    },
+    "ECO": {
+      "dropped_species_scoped": 10,
+      "dropped_tier3": 18,
+      "graph_stubs": 0,
+      "obsolete_retained": 37,
+      "strings_T0": 2957,
+      "strings_T1": 130,
+      "strings_T2": 1,
+      "terms_matchable": 2217
+    },
+    "GO": {
+      "dropped_species_scoped": 409,
+      "dropped_tier3": 22,
+      "graph_stubs": 219,
+      "obsolete_retained": 10248,
+      "skipped_gocheck": 459,
+      "strings_T0": 116441,
+      "strings_T1": 991,
+      "strings_T2": 11,
+      "terms_matchable": 37633
+    },
+    "NCBITaxon": {
+      "graph_stubs": 0,
+      "strings_T0": 4976,
+      "strings_T1": 51,
+      "strings_T2": 11,
+      "terms_matchable": 2680
+    },
+    "PATO": {
+      "dropped_species_scoped": 2,
+      "dropped_tier3": 8,
+      "graph_stubs": 0,
+      "obsolete_retained": 898,
+      "strings_T0": 2279,
+      "strings_T1": 375,
+      "strings_T2": 104,
+      "terms_matchable": 1886,
+      "terms_unmatchable": 1
+    },
+    "PECO": {
+      "graph_stubs": 1,
+      "obsolete_retained": 57,
+      "skipped_imported": 2010,
+      "strings_T0": 857,
+      "terms_matchable": 518
+    },
+    "PO": {
+      "graph_stubs": 3,
+      "obsolete_retained": 134,
+      "strings_T0": 6408,
+      "strings_T1": 19,
+      "strings_T2": 11,
+      "terms_matchable": 1659
+    },
+    "PSO": {
+      "dropped_tier3": 1,
+      "graph_stubs": 2,
+      "skipped_imported": 4145,
+      "strings_T0": 859,
+      "strings_T1": 135,
+      "terms_matchable": 754
+    },
+    "SO": {
+      "dropped_species_scoped": 1,
+      "dropped_tier3": 38,
+      "graph_stubs": 0,
+      "obsolete_retained": 211,
+      "strings_T0": 6194,
+      "strings_T1": 323,
+      "strings_T2": 44,
+      "terms_matchable": 2409
+    },
+    "TO": {
+      "graph_stubs": 63,
+      "obsolete_retained": 110,
+      "skipped_imported": 2979,
+      "strings_T0": 2989,
+      "strings_T1": 2,
+      "terms_matchable": 1587
+    }
+  },
+  "chebi_family_added": {
+    "aflatoxin": 9,
+    "beauvericin": 0,
+    "fumonisin": 12,
+    "moniliformin": 1,
+    "trichothecene": 160,
+    "zearalenone": 1
+  },
+  "chebi_role_bearers": {
+    "agrochemical": 613,
+    "fertilizer": 38,
+    "fungicide": 309,
+    "herbicide": 336,
+    "insecticide": 286,
+    "macronutrient": 10,
+    "micronutrient": 51,
+    "mycotoxin": 68,
+    "nutrient": 67,
+    "plant growth regulator": 134,
+    "plant hormone": 82,
+    "plant metabolite": 3588
+  },
+  "collection": "/Users/laura/.claude-science/orgs/46bf2510-f10c-45d2-982d-6e53e0a47e4b/workspaces/cb87aecf-64e8-43a9-ad72-3aeb64f864b5/maize-ontology-collection",
+  "drops": {
+    "chebi_out_of_scope": 211771,
+    "gocheck_do_not_annotate": 459,
+    "imported_stanza": 9134,
+    "non_maize_species_scoped": 422,
+    "tier_T3_blocked": 284
+  },
+  "totals": {
+    "by_channel": {
+      "CO_322": 1118,
+      "ChEBI": 42922,
+      "ECO": 3088,
+      "GO": 117443,
+      "NCBITaxon": 5038,
+      "PATO": 2758,
+      "PECO": 857,
+      "PO": 6438,
+      "PSO": 994,
+      "SO": 6561,
+      "TO": 2991
+    },
+    "by_kind": {
+      "exact": 72394,
+      "label": 59504,
+      "related": 58310
+    },
+    "by_tier": {
+      "T0": 186242,
+      "T1": 3640,
+      "T2": 326
+    },
+    "strings": 190208,
+    "terms": 59504
+  },
+  "versions": {
+    "CO_322": "cropontology-live/2026-09-22",
+    "ChEBI": "256",
+    "ECO": "releases/2026-07-10",
+    "GO": "releases/2026-07-26",
+    "NCBITaxon": "2026-07-12 [pruned]",
+    "PATO": "releases/2025-05-14/pato.obo",
+    "PECO": "releases/2025-12-02",
+    "PO": "releases/2026-01-09",
+    "PSO": "releases/2026-01-08",
+    "SO": "2026-08-07",
+    "TO": "releases/2026-01-14"
+  }
+}

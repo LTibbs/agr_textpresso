@@ -13,7 +13,9 @@ using namespace std;
 TpLexiconTrie::TpLexiconTrie() {
     idcounter_ = 0;
     root = new TpLexiconNode();
-    dlsetToken = set<UnicodeString>(G_initT, G_initT + G_initT_No);
+    dlsetToken = set<UnicodeString>(
+            tp_uima_globals::token_delimiters(),
+            tp_uima_globals::token_delimiters() + G_initT_No);
     set<UnicodeString>::iterator it;
     trieToken = new TpTrie();
     for (it = dlsetToken.begin(); it != dlsetToken.end(); it++) {

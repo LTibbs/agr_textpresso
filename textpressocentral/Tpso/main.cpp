@@ -10,6 +10,7 @@
 #define MINTERMLENGTH 2
 #define MAXWORDCOUNT 5
 
+#include "../PgCopyLine.h"
 #include <iostream>
 #include <fstream>
 #include <thread>
@@ -70,9 +71,15 @@ namespace {
         if (ifsfile.is_open()) {
             std::string line;
             while (getline(ifsfile, line)) {
+                boost::trim(line);
                 if (!line.empty()) {
+                    // 2026-10-21: runs of whitespace are one separator. A
+                    // trailing or doubled space used to add an empty subset
+                    // name, which no term is in, collapsing the whole ontology
+                    // to its root category.
                     std::vector<std::string> splits;
-                    boost::split(splits, line, boost::is_any_of(" "));
+                    boost::split(splits, line, boost::is_any_of(" \t"), boost::token_compress_on);
+                    if (splits.size() < 2) continue;
                     std::string word(splits[0]);
                     int d(stof(splits[1]));
                     if (!word.empty()) {
@@ -170,13 +177,61 @@ namespace {
                     files.insert(itr->path().string());
     }
 
+    // 2026-10-21: OBO values are read with their escapes resolved. Names were
+    // stored raw ("\{(Z)-pent-2-en-1-yl\}", never matching "{" in text), and
+    // synonyms were cut at the first quote, so an escaped \" inside one
+    // truncated it. OBO 1.2: \n \t \W are newline, tab, space; any other
+    // escaped character stands for itself.
+    std::string OboUnescape(const std::string & s) {
+        std::string out;
+        for (size_t i = 0; i < s.size(); i++) {
+            if (s[i] != '\\' || i + 1 == s.size()) {
+                out += s[i];
+                continue;
+            }
+            char c = s[++i];
+            out += (c == 'n') ? '\n' : (c == 't') ? '\t' : (c == 'W') ? ' ' : c;
+        }
+        return out;
+    }
+
+    // `"text" SCOPE ...` (a synonym: or property_value: value after its key)
+    // -> unescaped text and the word after the closing quote.
+    bool ParseQuoted(const std::string & s, std::string & text, std::string & rest) {
+        size_t open = s.find('"');
+        if (open == std::string::npos) return false;
+        size_t i = open + 1;
+        for (; i < s.size() && s[i] != '"'; i++)
+            if (s[i] == '\\') i++;
+        if (i >= s.size()) return false;
+        text = OboUnescape(s.substr(open + 1, i - open - 1));
+        rest = s.substr(i + 1);
+        boost::trim(rest);
+        return true;
+    }
+
+    // Category label: the term name or, for an annotation-build graph stub
+    // (build_match_dictionary.py writes pruned parents without a name: line,
+    // so they add no match string), its property_value stub_label. Without
+    // the fallback such categories read " (GO:0009059)".
+    std::string CategoryLabel(OboEntry * oe, const std::string & id) {
+        std::string name(OboUnescape(oe->GetName(id)));
+        if (!name.empty()) return name;
+        for (auto pv : oe->GetData("property_value")) {
+            std::string label, rest;
+            if (pv.compare(0, 11, "stub_label ") == 0 && ParseQuoted(pv, label, rest))
+                return label;
+        }
+        return name;
+    }
+
     std::string GetNodeName(tree<pss>::pre_order_iterator it,
             OboFileSegmentation * ofs = nullptr) {
         std::string ret((*it).first);
         if (ofs != nullptr) {
             OboEntry * oeptr = ofs->GetOePtr((*it).first);
             if (oeptr != nullptr)
-                ret = oeptr->GetName((*it).first)
+                ret = CategoryLabel(oeptr, (*it).first)
                 + std::string(" (") + (*it).first + std::string(")");
         }
         return ret;
@@ -214,14 +269,14 @@ namespace {
                 : oentry->GetData("xref"));
         //
         std::string term((oentry == nullptr) ? (*it).first
-                : oentry->GetName((*it).first));
+                : OboUnescape(oentry->GetName((*it).first)));
         //
         OboEntry * catoentry(ofs->GetOePtr((*it).second));
         std::string category;
         if (catoentry == nullptr)
             category = (*it).second;
         else
-            category = catoentry->GetName((*it).second)
+            category = CategoryLabel(catoentry, (*it).second)
             + std::string(" (") + (*it).second + std::string(")");
         //
         std::string attributes("");
@@ -282,12 +337,18 @@ namespace {
                 synonymsraw((oentry == nullptr) ? std::vector<std::string>()
                 : oentry->GetData("synonym"));
         std::vector<std::string> synonyms;
-        for (auto s : synonymsraw)
-            if (s.find("EXACT") != std::string::npos) {
-                std::vector<std::string> sp2;
-                boost::split(sp2, s, boost::is_any_of("\""));
-                synonyms.push_back(sp2[1]);
+        std::vector<std::string> related_synonyms;
+        for (auto s : synonymsraw) {
+            // scope is the word after the quoted text (it used to be found
+            // anywhere in the line, synonym text included)
+            std::string text, rest;
+            if (ParseQuoted(s, text, rest)) {
+                if (rest.compare(0, 5, "EXACT") == 0)
+                    synonyms.push_back(text);
+                else if (rest.compare(0, 7, "RELATED") == 0)
+                    related_synonyms.push_back(text);
             }
+        }
         while (!synonyms.empty()) {
             std::string synterm = synonyms.back();
             synonyms.pop_back();
@@ -303,6 +364,46 @@ namespace {
                     d.push_back(synterm);
                     // category
                     d.push_back(category);
+                    // attributes
+                    d.push_back(attributes);
+                    // annotationtype
+                    d.push_back(annotationtype);
+                    // lexical variations
+                    d.push_back(lexicalvariations);
+                    // curation status
+                    d.push_back(curationstatus);
+                    // curation use
+                    d.push_back(curationuse);
+                    // comments
+                    d.push_back(ConcatenateStrings(namespaces, ", "));
+                    // owner
+                    d.push_back(owner);
+                    // source
+                    d.push_back(source);
+                    // version
+                    d.push_back(version);
+                    std::stringstream ss;
+                    ss << time(0);
+                    d.push_back(ss.str());
+                    ret.push_back(d);
+                }
+        }
+        std::string related_category = std::string("RELATED:") + category;
+        while (!related_synonyms.empty()) {
+            std::string synterm = related_synonyms.back();
+            related_synonyms.pop_back();
+            if (synterm.length() >= MINTERMLENGTH) // only store terms with length of two or longer
+                if (CountWords(synterm) <= MAXWORDCOUNT) { // only store terms with less than 5 words
+                    std::vector<std::string> d;
+                    d.clear();
+                    // id
+                    d.push_back(id);
+                    // allxrefs
+                    d.push_back(ConcatenateStrings(xrefs, ", "));
+                    // term
+                    d.push_back(synterm);
+                    // category (prefixed to distinguish from EXACT matches)
+                    d.push_back(related_category.substr(0, CATEGORYCOLUMNWIDTH));
                     // attributes
                     d.push_back(attributes);
                     // annotationtype
@@ -411,7 +512,7 @@ namespace {
         }
         // set restriction on category: number of children
         for (auto it = growntree.begin(); it != growntree.end(); it++)
-            if (it.number_of_children() > 200)
+            if (it.number_of_children() > CATEGORYMAXCHILDREN)
                 for (auto cit = it.begin(); cit != it.end(); cit++)
                     (*cit).second = (*it).second;
         //        // set restriction on category: must be in subsets
@@ -437,9 +538,14 @@ namespace {
                         AddAllParentsUpstream(included, growntree, it);
                     }
             }
-            for (tree<pss>::post_order_iterator it = growntree.begin_post();
-                    it != growntree.end_post(); it++) {
-                if (included.find((*it).first) == included.end())
+            // 2026-10-21: parents before children (was post-order, which
+            // copied a parent's category before the parent itself collapsed,
+            // so a term only ever moved up one level: 7,998 GO categories with
+            // the slim restriction on). A term now takes the category of its
+            // nearest ancestor in a configured subset.
+            for (tree<pss>::pre_order_iterator it = growntree.begin();
+                    it != growntree.end(); it++) {
+                if (it != growntree.begin() && included.find((*it).first) == included.end())
                     (*it).second = (*growntree.parent(it)).second;
             }
         }
@@ -452,7 +558,7 @@ namespace {
         pqxx::tablewriter tt(w, "\"" + tablename + "\"", cols.begin(), cols.end());
 
         for (auto d : data)
-            tt.push_back(d.begin(), d.end());
+            pg_copy::push_back(tt, d); // not tt.push_back: see PgCopyLine.h
         tt.complete();
         w.commit();
     }
@@ -471,7 +577,7 @@ namespace {
             std::vector<std::string> d;
             d.push_back(((*it).first).substr(0, CATEGORYCOLUMNWIDTH));
             d.push_back(((*it).second).substr(0, CATEGORYCOLUMNWIDTH));
-            ttpc.push_back(d);
+            pg_copy::push_back(ttpc, d);
             ctpc++;
         }
         ttpc.complete();

@@ -58,12 +58,12 @@ void TpCategoryBrowser::LoadNextChildren(Wt::WTreeNode * x,
     for (std::set<std::string>::iterator it = childrennames.begin(); it != childrennames.end(); it++) {
         int noc(getNumberChildren(*it));
         Wt::WTreeNode * childnode = new Wt::WTreeNode(Wt::WString(*it));
-        if (noc > 500) childnode->disable();
+        if (noc > CATEGORYMAXCHILDREN) childnode->disable();
         childnode->expanded().connect(boost::bind(&TpCategoryBrowser::LoadNextChildren, this, childnode, std::set<std::string>()));
         childnode->label()->setWordWrap(false);
         x->addChildNode(childnode);
         if (noc > 0)
-            if (noc < 500) {
+            if (noc < CATEGORYMAXCHILDREN) {
                 //create a dummy here to make it expandable, will be replaced later.
                 Wt::WTreeNode * auxchildnode = new Wt::WTreeNode("");
                 auxchildnode->expanded().connect(boost::bind(&TpCategoryBrowser::LoadNextChildren, this, auxchildnode, std::set<std::string>()));

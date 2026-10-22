@@ -26,10 +26,20 @@ RUN git clone https://github.com/ipkn/crow.git
 RUN git clone https://github.com/SRombauts/SQLiteCpp.git; cd SQLiteCpp; git checkout 3.3.1; mkdir cmake-build-release; cd cmake-build-release; cmake ..; make -j 8; make install; rm -rf /SQLiteCpp
 
 # Precompile system
+COPY libtpc /data/textpresso/libtpc
+RUN cd /data/textpresso/libtpc && \
+    mkdir -p build && cd build && \
+    cmake -DCMAKE_BUILD_TYPE=Release .. && \
+    make -j 8 && make install && \
+    ldconfig && \
+    rm -rf /data/textpresso/libtpc
+
 COPY textpressocentral /data/textpresso/textpressocentral
 COPY textpressoapi /data/textpresso/textpressoapi
 COPY tpctools /data/textpresso/tpctools
 RUN /root/initialize.sh -t \
+&& mkdir -p /usr/local/textpresso/cas_annotate \
+&& cp /data/textpresso/textpressoapi/cas_annotate_server.py /data/textpresso/textpressoapi/casannot.py /data/textpresso/textpressoapi/category_index.py /data/textpresso/textpressoapi/access.py /data/textpresso/textpressoapi/annotation_hygiene.py /data/textpresso/textpressoapi/annotation_italics.py /data/textpresso/textpressoapi/annotation_tiers.py /usr/local/textpresso/cas_annotate/ \
 && rm -rf /data/textpresso/textpressocentral \
 && rm -rf /data/textpresso/textpressoapi \
 && rm -rf /data/textpresso/textpressoapi_data \
@@ -43,7 +53,12 @@ RUN mkdir -p etc
 COPY stopwords.postgres.tar.gz /usr/local/textpresso/etc/.
 WORKDIR /
 
-RUN wget -q https://repo.anaconda.com/miniconda/Miniconda3-py311_25.5.1-0-Linux-x86_64.sh && bash Miniconda3-py311_25.5.1-0-Linux-x86_64.sh -b && rm Miniconda3-py311_25.5.1-0-Linux-x86_64.sh
+RUN ARCH="$(dpkg --print-architecture)" \
+ && if [ "$ARCH" = "arm64" ]; then MC_ARCH="aarch64"; else MC_ARCH="x86_64"; fi \
+ && MC_SH="Miniconda3-py311_25.5.1-0-Linux-${MC_ARCH}.sh" \
+ && wget -q "https://repo.anaconda.com/miniconda/${MC_SH}" \
+ && bash "${MC_SH}" -b \
+ && rm "${MC_SH}"
 ENV PATH="${PATH}:/root/miniconda3/bin"
 RUN conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
 RUN conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r

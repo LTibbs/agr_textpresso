@@ -50,4 +50,5 @@ int main(int argc, const char* argv[]) {
     }
     tpc::index::IndexManager indexManager(inputDir, casDir, false, false);
     indexManager.calculate_and_save_corpus_counter();
+    return EXIT_SUCCESS;
 }

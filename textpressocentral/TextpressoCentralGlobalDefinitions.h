@@ -54,4 +54,13 @@
 
 #define CATEGORYCOLUMNWIDTH 1023
 
+// Max direct children a category node may have before GrowTreeFromObo()
+// collapses all of them into the parent's category label. Originally 200,
+// which silently collapsed every gene in a genome-scale, flat gene-list OBO
+// (e.g. maize's ~25k genes as direct children of one root term) into a
+// single category, making per-gene --category search impossible even though
+// full-text term matching still worked. Raised well above maize's current
+// gene count (~40k) so individual genes keep their own category.
+#define CATEGORYMAXCHILDREN 100000
+
 #endif

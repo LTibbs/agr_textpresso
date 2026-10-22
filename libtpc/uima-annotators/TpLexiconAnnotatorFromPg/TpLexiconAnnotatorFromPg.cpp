@@ -10,10 +10,13 @@
 #include <sys/stat.h>
 #include "../globaldefinitions.h"
 #include "AnnotationCounter.h"
+#include "../PdfTextNormalizer.h"
+#include "../../lucene-custom/GreekLetters.h"
+#include <algorithm>
 #include <pqxx/pqxx>
 #include <boost/algorithm/string.hpp>
 
-TpLexiconAnnotatorFromPg::TpLexiconAnnotatorFromPg(void) {
+TpLexiconAnnotatorFromPg::TpLexiconAnnotatorFromPg(void) : tcas_(nullptr), trie_(nullptr), s_(nullptr) {
 }
 
 TpLexiconAnnotatorFromPg::~TpLexiconAnnotatorFromPg(void) {
@@ -58,34 +61,59 @@ uima::TyErrorId TpLexiconAnnotatorFromPg::initialize(uima::AnnotatorContext & rc
     trie_ = new TpLexiconTrie();
     AllMyParents * amp = new AllMyParents();
     std::multimap<std::string, std::string> mmamp(amp->GetCPs());
-    while (!term.empty()) {
-        UnicodeString uterm = UnicodeString::fromUTF8(StringPiece(term.back()));
-        UnicodeString ucat = UnicodeString::fromUTF8(StringPiece(category.back()));
-        trie_->addWord(uterm, ucat);
-        trie_->addWord(uterm, "PTCAT" + ucat);
+    // 2026-10-21: each term is also added in the spelling tai-layout text has
+    // after PdfTextNormalizer (U+2010 hyphen -> "-", stray BOM dropped,
+    // degree sign -> "degree", ...), so "PYR1<U+2010>LIKE" in the OBO matches
+    // "PYR1-LIKE" in text. The original spelling stays for jats text, which
+    // keeps e.g. the degree sign.
+    auto addTermAndFolded = [&](const std::string & t, const UnicodeString & ucat) {
         std::pair<std::multimap<std::string, std::string>::iterator,
                 std::multimap<std::string, std::string>::iterator> ppp;
         std::string dummy("");
         ppp = mmamp.equal_range(ucat.toUTF8String<std::string>(dummy));
-        for (std::multimap<std::string, std::string>::iterator it2 = ppp.first; it2 != ppp.second; ++it2) {
-            UnicodeString upcat = "PTCAT" + UnicodeString::fromUTF8(StringPiece((*it2).second));
-            trie_->addWord(uterm, upcat);
+        std::vector<UnicodeString> variants(1, UnicodeString::fromUTF8(StringPiece(t)));
+        auto addVariant = [&](const UnicodeString & v) {
+            if (!v.isEmpty() && std::find(variants.begin(), variants.end(), v) == variants.end())
+                variants.push_back(v);
+        };
+        UnicodeString folded = tp_pdf_text::normalize(t);
+        folded.trim();
+        addVariant(folded);
+        // 2026-10-21: and in the other Greek spelling ("beta-carotene" <->
+        // "β-carotene"), the rule GreekSynonymFilter applies to search.
+        for (size_t k = 0, n = variants.size(); k < n; k++) {
+            std::wstring w;
+            for (int32_t i = 0; i < variants[k].length();) {
+                UChar32 c = variants[k].char32At(i);
+                i += U16_LENGTH(c);
+                w += (wchar_t) c;
+            }
+            for (const std::wstring & g : {tp_greek::spell_out(w), tp_greek::to_letters(w)}) {
+                if (g == w) continue;
+                UnicodeString u;
+                for (wchar_t c : g) u.append((UChar32) c);
+                addVariant(u);
+            }
         }
+        for (const UnicodeString & u : variants) {
+            trie_->addWord(u, ucat);
+            trie_->addWord(u, "PTCAT" + ucat);
+            for (std::multimap<std::string, std::string>::iterator it2 = ppp.first; it2 != ppp.second; ++it2) {
+                UnicodeString upcat = "PTCAT" + UnicodeString::fromUTF8(StringPiece((*it2).second));
+                trie_->addWord(u, upcat);
+            }
+        }
+    };
+    while (!term.empty()) {
+        UnicodeString ucat = UnicodeString::fromUTF8(StringPiece(category.back()));
+        addTermAndFolded(term.back(), ucat);
         // do lexical variations here;
         std::vector<std::string> splitsterms;
         boost::split(splitsterms, lexicalvariations.back(), boost::is_any_of("|"));
         while (!splitsterms.empty()) {
             std::string aux = splitsterms.back();
             boost::trim(aux);
-            uterm = UnicodeString::fromUTF8(StringPiece(aux));
-            trie_->addWord(uterm, ucat);
-            trie_->addWord(uterm, "PTCAT" + ucat);
-            std::string dummy("");
-            ppp = mmamp.equal_range(ucat.toUTF8String<std::string>(dummy));
-            for (std::multimap<std::string, std::string>::iterator it2 = ppp.first; it2 != ppp.second; ++it2) {
-                UnicodeString upcat = "PTCAT" + UnicodeString::fromUTF8(StringPiece((*it2).second));
-                trie_->addWord(uterm, upcat);
-            }
+            addTermAndFolded(aux, ucat);
             splitsterms.pop_back();
         }
         term.pop_back();
@@ -111,6 +139,10 @@ uima::TyErrorId TpLexiconAnnotatorFromPg::typeSystemInit(uima::TypeSystem const 
 }
 
 uima::TyErrorId TpLexiconAnnotatorFromPg::destroy() {
+    delete trie_;
+    trie_ = nullptr;
+    delete s_;
+    s_ = nullptr;
     return (uima::TyErrorId) UIMA_ERR_NONE;
 }
 

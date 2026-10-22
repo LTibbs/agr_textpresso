@@ -8,6 +8,7 @@
 #include "../TextpressoCentralGlobalDefinitions.h"
 #include "xercesc/util/XMLString.hpp"
 #include "../lucene/CaseSensitiveAnalyzer.h"
+#include "CaseInsensitiveAnalyzer.h"
 #include <uima/api.hpp>
 #include <uima/xmideserializer.hpp>
 #include <cstdio>
@@ -48,7 +49,7 @@ void mergeIndex(const string& indexpath1, const string& indexpath2, const string
                                         IndexWriter::MaxFieldLengthUNLIMITED);
     } else {
         writer = newLucene<IndexWriter>(FSDirectory::open(IndexDir1),
-                                        newLucene<StandardAnalyzer>(LuceneVersion::LUCENE_30), false, // append
+                                        newLucene<CaseInsensitiveAnalyzer>(LuceneVersion::LUCENE_30), false, // append
                                         IndexWriter::MaxFieldLengthUNLIMITED);
     }
     cout << "maxDoc(): " << writer->maxDoc() << endl;

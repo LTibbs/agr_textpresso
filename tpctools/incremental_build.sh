@@ -91,7 +91,12 @@ echo "${LOG_PREFIX} Proceeding; cleared ${PAST_WEEK}"
 # -----------------------------
 convert_text "${STAGE_RAW}"
 
-tokenize -P 4 -p "${STAGE_RAW}/pdf" -c "${STAGE_CAS1}"
+# Papers with staged JATS (raw_files/xml/<corpus>/<acc>/<acc>.jats.json, from
+# maizegdb_textpresso_implementation's bin/fetch_jats.py) get their CAS-1 from
+# JATS; tokenize then skips them. Nothing stages JATS for the AGR download, so
+# for AGR MODs both JATS steps are no-ops.
+jats2cas -P 4 -j "${STAGE_RAW}/xml" -c "${STAGE_CAS1}"
+tokenize -P 4 -p "${STAGE_RAW}/pdf" -c "${STAGE_CAS1}" -j "${STAGE_RAW}/xml"
 echo "${LOG_PREFIX} DONE generating CAS-1 files!"
 
 annotate -P 2 -c "${STAGE_CAS1}" -C "${STAGE_CAS2}"

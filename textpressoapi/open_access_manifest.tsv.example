@@ -1,0 +1,31 @@
+# Textpresso open-access manifest (example).
+#
+# Copy to the path textpressoapi and cas_annotate_server.py look for:
+#   /data/textpresso/open_access_manifest.tsv
+# (override: textpressoapi --open-access-manifest / $TEXTPRESSO_OA_MANIFEST)
+#
+# While this file is ABSENT the API is unchanged: every document is served in
+# full to everyone. Once it exists, gating is active and unauthenticated
+# clients get only metadata + abstract + a few matching sentences for any
+# document that resolves to "closed".
+#
+# Format: one entry per line, "<key><whitespace><status>".
+#   status:  open | oa | true | 1 | yes   /   closed | restricted | false | 0 | no
+#   key:     @default                     -> status for anything not matched below
+#            @corpus:<CorpusName>          -> default for a whole corpus
+#            <accession/DOI>               -> one document (wins over corpus + default)
+#
+# Accessions match case-insensitively and treat '/' and '_' as equivalent, so
+# "10.1093/genetics/iyaf266" and "10.1093_genetics_iyaf266" are the same entry.
+#
+# Precedence: accession  >  corpus  >  @default.
+
+@default              open
+
+# Everything harvested into these corpora is non-open-access unless a specific
+# accession below says otherwise.
+@corpus:SorghumClosed   closed
+
+# Per-document overrides.
+10.1093/genetics/iyaf266        open
+10.1021/acs.jafc.5c10234        closed

@@ -618,7 +618,7 @@ Wt::WContainerWidget * Viewer::DisplayAnnotationRangePdf(int32_t b, int32_t e, W
                             std::string aux = value.asUTF8();
                             long unsigned int i = aux.rfind("/");
                             //                            std::string location("images/" + paperdir_ + "/");
-                            std::string location("images/" + paperdir_ + "/images/");
+                            std::string location("/tpc/images/" + paperdir_ + "/images/");
                             location += aux.substr(i + 1, aux.length() - i - 1);
                             SetImage(location, ret);
                         }
@@ -834,7 +834,7 @@ Wt::WContainerWidget * Viewer::DisplayAnnotationRangeTai(int32_t b, int32_t e, W
                 Wt::WText * newimage = new Wt::WText(" -- Image on page " + std::to_string(td->value) + "-- ");
                 newimage->decorationStyle().font().setSize(Wt::WFont::XXSmall);
                 ret->addWidget(newimage);
-                std::string location = "images/" + td->filename.asUTF8();
+                std::string location = "/tpc/images/" + td->filename.asUTF8();
                 SetImage(location, ret);
             }
             delete td;
@@ -948,7 +948,7 @@ void Viewer::AddXmlTagAsWidget(XmlTag * x, Wt::WContainerWidget * parent) {
     // display graphic
     if (value.find("graphic") != std::string::npos) {
         //        std::string location("images/" + paperdir_ + "/");
-        std::string location("images/" + paperdir_ + "/images/");
+        std::string location("/tpc/images/" + paperdir_ + "/images/");
         long unsigned int start = content.find("xlink:href='");
         long unsigned int end = content.find("'", start + 12);
         std::string saux = content.substr(start + 12, end - start - 12);
@@ -1056,6 +1056,8 @@ void Viewer::PrepareAnnotationIds() {
             rawsource_ = pdf;
         else if (uvalue.compare("tai") == 0)
             rawsource_ = tai;
+        else if (uvalue.compare("jats") == 0)
+            rawsource_ = tai;   // clean text without inline tags, like tai
     }
     firstallbeginnings_ = -1;
     lastallbeginnings_ = -1;

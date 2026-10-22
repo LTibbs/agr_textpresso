@@ -79,7 +79,9 @@ target_link_libraries(libtextpresso lucene++ icuuc uima boost_iostreams boost_sy
 #        boost_filesystem xerces-c podofo z ${CImg_SYSTEM_LIBS} ${PYTHON_LIBRARIES})
 
 install(TARGETS libtextpresso RUNTIME DESTINATION bin LIBRARY DESTINATION lib)
-install(FILES IndexManager.h CASManager.h DataStructures.h DESTINATION include/textpresso)
+install(FILES IndexManager.h CASManager.h DataStructures.h
+        lucene-custom/GreekLetters.h lucene-custom/GreekSynonymFilter.h lucene-custom/CaseInsensitiveAnalyzer.h
+        DESTINATION include/textpresso)
 
 # uima annotators
 
@@ -148,6 +150,19 @@ add_library(TdTokenizer SHARED
         uima-annotators/TdTokenizer/textAndImageManager.cpp)
 target_link_libraries(TdTokenizer boost_regex ${PYTHON_LIBRARIES})
 
+# jats layout: reads <accession>.jats.json staged by jats_text.py; shares
+# TdTokenizer's trie and annotation counter.
+add_library(TjTokenizer SHARED
+        uima-annotators/TjTokenizer/TjTokenizer.h
+        uima-annotators/TjTokenizer/TjTokenizer.cpp
+        uima-annotators/TdTokenizer/AnnotationCounter.h
+        uima-annotators/TdTokenizer/AnnotationCounter.cpp
+        uima-annotators/TdTokenizer/TpNode.h
+        uima-annotators/TdTokenizer/TpNode.cpp
+        uima-annotators/TdTokenizer/TpTrie.h
+        uima-annotators/TdTokenizer/TpTrie.cpp)
+target_link_libraries(TjTokenizer boost_regex ${PYTHON_LIBRARIES})
+
 
 
 add_library(Tpcas2Bib SHARED uima-custom-analyzers/Tpcas2Bib/CASUtils.h
@@ -202,12 +217,13 @@ install(FILES
         uima-annotators/TxTokenizer/resources/descriptors/TxTokenizer.xml
         uima-annotators/TdTokenizer/resources/descriptors/TdTokenizerTypeSystem.xml
         uima-annotators/TdTokenizer/resources/descriptors/TdTokenizer.xml
+        uima-annotators/TjTokenizer/resources/descriptors/TjTokenizer.xml
         uima-annotators/shared_resources/descriptors/Tpcas2Lindex.xml
         uima-annotators/shared_resources/descriptors/Tpcas2TpCentral.xml
         DESTINATION uima_descriptors)
 
 install(DIRECTORY tests/data DESTINATION share/textpresso)
 
-install(TARGETS Tpcas2TpCentral Tpcas2SingleIndex TpLexiconAnnotatorFromPg TpTokenizer TxTokenizer TdTokenizer Tpcas2Bib
+install(TARGETS Tpcas2TpCentral Tpcas2SingleIndex TpLexiconAnnotatorFromPg TpTokenizer TxTokenizer TdTokenizer TjTokenizer Tpcas2Bib
         Tpcas2Bib4Nxml
         LIBRARY DESTINATION lib)

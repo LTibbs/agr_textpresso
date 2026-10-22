@@ -5,6 +5,42 @@ Search documents indexed by Textpresso through queries on fulltext or sentences.
 
 These are the APIs to perform document searches:
 
+.. _open-access-gating:
+
+Open-access gating
+------------------
+
+By default every indexed document is served in full to every client and no
+authentication is required. A deployment can opt in to gating by placing an
+**open-access manifest** file at ``/data/textpresso/open_access_manifest.tsv``
+(configurable with ``textpressoapi --open-access-manifest``). While that file
+is absent, behaviour is exactly as before this feature existed.
+
+When the manifest is present, each result is classified **open access** or
+**non-open-access** (per-accession entry, else per-corpus default, else the
+manifest's ``@default``). For a non-open-access document, a client with no
+valid API key receives only:
+
+* all metadata fields (identifier, title, author, accession, journal, year,
+  ``doc_type``, score),
+* ``abstract`` (when ``include_fulltext`` was requested), and
+* at most ``--max-anon-snippets`` (default 3) entries in ``matched_sentences``.
+
+``fulltext`` and ``all_sentences`` are withheld for those documents. Open-access
+documents are unaffected, and a request carrying a valid API key receives the
+full response for every document.
+
+**Providing an API key** (any one of):
+
+* ``X-API-Key: <key>`` request header,
+* ``Authorization: Bearer <key>`` request header, or
+* ``"api_key": "<key>"`` in the JSON body.
+
+Valid keys are listed one per line in the file named by
+``textpressoapi --api-keys-file`` (default
+``/data/textpresso/textpressoapi_data/api_keys.txt``). These keys are separate
+from the ``token`` / login-database mechanism.
+
 .. http:post:: /v1/textpresso/api/search_documents
 
    Search for documents indexed by Textpresso. **Requires authentication**
@@ -39,7 +75,13 @@ These are the APIs to perform document searches:
    :>jsonarr string all_sentences: the text of each sentence. Only if *include_all_sentences* is set to
                                        **true** in the request.
    :>jsonarr string matched_sentences: the text of each matched sentence. Only if *include_match_sentences* is set to
-                                       **true** in the request and the query type is set to **sentence**.
+                                       **true** in the request and the query type is set to **sentence**. Capped at
+                                       ``--max-anon-snippets`` entries for a non-open-access document when the request
+                                       carries no valid API key (see :ref:`open-access-gating`).
+   :>json boolean open_access: whether this document is open access. Present only when an open-access manifest is
+                               configured on the server.
+   :>json boolean access_limited: **true** when this result was trimmed because the document is non-open-access and the
+                                  request carried no valid API key. Absent otherwise.
 
    **Example request**:
 
@@ -189,6 +231,9 @@ These are the APIs to perform document searches:
 
    :>json string identifier: the document identifier
    :>jsonarr string matches: the list of words in the fulltext of the document that matched the specified category
+   :>json boolean access_limited: **true**, with ``matches`` omitted, when the document is non-open-access and the
+                                  request carried no valid API key (this endpoint reads the full text; see
+                                  :ref:`open-access-gating`).
 
    **Example request**:
 
