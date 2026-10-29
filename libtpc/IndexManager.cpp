@@ -204,6 +204,7 @@ SearchResults IndexManager::search_documents(const Query& query, bool matches_on
         String query_str = StringUtils::toUnicode(query_text);
         string joined_lit = boost::algorithm::join(query.literatures, "ED\" OR corpus:\"BG");
         query_str = L"(corpus:\"BG" + String(joined_lit.begin(), joined_lit.end()) + L"ED\") AND (" + query_str + L")";
+        BooleanQuery::setMaxClauseCount(MAX_QUERY_CLAUSES);
         QueryPtr luceneQuery = parser->parse(query_str);
         String key_query_str;
         TopScoreDocCollectorPtr collector = TopScoreDocCollector::create(MAX_HITS, true);

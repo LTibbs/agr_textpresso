@@ -43,7 +43,10 @@ Endpoints:
   GET /v1/textpresso/category_search
       ?q=<free-text query, e.g. "seed">
       &ontology=PO                       (repeatable; default: all)
-      &limit=20                          (default 20, capped at 100)
+      &limit=20                          (default 20, capped at 100 -- or at
+                                           EXPANDED_LIMIT_MAX when either
+                                           relationship param below is given, so
+                                           a whole closure fits in one call)
       &relationship_type=is_a            (repeatable; default: none -- literal
                                            match only. When given, each match's
                                            descendants along the named OBO
@@ -57,7 +60,8 @@ Endpoints:
                                            in both directions at once.)
 
     200 -> {"query": "...", "matches": [{"id","name","category","ontology","matched_on",
-             "relationship_types","parent_relationship_types"}, ...]}
+             "relationship_types","parent_relationship_types"}, ...],
+             "truncated": bool}   (true when more matches existed than were returned)
     400 -> {"error": "..."}  (missing q)
 
     Each match's "relationship_types" lists the OBO relationship types (e.g.
@@ -89,6 +93,9 @@ HOST = "127.0.0.1"
 PORT = int(os.environ.get("CAS_ANNOTATE_PORT", "8082"))
 ANNOTATE_SUFFIX = "/v1/textpresso/annotate"
 CATEGORY_SEARCH_SUFFIX = "/v1/textpresso/category_search"
+LIMIT_MAX = 100              # category_search matches for a plain lookup
+EXPANDED_LIMIT_MAX = 5000    # ...and with relationship_type/ancestor_relationship_type
+                             # (cellular_component, GO's largest root, has ~4,100)
 
 _CATEGORY_INDEX = None  # built once at startup, see main()
 _ACCESS = None          # access.AccessControl, built once at startup, see main()
@@ -243,15 +250,23 @@ class Handler(BaseHTTPRequestHandler):
         ontology_filter = set(qs.get("ontology") or ()) or None
         relationship_types = set(qs.get("relationship_type") or ()) or None
         ancestor_relationship_types = set(qs.get("ancestor_relationship_type") or ()) or None
+        # An expansion is used as a search filter, so it must be the whole
+        # closure: cutting it at 100 kept the alphabetically first terms and
+        # silently dropped the rest ("organelle" has 420 is_a descendants;
+        # "nucleus" is #285).
+        cap = (EXPANDED_LIMIT_MAX if relationship_types or ancestor_relationship_types
+               else LIMIT_MAX)
         try:
-            limit = min(int((qs.get("limit") or ["20"])[0]), 100)
+            limit = max(1, min(int((qs.get("limit") or ["20"])[0]), cap))
         except ValueError:
             limit = 20
 
+        # One extra match tells the caller whether the list was cut.
         matches = category_index.search(
-            _CATEGORY_INDEX, query, ontology_filter, limit, relationship_types,
+            _CATEGORY_INDEX, query, ontology_filter, limit + 1, relationship_types,
             ancestor_relationship_types)
-        self._send_json(200, {"query": query, "matches": matches})
+        self._send_json(200, {"query": query, "matches": matches[:limit],
+                              "truncated": len(matches) > limit})
 
 
 class ThreadingHTTPServer(socketserver.ThreadingMixIn, HTTPServer):

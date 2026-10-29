@@ -37,6 +37,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: reference
 is_a: PO:0025307
+relationship: part_of PO:0009066
 
 [Term]
 id: PO:0000003
@@ -118,6 +119,7 @@ subset: tier_T0
 subset: reference
 is_a: PO:0025001
 is_a: UBERON:0001062
+relationship: part_of PO:0006341
 
 [Term]
 id: PO:0000013
@@ -130,6 +132,7 @@ id: PO:0000014
 name: rosette leaf
 subset: tier_T0
 is_a: PO:0009025
+relationship: part_of PO:0025615
 
 [Term]
 id: PO:0000015
@@ -138,6 +141,7 @@ synonym: "cotyledon primordia (exact, plural)" EXACT []
 synonym: "portion of cotyledon primordium tissue" EXACT []
 subset: tier_T0
 is_a: PO:0025128
+relationship: part_of PO:0025223
 
 [Term]
 id: PO:0000016
@@ -145,6 +149,7 @@ name: lateral root primordium
 synonym: "portion of lateral root primordium tissue" EXACT []
 subset: tier_T0
 is_a: PO:0005029
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0000017
@@ -154,6 +159,7 @@ synonym: "portion of vascular leaf primordium tissue" EXACT []
 synonym: "vascular leaf primordia (exact, plural)" EXACT []
 subset: tier_T0
 is_a: PO:0025128
+relationship: part_of PO:0025223
 
 [Term]
 id: PO:0000018
@@ -205,18 +211,21 @@ id: PO:0000025
 name: root tip
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0000026
 name: primary root tip
 subset: tier_T0
 is_a: PO:0000025
+relationship: part_of PO:0020127
 
 [Term]
 id: PO:0000027
 name: lateral root tip
 subset: tier_T0
 is_a: PO:0000025
+relationship: part_of PO:0020121
 
 [Term]
 id: PO:0000028
@@ -244,6 +253,8 @@ name: lenticel
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0005046
+relationship: part_of PO:0005047
+relationship: part_of PO:0005048
 
 [Term]
 id: PO:0000032
@@ -259,6 +270,7 @@ name: fruit valve
 subset: tier_T0
 subset: Arabidopsis
 is_a: PO:0025228
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0000034
@@ -267,12 +279,14 @@ synonym: "vasculature" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0009015
+relationship: part_of PO:0000003
 
 [Term]
 id: PO:0000035
 name: cotyledon vascular system
 subset: tier_T0
 is_a: PO:0000034
+relationship: part_of PO:0020030
 
 [Term]
 id: PO:0000036
@@ -281,6 +295,7 @@ synonym: "leaf venation" RELATED []
 subset: tier_T0
 subset: Maize
 is_a: PO:0025206
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0000037
@@ -295,12 +310,15 @@ name: primary endosperm cell
 subset: tier_T0
 subset: CL
 is_a: PO:0025026
+relationship: part_of PO:0009089
 
 [Term]
 id: PO:0000039
 name: shoot axis vascular system
 subset: tier_T0
 is_a: PO:0000034
+relationship: part_of PO:0025198
+relationship: part_of PO:0025205
 
 [Term]
 id: PO:0000040
@@ -308,6 +326,7 @@ name: adventitious root nodule
 synonym: "stem primordium" RELATED []
 subset: tier_T0
 is_a: PO:0003023
+relationship: part_of PO:0000042
 
 [Term]
 id: PO:0000041
@@ -366,12 +385,15 @@ id: PO:0000047
 name: leaf lamina epidermis
 subset: tier_T0
 is_a: PO:0006016
+relationship: part_of PO:0020039
 
 [Term]
 id: PO:0000048
 name: leaf lamina vascular system
 subset: tier_T0
 is_a: PO:0000034
+relationship: part_of PO:0000036
+relationship: part_of PO:0020039
 
 [Term]
 id: PO:0000049
@@ -392,12 +414,15 @@ id: PO:0000051
 name: petiole epidermis
 subset: tier_T0
 is_a: PO:0006016
+relationship: part_of PO:0020038
 
 [Term]
 id: PO:0000052
 name: petiole vascular system
 subset: tier_T0
 is_a: PO:0000034
+relationship: part_of PO:0000036
+relationship: part_of PO:0020038
 
 [Term]
 id: PO:0000053
@@ -405,12 +430,15 @@ name: petiole cortex
 synonym: "portion of petiole corex tissue" EXACT []
 subset: tier_T0
 is_a: PO:0005708
+relationship: part_of PO:0020038
 
 [Term]
 id: PO:0000054
 name: petal vascular system
 subset: tier_T0
 is_a: PO:0025206
+relationship: part_of PO:0005017
+relationship: part_of PO:0009032
 
 [Term]
 id: PO:0000055
@@ -484,6 +512,7 @@ synonym: "leaf procambium cell" EXACT []
 subset: tier_T0
 subset: CL
 is_a: PO:0025258
+relationship: part_of PO:0025259
 
 [Term]
 id: PO:0000064
@@ -505,6 +534,7 @@ name: epithem cell
 subset: tier_T0
 subset: CL
 is_a: PO:0000074
+relationship: part_of PO:0005660
 
 [Term]
 id: PO:0000067
@@ -522,6 +552,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0000074
+relationship: part_of PO:0005417
 
 [Term]
 id: PO:0000074
@@ -530,6 +561,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0025030
+relationship: part_of PO:0005421
 
 [Term]
 id: PO:0000075
@@ -538,6 +570,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0025030
+relationship: part_of PO:0005423
 
 [Term]
 id: PO:0000076
@@ -546,6 +579,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0000074
+relationship: part_of PO:0005426
 
 [Term]
 id: PO:0000077
@@ -605,6 +639,7 @@ id: PO:0000112
 name: shoot axis epidermis
 subset: tier_T0
 is_a: PO:0006035
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0000115
@@ -631,6 +666,7 @@ subset: Angiosperm
 subset: CL
 subset: reference
 is_a: PO:0025026
+relationship: part_of PO:0020096
 
 [Term]
 id: PO:0000198
@@ -654,6 +690,7 @@ synonym: "portion of micropylar endosperm" EXACT []
 synonym: "micropylar region" RELATED []
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0009089
 
 [Term]
 id: PO:0000201
@@ -662,12 +699,14 @@ synonym: "portion of chalazal cyst" EXACT []
 synonym: "chalazal endosperm cyst" RELATED []
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0009089
 
 [Term]
 id: PO:0000207
 name: nectary epidermis
 subset: tier_T0
 is_a: PO:0006035
+relationship: part_of PO:0009035
 
 [Term]
 id: PO:0000223
@@ -676,6 +715,7 @@ synonym: "portion of shoot axis cortex tissue" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0005708
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0000224
@@ -683,6 +723,7 @@ name: central zone
 synonym: "central initiation zone" RELATED []
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0020148
 
 [Term]
 id: PO:0000225
@@ -690,6 +731,7 @@ name: peripheral zone
 synonym: "peripheral meristem" RELATED []
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0020148
 
 [Term]
 id: PO:0000226
@@ -697,6 +739,7 @@ name: rib zone
 synonym: "file meristem" RELATED []
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0020148
 
 [Term]
 id: PO:0000229
@@ -711,6 +754,7 @@ id: PO:0000230
 name: inflorescence meristem
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0009049
 
 [Term]
 id: PO:0000232
@@ -741,6 +785,7 @@ synonym: "portion of epidermis tissue" EXACT []
 synonym: "endodermoid" RELATED []
 subset: tier_T0
 is_a: PO:0025059
+relationship: part_of PO:0005708
 
 [Term]
 id: PO:0000256
@@ -758,6 +803,7 @@ synonym: "portion of root cortex tissue" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0005708
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0000262
@@ -798,6 +844,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0025407
+relationship: part_of PO:0005352
 
 [Term]
 id: PO:0000282
@@ -808,6 +855,7 @@ subset: tier_T0
 subset: TraitNet
 is_a: PO:0009011
 is_a: UBERON:0001062
+relationship: part_of PO:0005679
 
 [Term]
 id: PO:0000283
@@ -823,6 +871,7 @@ synonym: "accessory cell" RELATED []
 subset: tier_T0
 subset: CL
 is_a: PO:0025165
+relationship: part_of PO:0002000
 
 [Term]
 id: PO:0000289
@@ -835,6 +884,7 @@ subset: Angiosperm
 subset: CL
 subset: TraitNet
 is_a: PO:0025406
+relationship: part_of PO:0025416
 
 [Term]
 id: PO:0000290
@@ -843,6 +893,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0025606
+relationship: part_of PO:0005352
 
 [Term]
 id: PO:0000293
@@ -853,6 +904,7 @@ subset: CL
 subset: TraitNet
 is_a: PO:0025165
 is_a: UBERON:0001062
+relationship: part_of PO:0002000
 
 [Term]
 id: PO:0000295
@@ -862,6 +914,7 @@ synonym: "cambial initial" EXACT []
 subset: tier_T0
 subset: CL
 is_a: PO:0004011
+relationship: part_of PO:0005597
 
 [Term]
 id: PO:0000301
@@ -876,6 +929,7 @@ id: PO:0000309
 name: nectary parenchyma
 subset: tier_T0
 is_a: PO:0009035
+relationship: part_of PO:0005421
 
 [Term]
 id: PO:0000332
@@ -892,6 +946,7 @@ synonym: "epidermal initial" EXACT []
 subset: tier_T0
 subset: CL
 is_a: PO:0004011
+relationship: part_of PO:0005679
 
 [Term]
 id: PO:0000351
@@ -941,6 +996,7 @@ name: phloem mother cell
 subset: tier_T0
 subset: CL
 is_a: PO:0000295
+relationship: part_of PO:0005043
 
 [Term]
 id: PO:0000423
@@ -956,6 +1012,7 @@ synonym: "megaspore mother cell" EXACT []
 subset: tier_T0
 subset: CL
 is_a: PO:0006204
+relationship: part_of PO:0025201
 
 [Term]
 id: PO:0001000
@@ -1002,6 +1059,7 @@ id: PO:0001007
 name: pollen development stage
 subset: tier_T0
 is_a: PO:0025602
+relationship: part_of PO:0007605
 
 [Term]
 id: PO:0001008
@@ -1229,6 +1287,7 @@ name: lemma development stage
 synonym: "spikelet stage SP3" RELATED []
 subset: tier_T0
 is_a: PO:0025579
+relationship: part_of PO:0007600
 
 [Term]
 id: PO:0001048
@@ -1236,6 +1295,7 @@ name: palea development stage
 synonym: "spikelet stage SP4" RELATED []
 subset: tier_T0
 is_a: PO:0025579
+relationship: part_of PO:0007600
 
 [Term]
 id: PO:0001049
@@ -1243,6 +1303,7 @@ name: lodicule development stage
 synonym: "spikelet stage SP5" RELATED []
 subset: tier_T0
 is_a: PO:0025579
+relationship: part_of PO:0007600
 
 [Term]
 id: PO:0001050
@@ -1500,12 +1561,15 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0000290
+relationship: part_of PO:0025417
 
 [Term]
 id: PO:0002004
 name: silk scar
 subset: tier_T0
 is_a: PO:0025498
+relationship: part_of PO:0008001
+relationship: part_of PO:0009084
 
 [Term]
 id: PO:0003000
@@ -1513,6 +1577,7 @@ name: transition zone
 subset: tier_T0
 subset: reference
 is_a: PO:0025001
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0003003
@@ -1540,6 +1605,7 @@ name: root vascular system
 synonym: "root vein" RELATED []
 subset: tier_T0
 is_a: PO:0000034
+relationship: part_of PO:0020124
 
 [Term]
 id: PO:0003014
@@ -1552,48 +1618,56 @@ id: PO:0003015
 name: primary root differentiation zone
 subset: tier_T0
 is_a: PO:0020135
+relationship: part_of PO:0020127
 
 [Term]
 id: PO:0003016
 name: lateral root differentiation zone
 subset: tier_T0
 is_a: PO:0020135
+relationship: part_of PO:0020121
 
 [Term]
 id: PO:0003017
 name: root cap of primary root
 subset: tier_T0
 is_a: PO:0020123
+relationship: part_of PO:0000026
 
 [Term]
 id: PO:0003018
 name: root cap of lateral root
 subset: tier_T0
 is_a: PO:0020123
+relationship: part_of PO:0000027
 
 [Term]
 id: PO:0003019
 name: central root cap of lateral root
 subset: tier_T0
 is_a: PO:0020130
+relationship: part_of PO:0003018
 
 [Term]
 id: PO:0003020
 name: lateral root cap of lateral root
 subset: tier_T0
 is_a: PO:0020131
+relationship: part_of PO:0003018
 
 [Term]
 id: PO:0003021
 name: central root cap of primary root
 subset: tier_T0
 is_a: PO:0020130
+relationship: part_of PO:0003017
 
 [Term]
 id: PO:0003022
 name: lateral root cap of primary root
 subset: tier_T0
 is_a: PO:0020131
+relationship: part_of PO:0003017
 
 [Term]
 id: PO:0003023
@@ -1602,6 +1676,7 @@ subset: tier_T0
 subset: TraitNet
 is_a: PO:0025001
 is_a: UBERON:0001062
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0003024
@@ -1625,6 +1700,7 @@ synonym: "motor cell" RELATED []
 subset: tier_T0
 subset: CL
 is_a: PO:0025212
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0004002
@@ -1639,6 +1715,7 @@ synonym: "cork" RELATED []
 subset: tier_T0
 subset: tier_T2
 is_a: PO:0025059
+relationship: part_of PO:0005046
 
 [Term]
 id: PO:0004004
@@ -1658,6 +1735,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0000076
+relationship: part_of PO:0006070
 
 [Term]
 id: PO:0004007
@@ -1707,6 +1785,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0025606
+relationship: part_of PO:0005679
 
 [Term]
 id: PO:0004500
@@ -1778,6 +1857,7 @@ synonym: "pubescence" RELATED []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0000282
+relationship: part_of PO:0006048
 
 [Term]
 id: PO:0004512
@@ -1785,6 +1865,7 @@ name: heartwood
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0005848
+relationship: part_of PO:0025004
 
 [Term]
 id: PO:0004513
@@ -1792,6 +1873,7 @@ name: sapwood
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0005848
+relationship: part_of PO:0025004
 
 [Term]
 id: PO:0004514
@@ -1809,6 +1891,7 @@ synonym: "spring wood" RELATED []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0005848
+relationship: part_of PO:0004514
 
 [Term]
 id: PO:0004516
@@ -1819,6 +1902,7 @@ subset: tier_T0
 subset: Citrus
 subset: TraitNet
 is_a: PO:0005848
+relationship: part_of PO:0004514
 
 [Term]
 id: PO:0004517
@@ -1844,6 +1928,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0025407
+relationship: part_of PO:0005417
 
 [Term]
 id: PO:0004520
@@ -1887,6 +1972,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0000074
+relationship: part_of PO:0004532
 
 [Term]
 id: PO:0004526
@@ -1896,6 +1982,7 @@ subset: tier_T0
 subset: CL
 is_a: PO:0004525
 is_a: UBERON:0001062
+relationship: part_of PO:0004533
 
 [Term]
 id: PO:0004527
@@ -1905,6 +1992,7 @@ subset: tier_T0
 subset: CL
 is_a: PO:0004525
 is_a: UBERON:0001062
+relationship: part_of PO:0004534
 
 [Term]
 id: PO:0004528
@@ -1942,6 +2030,7 @@ name: secondary xylem parenchyma
 synonym: "wood parenchyma" EXACT []
 subset: tier_T0
 is_a: PO:0005421
+relationship: part_of PO:0005848
 
 [Term]
 id: PO:0004533
@@ -1949,6 +2038,7 @@ name: axial secondary xylem parenchyma
 synonym: "axial wood parenchyma" EXACT []
 subset: tier_T0
 is_a: PO:0004532
+relationship: part_of PO:0025410
 
 [Term]
 id: PO:0004534
@@ -1956,6 +2046,7 @@ name: ray secondary xylem parenchyma
 synonym: "ray wood parenchyma" EXACT []
 subset: tier_T0
 is_a: PO:0004532
+relationship: part_of PO:0025411
 
 [Term]
 id: PO:0004535
@@ -1964,6 +2055,7 @@ subset: tier_T0
 subset: Tomato
 is_a: PO:0020001
 is_a: UBERON:0001062
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0004536
@@ -1972,6 +2064,7 @@ subset: tier_T0
 subset: Tomato
 is_a: PO:0030114
 is_a: UBERON:0001062
+relationship: part_of PO:0006342
 
 [Term]
 id: PO:0004537
@@ -2001,6 +2094,7 @@ subset: tier_T0
 subset: Maize
 subset: Tomato
 is_a: PO:0025230
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0004542
@@ -2067,6 +2161,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: reference
 is_a: PO:0025059
+relationship: part_of PO:0000002
 
 [Term]
 id: PO:0004701
@@ -2126,6 +2221,7 @@ subset: tier_T0
 subset: Arabidopsis
 subset: Maize
 is_a: PO:0025092
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0004708
@@ -2133,6 +2229,7 @@ name: scutellar node
 subset: tier_T0
 is_a: PO:0020141
 is_a: PO:0025099
+relationship: part_of PO:0019018
 
 [Term]
 id: PO:0004709
@@ -2198,6 +2295,7 @@ name: long cell
 subset: tier_T0
 subset: CL
 is_a: PO:0025212
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0004718
@@ -2205,6 +2303,7 @@ name: short cell
 subset: tier_T0
 subset: CL
 is_a: PO:0025212
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0004719
@@ -2212,6 +2311,7 @@ name: hilum groove
 synonym: "faboid split" RELATED []
 subset: tier_T0
 is_a: PO:0025132
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0004721
@@ -2220,6 +2320,7 @@ synonym: "inflorescence branch cortex" EXACT []
 synonym: "portion of paraclade cortex tissue" EXACT []
 subset: tier_T0
 is_a: PO:0005708
+relationship: part_of PO:0009081
 
 [Term]
 id: PO:0004722
@@ -2227,12 +2328,15 @@ name: pedicel cortex
 synonym: "portion of pedicel cortex tissue" EXACT []
 subset: tier_T0
 is_a: PO:0005708
+relationship: part_of PO:0030112
 
 [Term]
 id: PO:0004723
 name: sepal vascular system
 subset: tier_T0
 is_a: PO:0025206
+relationship: part_of PO:0005017
+relationship: part_of PO:0009031
 
 [Term]
 id: PO:0004724
@@ -2248,12 +2352,14 @@ name: vascular leaf primordium abaxial side
 synonym: "葉原基の裏側、背軸側 (Japanese, exact)" EXACT []
 subset: tier_T0
 is_a: PO:0025128
+relationship: part_of PO:0000017
 
 [Term]
 id: PO:0004726
 name: vascular leaf primordium adaxial side
 subset: tier_T0
 is_a: PO:0025128
+relationship: part_of PO:0000017
 
 [Term]
 id: PO:0005001
@@ -2277,6 +2383,7 @@ name: shoot axis trichome
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0000282
+relationship: part_of PO:0000112
 
 [Term]
 id: PO:0005004
@@ -2285,6 +2392,7 @@ subset: tier_T0
 subset: reference
 subset: TraitNet
 is_a: PO:0025001
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0005005
@@ -2294,6 +2402,7 @@ subset: Potato
 subset: reference
 subset: TraitNet
 is_a: PO:0025001
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0005006
@@ -2327,24 +2436,28 @@ id: PO:0005010
 name: anther septum
 subset: tier_T0
 is_a: PO:0000030
+relationship: part_of PO:0005011
 
 [Term]
 id: PO:0005011
 name: anther dehiscence zone
 subset: tier_T0
 is_a: PO:0025092
+relationship: part_of PO:0009066
 
 [Term]
 id: PO:0005012
 name: pedicel vascular system
 subset: tier_T0
 is_a: PO:0000039
+relationship: part_of PO:0030112
 
 [Term]
 id: PO:0005013
 name: hypocotyl epidermis
 subset: tier_T0
 is_a: PO:0025178
+relationship: part_of PO:0020100
 
 [Term]
 id: PO:0005014
@@ -2372,18 +2485,22 @@ id: PO:0005017
 name: flower vascular system
 subset: tier_T0
 is_a: PO:0025205
+relationship: part_of PO:0009046
 
 [Term]
 id: PO:0005018
 name: stamen vascular system
 subset: tier_T0
 is_a: PO:0025206
+relationship: part_of PO:0005017
+relationship: part_of PO:0009029
 
 [Term]
 id: PO:0005019
 name: carpel vascular system
 subset: tier_T0
 is_a: PO:0025206
+relationship: part_of PO:0009030
 
 [Term]
 id: PO:0005020
@@ -2400,12 +2517,14 @@ id: PO:0005021
 name: sepal margin
 subset: tier_T0
 is_a: PO:0025018
+relationship: part_of PO:0009031
 
 [Term]
 id: PO:0005022
 name: plant ovary wall
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0009072
 
 [Term]
 id: PO:0005023
@@ -2428,6 +2547,7 @@ synonym: "middle layer of plant ovary wall" EXACT []
 subset: tier_T0
 subset: Poaceae
 is_a: PO:0005426
+relationship: part_of PO:0005022
 
 [Term]
 id: PO:0005026
@@ -2436,6 +2556,7 @@ subset: tier_T0
 subset: Arabidopsis
 subset: CL
 is_a: PO:0025030
+relationship: part_of PO:0003011
 
 [Term]
 id: PO:0005027
@@ -2444,12 +2565,14 @@ subset: tier_T0
 subset: Arabidopsis
 subset: CL
 is_a: PO:0025030
+relationship: part_of PO:0003011
 
 [Term]
 id: PO:0005028
 name: inflorescence vascular system
 subset: tier_T0
 is_a: PO:0025205
+relationship: part_of PO:0009049
 
 [Term]
 id: PO:0005029
@@ -2497,6 +2620,7 @@ synonym: "meristematic cap" RELATED []
 subset: tier_T0
 is_a: PO:0006344
 is_a: UBERON:0001062
+relationship: part_of PO:0009047
 
 [Term]
 id: PO:0005040
@@ -2504,6 +2628,7 @@ name: root pith
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0006109
+relationship: part_of PO:0020124
 
 [Term]
 id: PO:0005041
@@ -2511,6 +2636,7 @@ name: shoot axis pith
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0006109
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0005043
@@ -2529,18 +2655,22 @@ synonym: "portion of peridermal tissue" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025059
+relationship: part_of PO:0025004
 
 [Term]
 id: PO:0005047
 name: root periderm
 subset: tier_T0
 is_a: PO:0005046
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0005048
 name: shoot axis periderm
 subset: tier_T0
 is_a: PO:0005046
+relationship: part_of PO:0004518
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0005050
@@ -2549,6 +2679,7 @@ synonym: "portion of phelloderm tissue" EXACT []
 subset: tier_T0
 subset: Rice
 is_a: PO:0025059
+relationship: part_of PO:0005046
 
 [Term]
 id: PO:0005051
@@ -2556,6 +2687,7 @@ name: hypodermis
 synonym: "portion of hypodermal tissue" EXACT []
 subset: tier_T0
 is_a: PO:0025059
+relationship: part_of PO:0005708
 
 [Term]
 id: PO:0005052
@@ -2577,24 +2709,28 @@ id: PO:0005057
 name: shoot axis hypodermis
 subset: tier_T0
 is_a: PO:0005051
+relationship: part_of PO:0000223
 
 [Term]
 id: PO:0005058
 name: shoot axis endodermis
 subset: tier_T0
 is_a: PO:0000252
+relationship: part_of PO:0000223
 
 [Term]
 id: PO:0005059
 name: root endodermis
 subset: tier_T0
 is_a: PO:0000252
+relationship: part_of PO:0000258
 
 [Term]
 id: PO:0005060
 name: leaf endodermis
 subset: tier_T0
 is_a: PO:0000252
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0005349
@@ -2616,12 +2752,14 @@ synonym: "fruit aleurone layer" EXACT []
 subset: tier_T0
 subset: Angiosperm
 is_a: PO:0009007
+relationship: part_of PO:0009089
 
 [Term]
 id: PO:0005415
 name: endosperm parenchyma
 subset: tier_T0
 is_a: PO:0025067
+relationship: part_of PO:0009089
 
 [Term]
 id: PO:0005417
@@ -2687,6 +2825,7 @@ synonym: "phellogen" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0005597
+relationship: part_of PO:0005046
 
 [Term]
 id: PO:0005621
@@ -2712,6 +2851,7 @@ synonym: "leaf parenchyma" RELATED []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0006070
+relationship: part_of PO:0025034
 
 [Term]
 id: PO:0005647
@@ -2720,6 +2860,8 @@ synonym: "spongy parenchyma" RELATED []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0006070
+relationship: part_of PO:0005645
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0005648
@@ -2728,6 +2870,8 @@ synonym: "palisade parenchyma" RELATED []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0006070
+relationship: part_of PO:0005645
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0005656
@@ -2815,6 +2959,7 @@ name: exodermis
 synonym: "root hypodermis" RELATED []
 subset: tier_T0
 is_a: PO:0005051
+relationship: part_of PO:0000258
 
 [Term]
 id: PO:0005848
@@ -2846,6 +2991,7 @@ subset: Poaceae
 subset: Rice
 is_a: PO:0025023
 is_a: UBERON:0001062
+relationship: part_of PO:0006342
 
 [Term]
 id: PO:0006001
@@ -2855,6 +3001,7 @@ subset: reference
 subset: TraitNet
 is_a: PO:0009008
 is_a: UBERON:0001062
+relationship: part_of PO:0009006
 
 [Term]
 id: PO:0006002
@@ -2894,6 +3041,7 @@ id: PO:0006005
 name: carpel anlagen
 subset: tier_T0
 is_a: PO:0025430
+relationship: part_of PO:0000229
 
 [Term]
 id: PO:0006006
@@ -2903,6 +3051,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: reference
 is_a: PO:0025059
+relationship: part_of PO:0000002
 
 [Term]
 id: PO:0006007
@@ -2912,6 +3061,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: reference
 is_a: PO:0025059
+relationship: part_of PO:0000002
 
 [Term]
 id: PO:0006008
@@ -2936,6 +3086,7 @@ subset: tier_T0
 subset: CL
 is_a: PO:0025606
 is_a: UBERON:0001062
+relationship: part_of PO:0006006
 
 [Term]
 id: PO:0006011
@@ -2948,6 +3099,7 @@ id: PO:0006012
 name: leaf collar
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0006013
@@ -2956,6 +3108,7 @@ synonym: "juice vesicle" RELATED []
 subset: tier_T0
 subset: Citrus
 is_a: PO:0009007
+relationship: part_of PO:0009086
 
 [Term]
 id: PO:0006014
@@ -2964,6 +3117,7 @@ synonym: "male archesporial initial" EXACT []
 subset: tier_T0
 subset: CL
 is_a: PO:0030056
+relationship: part_of PO:0025202
 
 [Term]
 id: PO:0006015
@@ -2972,6 +3126,7 @@ synonym: "female archesporial initial" EXACT []
 subset: tier_T0
 subset: CL
 is_a: PO:0030056
+relationship: part_of PO:0025201
 
 [Term]
 id: PO:0006016
@@ -2980,6 +3135,7 @@ synonym: "foliage leaf epidermis" EXACT []
 synonym: "phyllid epidermis" EXACT []
 subset: tier_T0
 is_a: PO:0025157
+relationship: part_of PO:0025034
 
 [Term]
 id: PO:0006017
@@ -3008,6 +3164,7 @@ synonym: "apical meristem of lateral root" RELATED []
 synonym: "lateral root meristem" RELATED []
 subset: tier_T0
 is_a: PO:0020147
+relationship: part_of PO:0000027
 
 [Term]
 id: PO:0006021
@@ -3016,6 +3173,7 @@ synonym: "crown root meristem" RELATED []
 synonym: "seminal root meristem" RELATED []
 subset: tier_T0
 is_a: PO:0020147
+relationship: part_of PO:0000042
 
 [Term]
 id: PO:0006022
@@ -3028,6 +3186,7 @@ id: PO:0006023
 name: bundle sheath
 subset: tier_T0
 is_a: PO:0025059
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0006024
@@ -3048,6 +3207,7 @@ name: lemma awn
 subset: tier_T0
 subset: reference
 is_a: PO:0025349
+relationship: part_of PO:0009037
 
 [Term]
 id: PO:0006033
@@ -3056,18 +3216,21 @@ synonym: "apiculus" RELATED []
 subset: tier_T0
 subset: reference
 is_a: PO:0025001
+relationship: part_of PO:0009038
 
 [Term]
 id: PO:0006034
 name: leaflet margin
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0020049
 
 [Term]
 id: PO:0006035
 name: shoot system epidermis
 subset: tier_T0
 is_a: PO:0005679
+relationship: part_of PO:0009006
 
 [Term]
 id: PO:0006036
@@ -3076,6 +3239,7 @@ synonym: "epiblem" RELATED []
 synonym: "rhizodermis" RELATED []
 subset: tier_T0
 is_a: PO:0005679
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0006039
@@ -3083,18 +3247,21 @@ name: shoot-borne root epidermis
 synonym: "crown root epidermis" RELATED []
 subset: tier_T0
 is_a: PO:0006036
+relationship: part_of PO:0000042
 
 [Term]
 id: PO:0006040
 name: sepal epidermis
 subset: tier_T0
 is_a: PO:0025157
+relationship: part_of PO:0009031
 
 [Term]
 id: PO:0006041
 name: petal epidermis
 subset: tier_T0
 is_a: PO:0025157
+relationship: part_of PO:0009032
 
 [Term]
 id: PO:0006042
@@ -3109,24 +3276,28 @@ id: PO:0006043
 name: integument epidermis
 subset: tier_T0
 is_a: PO:0005679
+relationship: part_of PO:0020021
 
 [Term]
 id: PO:0006044
 name: inner integument epidermis
 subset: tier_T0
 is_a: PO:0006043
+relationship: part_of PO:0020022
 
 [Term]
 id: PO:0006045
 name: outer integument epidermis
 subset: tier_T0
 is_a: PO:0006043
+relationship: part_of PO:0020023
 
 [Term]
 id: PO:0006048
 name: seed coat epidermis
 subset: tier_T0
 is_a: PO:0005679
+relationship: part_of PO:0009088
 
 [Term]
 id: PO:0006049
@@ -3134,6 +3305,7 @@ name: scutellum epidermis
 subset: tier_T0
 is_a: PO:0006035
 is_a: PO:0025233
+relationship: part_of PO:0020110
 
 [Term]
 id: PO:0006050
@@ -3142,6 +3314,7 @@ synonym: "portion of exotesta tissue" EXACT []
 synonym: "seed coat outer epidermis" RELATED []
 subset: tier_T0
 is_a: PO:0006048
+relationship: part_of PO:0020057
 
 [Term]
 id: PO:0006051
@@ -3150,6 +3323,7 @@ synonym: "portion of endotesta tissue" EXACT []
 synonym: "seed coat inner epidermis" RELATED []
 subset: tier_T0
 is_a: PO:0006048
+relationship: part_of PO:0020057
 
 [Term]
 id: PO:0006052
@@ -3180,6 +3354,7 @@ id: PO:0006056
 name: cotyledon epidermis
 subset: tier_T0
 is_a: PO:0006016
+relationship: part_of PO:0020030
 
 [Term]
 id: PO:0006057
@@ -3198,12 +3373,14 @@ id: PO:0006060
 name: filament epidermis
 subset: tier_T0
 is_a: PO:0025097
+relationship: part_of PO:0009067
 
 [Term]
 id: PO:0006061
 name: stigma epidermis
 subset: tier_T0
 is_a: PO:0025096
+relationship: part_of PO:0009073
 
 [Term]
 id: PO:0006062
@@ -3211,24 +3388,28 @@ name: style epidermis
 synonym: "transmitting tract epidermis" RELATED []
 subset: tier_T0
 is_a: PO:0025096
+relationship: part_of PO:0009074
 
 [Term]
 id: PO:0006063
 name: plant ovary epidermis
 subset: tier_T0
 is_a: PO:0025096
+relationship: part_of PO:0005022
 
 [Term]
 id: PO:0006065
 name: hypocotyl endodermis
 subset: tier_T0
 is_a: PO:0000252
+relationship: part_of PO:0020100
 
 [Term]
 id: PO:0006066
 name: petiole parenchyma
 subset: tier_T0
 is_a: PO:0005421
+relationship: part_of PO:0020038
 
 [Term]
 id: PO:0006067
@@ -3240,12 +3421,14 @@ id: PO:0006068
 name: sepal parenchyma
 subset: tier_T0
 is_a: PO:0005421
+relationship: part_of PO:0009031
 
 [Term]
 id: PO:0006069
 name: petal parenchyma
 subset: tier_T0
 is_a: PO:0005421
+relationship: part_of PO:0009032
 
 [Term]
 id: PO:0006070
@@ -3315,6 +3498,7 @@ name: shoot system meristem
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0009013
+relationship: part_of PO:0009006
 
 [Term]
 id: PO:0006080
@@ -3328,6 +3512,7 @@ synonym: "apical meristem of primary root" RELATED []
 synonym: "embryonic root meristem" RELATED []
 subset: tier_T0
 is_a: PO:0020147
+relationship: part_of PO:0000026
 
 [Term]
 id: PO:0006082
@@ -3355,6 +3540,7 @@ name: root meristem
 synonym: "meristematic zone" RELATED []
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0025025
 
 [Term]
 id: PO:0006086
@@ -3421,6 +3607,7 @@ synonym: "medullary ray" EXACT []
 synonym: "pith ray" EXACT []
 subset: tier_T0
 is_a: PO:0025059
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0006203
@@ -3430,6 +3617,7 @@ synonym: "portion of pericyclic tissue" EXACT []
 subset: tier_T0
 subset: reference
 is_a: PO:0025059
+relationship: part_of PO:0020124
 
 [Term]
 id: PO:0006204
@@ -3440,6 +3628,7 @@ subset: tier_T0
 subset: CL
 is_a: PO:0025606
 is_a: UBERON:0001062
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0006205
@@ -3449,6 +3638,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0004006
+relationship: part_of PO:0005647
 
 [Term]
 id: PO:0006206
@@ -3458,6 +3648,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0004006
+relationship: part_of PO:0005648
 
 [Term]
 id: PO:0006207
@@ -3465,6 +3656,7 @@ name: exodermal passage cell
 subset: tier_T0
 subset: CL
 is_a: PO:0000353
+relationship: part_of PO:0005772
 
 [Term]
 id: PO:0006208
@@ -3472,6 +3664,7 @@ name: endodermal passage cell
 subset: tier_T0
 subset: CL
 is_a: PO:0000353
+relationship: part_of PO:0000252
 
 [Term]
 id: PO:0006209
@@ -3491,12 +3684,14 @@ id: PO:0006211
 name: separation layer
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0000146
 
 [Term]
 id: PO:0006212
 name: protective layer
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0000146
 
 [Term]
 id: PO:0006213
@@ -3507,6 +3702,7 @@ subset: Poaceae
 subset: Rice
 subset: TraitNet
 is_a: PO:0005702
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0006214
@@ -3514,12 +3710,14 @@ name: stem aerenchyma
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0005702
+relationship: part_of PO:0009047
 
 [Term]
 id: PO:0006215
 name: leaf aerenchyma
 subset: tier_T0
 is_a: PO:0005702
+relationship: part_of PO:0025034
 
 [Term]
 id: PO:0006216
@@ -3533,12 +3731,14 @@ id: PO:0006218
 name: exotegmen
 subset: tier_T0
 is_a: PO:0006048
+relationship: part_of PO:0020056
 
 [Term]
 id: PO:0006219
 name: endotegmen
 subset: tier_T0
 is_a: PO:0006048
+relationship: part_of PO:0020056
 
 [Term]
 id: PO:0006220
@@ -3546,6 +3746,7 @@ name: central endosperm
 synonym: "portion of central endosperm tissue" EXACT []
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0009089
 
 [Term]
 id: PO:0006221
@@ -3555,6 +3756,7 @@ synonym: "laticifer member" EXACT []
 subset: tier_T0
 subset: CL
 is_a: PO:0025031
+relationship: part_of PO:0005006
 
 [Term]
 id: PO:0006222
@@ -3608,6 +3810,7 @@ id: PO:0006307
 name: root procambium
 subset: tier_T0
 is_a: PO:0025275
+relationship: part_of PO:0020147
 
 [Term]
 id: PO:0006308
@@ -3615,6 +3818,7 @@ name: root lateral meristem
 synonym: "root lateral growth meristem" EXACT []
 subset: tier_T0
 is_a: PO:0020145
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0006309
@@ -3623,6 +3827,7 @@ subset: tier_T0
 subset: Maize
 is_a: PO:0009051
 is_a: UBERON:0001062
+relationship: part_of PO:0020126
 
 [Term]
 id: PO:0006310
@@ -3631,6 +3836,7 @@ subset: tier_T0
 subset: Maize
 is_a: PO:0009082
 is_a: PO:0025600
+relationship: part_of PO:0006309
 
 [Term]
 id: PO:0006311
@@ -3652,6 +3858,7 @@ name: lower floret of pedicellate spikelet of tassel
 subset: tier_T0
 subset: Maize
 is_a: PO:0006310
+relationship: part_of PO:0006312
 
 [Term]
 id: PO:0006314
@@ -3659,6 +3866,7 @@ name: upper floret of pedicellate spikelet of tassel
 subset: tier_T0
 subset: Maize
 is_a: PO:0006310
+relationship: part_of PO:0006312
 
 [Term]
 id: PO:0006315
@@ -3666,6 +3874,7 @@ name: lower floret of sessile spikelet of tassel
 subset: tier_T0
 subset: Maize
 is_a: PO:0006310
+relationship: part_of PO:0006311
 
 [Term]
 id: PO:0006316
@@ -3673,12 +3882,14 @@ name: upper floret of sessile spikelet of tassel
 subset: tier_T0
 subset: Maize
 is_a: PO:0006310
+relationship: part_of PO:0006311
 
 [Term]
 id: PO:0006319
 name: spikelet pedicel
 subset: tier_T0
 is_a: PO:0009081
+relationship: part_of PO:0009051
 
 [Term]
 id: PO:0006320
@@ -3686,6 +3897,7 @@ name: ear spikelet
 subset: tier_T0
 subset: Maize
 is_a: PO:0009051
+relationship: part_of PO:0020136
 
 [Term]
 id: PO:0006321
@@ -3712,6 +3924,7 @@ name: tassel inflorescence branch
 subset: tier_T0
 subset: Maize
 is_a: PO:0009081
+relationship: part_of PO:0020126
 
 [Term]
 id: PO:0006324
@@ -3722,24 +3935,28 @@ subset: tier_T0
 subset: Angiosperm
 subset: Maize
 is_a: PO:0025104
+relationship: part_of PO:0020126
 
 [Term]
 id: PO:0006325
 name: inflorescence axis node
 subset: tier_T0
 is_a: PO:0005004
+relationship: part_of PO:0020122
 
 [Term]
 id: PO:0006326
 name: inflorescence axis internode
 subset: tier_T0
 is_a: PO:0005005
+relationship: part_of PO:0020122
 
 [Term]
 id: PO:0006327
 name: spikelet meristem
 subset: tier_T0
 is_a: PO:0009108
+relationship: part_of PO:0009051
 
 [Term]
 id: PO:0006328
@@ -3766,6 +3983,7 @@ name: seed raphe
 subset: tier_T0
 is_a: PO:0025498
 is_a: UBERON:0001062
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0006332
@@ -3773,6 +3991,7 @@ name: seed funicle
 subset: tier_T0
 is_a: PO:0025498
 is_a: UBERON:0001062
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0006333
@@ -3781,6 +4000,7 @@ synonym: "portion of seed chalaza" EXACT []
 subset: tier_T0
 is_a: PO:0009007
 is_a: UBERON:0001062
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0006334
@@ -3789,6 +4009,7 @@ subset: tier_T0
 subset: TraitNet
 is_a: PO:0025117
 is_a: UBERON:0001062
+relationship: part_of PO:0009088
 
 [Term]
 id: PO:0006336
@@ -3797,6 +4018,7 @@ synonym: "portion of seed obturator tissue" EXACT []
 subset: tier_T0
 is_a: PO:0009007
 is_a: UBERON:0001062
+relationship: part_of PO:0006332
 
 [Term]
 id: PO:0006338
@@ -3869,6 +4091,7 @@ name: shoot lateral meristem
 synonym: "shoot lateral growth meristem" EXACT []
 subset: tier_T0
 is_a: PO:0020145
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0006345
@@ -3881,12 +4104,14 @@ id: PO:0006346
 name: leaf intercalary meristem
 subset: tier_T0
 is_a: PO:0006073
+relationship: part_of PO:0025034
 
 [Term]
 id: PO:0006347
 name: stem intercalary meristem
 subset: tier_T0
 is_a: PO:0006073
+relationship: part_of PO:0020142
 
 [Term]
 id: PO:0006348
@@ -3907,24 +4132,28 @@ id: PO:0006350
 name: upper floret of pedicellate spikelet of ear
 subset: tier_T0
 is_a: PO:0006354
+relationship: part_of PO:0006348
 
 [Term]
 id: PO:0006351
 name: lower floret of sessile spikelet of ear
 subset: tier_T0
 is_a: PO:0006354
+relationship: part_of PO:0006349
 
 [Term]
 id: PO:0006352
 name: upper floret of sessile spikelet of ear
 subset: tier_T0
 is_a: PO:0006354
+relationship: part_of PO:0006349
 
 [Term]
 id: PO:0006353
 name: lower floret of pedicellate spikelet of ear
 subset: tier_T0
 is_a: PO:0006354
+relationship: part_of PO:0006348
 
 [Term]
 id: PO:0006354
@@ -3933,6 +4162,7 @@ subset: tier_T0
 subset: Maize
 is_a: PO:0009082
 is_a: PO:0025599
+relationship: part_of PO:0006320
 
 [Term]
 id: PO:0006358
@@ -3941,6 +4171,7 @@ subset: tier_T0
 subset: Maize
 is_a: PO:0006328
 is_a: PO:0009107
+relationship: part_of PO:0009102
 
 [Term]
 id: PO:0006360
@@ -3957,12 +4188,14 @@ synonym: "embryonic shoot apical meristem" EXACT []
 subset: tier_T0
 is_a: PO:0008016
 is_a: PO:0025233
+relationship: part_of PO:0019018
 
 [Term]
 id: PO:0006367
 name: glume of ear spikelet
 subset: tier_T0
 is_a: PO:0009039
+relationship: part_of PO:0006320
 
 [Term]
 id: PO:0006368
@@ -3970,6 +4203,7 @@ name: glume of tassel spikelet
 subset: tier_T0
 subset: Maize
 is_a: PO:0009039
+relationship: part_of PO:0006309
 
 [Term]
 id: PO:0006369
@@ -4008,6 +4242,7 @@ subset: tier_T0
 subset: Maize
 is_a: PO:0009108
 is_a: PO:0009109
+relationship: part_of PO:0006505
 
 [Term]
 id: PO:0006376
@@ -4016,6 +4251,7 @@ subset: tier_T0
 subset: Maize
 is_a: PO:0009106
 is_a: PO:0009108
+relationship: part_of PO:0006324
 
 [Term]
 id: PO:0006377
@@ -4040,6 +4276,7 @@ subset: tier_T0
 subset: Maize
 is_a: PO:0006323
 is_a: PO:0009080
+relationship: part_of PO:0006309
 
 [Term]
 id: PO:0006380
@@ -4047,6 +4284,7 @@ name: ear spikelet rachilla
 subset: tier_T0
 subset: Maize
 is_a: PO:0009080
+relationship: part_of PO:0006320
 
 [Term]
 id: PO:0006385
@@ -4054,6 +4292,7 @@ name: lower glume of pedicellate spikelet of tassel
 subset: tier_T0
 subset: Maize
 is_a: PO:0006372
+relationship: part_of PO:0006312
 
 [Term]
 id: PO:0006386
@@ -4061,6 +4300,7 @@ name: lower glume of sessile spikelet of tassel
 subset: tier_T0
 subset: Maize
 is_a: PO:0006372
+relationship: part_of PO:0006311
 
 [Term]
 id: PO:0006387
@@ -4068,6 +4308,7 @@ name: upper glume of sessile spikelet of tassel
 subset: tier_T0
 subset: Maize
 is_a: PO:0006370
+relationship: part_of PO:0006311
 
 [Term]
 id: PO:0006388
@@ -4075,6 +4316,7 @@ name: upper glume of pedicellate spikelet of tassel
 subset: tier_T0
 subset: Maize
 is_a: PO:0006370
+relationship: part_of PO:0006312
 
 [Term]
 id: PO:0006389
@@ -4082,6 +4324,8 @@ name: rachilla of sessile spikelet of tassel
 subset: tier_T0
 subset: Maize
 is_a: PO:0006379
+relationship: part_of PO:0006311
+relationship: part_of PO:0006349
 
 [Term]
 id: PO:0006390
@@ -4089,12 +4333,14 @@ name: rachilla of pedicellate spikelet of tassel
 subset: tier_T0
 subset: Maize
 is_a: PO:0006379
+relationship: part_of PO:0006312
 
 [Term]
 id: PO:0006415
 name: pedicel of ear spikelet
 subset: tier_T0
 is_a: PO:0006319
+relationship: part_of PO:0006348
 
 [Term]
 id: PO:0006416
@@ -4102,6 +4348,7 @@ name: pedicel of tassel spikelet
 subset: tier_T0
 subset: Maize
 is_a: PO:0006319
+relationship: part_of PO:0006312
 
 [Term]
 id: PO:0006417
@@ -4109,6 +4356,7 @@ name: tassel peduncle
 subset: tier_T0
 subset: Maize
 is_a: PO:0009053
+relationship: part_of PO:0020126
 
 [Term]
 id: PO:0006418
@@ -4119,12 +4367,14 @@ subset: tier_T0
 subset: tier_T1
 subset: Maize
 is_a: PO:0009053
+relationship: part_of PO:0020136
 
 [Term]
 id: PO:0006435
 name: rachilla of pedicellate spikelet of ear
 subset: tier_T0
 is_a: PO:0006380
+relationship: part_of PO:0006348
 
 [Term]
 id: PO:0006436
@@ -4137,24 +4387,28 @@ id: PO:0006437
 name: lower glume of pedicellate spikelet of ear
 subset: tier_T0
 is_a: PO:0006369
+relationship: part_of PO:0006348
 
 [Term]
 id: PO:0006438
 name: lower glume of sessile spikelet of ear
 subset: tier_T0
 is_a: PO:0006369
+relationship: part_of PO:0006349
 
 [Term]
 id: PO:0006439
 name: upper glume of pedicellate spikelet of ear
 subset: tier_T0
 is_a: PO:0006371
+relationship: part_of PO:0006348
 
 [Term]
 id: PO:0006440
 name: upper glume of sessile spikelet of ear
 subset: tier_T0
 is_a: PO:0006371
+relationship: part_of PO:0006349
 
 [Term]
 id: PO:0006488
@@ -4167,12 +4421,14 @@ id: PO:0006501
 name: leaf abscission zone
 subset: tier_T0
 is_a: PO:0000146
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0006502
 name: floral organ abscission zone
 subset: tier_T0
 is_a: PO:0000146
+relationship: part_of PO:0025395
 
 [Term]
 id: PO:0006503
@@ -4183,6 +4439,7 @@ subset: Poaceae
 subset: Rice
 subset: Tomato
 is_a: PO:0000146
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0006504
@@ -4190,6 +4447,7 @@ name: leaf trichome
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025186
+relationship: part_of PO:0006016
 
 [Term]
 id: PO:0006505
@@ -4199,6 +4457,7 @@ synonym: "ear inflorescence rachis" EXACT []
 subset: tier_T0
 subset: Maize
 is_a: PO:0025104
+relationship: part_of PO:0020136
 
 [Term]
 id: PO:0007001
@@ -4329,6 +4588,7 @@ synonym: "radicle emergence" RELATED []
 synonym: "Zadok scale-5" RELATED []
 subset: tier_T0
 is_a: PO:0007520
+relationship: part_of PO:0007057
 
 [Term]
 id: PO:0007016
@@ -4630,6 +4890,7 @@ synonym: "0.3 coleoptile emergence from seed in maize" RELATED []
 synonym: "BBCH growth stage 09" RELATED []
 subset: tier_T0
 is_a: PO:0007134
+relationship: part_of PO:0007057
 
 [Term]
 id: PO:0007046
@@ -5753,12 +6014,14 @@ id: PO:0007603
 name: calyx development stage
 subset: tier_T0
 is_a: PO:0025578
+relationship: part_of PO:0007600
 
 [Term]
 id: PO:0007604
 name: corolla development stage
 subset: tier_T0
 is_a: PO:0025578
+relationship: part_of PO:0007600
 
 [Term]
 id: PO:0007605
@@ -5766,6 +6029,7 @@ name: androecium development stage
 synonym: "stamen development" RELATED []
 subset: tier_T0
 is_a: PO:0025578
+relationship: part_of PO:0007600
 
 [Term]
 id: PO:0007606
@@ -5773,6 +6037,7 @@ name: gynoecium development stage
 synonym: "ovule development" RELATED []
 subset: tier_T0
 is_a: PO:0025578
+relationship: part_of PO:0007600
 
 [Term]
 id: PO:0007607
@@ -5863,6 +6128,7 @@ id: PO:0007621
 name: megagametophyte development stage
 subset: tier_T0
 is_a: PO:0028003
+relationship: part_of PO:0007619
 
 [Term]
 id: PO:0007622
@@ -5953,6 +6219,7 @@ subset: Angiosperm
 subset: Maize
 subset: Tomato
 is_a: PO:0025498
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0008002
@@ -5962,6 +6229,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: Tomato
 is_a: PO:0025498
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0008003
@@ -5973,6 +6241,7 @@ subset: Poaceae
 subset: Rice
 subset: Tomato
 is_a: PO:0000034
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0008005
@@ -5982,6 +6251,7 @@ subset: Maize
 subset: Poaceae
 subset: Rice
 is_a: PO:0020020
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0008006
@@ -5991,6 +6261,7 @@ subset: tier_T0
 subset: Poaceae
 subset: Rice
 is_a: PO:0025312
+relationship: part_of PO:0020020
 
 [Term]
 id: PO:0008007
@@ -6000,6 +6271,7 @@ subset: tier_T0
 subset: Poaceae
 subset: Rice
 is_a: PO:0009007
+relationship: part_of PO:0020020
 
 [Term]
 id: PO:0008008
@@ -6016,6 +6288,7 @@ subset: tier_T0
 subset: Poaceae
 subset: Rice
 is_a: PO:0009007
+relationship: part_of PO:0008007
 
 [Term]
 id: PO:0008010
@@ -6024,6 +6297,7 @@ subset: tier_T0
 subset: Poaceae
 subset: Rice
 is_a: PO:0009007
+relationship: part_of PO:0008007
 
 [Term]
 id: PO:0008011
@@ -6038,12 +6312,16 @@ name: stigma vascular system
 synonym: "stigma vein" RELATED []
 subset: tier_T0
 is_a: PO:0000034
+relationship: part_of PO:0005019
+relationship: part_of PO:0009073
 
 [Term]
 id: PO:0008013
 name: anther vascular system
 subset: tier_T0
 is_a: PO:0025206
+relationship: part_of PO:0005018
+relationship: part_of PO:0009066
 
 [Term]
 id: PO:0008014
@@ -6051,6 +6329,8 @@ name: filament vascular system
 synonym: "filament vein" RELATED []
 subset: tier_T0
 is_a: PO:0000034
+relationship: part_of PO:0005018
+relationship: part_of PO:0009067
 
 [Term]
 id: PO:0008015
@@ -6058,6 +6338,8 @@ name: hypocotyl vascular system
 subset: tier_T0
 is_a: PO:0000034
 is_a: PO:0025233
+relationship: part_of PO:0008011
+relationship: part_of PO:0020100
 
 [Term]
 id: PO:0008016
@@ -6071,6 +6353,7 @@ id: PO:0008017
 name: leaf sheath pulvinus
 subset: tier_T0
 is_a: PO:0009000
+relationship: part_of PO:0020104
 
 [Term]
 id: PO:0008018
@@ -6089,12 +6372,14 @@ id: PO:0008019
 name: leaf lamina base
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0020039
 
 [Term]
 id: PO:0008020
 name: central zone of the leaf lamina
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0020039
 
 [Term]
 id: PO:0008021
@@ -6123,12 +6408,14 @@ name: petiole proximal end
 synonym: "petiole base" RELATED []
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0020038
 
 [Term]
 id: PO:0008025
 name: central zone of the petiole
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0020038
 
 [Term]
 id: PO:0008026
@@ -6136,6 +6423,7 @@ name: petiole distal end
 synonym: "petiole apex" RELATED []
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0020038
 
 [Term]
 id: PO:0008027
@@ -6148,6 +6436,7 @@ id: PO:0008028
 name: reproductive shoot apical meristem
 subset: tier_T0
 is_a: PO:0020148
+relationship: part_of PO:0025222
 
 [Term]
 id: PO:0008029
@@ -6162,6 +6451,7 @@ subset: tier_T0
 subset: CL
 is_a: PO:0025606
 is_a: UBERON:0001062
+relationship: part_of PO:0025162
 
 [Term]
 id: PO:0008031
@@ -6176,6 +6466,7 @@ synonym: "stomatal aperture" RELATED []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025117
+relationship: part_of PO:0002000
 
 [Term]
 id: PO:0008034
@@ -6214,6 +6505,7 @@ name: stem base
 synonym: "gametophore stem base" EXACT []
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0009047
 
 [Term]
 id: PO:0008040
@@ -6229,12 +6521,14 @@ id: PO:0008041
 name: stem internode elongation zone
 subset: tier_T0
 is_a: PO:0025100
+relationship: part_of PO:0020142
 
 [Term]
 id: PO:0008042
 name: stem internode differentiation zone
 subset: tier_T0
 is_a: PO:0025102
+relationship: part_of PO:0020142
 
 [Term]
 id: PO:0008043
@@ -6275,6 +6569,8 @@ synonym: "scutellum vascular system" RELATED []
 subset: tier_T0
 is_a: PO:0000034
 is_a: PO:0025233
+relationship: part_of PO:0008011
+relationship: part_of PO:0020110
 
 [Term]
 id: PO:0008048
@@ -6283,6 +6579,7 @@ synonym: "portion of scutellar epithelium" EXACT []
 synonym: "scutellum epithelium" EXACT []
 subset: tier_T0
 is_a: PO:0025233
+relationship: part_of PO:0020110
 
 [Term]
 id: PO:0009000
@@ -6290,6 +6587,7 @@ name: pulvinus
 synonym: "pulvini (exact, plural)" EXACT []
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0009006
 
 [Term]
 id: PO:0009001
@@ -6349,6 +6647,7 @@ subset: Tomato
 subset: TraitNet
 is_a: PO:0025004
 is_a: UBERON:0001062
+relationship: part_of PO:0025025
 
 [Term]
 id: PO:0009006
@@ -6455,6 +6754,7 @@ id: PO:0009017
 name: inflorescence branch pulvinus
 subset: tier_T0
 is_a: PO:0009000
+relationship: part_of PO:0009081
 
 [Term]
 id: PO:0009018
@@ -6462,6 +6762,7 @@ name: basal endosperm transfer cell
 subset: tier_T0
 subset: CL
 is_a: PO:0000078
+relationship: part_of PO:0025196
 
 [Term]
 id: PO:0009019
@@ -6475,18 +6776,23 @@ name: meristem L1 layer
 synonym: "tunica" RELATED []
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0020148
 
 [Term]
 id: PO:0009021
 name: meristem L2 layer
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0020148
+relationship: part_of PO:0025595
 
 [Term]
 id: PO:0009022
 name: meristem L3 layer
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0020148
+relationship: part_of PO:0025595
 
 [Term]
 id: PO:0009023
@@ -6551,6 +6857,7 @@ subset: reference
 subset: TraitNet
 is_a: PO:0009028
 is_a: PO:0025395
+relationship: part_of PO:0009061
 
 [Term]
 id: PO:0009030
@@ -6560,6 +6867,7 @@ subset: reference
 subset: TraitNet
 is_a: PO:0009027
 is_a: PO:0025395
+relationship: part_of PO:0009062
 
 [Term]
 id: PO:0009031
@@ -6569,6 +6877,7 @@ subset: reference
 subset: TraitNet
 is_a: PO:0006001
 is_a: PO:0025395
+relationship: part_of PO:0009060
 
 [Term]
 id: PO:0009032
@@ -6579,6 +6888,7 @@ subset: reference
 subset: TraitNet
 is_a: PO:0006001
 is_a: PO:0025395
+relationship: part_of PO:0009059
 
 [Term]
 id: PO:0009033
@@ -6588,6 +6898,7 @@ subset: reference
 subset: TraitNet
 is_a: PO:0006001
 is_a: PO:0025395
+relationship: part_of PO:0025021
 
 [Term]
 id: PO:0009034
@@ -6608,6 +6919,7 @@ subset: tier_T0
 subset: reference
 subset: TraitNet
 is_a: PO:0005656
+relationship: part_of PO:0009006
 
 [Term]
 id: PO:0009036
@@ -6620,6 +6932,7 @@ subset: tier_T0
 subset: reference
 is_a: PO:0006001
 is_a: PO:0025395
+relationship: part_of PO:0009082
 
 [Term]
 id: PO:0009037
@@ -6632,6 +6945,7 @@ subset: Maize
 subset: Poaceae
 subset: reference
 is_a: PO:0009034
+relationship: part_of PO:0009082
 
 [Term]
 id: PO:0009038
@@ -6640,6 +6954,7 @@ synonym: "palea of lower floret of sessile spikelet of ear" EXACT []
 subset: tier_T0
 subset: reference
 is_a: PO:0009034
+relationship: part_of PO:0009082
 
 [Term]
 id: PO:0009039
@@ -6648,6 +6963,7 @@ synonym: "rudimentary glume" RELATED []
 subset: tier_T0
 subset: reference
 is_a: PO:0009054
+relationship: part_of PO:0009051
 
 [Term]
 id: PO:0009040
@@ -6680,6 +6996,7 @@ name: bracteole
 synonym: "bractlet" EXACT []
 subset: tier_T0
 is_a: PO:0009042
+relationship: part_of PO:0030112
 
 [Term]
 id: PO:0009044
@@ -6695,6 +7012,7 @@ synonym: "phyllary" RELATED []
 subset: tier_T0
 subset: reference
 is_a: PO:0009054
+relationship: part_of PO:0009100
 
 [Term]
 id: PO:0009046
@@ -6735,6 +7053,7 @@ subset: tier_T0
 subset: Poaceae
 subset: reference
 is_a: PO:0025082
+relationship: part_of PO:0009049
 
 [Term]
 id: PO:0009052
@@ -6744,6 +7063,7 @@ subset: Angiosperm
 subset: reference
 subset: Tomato
 is_a: PO:0030113
+relationship: part_of PO:0009049
 
 [Term]
 id: PO:0009053
@@ -6754,6 +7074,7 @@ subset: Angiosperm
 subset: Musa
 subset: reference
 is_a: PO:0025029
+relationship: part_of PO:0025104
 
 [Term]
 id: PO:0009054
@@ -6765,6 +7086,7 @@ subset: tier_T0
 subset: reference
 subset: TraitNet
 is_a: PO:0009055
+relationship: part_of PO:0009049
 
 [Term]
 id: PO:0009055
@@ -6784,6 +7106,7 @@ synonym: "floral nectary" EXACT []
 subset: tier_T0
 subset: reference
 is_a: PO:0009035
+relationship: part_of PO:0009046
 
 [Term]
 id: PO:0009057
@@ -6800,6 +7123,7 @@ subset: tier_T0
 subset: reference
 subset: TraitNet
 is_a: PO:0025023
+relationship: part_of PO:0009046
 
 [Term]
 id: PO:0009059
@@ -6811,6 +7135,7 @@ subset: tier_T1
 subset: reference
 subset: TraitNet
 is_a: PO:0025023
+relationship: part_of PO:0009058
 
 [Term]
 id: PO:0009060
@@ -6820,6 +7145,7 @@ subset: tier_T0
 subset: reference
 subset: TraitNet
 is_a: PO:0025023
+relationship: part_of PO:0009058
 
 [Term]
 id: PO:0009061
@@ -6834,6 +7160,7 @@ subset: reference
 subset: TraitNet
 is_a: PO:0025023
 is_a: UBERON:0001062
+relationship: part_of PO:0009046
 
 [Term]
 id: PO:0009062
@@ -6845,6 +7172,7 @@ subset: reference
 subset: TraitNet
 is_a: PO:0025023
 is_a: UBERON:0001062
+relationship: part_of PO:0009046
 
 [Term]
 id: PO:0009063
@@ -6855,6 +7183,7 @@ synonym: "epicalyces (exact, plural)" EXACT []
 subset: tier_T0
 subset: reference
 is_a: PO:0025023
+relationship: part_of PO:0009046
 
 [Term]
 id: PO:0009064
@@ -6874,6 +7203,7 @@ synonym: "hypanthia (exact, plural)" EXACT []
 subset: tier_T0
 subset: reference
 is_a: PO:0025001
+relationship: part_of PO:0009064
 
 [Term]
 id: PO:0009066
@@ -6883,6 +7213,7 @@ subset: reference
 subset: TraitNet
 is_a: PO:0025007
 is_a: UBERON:0001062
+relationship: part_of PO:0009029
 
 [Term]
 id: PO:0009067
@@ -6891,6 +7222,7 @@ subset: tier_T1
 subset: reference
 subset: TraitNet
 is_a: PO:0025066
+relationship: part_of PO:0009029
 
 [Term]
 id: PO:0009068
@@ -6898,6 +7230,7 @@ name: connective
 subset: tier_T1
 subset: reference
 is_a: PO:0025001
+relationship: part_of PO:0009066
 
 [Term]
 id: PO:0009069
@@ -6907,6 +7240,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: reference
 is_a: PO:0025007
+relationship: part_of PO:0009066
 
 [Term]
 id: PO:0009070
@@ -6923,6 +7257,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: reference
 is_a: PO:0025314
+relationship: part_of PO:0000002
 
 [Term]
 id: PO:0009072
@@ -6933,6 +7268,7 @@ subset: Maize
 subset: reference
 subset: TraitNet
 is_a: PO:0009011
+relationship: part_of PO:0009030
 
 [Term]
 id: PO:0009073
@@ -6943,6 +7279,7 @@ subset: tier_T0
 subset: reference
 subset: TraitNet
 is_a: PO:0025001
+relationship: part_of PO:0009030
 
 [Term]
 id: PO:0009074
@@ -6951,6 +7288,7 @@ subset: tier_T2
 subset: reference
 subset: TraitNet
 is_a: PO:0025001
+relationship: part_of PO:0009030
 
 [Term]
 id: PO:0009075
@@ -6965,6 +7303,7 @@ synonym: "staminodium" EXACT []
 subset: tier_T0
 is_a: PO:0009028
 is_a: PO:0025395
+relationship: part_of PO:0009061
 
 [Term]
 id: PO:0009078
@@ -6981,6 +7320,7 @@ name: spikelet rachilla
 synonym: "spikelet rhachilla" EXACT []
 subset: tier_T0
 is_a: PO:0009081
+relationship: part_of PO:0009051
 
 [Term]
 id: PO:0009081
@@ -6998,6 +7338,7 @@ synonym: "spikelet flower" RELATED []
 subset: tier_T0
 subset: reference
 is_a: PO:0009046
+relationship: part_of PO:0009051
 
 [Term]
 id: PO:0009083
@@ -7018,6 +7359,7 @@ subset: Poaceae
 subset: Rice
 subset: Tomato
 is_a: PO:0009007
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0009085
@@ -7033,6 +7375,7 @@ subset: tier_T0
 subset: Citrus
 subset: Tomato
 is_a: PO:0009007
+relationship: part_of PO:0009084
 
 [Term]
 id: PO:0009086
@@ -7049,6 +7392,7 @@ subset: Poaceae
 subset: Rice
 subset: Tomato
 is_a: PO:0009007
+relationship: part_of PO:0009084
 
 [Term]
 id: PO:0009087
@@ -7060,6 +7404,7 @@ subset: tier_T1
 subset: Citrus
 subset: Tomato
 is_a: PO:0009007
+relationship: part_of PO:0009084
 
 [Term]
 id: PO:0009088
@@ -7068,6 +7413,7 @@ synonym: "portion of seed coat tissue" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0009007
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0009089
@@ -7076,6 +7422,7 @@ synonym: "albumen" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0009007
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0009090
@@ -7096,6 +7443,7 @@ id: PO:0009100
 name: involucre
 subset: tier_T0
 is_a: PO:0025023
+relationship: part_of PO:0009049
 
 [Term]
 id: PO:0009101
@@ -7124,6 +7472,8 @@ synonym: "third order tassel branch meristem" RELATED []
 subset: tier_T0
 subset: Maize
 is_a: PO:0009107
+relationship: part_of PO:0006324
+relationship: part_of PO:0009101
 
 [Term]
 id: PO:0009104
@@ -7133,6 +7483,7 @@ synonym: "second order tassel branch meristem" RELATED []
 subset: tier_T0
 subset: Maize
 is_a: PO:0009107
+relationship: part_of PO:0006324
 
 [Term]
 id: PO:0009105
@@ -7146,6 +7497,7 @@ name: tassel meristem
 subset: tier_T0
 subset: Maize
 is_a: PO:0000230
+relationship: part_of PO:0020126
 
 [Term]
 id: PO:0009107
@@ -7169,6 +7521,7 @@ name: ear meristem
 subset: tier_T0
 subset: Maize
 is_a: PO:0000230
+relationship: part_of PO:0020136
 
 [Term]
 id: PO:0009110
@@ -7183,6 +7536,7 @@ id: PO:0009111
 name: petiole pulvinus
 subset: tier_T0
 is_a: PO:0009000
+relationship: part_of PO:0020038
 
 [Term]
 id: PO:0019018
@@ -7200,6 +7554,7 @@ synonym: "arillus" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025498
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0019023
@@ -7207,6 +7562,7 @@ name: strophiole
 subset: tier_T0
 subset: reference
 is_a: PO:0019022
+relationship: part_of PO:0006331
 
 [Term]
 id: PO:0019024
@@ -7216,12 +7572,14 @@ synonym: "seed lid" EXACT []
 synonym: "seed opercula (exact, plural)" EXACT []
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0019026
 name: tracheid bar
 subset: tier_T0
 is_a: PO:0005352
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0020001
@@ -7229,6 +7587,7 @@ name: plant ovary placenta
 subset: tier_T0
 subset: reference
 is_a: PO:0025078
+relationship: part_of PO:0009072
 
 [Term]
 id: PO:0020002
@@ -7239,6 +7598,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: reference
 is_a: PO:0025309
+relationship: part_of PO:0000002
 
 [Term]
 id: PO:0020003
@@ -7260,6 +7620,7 @@ subset: Angiosperm
 subset: reference
 is_a: PO:0025097
 is_a: PO:0025311
+relationship: part_of PO:0000002
 
 [Term]
 id: PO:0020005
@@ -7267,6 +7628,7 @@ name: placentoid
 subset: tier_T0
 subset: reference
 is_a: PO:0005421
+relationship: part_of PO:0009068
 
 [Term]
 id: PO:0020006
@@ -7276,6 +7638,7 @@ synonym: "funiculus" RELATED []
 subset: tier_T0
 subset: reference
 is_a: PO:0025066
+relationship: part_of PO:0020003
 
 [Term]
 id: PO:0020008
@@ -7348,6 +7711,7 @@ subset: tier_T0
 subset: reference
 subset: TraitNet
 is_a: PO:0025201
+relationship: part_of PO:0020003
 
 [Term]
 id: PO:0020021
@@ -7357,6 +7721,7 @@ subset: tier_T0
 subset: reference
 subset: TraitNet
 is_a: PO:0009007
+relationship: part_of PO:0020003
 
 [Term]
 id: PO:0020022
@@ -7376,6 +7741,7 @@ name: endothelium
 synonym: "portion of endothelium" EXACT []
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0020022
 
 [Term]
 id: PO:0020025
@@ -7385,6 +7751,7 @@ subset: tier_T0
 subset: reference
 subset: TraitNet
 is_a: PO:0025117
+relationship: part_of PO:0020021
 
 [Term]
 id: PO:0020026
@@ -7396,6 +7763,7 @@ synonym: "portion of chalaza tissue" EXACT []
 subset: tier_T0
 subset: reference
 is_a: PO:0009007
+relationship: part_of PO:0020003
 
 [Term]
 id: PO:0020027
@@ -7403,6 +7771,7 @@ name: raphe
 subset: tier_T0
 subset: reference
 is_a: PO:0025001
+relationship: part_of PO:0020003
 
 [Term]
 id: PO:0020028
@@ -7411,6 +7780,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: reference
 is_a: PO:0025001
+relationship: part_of PO:0020003
 
 [Term]
 id: PO:0020029
@@ -7468,6 +7838,7 @@ id: PO:0020036
 name: epiblast
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0020034
 
 [Term]
 id: PO:0020037
@@ -7481,6 +7852,7 @@ name: petiole
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025066
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0020039
@@ -7489,6 +7861,7 @@ synonym: "leaf blade" RELATED []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025396
+relationship: part_of PO:0025034
 
 [Term]
 id: PO:0020040
@@ -7496,6 +7869,7 @@ name: leaf base
 synonym: "leaf sheath base" RELATED []
 subset: tier_T0
 is_a: PO:0025140
+relationship: part_of PO:0025034
 
 [Term]
 id: PO:0020041
@@ -7503,6 +7877,7 @@ name: stipule
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025001
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0020042
@@ -7521,6 +7896,7 @@ id: PO:0020044
 name: hyperphyll
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0020030
 
 [Term]
 id: PO:0020045
@@ -7543,6 +7919,7 @@ subset: tier_T0
 subset: CL
 subset: reference
 is_a: PO:0006204
+relationship: part_of PO:0025202
 
 [Term]
 id: PO:0020048
@@ -7558,18 +7935,21 @@ name: leaflet
 subset: tier_T1
 subset: TraitNet
 is_a: PO:0025001
+relationship: part_of PO:0020043
 
 [Term]
 id: PO:0020050
 name: petiolule
 subset: tier_T0
 is_a: PO:0025066
+relationship: part_of PO:0020049
 
 [Term]
 id: PO:0020051
 name: stipel
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0020049
 
 [Term]
 id: PO:0020052
@@ -7595,6 +7975,7 @@ synonym: "leaf rhachis" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025066
+relationship: part_of PO:0020043
 
 [Term]
 id: PO:0020056
@@ -7602,6 +7983,7 @@ name: tegmen
 synonym: "portion of tegmen tissue" EXACT []
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0009088
 
 [Term]
 id: PO:0020057
@@ -7611,6 +7993,7 @@ synonym: "testae (exact, plural)" EXACT []
 subset: tier_T0
 subset: tier_T1
 is_a: PO:0009007
+relationship: part_of PO:0009088
 
 [Term]
 id: PO:0020058
@@ -7619,6 +8002,7 @@ synonym: "portion of perisperm tissue" EXACT []
 synonym: "seed nucellus" RELATED []
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0020059
@@ -7655,6 +8039,7 @@ name: hilum
 synonym: "hila (exact, plural)" EXACT []
 subset: tier_T0
 is_a: PO:0025498
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0020064
@@ -7676,6 +8061,7 @@ id: PO:0020075
 name: mericarp
 subset: tier_T0
 is_a: PO:0025498
+relationship: part_of PO:0030098
 
 [Term]
 id: PO:0020081
@@ -7751,6 +8137,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: reference
 is_a: PO:0025001
+relationship: part_of PO:0025074
 
 [Term]
 id: PO:0020097
@@ -7769,6 +8156,7 @@ subset: tier_T0
 subset: CL
 subset: reference
 is_a: PO:0025606
+relationship: part_of PO:0025280
 
 [Term]
 id: PO:0020100
@@ -7783,6 +8171,7 @@ synonym: "stomia (exact, plural)" EXACT []
 subset: tier_T0
 subset: reference
 is_a: PO:0025117
+relationship: part_of PO:0000002
 
 [Term]
 id: PO:0020102
@@ -7791,6 +8180,7 @@ synonym: "transmitting tract" RELATED []
 subset: tier_T0
 subset: reference
 is_a: PO:0025059
+relationship: part_of PO:0009074
 
 [Term]
 id: PO:0020103
@@ -7805,12 +8195,14 @@ id: PO:0020104
 name: leaf sheath
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0020105
 name: ligule
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0020106
@@ -7818,6 +8210,7 @@ name: leaf sheath auricle
 synonym: "leaf sheath ear" EXACT []
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0020104
 
 [Term]
 id: PO:0020108
@@ -7834,6 +8227,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: CL
 is_a: PO:0025028
+relationship: part_of PO:0020108
 
 [Term]
 id: PO:0020110
@@ -7865,6 +8259,7 @@ subset: tier_T0
 subset: Angiosperm
 subset: TraitNet
 is_a: PO:0025029
+relationship: part_of PO:0009049
 
 [Term]
 id: PO:0020123
@@ -7873,6 +8268,7 @@ synonym: "rootcap" EXACT []
 subset: tier_T0
 subset: reference
 is_a: PO:0025095
+relationship: part_of PO:0000025
 
 [Term]
 id: PO:0020124
@@ -7883,6 +8279,7 @@ subset: Maize
 subset: reference
 subset: TraitNet
 is_a: PO:0025197
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0020125
@@ -7912,6 +8309,7 @@ name: leaf margin
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025018
+relationship: part_of PO:0025034
 
 [Term]
 id: PO:0020130
@@ -7920,6 +8318,7 @@ synonym: "columella cells" EXACT []
 synonym: "columella rootcap" EXACT []
 subset: tier_T0
 is_a: PO:0025095
+relationship: part_of PO:0020123
 
 [Term]
 id: PO:0020131
@@ -7927,6 +8326,7 @@ name: lateral root cap
 synonym: "peripheral cells" RELATED []
 subset: tier_T0
 is_a: PO:0025095
+relationship: part_of PO:0020123
 
 [Term]
 id: PO:0020132
@@ -7960,6 +8360,7 @@ synonym: "root specialization zone" EXACT []
 subset: tier_T0
 subset: reference
 is_a: PO:0025119
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0020136
@@ -7975,6 +8376,7 @@ id: PO:0020137
 name: leaf apex
 subset: tier_T0
 is_a: PO:0025139
+relationship: part_of PO:0025034
 
 [Term]
 id: PO:0020138
@@ -7983,6 +8385,7 @@ synonym: "leaf lamina vascular bundle" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025348
+relationship: part_of PO:0000048
 
 [Term]
 id: PO:0020139
@@ -8005,12 +8408,14 @@ id: PO:0020141
 name: stem node
 subset: tier_T0
 is_a: PO:0005004
+relationship: part_of PO:0009047
 
 [Term]
 id: PO:0020142
 name: stem internode
 subset: tier_T0
 is_a: PO:0005005
+relationship: part_of PO:0009047
 
 [Term]
 id: PO:0020144
@@ -8028,6 +8433,7 @@ synonym: "secondary meristem" RELATED []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0009013
+relationship: part_of PO:0025004
 
 [Term]
 id: PO:0020147
@@ -8036,6 +8442,7 @@ subset: tier_T0
 subset: TraitNet
 is_a: PO:0006085
 is_a: PO:0020144
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0020148
@@ -8045,12 +8452,14 @@ subset: tier_T0
 subset: TraitNet
 is_a: PO:0006079
 is_a: PO:0020144
+relationship: part_of PO:0000037
 
 [Term]
 id: PO:0020149
 name: quiescent center
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0020147
 
 [Term]
 id: PO:0021002
@@ -8077,6 +8486,7 @@ subset: tier_T0
 subset: Arabidopsis
 subset: TraitNet
 is_a: PO:0025498
+relationship: part_of PO:0009008
 
 [Term]
 id: PO:0025002
@@ -8105,6 +8515,7 @@ name: plant organ margin
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025001
+relationship: part_of PO:0025513
 
 [Term]
 id: PO:0025006
@@ -8125,12 +8536,14 @@ id: PO:0025008
 name: petal margin
 subset: tier_T0
 is_a: PO:0025018
+relationship: part_of PO:0009032
 
 [Term]
 id: PO:0025009
 name: leaf lamina margin
 subset: tier_T0
 is_a: PO:0020128
+relationship: part_of PO:0020039
 
 [Term]
 id: PO:0025010
@@ -8138,42 +8551,49 @@ name: petiole margin
 subset: tier_T0
 subset: Musa
 is_a: PO:0025001
+relationship: part_of PO:0025129
 
 [Term]
 id: PO:0025011
 name: bract margin
 subset: tier_T0
 is_a: PO:0025018
+relationship: part_of PO:0009055
 
 [Term]
 id: PO:0025012
 name: cotyledon margin
 subset: tier_T0
 is_a: PO:0020128
+relationship: part_of PO:0020030
 
 [Term]
 id: PO:0025013
 name: prophyll margin
 subset: tier_T0
 is_a: PO:0025018
+relationship: part_of PO:0009042
 
 [Term]
 id: PO:0025014
 name: scale leaf margin
 subset: tier_T0
 is_a: PO:0025018
+relationship: part_of PO:0006003
 
 [Term]
 id: PO:0025015
 name: tepal margin
 subset: tier_T0
 is_a: PO:0025018
+relationship: part_of PO:0009033
 
 [Term]
 id: PO:0025016
 name: sporophyll margin
 subset: tier_T0
 is_a: PO:0025018
+relationship: part_of PO:0009026
 
 [Term]
 id: PO:0025017
@@ -8188,18 +8608,21 @@ name: phyllome margin
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0025005
+relationship: part_of PO:0025396
 
 [Term]
 id: PO:0025019
 name: carpel margin
 subset: tier_T0
 is_a: PO:0025016
+relationship: part_of PO:0009030
 
 [Term]
 id: PO:0025020
 name: stamen margin
 subset: tier_T0
 is_a: PO:0025016
+relationship: part_of PO:0009029
 
 [Term]
 id: PO:0025021
@@ -8227,6 +8650,7 @@ id: PO:0025024
 name: branch node
 subset: tier_T0
 is_a: PO:0005004
+relationship: part_of PO:0025073
 
 [Term]
 id: PO:0025025
@@ -8243,6 +8667,7 @@ synonym: "embryo sac cell" RELATED []
 subset: tier_T0
 subset: CL
 is_a: PO:0025606
+relationship: part_of PO:0025074
 
 [Term]
 id: PO:0025027
@@ -8270,6 +8695,7 @@ subset: Poaceae
 subset: Rice
 subset: TraitNet
 is_a: PO:0025004
+relationship: part_of PO:0009006
 
 [Term]
 id: PO:0025030
@@ -8279,6 +8705,7 @@ subset: tier_T0
 subset: CL
 subset: TraitNet
 is_a: PO:0025606
+relationship: part_of PO:0025059
 
 [Term]
 id: PO:0025031
@@ -8295,6 +8722,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0025606
+relationship: part_of PO:0030047
 
 [Term]
 id: PO:0025033
@@ -8304,6 +8732,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0025606
+relationship: part_of PO:0030048
 
 [Term]
 id: PO:0025034
@@ -8327,6 +8756,7 @@ name: tuber storage parenchyma
 synonym: "tuber flesh" EXACT []
 subset: tier_T0
 is_a: PO:0025035
+relationship: part_of PO:0025522
 
 [Term]
 id: PO:0025037
@@ -8334,6 +8764,7 @@ name: fruit storage parenchyma
 synonym: "fruit flesh" EXACT []
 subset: tier_T0
 is_a: PO:0025035
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0025038
@@ -8341,12 +8772,14 @@ name: subterranean tuber storage parenchyma
 subset: tier_T0
 subset: Potato
 is_a: PO:0025036
+relationship: part_of PO:0004547
 
 [Term]
 id: PO:0025039
 name: aerial tuber storage parenchyma
 subset: tier_T0
 is_a: PO:0025036
+relationship: part_of PO:0004548
 
 [Term]
 id: PO:0025040
@@ -8355,12 +8788,14 @@ synonym: "tuber bud" EXACT []
 synonym: "tuber eye" RELATED []
 subset: tier_T0
 is_a: PO:0004712
+relationship: part_of PO:0004543
 
 [Term]
 id: PO:0025041
 name: aerial tuber axillary vegetative bud
 subset: tier_T0
 is_a: PO:0025040
+relationship: part_of PO:0004548
 
 [Term]
 id: PO:0025042
@@ -8368,12 +8803,14 @@ name: subterranean tuber axillary vegetative bud
 subset: tier_T0
 subset: Potato
 is_a: PO:0025040
+relationship: part_of PO:0004547
 
 [Term]
 id: PO:0025043
 name: shoot axis tuber periderm
 subset: tier_T0
 is_a: PO:0005048
+relationship: part_of PO:0004543
 
 [Term]
 id: PO:0025044
@@ -8387,24 +8824,28 @@ name: subterranean tuber periderm
 subset: tier_T0
 subset: Potato
 is_a: PO:0025043
+relationship: part_of PO:0004547
 
 [Term]
 id: PO:0025046
 name: shoot axis tuber epidermis
 subset: tier_T0
 is_a: PO:0000112
+relationship: part_of PO:0004543
 
 [Term]
 id: PO:0025047
 name: aerial tuber epidermis
 subset: tier_T0
 is_a: PO:0025046
+relationship: part_of PO:0004548
 
 [Term]
 id: PO:0025048
 name: subterranean tuber epidermis
 subset: tier_T0
 is_a: PO:0025046
+relationship: part_of PO:0004547
 
 [Term]
 id: PO:0025049
@@ -8412,24 +8853,28 @@ name: subterranean tuber interfascicular region
 subset: tier_T0
 subset: Potato
 is_a: PO:0025050
+relationship: part_of PO:0025038
 
 [Term]
 id: PO:0025050
 name: tuber interfascicular region
 subset: tier_T0
 is_a: PO:0006202
+relationship: part_of PO:0025036
 
 [Term]
 id: PO:0025051
 name: aerial tuber interfascicular region
 subset: tier_T0
 is_a: PO:0025050
+relationship: part_of PO:0025039
 
 [Term]
 id: PO:0025052
 name: tuber pith
 subset: tier_T0
 is_a: PO:0006109
+relationship: part_of PO:0025036
 
 [Term]
 id: PO:0025053
@@ -8437,24 +8882,28 @@ name: subterranean tuber pith
 subset: tier_T0
 subset: Potato
 is_a: PO:0025052
+relationship: part_of PO:0025038
 
 [Term]
 id: PO:0025054
 name: aerial tuber pith
 subset: tier_T0
 is_a: PO:0025052
+relationship: part_of PO:0025039
 
 [Term]
 id: PO:0025055
 name: tuber cortex
 subset: tier_T0
 is_a: PO:0005708
+relationship: part_of PO:0025036
 
 [Term]
 id: PO:0025056
 name: aerial tuber cortex
 subset: tier_T0
 is_a: PO:0025055
+relationship: part_of PO:0025039
 
 [Term]
 id: PO:0025057
@@ -8463,12 +8912,14 @@ synonym: "Outer storage tissue" EXACT []
 subset: tier_T0
 subset: Potato
 is_a: PO:0025055
+relationship: part_of PO:0025038
 
 [Term]
 id: PO:0025058
 name: perimedullary zone
 subset: tier_T0
 is_a: PO:0005421
+relationship: part_of PO:0006109
 
 [Term]
 id: PO:0025059
@@ -8493,12 +8944,14 @@ id: PO:0025061
 name: tuber perimedullary zone
 subset: tier_T0
 is_a: PO:0025064
+relationship: part_of PO:0025052
 
 [Term]
 id: PO:0025062
 name: aerial tuber perimedullary zone
 subset: tier_T0
 is_a: PO:0025061
+relationship: part_of PO:0025054
 
 [Term]
 id: PO:0025063
@@ -8506,18 +8959,21 @@ name: subterranean tuber perimedullary zone
 subset: tier_T0
 subset: Potato
 is_a: PO:0025061
+relationship: part_of PO:0025053
 
 [Term]
 id: PO:0025064
 name: shoot axis perimedullary zone
 subset: tier_T0
 is_a: PO:0025058
+relationship: part_of PO:0005041
 
 [Term]
 id: PO:0025065
 name: root perimedullary zone
 subset: tier_T0
 is_a: PO:0025058
+relationship: part_of PO:0005040
 
 [Term]
 id: PO:0025066
@@ -8532,24 +8988,28 @@ id: PO:0025067
 name: seed storage parenchyma
 subset: tier_T0
 is_a: PO:0025035
+relationship: part_of PO:0009010
 
 [Term]
 id: PO:0025068
 name: shoot axis tuber axillary bud meristem
 subset: tier_T0
 is_a: PO:0000232
+relationship: part_of PO:0004543
 
 [Term]
 id: PO:0025069
 name: aerial tuber axillary bud meristem
 subset: tier_T0
 is_a: PO:0025068
+relationship: part_of PO:0004548
 
 [Term]
 id: PO:0025070
 name: subterranean tuber axillary bud meristem
 subset: tier_T0
 is_a: PO:0025068
+relationship: part_of PO:0004547
 
 [Term]
 id: PO:0025071
@@ -8594,6 +9054,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: TraitNet
 is_a: PO:0025034
+relationship: part_of PO:0030018
 
 [Term]
 id: PO:0025076
@@ -8624,12 +9085,14 @@ id: PO:0025079
 name: aerial tuber axillary shoot
 subset: tier_T0
 is_a: PO:0025003
+relationship: part_of PO:0004548
 
 [Term]
 id: PO:0025080
 name: branch internode
 subset: tier_T0
 is_a: PO:0005005
+relationship: part_of PO:0025073
 
 [Term]
 id: PO:0025081
@@ -8638,6 +9101,7 @@ synonym: "tuber sprout" EXACT []
 subset: tier_T0
 subset: Potato
 is_a: PO:0025003
+relationship: part_of PO:0004547
 
 [Term]
 id: PO:0025082
@@ -8694,6 +9158,7 @@ synonym: "spore capusule annuli (exact, plural)" EXACT []
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0025092
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0025094
@@ -8712,24 +9177,28 @@ id: PO:0025095
 name: root parenchyma
 subset: tier_T0
 is_a: PO:0005421
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0025096
 name: carpel epidermis
 subset: tier_T0
 is_a: PO:0025157
+relationship: part_of PO:0009030
 
 [Term]
 id: PO:0025097
 name: stamen epidermis
 subset: tier_T0
 is_a: PO:0025157
+relationship: part_of PO:0009029
 
 [Term]
 id: PO:0025098
 name: bract trichome
 subset: tier_T0
 is_a: PO:0025186
+relationship: part_of PO:0025158
 
 [Term]
 id: PO:0025099
@@ -8737,30 +9206,35 @@ name: embryo plant structure
 synonym: "embryonic plant structure" EXACT []
 subset: tier_T0
 is_a: PO:0009011
+relationship: part_of PO:0009009
 
 [Term]
 id: PO:0025100
 name: shoot axis internode elongation zone
 subset: tier_T0
 is_a: PO:0025180
+relationship: part_of PO:0005005
 
 [Term]
 id: PO:0025101
 name: branch internode elongation zone
 subset: tier_T0
 is_a: PO:0025100
+relationship: part_of PO:0025080
 
 [Term]
 id: PO:0025102
 name: shoot internode differentiation zone
 subset: tier_T0
 is_a: PO:0025119
+relationship: part_of PO:0005005
 
 [Term]
 id: PO:0025103
 name: branch internode differentiation zone
 subset: tier_T0
 is_a: PO:0025102
+relationship: part_of PO:0025080
 
 [Term]
 id: PO:0025104
@@ -8870,12 +9344,14 @@ id: PO:0025118
 name: anther pore
 subset: tier_T0
 is_a: PO:0025117
+relationship: part_of PO:0009066
 
 [Term]
 id: PO:0025119
 name: plant axis differentiation zone
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0025004
 
 [Term]
 id: PO:0025120
@@ -8897,6 +9373,7 @@ subset: Angiosperm
 subset: CL
 subset: Gymnosperms
 is_a: PO:0000084
+relationship: part_of PO:0025281
 
 [Term]
 id: PO:0025122
@@ -8918,6 +9395,7 @@ subset: Angiosperm
 subset: CL
 is_a: PO:0020094
 is_a: PO:0025026
+relationship: part_of PO:0020096
 
 [Term]
 id: PO:0025124
@@ -8965,6 +9443,7 @@ synonym: "portion of phyllome primordium tissue" EXACT []
 subset: tier_T0
 is_a: PO:0025127
 is_a: UBERON:0001062
+relationship: part_of PO:0000037
 
 [Term]
 id: PO:0025129
@@ -8972,6 +9451,7 @@ name: petiole lamina
 subset: tier_T0
 subset: Musa
 is_a: PO:0025396
+relationship: part_of PO:0020038
 
 [Term]
 id: PO:0025130
@@ -8999,6 +9479,7 @@ name: petiole canal
 subset: tier_T0
 subset: Musa
 is_a: PO:0025132
+relationship: part_of PO:0020038
 
 [Term]
 id: PO:0025134
@@ -9006,6 +9487,7 @@ name: inflorescence branch crown
 subset: tier_T0
 subset: Musa
 is_a: PO:0009006
+relationship: part_of PO:0009049
 
 [Term]
 id: PO:0025135
@@ -9013,6 +9495,7 @@ name: cigar leaf lamina abaxial epidermis
 synonym: "cigar leaf dorsal surface" EXACT []
 subset: tier_T0
 is_a: PO:0000049
+relationship: part_of PO:0025130
 
 [Term]
 id: PO:0025136
@@ -9026,6 +9509,7 @@ name: fused tepal
 subset: tier_T0
 subset: Musa
 is_a: PO:0009033
+relationship: part_of PO:0025138
 
 [Term]
 id: PO:0025138
@@ -9041,24 +9525,28 @@ id: PO:0025139
 name: phyllome apex
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0006001
 
 [Term]
 id: PO:0025140
 name: phyllome base
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0006001
 
 [Term]
 id: PO:0025141
 name: phyllome tip
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0025139
 
 [Term]
 id: PO:0025142
 name: leaf tip
 subset: tier_T0
 is_a: PO:0025141
+relationship: part_of PO:0020137
 
 [Term]
 id: PO:0025143
@@ -9066,54 +9554,63 @@ name: tepal apex
 subset: tier_T0
 subset: Musa
 is_a: PO:0025139
+relationship: part_of PO:0009033
 
 [Term]
 id: PO:0025144
 name: petal apex
 subset: tier_T0
 is_a: PO:0025139
+relationship: part_of PO:0009032
 
 [Term]
 id: PO:0025145
 name: sepal apex
 subset: tier_T0
 is_a: PO:0025139
+relationship: part_of PO:0009031
 
 [Term]
 id: PO:0025146
 name: petal base
 subset: tier_T0
 is_a: PO:0025140
+relationship: part_of PO:0009032
 
 [Term]
 id: PO:0025147
 name: sepal base
 subset: tier_T0
 is_a: PO:0025140
+relationship: part_of PO:0009031
 
 [Term]
 id: PO:0025148
 name: tepal base
 subset: tier_T0
 is_a: PO:0025140
+relationship: part_of PO:0009033
 
 [Term]
 id: PO:0025149
 name: petal tip
 subset: tier_T0
 is_a: PO:0025141
+relationship: part_of PO:0025144
 
 [Term]
 id: PO:0025150
 name: sepal tip
 subset: tier_T0
 is_a: PO:0025141
+relationship: part_of PO:0025145
 
 [Term]
 id: PO:0025151
 name: tepal tip
 subset: tier_T0
 is_a: PO:0025141
+relationship: part_of PO:0025143
 
 [Term]
 id: PO:0025152
@@ -9122,6 +9619,7 @@ synonym: "peduncle surface" RELATED []
 subset: tier_T0
 subset: Musa
 is_a: PO:0025179
+relationship: part_of PO:0009053
 
 [Term]
 id: PO:0025153
@@ -9130,6 +9628,7 @@ synonym: "peduncle hair" EXACT []
 subset: tier_T0
 subset: Musa
 is_a: PO:0005003
+relationship: part_of PO:0025152
 
 [Term]
 id: PO:0025154
@@ -9137,6 +9636,7 @@ name: bract apex
 subset: tier_T0
 subset: Musa
 is_a: PO:0025139
+relationship: part_of PO:0009055
 
 [Term]
 id: PO:0025155
@@ -9144,6 +9644,7 @@ name: bract base
 subset: tier_T0
 subset: Musa
 is_a: PO:0025140
+relationship: part_of PO:0009055
 
 [Term]
 id: PO:0025156
@@ -9156,12 +9657,14 @@ id: PO:0025157
 name: phyllome epidermis
 subset: tier_T0
 is_a: PO:0006035
+relationship: part_of PO:0006001
 
 [Term]
 id: PO:0025158
 name: bract epidermis
 subset: tier_T0
 is_a: PO:0025157
+relationship: part_of PO:0009055
 
 [Term]
 id: PO:0025159
@@ -9205,6 +9708,7 @@ name: root epidermal cell
 subset: tier_T0
 subset: CL
 is_a: PO:0004013
+relationship: part_of PO:0006036
 
 [Term]
 id: PO:0025165
@@ -9212,6 +9716,7 @@ name: shoot epidermal cell
 subset: tier_T0
 subset: CL
 is_a: PO:0004013
+relationship: part_of PO:0006035
 
 [Term]
 id: PO:0025166
@@ -9226,6 +9731,7 @@ name: leaf papilla cell
 subset: tier_T0
 subset: CL
 is_a: PO:0025166
+relationship: part_of PO:0006016
 
 [Term]
 id: PO:0025168
@@ -9233,6 +9739,7 @@ name: stigma papilla cell
 subset: tier_T0
 subset: CL
 is_a: PO:0025166
+relationship: part_of PO:0006061
 
 [Term]
 id: PO:0025169
@@ -9287,6 +9794,7 @@ name: stem trichome
 synonym: "stem hair" EXACT []
 subset: tier_T0
 is_a: PO:0005003
+relationship: part_of PO:0025178
 
 [Term]
 id: PO:0025177
@@ -9294,6 +9802,7 @@ name: branch trichome
 synonym: "branch hair" EXACT []
 subset: tier_T0
 is_a: PO:0005003
+relationship: part_of PO:0025179
 
 [Term]
 id: PO:0025178
@@ -9301,30 +9810,35 @@ name: stem epidermis
 synonym: "culm epidermis" RELATED []
 subset: tier_T0
 is_a: PO:0000112
+relationship: part_of PO:0009047
 
 [Term]
 id: PO:0025179
 name: branch epidermis
 subset: tier_T0
 is_a: PO:0000112
+relationship: part_of PO:0025073
 
 [Term]
 id: PO:0025180
 name: plant axis elongation zone
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0025004
 
 [Term]
 id: PO:0025181
 name: root elongation zone
 subset: tier_T0
 is_a: PO:0025180
+relationship: part_of PO:0000025
 
 [Term]
 id: PO:0025182
 name: sepal trichome
 subset: tier_T0
 is_a: PO:0025186
+relationship: part_of PO:0006040
 
 [Term]
 id: PO:0025183
@@ -9340,6 +9854,7 @@ id: PO:0025184
 name: tepal epidermis
 subset: tier_T0
 is_a: PO:0025157
+relationship: part_of PO:0009033
 
 [Term]
 id: PO:0025185
@@ -9361,12 +9876,14 @@ id: PO:0025187
 name: petal trichome
 subset: tier_T0
 is_a: PO:0025186
+relationship: part_of PO:0006041
 
 [Term]
 id: PO:0025188
 name: tepal trichome
 subset: tier_T0
 is_a: PO:0025186
+relationship: part_of PO:0025184
 
 [Term]
 id: PO:0025189
@@ -9384,6 +9901,7 @@ synonym: "leaf abaxial epidermal stomatal complex" EXACT []
 synonym: "leaf abaxial epidermis stomatal complex" EXACT []
 subset: tier_T0
 is_a: PO:0025183
+relationship: part_of PO:0006019
 
 [Term]
 id: PO:0025191
@@ -9392,6 +9910,7 @@ synonym: "leaf adaxial epidermal stomatal complex" EXACT []
 synonym: "leaf adaxial epidermis stomatal complex" EXACT []
 subset: tier_T0
 is_a: PO:0025183
+relationship: part_of PO:0006018
 
 [Term]
 id: PO:0025192
@@ -9424,30 +9943,35 @@ id: PO:0025196
 name: basal endosperm transfer layer
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0009089
 
 [Term]
 id: PO:0025197
 name: stele
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0025004
 
 [Term]
 id: PO:0025198
 name: shoot axis stele
 subset: tier_T0
 is_a: PO:0025197
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0025199
 name: branch stele
 subset: tier_T0
 is_a: PO:0025198
+relationship: part_of PO:0025073
 
 [Term]
 id: PO:0025200
 name: stem stele
 subset: tier_T0
 is_a: PO:0025198
+relationship: part_of PO:0009047
 
 [Term]
 id: PO:0025201
@@ -9470,54 +9994,65 @@ id: PO:0025203
 name: pericarp vascular bundle
 subset: tier_T0
 is_a: PO:0005020
+relationship: part_of PO:0009084
 
 [Term]
 id: PO:0025204
 name: rhizome internode
 subset: tier_T0
 is_a: PO:0005005
+relationship: part_of PO:0004542
 
 [Term]
 id: PO:0025205
 name: shoot system vascular system
 subset: tier_T0
 is_a: PO:0000034
+relationship: part_of PO:0009006
 
 [Term]
 id: PO:0025206
 name: phyllome vascular system
 subset: tier_T0
 is_a: PO:0000034
+relationship: part_of PO:0006001
+relationship: part_of PO:0025205
 
 [Term]
 id: PO:0025207
 name: tepal vascular system
 subset: tier_T0
 is_a: PO:0025206
+relationship: part_of PO:0005017
+relationship: part_of PO:0009033
 
 [Term]
 id: PO:0025208
 name: carpel trichome
 subset: tier_T0
 is_a: PO:0025186
+relationship: part_of PO:0025096
 
 [Term]
 id: PO:0025209
 name: stamen trichome
 subset: tier_T0
 is_a: PO:0025186
+relationship: part_of PO:0025097
 
 [Term]
 id: PO:0025210
 name: leaf abaxial trichome
 subset: tier_T0
 is_a: PO:0006504
+relationship: part_of PO:0006019
 
 [Term]
 id: PO:0025211
 name: leaf adaxial trichome
 subset: tier_T0
 is_a: PO:0006504
+relationship: part_of PO:0006018
 
 [Term]
 id: PO:0025212
@@ -9525,6 +10060,7 @@ name: leaf pavement cell
 subset: tier_T0
 subset: CL
 is_a: PO:0000332
+relationship: part_of PO:0006016
 
 [Term]
 id: PO:0025213
@@ -9532,6 +10068,7 @@ name: leaf abaxial pavement cell
 subset: tier_T0
 subset: CL
 is_a: PO:0025212
+relationship: part_of PO:0006019
 
 [Term]
 id: PO:0025214
@@ -9539,6 +10076,7 @@ name: leaf adaxial pavement cell
 subset: tier_T0
 subset: CL
 is_a: PO:0025212
+relationship: part_of PO:0006018
 
 [Term]
 id: PO:0025215
@@ -9651,6 +10189,7 @@ id: PO:0025229
 name: spore capsule valve
 subset: tier_T0
 is_a: PO:0025228
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0025230
@@ -9664,6 +10203,7 @@ id: PO:0025231
 name: spore capsule columella
 subset: tier_T0
 is_a: PO:0025230
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0025233
@@ -9678,12 +10218,14 @@ id: PO:0025234
 name: phyllome stomatal pore
 subset: tier_T0
 is_a: PO:0008032
+relationship: part_of PO:0025215
 
 [Term]
 id: PO:0025235
 name: leaf stomatal pore
 subset: tier_T0
 is_a: PO:0025234
+relationship: part_of PO:0025183
 
 [Term]
 id: PO:0025236
@@ -9691,6 +10233,7 @@ name: phyllome guard cell
 subset: tier_T0
 subset: CL
 is_a: PO:0000293
+relationship: part_of PO:0025215
 
 [Term]
 id: PO:0025237
@@ -9698,6 +10241,7 @@ name: leaf guard cell
 subset: tier_T0
 subset: CL
 is_a: PO:0025236
+relationship: part_of PO:0025183
 
 [Term]
 id: PO:0025238
@@ -9719,6 +10263,7 @@ subset: tier_T0
 subset: Angiosperm
 is_a: PO:0025082
 is_a: UBERON:0001062
+relationship: part_of PO:0009049
 
 [Term]
 id: PO:0025241
@@ -9730,6 +10275,7 @@ subset: Angiosperm
 subset: Musa
 is_a: PO:0025082
 is_a: UBERON:0001062
+relationship: part_of PO:0006342
 
 [Term]
 id: PO:0025242
@@ -9737,6 +10283,7 @@ name: infructescence axis
 subset: tier_T0
 is_a: PO:0025029
 is_a: UBERON:0001062
+relationship: part_of PO:0006342
 
 [Term]
 id: PO:0025243
@@ -9785,6 +10332,7 @@ id: PO:0025249
 name: leaf sheath epidermis
 subset: tier_T0
 is_a: PO:0006016
+relationship: part_of PO:0020104
 
 [Term]
 id: PO:0025250
@@ -9832,12 +10380,14 @@ id: PO:0025256
 name: lateral root elongation zone
 subset: tier_T0
 is_a: PO:0025181
+relationship: part_of PO:0000027
 
 [Term]
 id: PO:0025257
 name: primary root elongation zone
 subset: tier_T0
 is_a: PO:0025181
+relationship: part_of PO:0000026
 
 [Term]
 id: PO:0025258
@@ -9846,6 +10396,7 @@ synonym: "procambium cell" EXACT []
 subset: tier_T0
 subset: CL
 is_a: PO:0004010
+relationship: part_of PO:0025275
 
 [Term]
 id: PO:0025259
@@ -9858,6 +10409,7 @@ id: PO:0025260
 name: shoot axis procambium
 subset: tier_T0
 is_a: PO:0025276
+relationship: part_of PO:0020148
 
 [Term]
 id: PO:0025261
@@ -9865,6 +10417,7 @@ name: pericycle cell
 subset: tier_T0
 subset: CL
 is_a: PO:0025030
+relationship: part_of PO:0006203
 
 [Term]
 id: PO:0025262
@@ -9874,6 +10427,7 @@ synonym: "carpel synonym" RELATED []
 subset: tier_T0
 is_a: PO:0000030
 is_a: UBERON:0001062
+relationship: part_of PO:0009062
 
 [Term]
 id: PO:0025263
@@ -9888,6 +10442,7 @@ name: anther locule
 synonym: "pollen sac locule" EXACT []
 subset: tier_T0
 is_a: PO:0025265
+relationship: part_of PO:0009066
 
 [Term]
 id: PO:0025265
@@ -9895,12 +10450,14 @@ name: sporangium locule
 synonym: "spore capsule locule" EXACT []
 subset: tier_T0
 is_a: PO:0025263
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0025266
 name: plant ovary locule
 subset: tier_T0
 is_a: PO:0025263
+relationship: part_of PO:0009072
 
 [Term]
 id: PO:0025267
@@ -9915,6 +10472,7 @@ name: fruit septum
 subset: tier_T0
 is_a: PO:0000030
 is_a: UBERON:0001062
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0025269
@@ -9928,6 +10486,7 @@ name: fruit locule
 subset: tier_T0
 is_a: PO:0025263
 is_a: UBERON:0001062
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0025272
@@ -9961,6 +10520,7 @@ id: PO:0025276
 name: shoot procambium
 subset: tier_T0
 is_a: PO:0025275
+relationship: part_of PO:0009006
 
 [Term]
 id: PO:0025277
@@ -9969,6 +10529,7 @@ subset: tier_T0
 subset: reference
 subset: TraitNet
 is_a: PO:0025202
+relationship: part_of PO:0009028
 
 [Term]
 id: PO:0025278
@@ -10036,6 +10597,7 @@ name: callus parenchyma cell
 subset: tier_T0
 subset: CL
 is_a: PO:0000074
+relationship: part_of PO:0005052
 
 [Term]
 id: PO:0025286
@@ -10051,6 +10613,7 @@ name: seedling coleoptile
 subset: tier_T0
 is_a: PO:0020033
 is_a: UBERON:0001062
+relationship: part_of PO:0008037
 
 [Term]
 id: PO:0025288
@@ -10066,6 +10629,7 @@ name: seedling coleorhiza
 subset: tier_T0
 is_a: PO:0020034
 is_a: UBERON:0001062
+relationship: part_of PO:0008037
 
 [Term]
 id: PO:0025290
@@ -10074,6 +10638,7 @@ synonym: "embryonic hypocotyl" EXACT []
 subset: tier_T0
 is_a: PO:0020100
 is_a: PO:0025099
+relationship: part_of PO:0019018
 
 [Term]
 id: PO:0025291
@@ -10081,6 +10646,7 @@ name: seedling hypocotyl
 subset: tier_T0
 is_a: PO:0020100
 is_a: UBERON:0001062
+relationship: part_of PO:0008037
 
 [Term]
 id: PO:0025292
@@ -10096,6 +10662,7 @@ name: seedling epicotyl
 subset: tier_T0
 is_a: PO:0020035
 is_a: UBERON:0001062
+relationship: part_of PO:0008037
 
 [Term]
 id: PO:0025294
@@ -10111,6 +10678,7 @@ name: seedling mesocotyl
 subset: tier_T0
 is_a: PO:0020037
 is_a: UBERON:0001062
+relationship: part_of PO:0008037
 
 [Term]
 id: PO:0025296
@@ -10126,6 +10694,7 @@ id: PO:0025297
 name: seedling radicle
 subset: tier_T0
 is_a: PO:0020031
+relationship: part_of PO:0008037
 
 [Term]
 id: PO:0025298
@@ -10134,6 +10703,7 @@ synonym: "fruit lid" EXACT []
 synonym: "fruit opercula (exact, plural)" EXACT []
 subset: tier_T0
 is_a: PO:0025269
+relationship: part_of PO:0009001
 
 [Term]
 id: PO:0025299
@@ -10149,6 +10719,7 @@ synonym: "embryonic hypocotyl-root junction" EXACT []
 subset: tier_T0
 is_a: PO:0004724
 is_a: PO:0025099
+relationship: part_of PO:0019018
 
 [Term]
 id: PO:0025301
@@ -10156,6 +10727,7 @@ name: seedling hypocotyl-root junction
 subset: tier_T0
 is_a: PO:0004724
 is_a: UBERON:0001062
+relationship: part_of PO:0008037
 
 [Term]
 id: PO:0025302
@@ -10192,30 +10764,35 @@ synonym: "sporangium jacket layer" EXACT []
 synonym: "sporangium jacket layers" EXACT []
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0025307
 name: microsporangium wall
 subset: tier_T0
 is_a: PO:0025306
+relationship: part_of PO:0025202
 
 [Term]
 id: PO:0025308
 name: megasporangium wall
 subset: tier_T0
 is_a: PO:0025306
+relationship: part_of PO:0025201
 
 [Term]
 id: PO:0025309
 name: microsporangium endothecium
 subset: tier_T0
 is_a: PO:0030049
+relationship: part_of PO:0025307
 
 [Term]
 id: PO:0025310
 name: megasporangium endothecium
 subset: tier_T0
 is_a: PO:0030049
+relationship: part_of PO:0025308
 
 [Term]
 id: PO:0025311
@@ -10224,6 +10801,7 @@ synonym: "microsporangial exothecium" EXACT []
 synonym: "microsporangium epidermis" EXACT []
 subset: tier_T0
 is_a: PO:0030073
+relationship: part_of PO:0025307
 
 [Term]
 id: PO:0025312
@@ -10232,24 +10810,28 @@ synonym: "megapsorangial exothecium" EXACT []
 synonym: "megasporangium epidermis" EXACT []
 subset: tier_T0
 is_a: PO:0030073
+relationship: part_of PO:0025308
 
 [Term]
 id: PO:0025313
 name: tapetum
 subset: tier_T0
 is_a: PO:0025059
+relationship: part_of PO:0025306
 
 [Term]
 id: PO:0025314
 name: microsporangium tapetum
 subset: tier_T0
 is_a: PO:0025313
+relationship: part_of PO:0025307
 
 [Term]
 id: PO:0025315
 name: megasporangium tapetum
 subset: tier_T0
 is_a: PO:0025313
+relationship: part_of PO:0025308
 
 [Term]
 id: PO:0025316
@@ -10263,12 +10845,14 @@ name: axillary hair terminal cell
 subset: tier_T0
 subset: CL
 is_a: PO:0008030
+relationship: part_of PO:0025316
 
 [Term]
 id: PO:0025318
 name: axillary hair base
 subset: tier_T0
 is_a: PO:0009007
+relationship: part_of PO:0025316
 
 [Term]
 id: PO:0025319
@@ -10277,6 +10861,7 @@ synonym: "axillary hair base cell" EXACT []
 subset: tier_T0
 subset: CL
 is_a: PO:0008030
+relationship: part_of PO:0025318
 
 [Term]
 id: PO:0025320
@@ -10297,6 +10882,7 @@ id: PO:0025322
 name: hydathode pore
 subset: tier_T0
 is_a: PO:0025117
+relationship: part_of PO:0005660
 
 [Term]
 id: PO:0025323
@@ -10331,12 +10917,14 @@ synonym: "carinae (exact, plural)" EXACT []
 subset: tier_T0
 subset: tier_T1
 is_a: PO:0009032
+relationship: part_of PO:0025327
 
 [Term]
 id: PO:0025327
 name: keel
 subset: tier_T2
 is_a: PO:0025023
+relationship: part_of PO:0009059
 
 [Term]
 id: PO:0025328
@@ -10493,6 +11081,7 @@ id: PO:0025348
 name: phyllome lamina vein
 subset: tier_T0
 is_a: PO:0005020
+relationship: part_of PO:0025396
 
 [Term]
 id: PO:0025349
@@ -10502,18 +11091,21 @@ synonym: "seta" RELATED []
 synonym: "setae (related, plural)" RELATED []
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0009051
 
 [Term]
 id: PO:0025350
 name: palea awn
 subset: tier_T0
 is_a: PO:0025349
+relationship: part_of PO:0009038
 
 [Term]
 id: PO:0025351
 name: glume awn
 subset: tier_T0
 is_a: PO:0025349
+relationship: part_of PO:0009039
 
 [Term]
 id: PO:0025352
@@ -10522,6 +11114,7 @@ synonym: "podaria (exact, plural)" EXACT []
 synonym: "podarium" EXACT []
 subset: tier_T0
 is_a: PO:0020040
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0025353
@@ -10571,6 +11164,7 @@ subset: Gymnosperms
 subset: Poaceae
 subset: Pteridophytes
 is_a: PO:0025007
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0025360
@@ -10578,6 +11172,7 @@ name: ceonosorus
 synonym: "coenosori (exact, plural)" EXACT []
 subset: tier_T0
 is_a: PO:0025007
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0025361
@@ -10596,6 +11191,7 @@ id: PO:0025363
 name: leaf apex tendril
 subset: tier_T0
 is_a: PO:0020137
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0025364
@@ -10704,18 +11300,21 @@ id: PO:0025379
 name: intercellular space
 subset: tier_T0
 is_a: PO:0025117
+relationship: part_of PO:0009007
 
 [Term]
 id: PO:0025380
 name: leaf mesophyll intercellular space
 subset: tier_T0
 is_a: PO:0025379
+relationship: part_of PO:0005645
 
 [Term]
 id: PO:0025381
 name: spongy mesophyll intercellular space
 subset: tier_T0
 is_a: PO:0025380
+relationship: part_of PO:0005647
 
 [Term]
 id: PO:0025382
@@ -10728,24 +11327,29 @@ id: PO:0025383
 name: phyllome sinus
 subset: tier_T0
 is_a: PO:0025117
+relationship: part_of PO:0025018
 
 [Term]
 id: PO:0025384
 name: leaf sinus
 subset: tier_T0
 is_a: PO:0025383
+relationship: part_of PO:0020128
 
 [Term]
 id: PO:0025385
 name: cutin
 subset: tier_T0
 is_a: PO:0025161
+relationship: part_of PO:0000022
+relationship: part_of PO:0025387
 
 [Term]
 id: PO:0025386
 name: cuticular wax
 subset: tier_T0
 is_a: PO:0025161
+relationship: part_of PO:0000022
 
 [Term]
 id: PO:0025387
@@ -10764,6 +11368,7 @@ id: PO:0025389
 name: intercuticular wax
 subset: tier_T0
 is_a: PO:0025386
+relationship: part_of PO:0025387
 
 [Term]
 id: PO:0025390
@@ -10778,12 +11383,14 @@ id: PO:0025391
 name: phyllome lamina areole
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0025396
 
 [Term]
 id: PO:0025392
 name: leaf lamina areole
 subset: tier_T0
 is_a: PO:0025391
+relationship: part_of PO:0020039
 
 [Term]
 id: PO:0025393
@@ -10797,6 +11404,7 @@ id: PO:0025394
 name: pappus element
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0025393
 
 [Term]
 id: PO:0025395
@@ -10804,24 +11412,28 @@ name: floral organ
 synonym: "flower organ" EXACT []
 subset: tier_T0
 is_a: PO:0009008
+relationship: part_of PO:0009046
 
 [Term]
 id: PO:0025396
 name: phyllome lamina
 subset: tier_T0
 is_a: PO:0025513
+relationship: part_of PO:0006001
 
 [Term]
 id: PO:0025397
 name: palisade mesophyll intercellular space
 subset: tier_T0
 is_a: PO:0025380
+relationship: part_of PO:0005648
 
 [Term]
 id: PO:0025398
 name: phyllome substomatal cavity
 subset: tier_T0
 is_a: PO:0025382
+relationship: part_of PO:0006001
 
 [Term]
 id: PO:0025399
@@ -10835,24 +11447,28 @@ id: PO:0025400
 name: phyllome adaxial meristem
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0006001
 
 [Term]
 id: PO:0025401
 name: vascular leaf adaxial meristem
 subset: tier_T0
 is_a: PO:0025400
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0025402
 name: phyllome abaxial meristem
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0006001
 
 [Term]
 id: PO:0025403
 name: vascular leaf abaxial meristem
 subset: tier_T0
 is_a: PO:0025402
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0025404
@@ -10860,6 +11476,7 @@ name: phyllome marginal meristem
 synonym: "phyllome margin meristem" EXACT []
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0025018
 
 [Term]
 id: PO:0025405
@@ -10868,12 +11485,15 @@ synonym: "leaf margin blastozone" EXACT []
 synonym: "leaf margin meristem" EXACT []
 subset: tier_T0
 is_a: PO:0025404
+relationship: part_of PO:0009025
+relationship: part_of PO:0025009
 
 [Term]
 id: PO:0025406
 name: sieve element
 subset: tier_T0
 is_a: PO:0025606
+relationship: part_of PO:0005417
 
 [Term]
 id: PO:0025407
@@ -10917,6 +11537,7 @@ id: PO:0025412
 name: albuminous cell
 subset: tier_T0
 is_a: PO:0000074
+relationship: part_of PO:0005417
 
 [Term]
 id: PO:0025413
@@ -11025,24 +11646,28 @@ id: PO:0025428
 name: phyllome plate meristem
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0006001
 
 [Term]
 id: PO:0025429
 name: leaf plate meristem
 subset: tier_T0
 is_a: PO:0025428
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0025430
 name: phyllome anlagen
 subset: tier_T0
 is_a: PO:0009013
+relationship: part_of PO:0000225
 
 [Term]
 id: PO:0025431
 name: vascular leaf anlagen
 subset: tier_T0
 is_a: PO:0025430
+relationship: part_of PO:0008016
 
 [Term]
 id: PO:0025432
@@ -11068,72 +11693,84 @@ id: PO:0025435
 name: shoot axis cork cambium
 subset: tier_T0
 is_a: PO:0005599
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0025436
 name: root cork cambium
 subset: tier_T0
 is_a: PO:0005599
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0025437
 name: shoot axis vascular cambium
 subset: tier_T0
 is_a: PO:0005598
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0025438
 name: root vascular cambium
 subset: tier_T0
 is_a: PO:0005598
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0025439
 name: cambial zone
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0025004
 
 [Term]
 id: PO:0025440
 name: shoot axis cambial zone
 subset: tier_T0
 is_a: PO:0025439
+relationship: part_of PO:0025029
 
 [Term]
 id: PO:0025441
 name: root cambial zone
 subset: tier_T0
 is_a: PO:0025439
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0025442
 name: stem secondary thickening meristem
 subset: tier_T0
 is_a: PO:0025414
+relationship: part_of PO:0009047
 
 [Term]
 id: PO:0025443
 name: root secondary thickening meristem
 subset: tier_T0
 is_a: PO:0025414
+relationship: part_of PO:0009005
 
 [Term]
 id: PO:0025444
 name: primary xylem tracheary element
 subset: tier_T0
 is_a: PO:0000290
+relationship: part_of PO:0005849
 
 [Term]
 id: PO:0025445
 name: secondary xylem tracheary element
 subset: tier_T0
 is_a: PO:0000290
+relationship: part_of PO:0005848
 
 [Term]
 id: PO:0025446
 name: primary xylem tracheid
 subset: tier_T0
 is_a: PO:0000301
+relationship: part_of PO:0005849
 
 [Term]
 id: PO:0025447
@@ -11148,6 +11785,7 @@ name: primary xylem vessel member
 synonym: "primary xylem vessel element" EXACT []
 subset: tier_T0
 is_a: PO:0002003
+relationship: part_of PO:0005849
 
 [Term]
 id: PO:0025449
@@ -11161,24 +11799,28 @@ id: PO:0025450
 name: primary xylem vessel
 subset: tier_T0
 is_a: PO:0025417
+relationship: part_of PO:0005849
 
 [Term]
 id: PO:0025451
 name: secondary xylem vessel
 subset: tier_T0
 is_a: PO:0025417
+relationship: part_of PO:0005848
 
 [Term]
 id: PO:0025452
 name: primary phloem sieve element
 subset: tier_T0
 is_a: PO:0025406
+relationship: part_of PO:0006075
 
 [Term]
 id: PO:0025453
 name: secondary phloem sieve element
 subset: tier_T0
 is_a: PO:0025406
+relationship: part_of PO:0005043
 
 [Term]
 id: PO:0025454
@@ -11240,6 +11882,7 @@ name: early wood tracheary element
 synonym: "earlywood tracheary element" EXACT []
 subset: tier_T0
 is_a: PO:0025445
+relationship: part_of PO:0004515
 
 [Term]
 id: PO:0025462
@@ -11247,6 +11890,7 @@ name: late wood tracheary element
 synonym: "latewood tracheary element" EXACT []
 subset: tier_T0
 is_a: PO:0025445
+relationship: part_of PO:0004516
 
 [Term]
 id: PO:0025463
@@ -11302,6 +11946,7 @@ id: PO:0025471
 name: seedling cotyledon
 subset: tier_T0
 is_a: PO:0020030
+relationship: part_of PO:0008037
 
 [Term]
 id: PO:0025472
@@ -11328,6 +11973,7 @@ id: PO:0025475
 name: coleorhiza emergence stage
 subset: tier_T0
 is_a: PO:0007520
+relationship: part_of PO:0007057
 
 [Term]
 id: PO:0025476
@@ -11347,6 +11993,7 @@ synonym: "portion of floral structure primordium tissue" EXACT []
 subset: tier_T0
 subset: Angiosperm
 is_a: PO:0025127
+relationship: part_of PO:0025222
 
 [Term]
 id: PO:0025478
@@ -11376,6 +12023,7 @@ synonym: "leaflet primordia (exact, plural)" EXACT []
 synonym: "portion of leaflet primordium tissue" EXACT []
 subset: tier_T0
 is_a: PO:0025127
+relationship: part_of PO:0000017
 
 [Term]
 id: PO:0025482
@@ -11414,6 +12062,7 @@ synonym: "bract primordia (exact, plural)" EXACT []
 synonym: "portion of bract primordium tissue" EXACT []
 subset: tier_T0
 is_a: PO:0025128
+relationship: part_of PO:0025222
 
 [Term]
 id: PO:0025488
@@ -11439,6 +12088,7 @@ subset: tier_T0
 subset: Angiosperm
 is_a: PO:0020003
 is_a: PO:0025395
+relationship: part_of PO:0009072
 
 [Term]
 id: PO:0025491
@@ -11488,12 +12138,14 @@ id: PO:0025498
 name: cardinal part of multi-tissue plant structure
 subset: tier_T0
 is_a: PO:0009011
+relationship: part_of PO:0025496
 
 [Term]
 id: PO:0025499
 name: sepal epidermis giant cell
 subset: tier_T0
 is_a: PO:0000332
+relationship: part_of PO:0006040
 
 [Term]
 id: PO:0025500
@@ -11574,6 +12226,7 @@ id: PO:0025511
 name: petal spur
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0009032
 
 [Term]
 id: PO:0025512
@@ -11581,6 +12234,7 @@ name: corolla spur
 synonym: "花冠距" EXACT []
 subset: tier_T0
 is_a: PO:0025269
+relationship: part_of PO:0009059
 
 [Term]
 id: PO:0025513
@@ -11594,6 +12248,7 @@ id: PO:0025514
 name: phyllome lamina lobe
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0025396
 
 [Term]
 id: PO:0025515
@@ -11601,6 +12256,7 @@ name: phyllome lamina tooth
 synonym: "phyllome lamina teeth (exact, plural)" EXACT []
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0025396
 
 [Term]
 id: PO:0025516
@@ -11608,12 +12264,14 @@ name: phyllome lamina crena
 synonym: "phyllome lamina crenae (exact, plural)" EXACT []
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0025396
 
 [Term]
 id: PO:0025517
 name: leaf lamina lobe
 subset: tier_T0
 is_a: PO:0025514
+relationship: part_of PO:0025034
 
 [Term]
 id: PO:0025518
@@ -11621,6 +12279,7 @@ name: leaf lamina tooth
 synonym: "leaf lamina teeth (exact, plural)" EXACT []
 subset: tier_T0
 is_a: PO:0025515
+relationship: part_of PO:0025034
 
 [Term]
 id: PO:0025519
@@ -11629,6 +12288,7 @@ synonym: "leaf lamina crenae (exact, plural)" EXACT []
 synonym: "leaf lamina scallop" EXACT []
 subset: tier_T0
 is_a: PO:0025516
+relationship: part_of PO:0025034
 
 [Term]
 id: PO:0025520
@@ -11662,12 +12322,14 @@ name: ventral canal cell
 subset: tier_T0
 is_a: PO:0025606
 is_a: UBERON:0001062
+relationship: part_of PO:0030038
 
 [Term]
 id: PO:0025525
 name: spermatogenous cell
 subset: tier_T0
 is_a: PO:0025606
+relationship: part_of PO:0025280
 
 [Term]
 id: PO:0025526
@@ -11737,6 +12399,8 @@ synonym: "tip of a multicellular trichome" EXACT []
 subset: tier_T0
 is_a: PO:0009007
 is_a: PO:0025549
+relationship: part_of PO:0025162
+relationship: part_of PO:0025551
 
 [Term]
 id: PO:0025536
@@ -11774,6 +12438,7 @@ id: PO:0025541
 name: bundle sheath cell
 subset: tier_T0
 is_a: PO:0025030
+relationship: part_of PO:0006023
 
 [Term]
 id: PO:0025542
@@ -11789,6 +12454,7 @@ name: tapetum cell
 synonym: "tapetal cell" EXACT []
 subset: tier_T0
 is_a: PO:0025606
+relationship: part_of PO:0025313
 
 [Term]
 id: PO:0025544
@@ -11796,6 +12462,7 @@ name: microsporangium tapetum cell
 synonym: "microsporangium tapetal cell" EXACT []
 subset: tier_T0
 is_a: PO:0025543
+relationship: part_of PO:0025314
 
 [Term]
 id: PO:0025545
@@ -11803,6 +12470,7 @@ name: anther wall tapetum cell
 synonym: "anther wall tapetal cell" EXACT []
 subset: tier_T0
 is_a: PO:0025544
+relationship: part_of PO:0009071
 
 [Term]
 id: PO:0025546
@@ -11829,12 +12497,14 @@ id: PO:0025549
 name: trichome tip
 subset: tier_T0
 is_a: PO:0009011
+relationship: part_of PO:0025550
 
 [Term]
 id: PO:0025550
 name: trichome apex
 subset: tier_T0
 is_a: PO:0009011
+relationship: part_of PO:0000282
 
 [Term]
 id: PO:0025551
@@ -11921,6 +12591,7 @@ id: PO:0025564
 name: megasporangium tapetum cell
 subset: tier_T0
 is_a: PO:0025543
+relationship: part_of PO:0025315
 
 [Term]
 id: PO:0025565
@@ -11990,18 +12661,21 @@ id: PO:0025575
 name: protoxylem tracheary element
 subset: tier_T0
 is_a: PO:0025444
+relationship: part_of PO:0000272
 
 [Term]
 id: PO:0025576
 name: metaxylem tracheary element
 subset: tier_T0
 is_a: PO:0025444
+relationship: part_of PO:0000372
 
 [Term]
 id: PO:0025577
 name: epicalyx bract
 subset: tier_T0
 is_a: PO:0009034
+relationship: part_of PO:0009063
 
 [Term]
 id: PO:0025578
@@ -12014,6 +12688,7 @@ id: PO:0025579
 name: phyllome development stage
 subset: tier_T0
 is_a: PO:0025339
+relationship: part_of PO:0025527
 
 [Term]
 id: PO:0025580
@@ -12040,6 +12715,8 @@ id: PO:0025583
 name: fused petal
 subset: tier_T0
 is_a: PO:0009032
+relationship: part_of PO:0025580
+relationship: part_of PO:0025581
 
 [Term]
 id: PO:0025584
@@ -12053,6 +12730,7 @@ name: floral organ formation stage
 synonym: "flower morphogenesis stage" EXACT []
 subset: tier_T0
 is_a: PO:0025339
+relationship: part_of PO:0007615
 
 [Term]
 id: PO:0025586
@@ -12060,6 +12738,7 @@ name: phyllome founder cell
 synonym: "phyllome anlagen cell" EXACT []
 subset: tier_T0
 is_a: PO:0025606
+relationship: part_of PO:0025430
 
 [Term]
 id: PO:0025587
@@ -12084,18 +12763,21 @@ id: PO:0025590
 name: receptacle pith
 subset: tier_T0
 is_a: PO:0006109
+relationship: part_of PO:0009064
 
 [Term]
 id: PO:0025591
 name: receptacle cortex
 subset: tier_T0
 is_a: PO:0005708
+relationship: part_of PO:0009064
 
 [Term]
 id: PO:0025592
 name: vascular leaf founder cell
 subset: tier_T0
 is_a: PO:0025586
+relationship: part_of PO:0025431
 
 [Term]
 id: PO:0025593
@@ -12115,12 +12797,14 @@ id: PO:0025595
 name: shoot system ground meristem
 subset: tier_T0
 is_a: PO:0025594
+relationship: part_of PO:0009006
 
 [Term]
 id: PO:0025596
 name: root system ground meristem
 subset: tier_T0
 is_a: PO:0025594
+relationship: part_of PO:0025025
 
 [Term]
 id: PO:0025597
@@ -12190,6 +12874,7 @@ subset: tier_T0
 subset: Tomato
 is_a: PO:0000146
 is_a: UBERON:0001062
+relationship: part_of PO:0004536
 
 [Term]
 id: PO:0025606
@@ -12210,6 +12895,7 @@ name: flower pedicel abscission zone
 subset: tier_T0
 subset: Tomato
 is_a: PO:0000146
+relationship: part_of PO:0030113
 
 [Term]
 id: PO:0025609
@@ -12224,6 +12910,7 @@ id: PO:0025610
 name: stem hypodermis
 subset: tier_T0
 is_a: PO:0005057
+relationship: part_of PO:0025612
 
 [Term]
 id: PO:0025611
@@ -12241,6 +12928,7 @@ id: PO:0025612
 name: stem cortex
 subset: tier_T0
 is_a: PO:0000223
+relationship: part_of PO:0009047
 
 [Term]
 id: PO:0025613
@@ -12265,6 +12953,7 @@ id: PO:0025616
 name: lemma apiculus
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0009037
 
 [Term]
 id: PO:0025617
@@ -12283,6 +12972,7 @@ id: PO:0025619
 name: leaf sheath margin
 subset: tier_T0
 is_a: PO:0025001
+relationship: part_of PO:0020104
 
 [Term]
 id: PO:0025620
@@ -12302,6 +12992,7 @@ name: metaxylem vessel member
 synonym: "metaxylem vessel element" EXACT []
 subset: tier_T0
 is_a: PO:0025448
+relationship: part_of PO:0025620
 
 [Term]
 id: PO:0025623
@@ -12318,6 +13009,7 @@ synonym: "plant endodermal cell" EXACT []
 subset: tier_T0
 is_a: PO:0025030
 is_a: UBERON:0001062
+relationship: part_of PO:0000252
 
 [Term]
 id: PO:0025625
@@ -12337,6 +13029,7 @@ name: phloem parenchyma cell
 subset: tier_T0
 subset: CL
 is_a: PO:0000074
+relationship: part_of PO:0005417
 
 [Term]
 id: PO:0025628
@@ -12359,6 +13052,7 @@ synonym: "sporphyte phase" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0007033
+relationship: part_of PO:0025337
 
 [Term]
 id: PO:0028003
@@ -12369,6 +13063,7 @@ synonym: "gametophytic phase" EXACT []
 subset: tier_T0
 subset: TraitNet
 is_a: PO:0007033
+relationship: part_of PO:0025337
 
 [Term]
 id: PO:0028004
@@ -12376,12 +13071,14 @@ name: branch apex
 synonym: "branch tip" EXACT []
 subset: tier_T0
 is_a: PO:0000037
+relationship: part_of PO:0025073
 
 [Term]
 id: PO:0028005
 name: gametophyte coma
 subset: tier_T0
 is_a: PO:0025007
+relationship: part_of PO:0030018
 
 [Term]
 id: PO:0030001
@@ -12390,6 +13087,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0000076
+relationship: part_of PO:0030004
 
 [Term]
 id: PO:0030002
@@ -12398,6 +13096,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0000076
+relationship: part_of PO:0030005
 
 [Term]
 id: PO:0030003
@@ -12457,6 +13156,7 @@ subset: tier_T0
 subset: CL
 subset: Pteridophytes
 is_a: PO:0030015
+relationship: part_of PO:0000025
 
 [Term]
 id: PO:0030009
@@ -12468,6 +13168,7 @@ subset: Bryophytes
 subset: CL
 subset: Pteridophytes
 is_a: PO:0030007
+relationship: part_of PO:0009006
 
 [Term]
 id: PO:0030010
@@ -12479,6 +13180,7 @@ subset: Bryophytes
 subset: CL
 subset: Pteridophytes
 is_a: PO:0030009
+relationship: part_of PO:0000037
 
 [Term]
 id: PO:0030011
@@ -12490,6 +13192,7 @@ subset: Bryophytes
 subset: CL
 subset: Pteridophytes
 is_a: PO:0030009
+relationship: part_of PO:0020137
 
 [Term]
 id: PO:0030012
@@ -12500,6 +13203,7 @@ subset: tier_T0
 subset: CL
 subset: Pteridophytes
 is_a: PO:0030011
+relationship: part_of PO:0009025
 
 [Term]
 id: PO:0030013
@@ -12514,6 +13218,7 @@ subset: CL
 is_a: PO:0030011
 is_a: PO:0030019
 is_a: UBERON:0001062
+relationship: part_of PO:0025075
 
 [Term]
 id: PO:0030014
@@ -12548,6 +13253,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0030010
+relationship: part_of PO:0030032
 
 [Term]
 id: PO:0030017
@@ -12556,6 +13262,7 @@ synonym: "sporangium mouth" EXACT []
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0025117
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0030018
@@ -12574,6 +13281,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0030009
+relationship: part_of PO:0030018
 
 [Term]
 id: PO:0030020
@@ -12584,6 +13292,7 @@ synonym: "non-vascular shoot axis" EXACT []
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0025029
+relationship: part_of PO:0030018
 
 [Term]
 id: PO:0030021
@@ -12619,6 +13328,7 @@ subset: Bryophytes
 subset: CL
 is_a: PO:0030010
 is_a: PO:0030019
+relationship: part_of PO:0030020
 
 [Term]
 id: PO:0030024
@@ -12642,6 +13352,7 @@ subset: Bryophytes
 subset: CL
 subset: Pteridophytes
 is_a: PO:0030014
+relationship: part_of PO:0030027
 
 [Term]
 id: PO:0030026
@@ -12668,6 +13379,7 @@ synonym: "perigonium bract" EXACT []
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0009055
+relationship: part_of PO:0030018
 
 [Term]
 id: PO:0030029
@@ -12685,6 +13397,7 @@ synonym: "perichaetum bract" EXACT []
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0009055
+relationship: part_of PO:0030018
 
 [Term]
 id: PO:0030031
@@ -12696,6 +13409,7 @@ subset: Citrus
 subset: Pteridophytes
 is_a: PO:0025023
 is_a: UBERON:0001062
+relationship: part_of PO:0030018
 
 [Term]
 id: PO:0030032
@@ -12728,6 +13442,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: Pteridophytes
 is_a: PO:0025066
+relationship: part_of PO:0025125
 
 [Term]
 id: PO:0030036
@@ -12737,6 +13452,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: Pteridophytes
 is_a: PO:0025066
+relationship: part_of PO:0025126
 
 [Term]
 id: PO:0030037
@@ -12755,6 +13471,7 @@ subset: Bryophytes
 subset: Gymnosperms
 subset: Pteridophytes
 is_a: PO:0025001
+relationship: part_of PO:0025126
 
 [Term]
 id: PO:0030039
@@ -12764,6 +13481,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: Pteridophytes
 is_a: PO:0025001
+relationship: part_of PO:0025126
 
 [Term]
 id: PO:0030040
@@ -12773,6 +13491,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: Pteridophytes
 is_a: PO:0025001
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0030041
@@ -12783,6 +13502,7 @@ subset: Bryophytes
 subset: Citrus
 subset: Pteridophytes
 is_a: PO:0025001
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0030042
@@ -12790,6 +13510,7 @@ name: peristome
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0025001
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0030043
@@ -12797,6 +13518,7 @@ name: peristome tooth
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0025001
+relationship: part_of PO:0030042
 
 [Term]
 id: PO:0030044
@@ -12807,6 +13529,7 @@ synonym: "spore capsule opercula (exact, plural)" EXACT []
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0025001
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0030045
@@ -12816,6 +13539,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0025030
+relationship: part_of PO:0030050
 
 [Term]
 id: PO:0030046
@@ -12827,6 +13551,7 @@ subset: Bryophytes
 subset: CL
 subset: Pteridophytes
 is_a: PO:0030014
+relationship: part_of PO:0030003
 
 [Term]
 id: PO:0030047
@@ -12852,6 +13577,7 @@ name: sporangium wall endothecium
 synonym: "endothecium of sporangium wall" EXACT []
 subset: tier_T0
 is_a: PO:0025059
+relationship: part_of PO:0025306
 
 [Term]
 id: PO:0030050
@@ -12879,6 +13605,7 @@ subset: Bryophytes
 subset: CL
 subset: Pteridophytes
 is_a: PO:0025606
+relationship: part_of PO:0030053
 
 [Term]
 id: PO:0030053
@@ -12890,6 +13617,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: Pteridophytes
 is_a: PO:0009007
+relationship: part_of PO:0025125
 
 [Term]
 id: PO:0030054
@@ -12900,6 +13628,7 @@ subset: tier_T0
 subset: Arabidopsis
 subset: Bryophytes
 is_a: PO:0005421
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0030055
@@ -12917,6 +13646,7 @@ synonym: "sporogenous cell" EXACT []
 subset: tier_T0
 subset: CL
 is_a: PO:0025606
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0030057
@@ -12925,6 +13655,8 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0025606
+relationship: part_of PO:0020040
+relationship: part_of PO:0025075
 
 [Term]
 id: PO:0030058
@@ -12950,6 +13682,7 @@ synonym: "club hair" EXACT []
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0025316
+relationship: part_of PO:0030018
 
 [Term]
 id: PO:0030061
@@ -12965,6 +13698,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0025317
+relationship: part_of PO:0030060
 
 [Term]
 id: PO:0030063
@@ -12972,6 +13706,7 @@ name: gametophore axillary hair base
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0025318
+relationship: part_of PO:0030060
 
 [Term]
 id: PO:0030064
@@ -12981,6 +13716,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0025319
+relationship: part_of PO:0030063
 
 [Term]
 id: PO:0030065
@@ -12990,6 +13726,7 @@ subset: tier_T0
 subset: CL
 is_a: PO:0025606
 is_a: UBERON:0001062
+relationship: part_of PO:0030039
 
 [Term]
 id: PO:0030066
@@ -12999,6 +13736,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: Pteridophytes
 is_a: PO:0025132
+relationship: part_of PO:0030039
 
 [Term]
 id: PO:0030067
@@ -13009,6 +13747,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0030086
+relationship: part_of PO:0030003
 
 [Term]
 id: PO:0030068
@@ -13025,6 +13764,7 @@ synonym: "paraphyllia (exact, plural)" EXACT []
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0000112
+relationship: part_of PO:0030020
 
 [Term]
 id: PO:0030070
@@ -13055,6 +13795,7 @@ synonym: "phyllid midvein" RELATED []
 subset: tier_T0
 subset: Bryophytes
 is_a: PO:0009007
+relationship: part_of PO:0025075
 
 [Term]
 id: PO:0030073
@@ -13064,6 +13805,7 @@ synonym: "sporangium epidermis" EXACT []
 synonym: "sporangium wall exothecium" EXACT []
 subset: tier_T0
 is_a: PO:0005679
+relationship: part_of PO:0025306
 
 [Term]
 id: PO:0030074
@@ -13074,6 +13816,7 @@ subset: Bryophytes
 subset: Gymnosperms
 subset: Pteridophytes
 is_a: PO:0009007
+relationship: part_of PO:0025094
 
 [Term]
 id: PO:0030075
@@ -13126,6 +13869,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0030014
+relationship: part_of PO:0030078
 
 [Term]
 id: PO:0030081
@@ -13189,6 +13933,7 @@ subset: tier_T0
 subset: Bryophytes
 subset: CL
 is_a: PO:0004011
+relationship: part_of PO:0030018
 
 [Term]
 id: PO:0030088

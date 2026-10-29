@@ -30,6 +30,11 @@ namespace tpc {
 
         static const int MAX_HITS(1000000);
         static const int FIELD_CACHE_MIN_HITS(30000);
+        // Lucene's default of 1024 clauses per BooleanQuery rejected any
+        // search with more than 1024 categories (HTTP 500 at 1025). An
+        // ontology expansion can return up to 5000 terms (category_search's
+        // EXPANDED_LIMIT_MAX); "organelle" with is_a + part_of is 1876.
+        static const int MAX_QUERY_CLAUSES(16384);
 
         static const int MAX_NUM_SENTENCES_IN_QUERY(200);
         static const int MAX_NUM_DOCIDS_IN_QUERY(200);

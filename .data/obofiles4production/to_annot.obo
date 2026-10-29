@@ -380,6 +380,7 @@ id: TO:0000057
 name: grain moisture content
 subset: tier_T0
 is_a: TO:0000686
+relationship: part_of TO:0000162
 
 [Term]
 id: TO:0000058
@@ -394,6 +395,7 @@ id: TO:0000059
 name: node color
 subset: tier_T0
 is_a: TO:1000003
+relationship: part_of TO:0000056
 
 [Term]
 id: TO:0000060
@@ -529,6 +531,7 @@ synonym: "root dry weight per tiller" RELATED []
 synonym: "total root dry weight" RELATED []
 subset: tier_T0
 is_a: TO:0000279
+relationship: part_of TO:0000352
 
 [Term]
 id: TO:0000079
@@ -605,6 +608,7 @@ synonym: "grain aroma" RELATED []
 subset: tier_T0
 subset: tier_T1
 is_a: TO:0000162
+relationship: part_of TO:0002694
 
 [Term]
 id: TO:0000088
@@ -671,6 +675,7 @@ id: TO:0000096
 name: ratooning ability
 subset: tier_T0
 is_a: TO:0000654
+relationship: part_of TO:0000250
 
 [Term]
 id: TO:0000097
@@ -679,6 +684,7 @@ synonym: "AMYPCTCN" RELATED []
 subset: tier_T0
 is_a: PATO:0000025
 is_a: TO:0006007
+relationship: part_of TO:0001166
 
 [Term]
 id: TO:0000098
@@ -949,6 +955,7 @@ synonym: "lfln" RELATED []
 subset: tier_T0
 is_a: PATO:0000122
 is_a: TO:0002637
+relationship: part_of TO:0000542
 
 [Term]
 id: TO:0000136
@@ -981,6 +988,7 @@ name: lemma apiculus color
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000754
+relationship: part_of TO:0000536
 
 [Term]
 id: TO:0000141
@@ -988,6 +996,7 @@ name: awn color
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0002718
+relationship: part_of TO:0000536
 
 [Term]
 id: TO:0000142
@@ -1018,6 +1027,7 @@ name: shoot axis internode length
 subset: tier_T0
 is_a: PATO:0000122
 is_a: TO:0000756
+relationship: part_of TO:0000576
 
 [Term]
 id: TO:0000146
@@ -1025,6 +1035,7 @@ name: seed length
 subset: tier_T0
 is_a: PATO:0000122
 is_a: TO:0000391
+relationship: part_of TO:0000391
 
 [Term]
 id: TO:0000147
@@ -1046,6 +1057,7 @@ synonym: "plump seed" RELATED []
 subset: tier_T0
 is_a: PATO:0000921
 is_a: TO:0000391
+relationship: part_of TO:0000391
 
 [Term]
 id: TO:0000151
@@ -1338,6 +1350,8 @@ synonym: "bran color" RELATED []
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000838
+relationship: part_of TO:0000486
+relationship: part_of TO:0000931
 
 [Term]
 id: TO:0000191
@@ -1374,6 +1388,7 @@ subset: tier_T0
 subset: tier_T2
 is_a: PATO:0000025
 is_a: TO:0006007
+relationship: part_of TO:0001166
 
 [Term]
 id: TO:0000197
@@ -1453,6 +1468,7 @@ synonym: "shoot height" RELATED []
 subset: tier_T0
 is_a: PATO:0000119
 is_a: TO:1000012
+relationship: part_of TO:1000012
 
 [Term]
 id: TO:0000208
@@ -1476,6 +1492,7 @@ name: anther number
 subset: tier_T0
 is_a: TO:0000225
 is_a: TO:1000022
+relationship: part_of TO:0000225
 
 [Term]
 id: TO:0000211
@@ -1559,6 +1576,7 @@ synonym: "head milled rice" RELATED []
 synonym: "head rice ratio" RELATED []
 subset: tier_T0
 is_a: TO:0000396
+relationship: part_of TO:0000144
 
 [Term]
 id: TO:0000223
@@ -1773,6 +1791,7 @@ id: TO:0000253
 name: seed dormancy
 subset: tier_T0
 is_a: TO:0000653
+relationship: part_of TO:0001159
 
 [Term]
 id: TO:0000254
@@ -1806,6 +1825,7 @@ name: leaf thickness
 subset: tier_T0
 is_a: PATO:0000915
 is_a: TO:0002637
+relationship: part_of TO:0002637
 
 [Term]
 id: TO:0000259
@@ -1843,6 +1863,7 @@ synonym: "palea color" RELATED []
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000079
+relationship: part_of TO:0000536
 
 [Term]
 id: TO:0000265
@@ -1858,6 +1879,7 @@ synonym: "chalkiness of endosperm" RELATED []
 synonym: "Clk" RELATED []
 subset: tier_T0
 is_a: TO:0000575
+relationship: part_of TO:0000587
 
 [Term]
 id: TO:0000267
@@ -1896,6 +1918,7 @@ name: inflorescence length
 subset: tier_T0
 is_a: PATO:0000122
 is_a: TO:0006031
+relationship: part_of TO:0006031
 
 [Term]
 id: TO:0000272
@@ -2032,6 +2055,7 @@ synonym: "alpha-amylase activity" RELATED []
 subset: tier_T0
 subset: tier_T2
 is_a: TO:0000703
+relationship: part_of TO:0000336
 
 [Term]
 id: TO:0000289
@@ -2044,6 +2068,7 @@ id: TO:0000290
 name: flavonoid content
 subset: tier_T0
 is_a: TO:0001172
+relationship: part_of TO:0001143
 
 [Term]
 id: TO:0000291
@@ -2147,6 +2172,7 @@ name: seed thickness
 subset: tier_T0
 is_a: PATO:0000915
 is_a: TO:0000391
+relationship: part_of TO:0000391
 
 [Term]
 id: TO:0000305
@@ -2393,6 +2419,7 @@ synonym: "TAMYASEACT" RELATED []
 synonym: "total amylase activity" RELATED []
 subset: tier_T0
 is_a: TO:0000703
+relationship: part_of TO:0000606
 
 [Term]
 id: TO:0000337
@@ -2408,6 +2435,7 @@ synonym: "BETAAMYASEACT" RELATED []
 synonym: "beta-amylase activity" RELATED []
 subset: tier_T0
 is_a: TO:0000703
+relationship: part_of TO:0000336
 
 [Term]
 id: TO:0000339
@@ -2417,6 +2445,8 @@ synonym: "culm thickness (sensu Poaceae)" RELATED []
 subset: tier_T0
 is_a: PATO:0000915
 is_a: TO:0000892
+relationship: part_of TO:0000051
+relationship: part_of TO:0000892
 
 [Term]
 id: TO:0000340
@@ -2576,6 +2606,7 @@ synonym: "collar color" RELATED []
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000843
+relationship: part_of TO:0000326
 
 [Term]
 id: TO:0000365
@@ -2620,6 +2651,7 @@ synonym: "lfwid" RELATED []
 subset: tier_T0
 is_a: PATO:0000921
 is_a: TO:0002637
+relationship: part_of TO:0002637
 
 [Term]
 id: TO:0000371
@@ -2814,6 +2846,7 @@ id: TO:0000399
 name: grain thickness
 subset: tier_T0
 is_a: TO:0000162
+relationship: part_of TO:0000397
 
 [Term]
 id: TO:0000400
@@ -3013,6 +3046,7 @@ synonym: "culm internode color" RELATED []
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000756
+relationship: part_of TO:0000056
 
 [Term]
 id: TO:0000427
@@ -3142,6 +3176,7 @@ id: TO:0000445
 name: fruit seed number
 subset: tier_T0
 is_a: TO:0002629
+relationship: part_of TO:0000905
 
 [Term]
 id: TO:0000446
@@ -3725,6 +3760,7 @@ name: anther length
 subset: tier_T0
 is_a: PATO:0000122
 is_a: TO:1000022
+relationship: part_of TO:0002609
 
 [Term]
 id: TO:0000532
@@ -3790,6 +3826,7 @@ synonym: "LFLGWDRO" RELATED []
 subset: tier_T0
 is_a: PATO:0001470
 is_a: TO:0000748
+relationship: part_of TO:0002637
 
 [Term]
 id: TO:0000543
@@ -3871,6 +3908,7 @@ name: shoot dry weight
 synonym: "total shoot dry weight" RELATED []
 subset: tier_T0
 is_a: TO:0000568
+relationship: part_of TO:0000352
 
 [Term]
 id: TO:0000553
@@ -3905,6 +3943,7 @@ synonym: "rhizome dry weight per plant" RELATED []
 subset: tier_T0
 is_a: TO:0000549
 is_a: TO:0000568
+relationship: part_of TO:0000352
 
 [Term]
 id: TO:0000557
@@ -3996,6 +4035,7 @@ synonym: "total shoot weight" RELATED []
 subset: tier_T0
 is_a: PATO:0000125
 is_a: TO:0000739
+relationship: part_of TO:0000327
 
 [Term]
 id: TO:0000569
@@ -4013,6 +4053,7 @@ name: shoot fresh weight
 synonym: "total shoot fresh weight" RELATED []
 subset: tier_T0
 is_a: TO:0000568
+relationship: part_of TO:0000442
 
 [Term]
 id: TO:0000572
@@ -4020,6 +4061,7 @@ name: petal color
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000863
+relationship: part_of TO:0000537
 
 [Term]
 id: TO:0000573
@@ -4027,6 +4069,7 @@ name: sepal color
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000864
+relationship: part_of TO:0000537
 
 [Term]
 id: TO:0000574
@@ -4034,6 +4077,7 @@ name: tepal color
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000865
+relationship: part_of TO:0000537
 
 [Term]
 id: TO:0000575
@@ -4051,6 +4095,8 @@ synonym: "stem height" RELATED []
 subset: tier_T0
 is_a: PATO:0000122
 is_a: TO:0000892
+relationship: part_of TO:0000207
+relationship: part_of TO:0000892
 
 [Term]
 id: TO:0000577
@@ -4065,6 +4111,7 @@ name: root fresh weight
 synonym: "total root fresh weight" RELATED []
 subset: tier_T0
 is_a: TO:0000279
+relationship: part_of TO:0000442
 
 [Term]
 id: TO:0000579
@@ -4298,6 +4345,7 @@ synonym: "test weight" RELATED []
 subset: tier_T0
 is_a: PATO:0001019
 is_a: TO:0001079
+relationship: part_of TO:0000162
 
 [Term]
 id: TO:0000613
@@ -4627,6 +4675,7 @@ id: TO:0000661
 name: tiller bud dormancy
 subset: tier_T0
 is_a: TO:0000660
+relationship: part_of TO:0000329
 
 [Term]
 id: TO:0000662
@@ -4725,6 +4774,7 @@ synonym: "4-hydroxy-3-methoxycinnamic acid" RELATED []
 synonym: "FERULICACIDCN" RELATED []
 subset: tier_T0
 is_a: TO:0020076
+relationship: part_of TO:0001143
 
 [Term]
 id: TO:0000676
@@ -4753,6 +4803,7 @@ synonym: "diameter of central spike of ear" RELATED []
 subset: tier_T0
 is_a: PATO:0001334
 is_a: TO:0000921
+relationship: part_of TO:0000433
 
 [Term]
 id: TO:0000680
@@ -4761,6 +4812,7 @@ synonym: "INFLOCIRCUM" RELATED []
 subset: tier_T0
 is_a: PATO:0001648
 is_a: TO:0006031
+relationship: part_of TO:0006031
 
 [Term]
 id: TO:0000681
@@ -4809,6 +4861,7 @@ synonym: "juiciness" RELATED []
 synonym: "succulence" RELATED []
 subset: tier_T0
 is_a: TO:0000228
+relationship: part_of TO:0002728
 
 [Term]
 id: TO:0000687
@@ -4894,6 +4947,7 @@ name: starch yield
 synonym: "STARCHYLD" RELATED []
 subset: tier_T0
 is_a: TO:0000371
+relationship: part_of TO:0000162
 
 [Term]
 id: TO:0000698
@@ -4968,6 +5022,8 @@ synonym: "PERICARPCL" RELATED []
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000945
+relationship: part_of TO:0002617
+relationship: part_of TO:0002728
 
 [Term]
 id: TO:0000708
@@ -5658,6 +5714,7 @@ name: inflorescence diameter
 subset: tier_T0
 is_a: PATO:0001334
 is_a: TO:0006031
+relationship: part_of TO:0006031
 
 [Term]
 id: TO:0000803
@@ -5672,6 +5729,7 @@ name: inflorescence width
 subset: tier_T0
 is_a: PATO:0000921
 is_a: TO:0006031
+relationship: part_of TO:0006031
 
 [Term]
 id: TO:0000805
@@ -6138,6 +6196,7 @@ name: glume morphology trait
 synonym: "glume morphology" RELATED []
 subset: tier_T0
 is_a: TO:0000816
+relationship: part_of TO:0000657
 
 [Term]
 id: TO:0000870
@@ -6395,6 +6454,7 @@ synonym: "rind thickness" EXACT []
 subset: tier_T0
 is_a: PATO:0000915
 is_a: TO:0000906
+relationship: part_of TO:0002728
 
 [Term]
 id: TO:0000908
@@ -6477,6 +6537,7 @@ synonym: "kwt" RELATED []
 subset: tier_T0
 is_a: TO:0001079
 is_a: TO:0002746
+relationship: part_of TO:0000396
 
 [Term]
 id: TO:0000920
@@ -6619,12 +6680,14 @@ name: tassel spike length
 synonym: "first order tassel inflorescence axis length" EXACT []
 subset: tier_T0
 is_a: TO:0001072
+relationship: part_of TO:0000798
 
 [Term]
 id: TO:0000940
 name: tassel branch zone length
 subset: tier_T0
 is_a: TO:0001072
+relationship: part_of TO:0000798
 
 [Term]
 id: TO:0000941
@@ -6641,6 +6704,7 @@ subset: Hordeum_vulgare
 subset: Triticum_aestivum
 subset: Zea_mays
 is_a: TO:0000843
+relationship: part_of TO:0000575
 
 [Term]
 id: TO:0000943
@@ -7237,6 +7301,7 @@ synonym: "culm width" RELATED []
 subset: tier_T0
 is_a: PATO:0000921
 is_a: TO:0000892
+relationship: part_of TO:0000892
 
 [Term]
 id: TO:0001036
@@ -7346,6 +7411,7 @@ id: TO:0001053
 name: subterranean shoot axis tuber length
 subset: tier_T0
 is_a: TO:0000742
+relationship: part_of TO:0000744
 
 [Term]
 id: TO:0001054
@@ -7391,6 +7457,7 @@ id: TO:0001060
 name: subterranean shoot axis tuber width
 subset: tier_T0
 is_a: TO:0000742
+relationship: part_of TO:0000744
 
 [Term]
 id: TO:0001061
@@ -7476,6 +7543,7 @@ id: TO:0001073
 name: fruit shattering
 subset: tier_T0
 is_a: TO:0002729
+relationship: part_of TO:0000929
 
 [Term]
 id: TO:0001074
@@ -7615,6 +7683,7 @@ synonym: "pod weight" EXACT []
 subset: tier_T0
 is_a: TO:0001082
 is_a: TO:0002746
+relationship: part_of TO:0001142
 
 [Term]
 id: TO:0001093
@@ -7769,12 +7838,14 @@ id: TO:0001114
 name: leaflet area
 subset: tier_T0
 is_a: TO:0001113
+relationship: part_of TO:0001119
 
 [Term]
 id: TO:0001115
 name: leaflet length
 subset: tier_T0
 is_a: TO:0001113
+relationship: part_of TO:0001119
 
 [Term]
 id: TO:0001116
@@ -7793,6 +7864,7 @@ id: TO:0001118
 name: leaflet width
 subset: tier_T0
 is_a: TO:0001113
+relationship: part_of TO:0001119
 
 [Term]
 id: TO:0001119
@@ -7831,6 +7903,7 @@ id: TO:0001124
 name: root phosphorus content
 subset: tier_T0
 is_a: TO:0001024
+relationship: part_of TO:1000043
 
 [Term]
 id: TO:0001125
@@ -8043,6 +8116,7 @@ id: TO:0001157
 name: seed moisture content
 subset: tier_T0
 is_a: TO:0000228
+relationship: part_of TO:0000931
 
 [Term]
 id: TO:0001158
@@ -8281,6 +8355,7 @@ name: endocarp color
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000946
+relationship: part_of TO:0002617
 
 [Term]
 id: TO:0002619
@@ -8288,6 +8363,7 @@ name: mesocarp color
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000948
+relationship: part_of TO:0002617
 
 [Term]
 id: TO:0002620
@@ -8296,6 +8372,7 @@ synonym: "epicarp color" EXACT []
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000906
+relationship: part_of TO:0002617
 
 [Term]
 id: TO:0002621
@@ -8303,6 +8380,7 @@ name: fruit columella color
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000843
+relationship: part_of TO:0002617
 
 [Term]
 id: TO:0002622
@@ -8317,6 +8395,7 @@ name: pericarp texture
 subset: tier_T0
 is_a: PATO:0000150
 is_a: TO:0000945
+relationship: part_of TO:0002728
 
 [Term]
 id: TO:0002624
@@ -8394,6 +8473,7 @@ synonym: "fruit ripening" RELATED []
 synonym: "fruit ripening" RELATED []
 subset: tier_T0
 is_a: TO:0000283
+relationship: part_of TO:0000929
 
 [Term]
 id: TO:0002634
@@ -8931,6 +9011,7 @@ name: stay green trait
 synonym: "stay green" RELATED []
 subset: tier_T0
 is_a: TO:0000947
+relationship: part_of TO:0000326
 
 [Term]
 id: TO:0002713
@@ -10565,6 +10646,7 @@ name: seed volume
 subset: tier_T0
 is_a: PATO:0000918
 is_a: TO:0000391
+relationship: part_of TO:0000391
 
 [Term]
 id: TO:0010001
@@ -10593,6 +10675,7 @@ synonym: "INFLAXISCL" RELATED []
 subset: tier_T0
 is_a: PATO:0000014
 is_a: TO:0000782
+relationship: part_of TO:0000581
 
 [Term]
 id: TO:0011004
@@ -11157,6 +11240,7 @@ synonym: "culm diameter" RELATED []
 subset: tier_T0
 is_a: PATO:0001334
 is_a: TO:0000892
+relationship: part_of TO:0000892
 
 [Term]
 id: TO:0020084
@@ -11586,6 +11670,7 @@ name: anther morphology trait
 synonym: "anther morphology" RELATED []
 subset: tier_T0
 is_a: TO:0000842
+relationship: part_of TO:0000215
 
 [Term]
 id: TO:1000023
