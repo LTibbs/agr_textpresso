@@ -4159,7 +4159,6 @@ is_a: TO:0020103
 [Term]
 id: TO:0000587
 name: endosperm quality
-synonym: "End" RELATED []
 synonym: "endosperm quality (sensu Poaceae)" RELATED []
 subset: tier_T0
 subset: tier_T2
