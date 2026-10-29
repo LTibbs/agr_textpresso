@@ -102,6 +102,7 @@ _ACCESS = None          # access.AccessControl, built once at startup, see main(
 _VIEW = None            # hygiene.OntologyView over _CATEGORY_INDEX, see main()
 _ITALICS = {}           # per-paper italic counts, see main()
 _OBO_CLASS = None       # surface form -> OBO provenance class, see main()
+_ENGLISH_FORMS = frozenset()   # gene forms that are English words, see main()
 _TIERS = None           # annotation_tiers.TierIndex, or None when not configured
 
 # Default ON since the 2026-10 rollout (the instance had not been shared
@@ -127,13 +128,21 @@ def _load_annotation(identifier, ontology_filter, include_related,
         return None
     sentences, annotations, sections = casannot.parse_cas_file(path)
     if ontology_filter:
-        annotations = [a for a in annotations if a["ontology"] in ontology_filter]
+        def visible(a):
+            return a["ontology"] in ontology_filter
     elif not include_related:
-        annotations = [a for a in annotations if not a["ontology"].endswith("_RELATED")]
-
-    out = {"sentences": sentences, "annotations": annotations, "sections": sections}
+        def visible(a):
+            return not a["ontology"].endswith("_RELATED")
+    else:
+        visible = None
     if not clean:
-        return out
+        if visible is not None:
+            annotations = [a for a in annotations if visible(a)]
+        return {"sentences": sentences, "annotations": annotations, "sections": sections}
+    # With hygiene on, everything is filtered and then the hidden channels are
+    # removed (include=), so a RELATED gene synonym that is not shown still
+    # counts as evidence for the english-word rule.
+    out = {"sentences": sentences, "annotations": annotations, "sections": sections}
 
     paper_italics = italics.for_paper(_ITALICS, identifier) if use_italics else None
     annotations, dropped = hygiene.clean_annotations(
@@ -145,6 +154,8 @@ def _load_annotation(identifier, ontology_filter, include_related,
         italics=paper_italics,
         italic_rule=italics.never_italicised,
         obo_class_of=_OBO_CLASS,
+        english_forms=_ENGLISH_FORMS,
+        include=visible,
         tiers=_TIERS if use_tiers else None,
         tier_rule=tiers_mod.tier_rule,
         sentence_at=casannot.sentence_lookup(sentences),
@@ -290,7 +301,7 @@ def main():
 
     print("cas_annotate_server: building category index from OBO files...", file=sys.stderr)
     _CATEGORY_INDEX = category_index.build_index(casannot._ontology_of)
-    global _VIEW, _ITALICS, _OBO_CLASS, _TIERS
+    global _VIEW, _ITALICS, _OBO_CLASS, _TIERS, _ENGLISH_FORMS
     # reuse the index already built above rather than parsing the OBO twice
     _VIEW = hygiene.OntologyView.from_category_index(_CATEGORY_INDEX)
     _ITALICS = italics.load_index(os.environ.get(
@@ -301,6 +312,19 @@ def main():
     _OBO_CLASS = italics.load_class_map(os.environ.get(
         "TEXTPRESSO_OBO_CLASS_MAP", "/data/textpresso/italics/obo_short_form_classes.json"))
     print("[cas_annotate_server] italics index: %d papers" % len(_ITALICS), file=sys.stderr)
+    # Gene forms that are English words ('late', 'red', 'promoter'): annotated
+    # only with italic or other-synonym support. Built with
+    # bin/build_class_map.py --english-out from the same OBO as the class map;
+    # a missing file turns the rule off. Read at startup: restart, not re-index.
+    english_path = os.environ.get("TEXTPRESSO_ENGLISH_GENE_FORMS",
+                                  "/data/textpresso/italics/english_gene_forms.json")
+    _ENGLISH_FORMS = italics.load_english_forms(english_path)
+    if _ENGLISH_FORMS:
+        print("[cas_annotate_server] english-word gene rule: %d forms from %s"
+              % (len(_ENGLISH_FORMS), english_path), file=sys.stderr)
+    else:
+        print("[cas_annotate_server] english-word gene rule: off -- WARNING %s not found or empty"
+              % english_path, file=sys.stderr)
     # The tier gate is on by default (2026-10-22): it reads the
     # match_dictionary.csv(.gz) from build_match_dictionary.py, by default the
     # annotation build's. TEXTPRESSO_MATCH_DICTIONARY names another file, or
