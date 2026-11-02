@@ -53,6 +53,9 @@ private:
     Feature sectiontype_type_;
     Type formattype_;
     Feature formattype_value_;
+    Type imagetype_;
+    Feature imagetype_filename_;
+    Feature imagetype_page_;
     std::set<UnicodeString> dlsetToken_;
     TpTrie * trieToken_;
     std::set<UnicodeString> dlsetSentence_;

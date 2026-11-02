@@ -8,7 +8,13 @@
  *   {"rawsource": "jats", "text": "...",
  *    "blocks":   [{"begin", "end", "kind"}],
  *    "sections": [{"begin", "end", "type", "content"}],
- *    "formats":  [{"begin", "end", "value"}], ...}
+ *    "formats":  [{"begin", "end", "value"}],
+ *    "images":   [{"begin", "end", "page", "filename"}], ...}
+ *
+ * "images" is optional (added by add_jats_figures.py; older files lack it).
+ * Each entry becomes one org.apache.uima.textpresso.image annotation, as
+ * TdTokenizer writes for PDFs, so the TpC viewer draws the figure at
+ * "begin". begin == end (a zero-length anchor) is allowed and kept.
  *
  * Offsets in the JSON count Unicode code points (Python str indices); UIMA
  * offsets count UTF-16 code units, so they are converted here -- otherwise a
@@ -181,6 +187,7 @@ TyErrorId TjTokenizer::typeSystemInit(TypeSystem const & crTypeSystem) {
     dblbrktype_ = requireType(crTypeSystem, "org.apache.uima.textpresso.dblbrk", err);
     sectiontype_ = requireType(crTypeSystem, "org.apache.uima.textpresso.section", err);
     formattype_ = requireType(crTypeSystem, "org.apache.uima.textpresso.format", err);
+    imagetype_ = requireType(crTypeSystem, "org.apache.uima.textpresso.image", err);
     if (err != UIMA_ERR_NONE) return err;
     filenametype_name_ = filenametype_.getFeatureByBaseName("value");
     rawsourcetype_type_ = rawsourcetype_.getFeatureByBaseName("value");
@@ -190,6 +197,8 @@ TyErrorId TjTokenizer::typeSystemInit(TypeSystem const & crTypeSystem) {
     sectiontype_content_ = sectiontype_.getFeatureByBaseName("content");
     sectiontype_type_ = sectiontype_.getFeatureByBaseName("type");
     formattype_value_ = formattype_.getFeatureByBaseName("value");
+    imagetype_filename_ = imagetype_.getFeatureByBaseName("filename");
+    imagetype_page_ = imagetype_.getFeatureByBaseName("page");
     return err;
 }
 
@@ -297,6 +306,24 @@ TyErrorId TjTokenizer::process(CAS & tcas, ResultSpecification const & crResultS
             fs.setStringValue(formattype_value_,
                     UnicodeString::fromUTF8(StringPiece(node.second.get<string>("value", ""))));
             if (fmtaid.isValid()) fs.setIntValue(fmtaid, ac.GetNextId());
+            indexRep.addFS(fs);
+        }
+    }
+
+    // figures: one image annotation per entry, anchored where the figure
+    // belongs in the text (ToUtf16 clamps to the document). Unlike sections
+    // and formats, a zero-length span is a valid anchor and is kept.
+    Feature imgaid = imagetype_.getFeatureByBaseName("aid");
+    if (doc.get_child_optional("images")) {
+        for (auto & node : doc.get_child("images")) {
+            int32_t b = ToUtf16(cp2u, node.second.get<int>("begin"));
+            int32_t e = ToUtf16(cp2u, node.second.get<int>("end", node.second.get<int>("begin")));
+            if (e < b) e = b;
+            AnnotationFS fs = tcas.createAnnotation(imagetype_, b, e);
+            fs.setIntValue(imagetype_page_, node.second.get<int>("page", 0));
+            fs.setStringValue(imagetype_filename_,
+                    UnicodeString::fromUTF8(StringPiece(node.second.get<string>("filename", ""))));
+            if (imgaid.isValid()) fs.setIntValue(imgaid, ac.GetNextId());
             indexRep.addFS(fs);
         }
     }

@@ -24,6 +24,7 @@
         <type allAnnotatorFeatures="true">org.apache.uima.textpresso.dblbrk</type>
         <type allAnnotatorFeatures="true">org.apache.uima.textpresso.section</type>
         <type allAnnotatorFeatures="true">org.apache.uima.textpresso.format</type>
+        <type allAnnotatorFeatures="true">org.apache.uima.textpresso.image</type>
         <type allAnnotatorFeatures="true">org.apache.uima.textpresso.tpfnvhash</type>
       </outputs> 
       <languagesSupported>
